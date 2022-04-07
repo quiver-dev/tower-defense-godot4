@@ -22,10 +22,10 @@ vertices = PackedVector2Array(-32, -32, 32, -32, 32, 16, -32, 15.5)
 polygons = [PackedInt32Array(0, 1, 2, 3)]
 outlines = [PackedVector2Array(-32, -32, 32, -32, 32, 16, -32, 15.5)]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_2wah0"]
-vertices = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_578dk"]
+vertices = PackedVector2Array(-32, -16.5, 32, -17, 32, 32, -32, 32)
 polygons = [PackedInt32Array(0, 1, 2, 3)]
-outlines = [PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)]
+outlines = [PackedVector2Array(-32, -16.5, 32, -17, 32, 32, -32, 32)]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_gf3p1"]
 vertices = PackedVector2Array(-32, -32, 32, -32, 32, 32, -17, 32, -32, 17)
@@ -70,7 +70,7 @@ texture_region_size = Vector2i(64, 64)
 1:0/0/navigation_layer_0/polygon = SubResource( "NavigationPolygon_vmgig" )
 1:1/0 = 0
 1:2/0 = 0
-1:2/0/navigation_layer_0/polygon = SubResource( "NavigationPolygon_2wah0" )
+1:2/0/navigation_layer_0/polygon = SubResource( "NavigationPolygon_578dk" )
 1:3/0 = 0
 1:4/0 = 0
 1:5/0 = 0
