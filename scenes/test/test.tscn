@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfiiht3353wrk"]
+[gd_scene load_steps=5 format=3 uid="uid://bggyqre5h41hv"]
 
-[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_emp5r"]
+[ext_resource type="Script" path="res://scenes/test/test.gd" id="1_dhim3"]
 [ext_resource type="TileSet" uid="uid://cfbpq32p4dvj7" path="res://scenes/main/assets/tilesets/main.tres" id="1_k6svi"]
 
 [sub_resource type="CurveTexture" id="CurveTexture_nkamu"]
@@ -9,7 +9,7 @@
 size = Vector2(64, 64)
 
 [node name="Main" type="Node2D"]
-script = ExtResource( "1_emp5r" )
+script = ExtResource( "1_dhim3" )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(128, 96)
