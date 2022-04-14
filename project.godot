@@ -8,11 +8,31 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Node",
+"class": &"State",
+"language": &"GDScript",
+"path": "res://entities/states/state.gd"
+}, {
+"base": "Node",
+"class": &"StateMachine",
+"language": &"GDScript",
+"path": "res://entities/state_machine.gd"
+}]
+_global_script_class_icons={
+"State": "",
+"StateMachine": ""
+}
+
 [application]
 
 config/name="Tower Defense"
 config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Mobile")
+
+[display]
+
+window/stretch/mode="viewport"
 
 [rendering]
 
