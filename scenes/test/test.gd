@@ -14,8 +14,8 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
-		target.global_position = event.position
-		nav_agent.set_target_location(target.position)
+		target.global_position = get_global_mouse_position()
+		nav_agent.set_target_location(target.global_position)
 
 
 func _physics_process(_delta: float) -> void:
@@ -29,3 +29,7 @@ func _physics_process(_delta: float) -> void:
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	test.velocity = safe_velocity
 	test.move_and_slide()
+
+
+func _on_navigation_agent_2d_target_reached() -> void:
+	test.velocity = Vector2.ZERO

@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
-		target.global_position = event.global_position
+		target.global_position = get_global_mouse_position()
 		nav_agent.set_target_location(target.global_position)
 
 
