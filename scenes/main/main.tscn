@@ -1,12 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfiiht3353wrk"]
+[gd_scene load_steps=4 format=3 uid="uid://dfiiht3353wrk"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_emp5r"]
 [ext_resource type="TileSet" uid="uid://cfbpq32p4dvj7" path="res://scenes/main/assets/tilesets/main.tres" id="1_k6svi"]
-
-[sub_resource type="CurveTexture" id="CurveTexture_nkamu"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b4bn"]
-size = Vector2(64, 64)
+[ext_resource type="PackedScene" uid="uid://cexdb0ssdaoqj" path="res://entities/enemies/enemy.tscn" id="3_ccynr"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( "1_emp5r" )
@@ -30,21 +26,7 @@ position = Vector2(696, 392)
 current = true
 zoom = Vector2(0.75, 0.75)
 
-[node name="Test" type="CharacterBody2D" parent="."]
-position = Vector2(88, 792)
-
-[node name="Sprite2D" type="Sprite2D" parent="Test"]
-position = Vector2(-3.8147e-06, -2.86102e-06)
-scale = Vector2(0.25, 64)
-texture = SubResource( "CurveTexture_nkamu" )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Test"]
-shape = SubResource( "RectangleShape2D_7b4bn" )
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Test"]
-target_desired_distance = 32.0
-radius = 32.0
-max_speed = 1000.0
+[node name="Enemy" parent="." instance=ExtResource( "3_ccynr" )]
 
 [node name="Target" type="Position2D" parent="."]
 position = Vector2(592, 136)
@@ -59,5 +41,3 @@ offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
 color = Color(0.443137, 0.505882, 1, 1)
-
-[connection signal="velocity_computed" from="Test/NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

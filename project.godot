@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "CharacterBody2D",
+"class": &"Enemy",
+"language": &"GDScript",
+"path": "res://entities/enemies/enemy.gd"
+}, {
 "base": "Node",
 "class": &"State",
 "language": &"GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[{
 "path": "res://entities/state_machine.gd"
 }]
 _global_script_class_icons={
+"Enemy": "",
 "State": "",
 "StateMachine": ""
 }

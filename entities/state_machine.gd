@@ -21,7 +21,6 @@ signal state_changed(states_stack)
 # the character can return to the previous state. The states_stack is 
 # an Array, and we use Array.push_front() and Array.pop_front() to add and
 # remove states from the history.
-
 var states_map := {}
 var states_stack := []
 var current_state: State = null
@@ -41,7 +40,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	# warning-ignore:return_value_discarded
 	current_state.handle_input(event)
 
 

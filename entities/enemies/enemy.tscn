@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cexdb0ssdaoqj"]
+
+[ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
+[ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_nkamu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b4bn"]
+size = Vector2(64, 64)
+
+[node name="Enemy" type="CharacterBody2D"]
+position = Vector2(88, 792)
+script = ExtResource( "1_cy1ia" )
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( "2_8ke4v" )
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 64)
+texture = SubResource( "CurveTexture_nkamu" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( "RectangleShape2D_7b4bn" )
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 32.0
+radius = 32.0
+max_speed = 1000.0
