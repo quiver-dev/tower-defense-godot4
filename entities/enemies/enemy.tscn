@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cexdb0ssdaoqj"]
+[gd_scene load_steps=6 format=3 uid="uid://cexdb0ssdaoqj"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
+[ext_resource type="Script" path="res://entities/enemies/states/move.gd" id="3_juveh"]
 
 [sub_resource type="CurveTexture" id="CurveTexture_nkamu"]
 
@@ -9,11 +10,15 @@
 size = Vector2(64, 64)
 
 [node name="Enemy" type="CharacterBody2D"]
-position = Vector2(88, 792)
+position = Vector2(424, 224)
 script = ExtResource( "1_cy1ia" )
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( "2_8ke4v" )
+START_STATE = NodePath("Move")
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource( "3_juveh" )
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 64)
@@ -26,3 +31,5 @@ shape = SubResource( "RectangleShape2D_7b4bn" )
 target_desired_distance = 32.0
 radius = 32.0
 max_speed = 1000.0
+
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

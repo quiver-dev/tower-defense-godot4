@@ -26,7 +26,9 @@ var states_stack := []
 var current_state: State = null
 
 
-func _ready() -> void:
+# TODO: using this instead of _ready because for some reason _physics_process
+# and _*input get called before _ready. Check if it is alpha-related
+func _enter_tree() -> void:
 	for state_node in get_children():
 		state_node.finished.connect(_change_state)
 	initialize(START_STATE)
