@@ -9,7 +9,7 @@ extends Node
 # the states anytime without breaking the game.
 
 
-signal state_changed(states_stack)
+signal state_changed(states_stack: Array)
 
 # You must set a starting node from the inspector or on
 # the node that inherits from this state machine interface
@@ -27,7 +27,7 @@ var current_state: State = null
 
 
 # TODO: using this instead of _ready because for some reason _physics_process
-# and _*input get called before _ready. Check if it is alpha-related
+# and _*input get called before _ready. Check if this is alpha-related
 func _enter_tree() -> void:
 	for state_node in get_children():
 		state_node.finished.connect(_change_state)

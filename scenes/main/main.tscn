@@ -41,3 +41,5 @@ offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
 color = Color(0.443137, 0.505882, 1, 1)
+
+[connection signal="target_changed" from="Enemy" to="." method="_on_enemy_target_changed"]

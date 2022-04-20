@@ -2,6 +2,8 @@ class_name Enemy
 extends CharacterBody2D
 
 
+signal target_changed(pos: Vector2)
+
 var speed: int = 300
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
@@ -10,6 +12,7 @@ var speed: int = 300
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		nav_agent.set_target_location(get_global_mouse_position())
+		emit_signal("target_changed", nav_agent.get_target_location())
 
 
 func stop() -> void:

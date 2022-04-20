@@ -5,7 +5,7 @@ extends Node
 # and makes sure every State object had all of these methods.
 
 
-signal finished(next_state_name)
+signal finished(next_state_name: String)
 
 
 # Initialize the state. E.g. change the animation
