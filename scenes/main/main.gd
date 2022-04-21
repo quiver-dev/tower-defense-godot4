@@ -6,8 +6,9 @@ extends Node2D
 
 
 func _ready() -> void:
-	enemy.nav_agent.set_target_location(target.position)
+	target.hide()
 
 
 func _on_enemy_target_changed(pos: Vector2) -> void:
+	target.show()
 	target.position = pos

@@ -1,9 +1,20 @@
 extends State
 
 
-func update(delta: float) -> void:
+func handle_input(event: InputEvent) -> InputEvent:
+	if event is InputEventMouseButton and event.is_pressed():
+		var click_pos := (owner as Enemy).get_global_mouse_position()
+		(owner as Enemy).move_to(click_pos)
+	return super.handle_input(event)
+
+
+func update(_delta: float) -> void:
 	var next_path_pos: Vector2 = (owner as Enemy).nav_agent.get_next_location()
 	var cur_agent_pos: Vector2 = (owner as Enemy).global_position
 	var new_velocity: Vector2 = (next_path_pos - cur_agent_pos).normalized() * \
 			(owner as Enemy).speed
 	(owner as Enemy).nav_agent.set_velocity(new_velocity)
+
+
+func _on_navigation_agent_2d_target_reached() -> void:
+	emit_signal("finished", "idle")

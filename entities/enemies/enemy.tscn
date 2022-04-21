@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cexdb0ssdaoqj"]
+[gd_scene load_steps=7 format=3 uid="uid://e3umhm2q1c0i"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
 [ext_resource type="Script" path="res://entities/enemies/states/move.gd" id="3_juveh"]
+[ext_resource type="Script" path="res://entities/enemies/states/idle.gd" id="4_vk1wn"]
 
 [sub_resource type="CurveTexture" id="CurveTexture_nkamu"]
 
@@ -15,10 +16,13 @@ script = ExtResource( "1_cy1ia" )
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( "2_8ke4v" )
-START_STATE = NodePath("Move")
+START_STATE = NodePath("Idle")
 
 [node name="Move" type="Node" parent="StateMachine"]
 script = ExtResource( "3_juveh" )
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource( "4_vk1wn" )
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 64)
@@ -32,4 +36,5 @@ target_desired_distance = 32.0
 radius = 32.0
 max_speed = 1000.0
 
+[connection signal="target_reached" from="NavigationAgent2D" to="StateMachine/Move" method="_on_navigation_agent_2d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

@@ -9,6 +9,7 @@ extends StateMachine
 func _ready() -> void:
 	states_map = {
 		"move": $Move,
+		"idle": $Idle,
 	}
 
 

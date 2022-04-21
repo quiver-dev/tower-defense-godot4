@@ -9,13 +9,14 @@ var speed: int = 300
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
-		nav_agent.set_target_location(get_global_mouse_position())
-		emit_signal("target_changed", nav_agent.get_target_location())
+func move_to(pos: Vector2) -> void:
+	nav_agent.set_target_location(pos)
+	emit_signal("target_changed", nav_agent.get_target_location())
 
 
 func stop() -> void:
+	if velocity == Vector2.ZERO:
+		return
 	nav_agent.set_velocity(Vector2.ZERO)
 
 

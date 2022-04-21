@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_emp5r"]
 [ext_resource type="TileSet" uid="uid://cfbpq32p4dvj7" path="res://scenes/main/assets/tilesets/main.tres" id="1_k6svi"]
-[ext_resource type="PackedScene" uid="uid://cexdb0ssdaoqj" path="res://entities/enemies/enemy.tscn" id="3_ccynr"]
+[ext_resource type="PackedScene" uid="uid://e3umhm2q1c0i" path="res://entities/enemies/enemy.tscn" id="3_ccynr"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( "1_emp5r" )
