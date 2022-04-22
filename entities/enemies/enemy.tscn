@@ -1,14 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://e3umhm2q1c0i"]
+[gd_scene load_steps=9 format=3 uid="uid://e3umhm2q1c0i"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
 [ext_resource type="Script" path="res://entities/enemies/states/move.gd" id="3_juveh"]
 [ext_resource type="Script" path="res://entities/enemies/states/idle.gd" id="4_vk1wn"]
+[ext_resource type="FontData" uid="uid://db33awc1pfsoi" path="res://assets/fonts/kenney_future_narrow.ttf" id="5_o8crm"]
 
 [sub_resource type="CurveTexture" id="CurveTexture_nkamu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b4bn"]
 size = Vector2(64, 64)
+
+[sub_resource type="Font" id="Font_yxjyq"]
+data/0 = ExtResource( "5_o8crm" )
 
 [node name="Enemy" type="CharacterBody2D"]
 position = Vector2(424, 224)
@@ -36,5 +40,22 @@ target_desired_distance = 32.0
 radius = 32.0
 max_speed = 1000.0
 
+[node name="StateLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -64.0
+offset_right = 29.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource( "Font_yxjyq" )
+text = "Idle"
+horizontal_alignment = 1
+metadata/_edit_use_custom_anchors = false
+
+[connection signal="state_changed" from="StateMachine" to="." method="_on_state_machine_state_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="StateMachine/Move" method="_on_navigation_agent_2d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

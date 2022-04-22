@@ -7,6 +7,7 @@ signal target_changed(pos: Vector2)
 var speed: int = 300
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var state_label: Label = $StateLabel
 
 
 func move_to(pos: Vector2) -> void:
@@ -25,3 +26,7 @@ func stop() -> void:
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
 	move_and_slide()
+
+
+func _on_state_machine_state_changed(states_stack: Array) -> void:
+	state_label.text = (states_stack[0] as State).name
