@@ -8,7 +8,7 @@ extends Camera2D
 const MIN_ZOOM: float = 0.1
 const MAX_ZOOM: float = 1.0
 const ZOOM_RATE: float = 8.0
-const ZOOM_INCREMENT: float = 0.1
+const ZOOM_DELTA: float = 0.1
 
 var target_zoom: float = 1.0
 
@@ -34,10 +34,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func zoom_in() -> void:
-	target_zoom = max(target_zoom - ZOOM_INCREMENT, MIN_ZOOM)
+	target_zoom = min(target_zoom + ZOOM_DELTA, MAX_ZOOM)
 	set_physics_process(true)
 
 
 func zoom_out() -> void:
-	target_zoom = min(target_zoom + ZOOM_INCREMENT, MAX_ZOOM)
+	target_zoom = max(target_zoom - ZOOM_DELTA, MIN_ZOOM)
 	set_physics_process(true)
