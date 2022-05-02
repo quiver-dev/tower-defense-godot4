@@ -1,8 +1,8 @@
 extends Camera2D
 # Panning camera which can be zoomed out/in with the mouse wheel and panned by
 # holding the middle mouse button and dragging the mouse.
-# We use the _physics_process to animate the zoom and to make sure the zooming
-# speed is not influenced by the framerate, since it always updated at 60 FPS.
+# We use _physics_process to animate the zoom and to make sure the zooming
+# speed is not influenced by the framerate, since it's always updated at 60 FPS.
 
 
 const MIN_ZOOM: float = 0.1

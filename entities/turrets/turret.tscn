@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd8d3ni18y5j3"]
+
+[ext_resource type="Texture2D" uid="uid://dkyor5cvnlh4a" path="res://entities/turrets/assets/textures/base_00.png" id="1_rhox6"]
+[ext_resource type="Texture2D" uid="uid://cn0fp8w7073hc" path="res://entities/turrets/assets/textures/gun_00.png" id="2_2e7ls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o87d8"]
+size = Vector2(48, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xaj0"]
+radius = 72.0
+
+[node name="Turret" type="CharacterBody2D"]
+
+[node name="Basement" type="Sprite2D" parent="."]
+texture = ExtResource( "1_rhox6" )
+
+[node name="Gun" type="Sprite2D" parent="."]
+texture = ExtResource( "2_2e7ls" )
+offset = Vector2(0, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+shape = SubResource( "RectangleShape2D_o87d8" )
+
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource( "CircleShape2D_5xaj0" )
