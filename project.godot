@@ -23,11 +23,17 @@ _global_script_classes=[{
 "class": &"StateMachine",
 "language": &"GDScript",
 "path": "res://entities/state_machine.gd"
+}, {
+"base": "CharacterBody2D",
+"class": &"Turret",
+"language": &"GDScript",
+"path": "res://entities/turrets/turret.gd"
 }]
 _global_script_class_icons={
 "Enemy": "",
 "State": "",
-"StateMachine": ""
+"StateMachine": "",
+"Turret": ""
 }
 
 [application]
@@ -39,6 +45,12 @@ config/features=PackedStringArray("4.0", "Vulkan Mobile")
 [display]
 
 window/stretch/mode="viewport"
+
+[layer_names]
+
+2d_physics/layer_1="enemy"
+2d_physics/layer_2="turret"
+2d_physics/layer_3="bullet"
 
 [rendering]
 

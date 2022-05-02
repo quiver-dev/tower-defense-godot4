@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd8d3ni18y5j3"]
+[gd_scene load_steps=6 format=3 uid="uid://bd8d3ni18y5j3"]
 
+[ext_resource type="Script" path="res://entities/turrets/turret.gd" id="1_mel1h"]
 [ext_resource type="Texture2D" uid="uid://dkyor5cvnlh4a" path="res://entities/turrets/assets/textures/base_00.png" id="1_rhox6"]
 [ext_resource type="Texture2D" uid="uid://cn0fp8w7073hc" path="res://entities/turrets/assets/textures/gun_00.png" id="2_2e7ls"]
 
@@ -10,6 +11,9 @@ size = Vector2(48, 48)
 radius = 72.0
 
 [node name="Turret" type="CharacterBody2D"]
+position = Vector2(248, 128)
+collision_layer = 2
+script = ExtResource( "1_mel1h" )
 
 [node name="Basement" type="Sprite2D" parent="."]
 texture = ExtResource( "1_rhox6" )
@@ -26,3 +30,8 @@ shape = SubResource( "RectangleShape2D_o87d8" )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 shape = SubResource( "CircleShape2D_5xaj0" )
+
+[node name="FireRateTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]

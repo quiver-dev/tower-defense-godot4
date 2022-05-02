@@ -15,6 +15,7 @@ data/0 = ExtResource( "5_o8crm" )
 
 [node name="Enemy" type="CharacterBody2D"]
 position = Vector2(424, 224)
+collision_mask = 7
 script = ExtResource( "1_cy1ia" )
 
 [node name="StateMachine" type="Node" parent="."]
