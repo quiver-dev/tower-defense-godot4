@@ -46,6 +46,10 @@ config/features=PackedStringArray("4.0", "Vulkan Mobile")
 
 window/stretch/mode="viewport"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
 [layer_names]
 
 2d_physics/layer_1="enemy"

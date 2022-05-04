@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfiiht3353wrk"]
+[gd_scene load_steps=6 format=3 uid="uid://dfiiht3353wrk"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_emp5r"]
 [ext_resource type="TileSet" uid="uid://cfbpq32p4dvj7" path="res://scenes/main/assets/tilesets/main.tres" id="1_k6svi"]
 [ext_resource type="PackedScene" uid="uid://e3umhm2q1c0i" path="res://entities/enemies/enemy.tscn" id="3_ccynr"]
 [ext_resource type="PackedScene" uid="uid://cwdrqlu7vci07" path="res://scenes/main/prefabs/camera2D.tscn" id="3_o2ded"]
+[ext_resource type="PackedScene" uid="uid://bd8d3ni18y5j3" path="res://entities/turrets/turret.tscn" id="5_bg8bs"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( "1_emp5r" )
@@ -39,5 +40,10 @@ offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
 color = Color(0.443137, 0.505882, 1, 1)
+
+[node name="Turret" parent="." instance=ExtResource( "5_bg8bs" )]
+position = Vector2(992, 424)
+detect_radius = 250
+rot_speed = 2.5
 
 [connection signal="target_changed" from="Enemy" to="." method="_on_enemy_target_changed"]

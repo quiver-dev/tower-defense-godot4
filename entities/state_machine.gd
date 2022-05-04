@@ -26,7 +26,7 @@ var states_stack := []
 var current_state: State = null
 
 
-# TODO: using this instead of _ready because for some reason _physics_process
+# WARN: using this instead of _ready because for some reason _physics_process
 # and _*input get called before _ready. Check if this is alpha-related
 func _enter_tree() -> void:
 	for state_node in get_children():
@@ -66,7 +66,7 @@ func _change_state(_state_name: String) -> void:
 
 # We want to delegate every method or callback that could trigger 
 # a state change to the state objects. The base script state.gd,
-# that all states extend, makes sure that all states have the same
+# which all states extend, makes sure that all states have the same
 # interface, that is to say access to the same base methods, including
 # _on_animation_finished. See state.gd
 func _on_Sprite_animation_finished() -> void:
