@@ -8,7 +8,7 @@ const DETECTOR_COLOR := Color(1, 0.22, 0.25, 0.25)
 @export var detect_radius: int = 200:
 	set = set_detect_radius
 @export var fire_rate: float
-@export var rot_speed: float = 1.5
+@export var rot_speed: float = 3.0
 @export var bullet_type: PackedScene
 @export_range(0, 100) var health: int = 10
 

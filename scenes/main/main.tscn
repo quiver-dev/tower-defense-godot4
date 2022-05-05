@@ -35,15 +35,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
 color = Color(0.443137, 0.505882, 1, 1)
 
-[node name="Turret" parent="." instance=ExtResource( "5_bg8bs" )]
+[node name="Turret1" parent="." instance=ExtResource( "5_bg8bs" )]
 position = Vector2(992, 424)
 detect_radius = 250
+rot_speed = 2.5
+
+[node name="Turret2" parent="." instance=ExtResource( "5_bg8bs" )]
+position = Vector2(224, 608)
 rot_speed = 2.5
 
 [connection signal="target_changed" from="Enemy" to="." method="_on_enemy_target_changed"]
