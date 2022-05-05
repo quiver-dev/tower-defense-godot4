@@ -11,11 +11,11 @@ size = Vector2(48, 48)
 radius = 250.0
 
 [node name="Turret" type="CharacterBody2D"]
-position = Vector2(248, 128)
+position = Vector2(256, 152)
 collision_layer = 2
 script = ExtResource( "1_mel1h" )
-detect_radius = 150
 fire_rate = 0.0
+metadata/_edit_group_ = true
 
 [node name="Basement" type="Sprite2D" parent="."]
 texture = ExtResource( "1_rhox6" )

@@ -4,10 +4,26 @@ extends CharacterBody2D
 
 signal target_changed(pos: Vector2)
 
+@export var rot_speed: float = 10.0
+
 var speed: int = 300
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var state_label: Label = $StateLabel
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var collision: CollisionShape2D = $CollisionShape2D
+
+
+func _physics_process(delta: float) -> void:
+	# Rotate based on current velocity
+	sprite.global_rotation = calculate_rot(sprite.global_rotation, delta)
+	collision.global_rotation = calculate_rot(collision.global_rotation, delta)
+
+
+# Used to make the enemy rotate to face its current direction,
+# with the specified rotation speed
+func calculate_rot(start_rot: float, delta: float) -> float:
+	return lerp_angle(start_rot, velocity.angle(), rot_speed * delta)
 
 
 func move_to(pos: Vector2) -> void:

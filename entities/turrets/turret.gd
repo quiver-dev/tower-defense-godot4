@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 const DETECTOR_COLOR := Color(1, 0.22, 0.25, 0.25)
 
-@export var detect_radius: int = 80:
+@export var detect_radius: int = 200:
 	set = set_detect_radius
 @export var fire_rate: float
 @export var rot_speed: float = 1.5
