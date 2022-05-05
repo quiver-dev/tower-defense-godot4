@@ -12,20 +12,20 @@ A 2D tile-based tower defense game built using Godot 4.0 alpha.
 
 ## Topics covered
 - Godot 4's new features:
-	1. GDScript's annotations
-	2. The massively-upgraded `TileMap` system
-	3. The Navigation Server API
-	4. Physics bodies, including the new `CharacterBody2D`
+	- GDScript's annotations
+	- The massively-upgraded `TileMap` system
+	- The Navigation Server API
+	- Physics bodies, including the new `CharacterBody2D`
 - Signals
 - Class inheritance
 - Character movement
 - Collision detection
 - AI implementing the Finite State Machine (FSM) pattern and states
-- Following Godot's best practices
+- Following Godot's [best practices](https://docs.godotengine.org/en/latest/tutorials/best_practices/index.html)
 
 ## Code style and guidelines
 The code will be written using static typing whenever possible and
-following the official GDScript style guide.
+following the official GDScript [style guide](https://docs.godotengine.org/en/latest/tutorials/scripting/gdscript/gdscript_styleguide.html).
 
 ## LFS
 This project uses Git Large File Storage (LFS) to store asset binaries.
