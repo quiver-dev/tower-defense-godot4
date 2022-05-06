@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://e3umhm2q1c0i"]
+[gd_scene load_steps=10 format=3 uid="uid://e3umhm2q1c0i"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://entities/enemies/states/idle.gd" id="4_vk1wn"]
 [ext_resource type="Texture2D" uid="uid://by5hmlojnbruq" path="res://entities/enemies/infantry/assets/textures/sprite.png" id="5_e4vuj"]
 [ext_resource type="FontData" uid="uid://db33awc1pfsoi" path="res://assets/fonts/kenney_future_narrow.ttf" id="5_o8crm"]
+[ext_resource type="Script" path="res://entities/enemies/states/hit.gd" id="5_t30j3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b4bn"]
 size = Vector2(16, 32)
@@ -27,6 +28,9 @@ script = ExtResource( "3_juveh" )
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource( "4_vk1wn" )
+
+[node name="Hit" type="Node" parent="StateMachine"]
+script = ExtResource( "5_t30j3" )
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource( "5_e4vuj" )

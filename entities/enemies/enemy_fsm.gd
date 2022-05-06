@@ -6,10 +6,14 @@ extends StateMachine
 # from each state and passed on when their "finished" signal is emitted.
 
 
+const STATES_STACK_COUNT := 2
+
+
 func _ready() -> void:
 	states_map = {
 		"move": $Move,
 		"idle": $Idle,
+		"hit": $Hit,
 	}
 
 
@@ -17,8 +21,10 @@ func _change_state(state_name: String) -> void:
 	current_state.exit()
 	
 	states_stack.push_front(states_map[state_name])
-	if states_stack.size() > 2:
+	if states_stack.size() > STATES_STACK_COUNT:
 		states_stack.pop_back()
 	
 	current_state = states_stack[0]
 	emit_signal("state_changed", states_stack)
+
+	current_state.enter()

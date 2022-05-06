@@ -28,7 +28,3 @@ func update(_delta: float) -> void:
 
 func _on_animation_finished() -> void:
 	return
-
-
-func _to_string() -> String:
-	return String(name).to_lower()

@@ -5,8 +5,8 @@ extends CharacterBody2D
 signal target_changed(pos: Vector2)
 
 @export var rot_speed: float = 10.0
-
-var speed: int = 300
+@export var health: int = 10
+@export var speed: int = 300
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var state_label: Label = $StateLabel
@@ -18,6 +18,12 @@ func _physics_process(delta: float) -> void:
 	# Rotate based on current velocity
 	sprite.global_rotation = calculate_rot(sprite.global_rotation, delta)
 	collision.global_rotation = calculate_rot(collision.global_rotation, delta)
+
+
+func take_damage(damage: int) -> void:
+	health -= damage
+	if health < 1:
+		print("enemy dead")
 
 
 # Used to make the enemy rotate to face its current direction,
@@ -35,6 +41,10 @@ func stop() -> void:
 	if velocity == Vector2.ZERO:
 		return
 	nav_agent.set_velocity(Vector2.ZERO)
+
+
+func get_fsm() -> StateMachine:
+	return $StateMachine as StateMachine
 
 
 # Emitted by NavigationAgent2D.set_velocity, which can be called by any 
