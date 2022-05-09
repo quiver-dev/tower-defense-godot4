@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0egye3vj4x04"]
+[gd_scene load_steps=4 format=3 uid="uid://c0egye3vj4x04"]
 
 [ext_resource type="Script" path="res://entities/bullets/bullet.gd" id="1_x4s37"]
+[ext_resource type="Texture2D" uid="uid://dqkkexn4peet5" path="res://entities/bullets/assets/textures/normal_00.png" id="2_fq4cx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_er61a"]
+radius = 8.0
+height = 32.0
 
 [node name="Bullet" type="Area2D"]
 position = Vector2(240, 112)
@@ -9,8 +14,10 @@ collision_mask = 3
 script = ExtResource( "1_x4s37" )
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource( "2_fq4cx" )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( "CapsuleShape2D_er61a" )
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 scale = Vector2(4, 4)

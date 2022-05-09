@@ -22,7 +22,7 @@ signal state_changed(states_stack: Array)
 # an Array, and we use Array.push_front() and Array.pop_front() to add and
 # remove states from the history.
 var states_map := {}
-var states_stack := []
+var states_stack: Array[Object] = []
 var current_state: State = null
 
 
