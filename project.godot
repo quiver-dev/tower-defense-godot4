@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Area2D",
+"class": &"Bullet",
+"language": &"GDScript",
+"path": "res://entities/bullets/bullet.gd"
+}, {
 "base": "CharacterBody2D",
 "class": &"Enemy",
 "language": &"GDScript",
@@ -35,6 +40,7 @@ _global_script_classes=[{
 "path": "res://entities/turrets/turret.gd"
 }]
 _global_script_class_icons={
+"Bullet": "",
 "Enemy": "",
 "EnemyState": "",
 "State": "",

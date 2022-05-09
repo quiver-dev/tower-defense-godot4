@@ -5,7 +5,7 @@ extends CharacterBody2D
 signal target_changed(pos: Vector2)
 
 @export var rot_speed: float = 10.0
-@export var health: int = 10
+@export var health: int = 100
 @export var speed: int = 300
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D

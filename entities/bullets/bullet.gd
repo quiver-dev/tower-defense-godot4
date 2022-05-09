@@ -1,3 +1,4 @@
+class_name Bullet
 extends Area2D
 # This class extends the Area2D node because we don't need advanced
 # physics or player-controlled movement.
@@ -12,11 +13,23 @@ extends Area2D
 var velocity: Vector2
 
 
+func _physics_process(delta: float) -> void:
+	global_position += velocity * delta
+
+
+# Called by the turret, which instantiates a bullet and gives it a target
+func start(_position: Vector2, _rotation: float) -> void:
+	global_position = _position
+	rotation = _rotation + PI / 2
+	velocity = Vector2.RIGHT.rotated(_rotation) * speed
+
+
 func _on_bullet_body_entered(body: Node2D) -> void:
 	if body is Enemy:
-		# TODO: trigger hit state for enemy
+		body.take_damage(damage)
 		queue_free()
 
 
 func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
+	print("Freeing ", self.name)
 	queue_free()
