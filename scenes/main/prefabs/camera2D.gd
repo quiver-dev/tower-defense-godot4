@@ -31,6 +31,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		# go the opposite direction of the dragging and multiply the current
 		# zoom to regulate the dragging speed
 		position -= event.relative * zoom
+	# apply custom mouse cursor by mapping middle mouse button in the InputMap
+	if event.is_action_pressed("middle_mouse"):
+		Input.set_default_cursor_shape(Input.CURSOR_DRAG)
+	if event.is_action_released("middle_mouse"):
+		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
 
 func zoom_in() -> void:
