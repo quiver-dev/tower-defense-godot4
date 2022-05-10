@@ -23,6 +23,7 @@ metadata/_edit_group_ = true
 texture = ExtResource( "1_rhox6" )
 
 [node name="Gun" type="Sprite2D" parent="."]
+rotation = 1.5708
 texture = ExtResource( "2_2e7ls" )
 offset = Vector2(0, -11)
 

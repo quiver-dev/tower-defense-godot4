@@ -14,9 +14,11 @@ collision_mask = 3
 script = ExtResource( "1_x4s37" )
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 texture = ExtResource( "2_fq4cx" )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
 shape = SubResource( "CapsuleShape2D_er61a" )
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]

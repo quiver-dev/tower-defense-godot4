@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 
 signal target_changed(pos: Vector2)
+signal enemy_dead
 
 @export var rot_speed: float = 10.0
 @export var health: int = 100
@@ -16,20 +17,15 @@ signal target_changed(pos: Vector2)
 
 func _physics_process(delta: float) -> void:
 	# Rotate based on current velocity
-	sprite.global_rotation = calculate_rot(sprite.global_rotation, delta)
-	collision.global_rotation = calculate_rot(collision.global_rotation, delta)
+	sprite.global_rotation = _calculate_rot(sprite.global_rotation, delta)
+	collision.global_rotation = _calculate_rot(collision.global_rotation, delta)
 
 
 func take_damage(damage: int) -> void:
-	health -= damage
-	if health < 1:
+	health = max(0, health - damage)
+	if health == 0:
+		emit_signal("enemy_dead")
 		print("enemy dead")
-
-
-# Used to make the enemy rotate to face its current direction,
-# with the specified rotation speed
-func calculate_rot(start_rot: float, delta: float) -> float:
-	return lerp_angle(start_rot, velocity.angle(), rot_speed * delta)
 
 
 func move_to(pos: Vector2) -> void:
@@ -45,6 +41,12 @@ func stop() -> void:
 
 func get_fsm() -> StateMachine:
 	return $StateMachine as StateMachine
+
+
+# Used to make the enemy rotate to face its current direction,
+# with the specified rotation speed
+func _calculate_rot(start_rot: float, delta: float) -> float:
+	return lerp_angle(start_rot, velocity.angle(), rot_speed * delta)
 
 
 # Emitted by NavigationAgent2D.set_velocity, which can be called by any 

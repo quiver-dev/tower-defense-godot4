@@ -3,7 +3,9 @@ class_name Turret
 extends CharacterBody2D
 
 
-const DETECTOR_COLOR := Color(1, 0.22, 0.25, 0.25)
+signal turret_disabled
+
+const DETECTOR_COLOR := Color(1, 0.22, 0.25, 0.25)  # for debug purposes
 
 @export_range(0, 100) var health: int = 10
 @export var detect_radius: int = 200:
@@ -30,10 +32,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	update()
 	if targets:
-		var target_rot: float = (targets.front().global_position - \
-				global_position).normalized().angle()
-		gun.global_rotation = lerp_angle(gun.global_rotation,
-				target_rot + PI / 2, rot_speed * delta)
+		var target_pos: Vector2 = targets.front().global_position
+		var target_rot: float = global_position.direction_to(target_pos).angle()
+		gun.rotation = lerp_angle(gun.rotation, target_rot + PI / 2,
+				rot_speed * delta)
 		if can_shoot:
 			shoot(targets.front().global_position)
 
@@ -51,9 +53,16 @@ func set_detect_radius(value: int) -> void:
 func shoot(_position: Vector2) -> void:
 	can_shoot = false
 	var bullet: Bullet = bullet_type.instantiate()
-	bullet.start(muzzle.global_position, gun.global_rotation - PI / 2)
+	bullet.start(muzzle.global_position, gun.rotation - PI / 2)
 	bullet_container.add_child(bullet, true)
 	firerate_timer.start(fire_rate)
+
+
+func take_damage(damage: int) -> void:
+	health = max(0, health - damage)
+	if health == 0:
+		emit_signal("turret_disabled")
+		print("turret_disabled")
 
 
 func _on_fire_rate_timer_timeout() -> void:

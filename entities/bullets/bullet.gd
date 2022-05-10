@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 # Called by the turret, which instantiates a bullet and gives it a target
 func start(_position: Vector2, _rotation: float) -> void:
 	global_position = _position
-	rotation = _rotation + PI / 2
+	rotation = _rotation
 	velocity = Vector2.RIGHT.rotated(_rotation) * speed
 
 
