@@ -61,6 +61,7 @@ func shoot(_position: Vector2) -> void:
 func take_damage(damage: int) -> void:
 	health = max(0, health - damage)
 	if health == 0:
+		# TODO: add logic
 		emit_signal("turret_disabled")
 		print("turret_disabled")
 

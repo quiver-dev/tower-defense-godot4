@@ -26,7 +26,7 @@ func start(_position: Vector2, _rotation: float) -> void:
 
 func _on_bullet_body_entered(body: Node2D) -> void:
 	if body is Enemy:
-		body.take_damage(damage)
+		(body.get_fsm().current_state as EnemyState).is_hit(damage)
 		queue_free()
 
 

@@ -1,7 +1,7 @@
 extends EnemyState
 
 
-const DURATION := 0.8
+const DURATION := 0.5
 
 @onready var timer := Timer.new()
 

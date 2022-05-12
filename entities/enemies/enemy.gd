@@ -24,6 +24,7 @@ func _physics_process(delta: float) -> void:
 func take_damage(damage: int) -> void:
 	health = max(0, health - damage)
 	if health == 0:
+		# TODO: add logic
 		emit_signal("enemy_dead")
 		print("enemy dead")
 
