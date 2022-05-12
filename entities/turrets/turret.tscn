@@ -15,6 +15,7 @@ radius = 200.0
 position = Vector2(256, 152)
 collision_layer = 2
 script = ExtResource( "1_mel1h" )
+fire_rate = 0.8
 rot_speed = 1.5
 bullet_type = ExtResource( "2_nwtwu" )
 metadata/_edit_group_ = true

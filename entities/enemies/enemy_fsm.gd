@@ -1,3 +1,4 @@
+class_name EnemyFSM
 extends StateMachine
 # This class must override the _change_state method to exit the current
 # state, do the necessary steps and finally switch to the new state.
@@ -15,6 +16,18 @@ func _ready() -> void:
 		"idle": $Idle,
 		"hit": $Hit,
 	}
+
+
+# Special case to force a switch to the Hit state.
+# Called when colliding with damaging objects. This is a limitation of
+# this implementation because we can't pass data directly to the hit state.
+# TODO: try finding a way to let the Hit state handle damage.
+func is_hit(damage: int) -> void:
+	if current_state.name == "Hit":
+		print("Already in Hit state")
+		return
+	(owner as Enemy).take_damage(damage)
+	current_state.emit_signal("finished", "hit")
 
 
 func _change_state(state_name: String) -> void:

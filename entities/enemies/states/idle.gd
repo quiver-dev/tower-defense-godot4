@@ -1,4 +1,4 @@
-extends EnemyState
+extends State
 
 
 func enter() -> void:

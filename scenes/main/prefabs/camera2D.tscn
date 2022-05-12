@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwdrqlu7vci07"]
-
-[ext_resource type="Script" path="res://scenes/main/prefabs/camera2D.gd" id="1_8bemx"]
-
-[node name="Camera2D" type="Camera2D"]
-position = Vector2(696, 392)
-current = true
-script = ExtResource( "1_8bemx" )
