@@ -19,14 +19,16 @@ var targets: Array[Node2D]
 var can_shoot := true
 
 @onready var gun: Sprite2D = $Gun
-@onready var coll_radius: CollisionShape2D = $Detector/CollisionShape2D
 @onready var muzzle: Position2D = $Gun/Muzzle
 @onready var bullet_container: Node = $BulletContainer
 @onready var firerate_timer: Timer = $FireRateTimer
+@onready var detector_coll: CollisionShape2D = $Detector/CollisionShape2D
+@onready var detector_shape := CircleShape2D.new()
 
 
 func _ready() -> void:
-	(coll_radius.shape as CircleShape2D).radius = detect_radius
+	detector_shape.radius = detect_radius
+	detector_coll.shape = detector_shape
 
 
 func _physics_process(delta: float) -> void:
@@ -46,14 +48,15 @@ func _draw() -> void:
 
 func set_detect_radius(value: int) -> void:
 	detect_radius = value
-	if coll_radius:
-		(coll_radius.shape as CircleShape2D).radius = detect_radius
+	if detector_shape:
+		detector_shape.radius = detect_radius
 
 
 func shoot(_position: Vector2) -> void:
 	can_shoot = false
 	var bullet: Bullet = bullet_type.instantiate()
-	bullet.start(muzzle.global_position, gun.rotation - PI / 2)
+	bullet.start(muzzle.global_position,
+			gun.rotation - PI / 2 + randf_range(-bullet_spread, bullet_spread))
 	bullet_container.add_child(bullet, true)
 	firerate_timer.start(fire_rate)
 

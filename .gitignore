@@ -1,5 +1,6 @@
-# Godot4-specific ignores
+# Godot 4+ specific ignores
 .godot/
+
 export_presets.cfg
 
 # Imported translations (automatically generated from CSV files)

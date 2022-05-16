@@ -26,6 +26,7 @@ layer_1/tile_data = PackedInt32Array()
 [node name="Camera2D" parent="." instance=ExtResource( "3_o2ded" )]
 
 [node name="Enemy" parent="." instance=ExtResource( "3_ccynr" )]
+position = Vector2(544, 160)
 
 [node name="Target" type="Position2D" parent="."]
 position = Vector2(592, 136)
@@ -47,7 +48,6 @@ detect_radius = 250
 rot_speed = 10.0
 
 [node name="Turret2" parent="." instance=ExtResource( "5_bg8bs" )]
-position = Vector2(224, 608)
-rot_speed = 2.5
+position = Vector2(224, 288)
 
 [connection signal="target_changed" from="Enemy" to="." method="_on_enemy_target_changed"]

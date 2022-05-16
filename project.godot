@@ -63,7 +63,8 @@ config/features=PackedStringArray("4.0", "Vulkan Mobile")
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
@@ -82,6 +83,7 @@ middle_mouse={
 2d_physics/layer_1="enemy"
 2d_physics/layer_2="turret"
 2d_physics/layer_3="bullet"
+2d_physics/layer_4="turret_slot"
 
 [rendering]
 
