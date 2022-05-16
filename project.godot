@@ -61,6 +61,10 @@ run/main_scene="res://scenes/main/main.tscn"
 config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Mobile")
 
+[autoload]
+
+Global="*res://assets/scripts/global.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
