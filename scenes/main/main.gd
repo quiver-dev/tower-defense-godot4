@@ -3,6 +3,8 @@ extends Node2D
 
 @onready var target: Position2D = $Target
 @onready var enemy: CharacterBody2D = $Enemy
+@onready var tile_map: TileMap = $TileMap
+@onready var camera: Camera2D = $Camera2D
 
 
 func _ready() -> void:
