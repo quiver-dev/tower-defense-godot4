@@ -8,15 +8,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o87d8"]
 size = Vector2(48, 48)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nnqdx"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_avyee"]
 radius = 200.0
 
 [node name="Turret" type="CharacterBody2D"]
 position = Vector2(256, 152)
 collision_layer = 2
 script = ExtResource( "1_mel1h" )
-fire_rate = 0.8
-rot_speed = 1.5
 bullet_type = ExtResource( "2_nwtwu" )
 metadata/_edit_group_ = true
 
@@ -39,7 +37,8 @@ shape = SubResource( "RectangleShape2D_o87d8" )
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
-shape = SubResource( "CircleShape2D_nnqdx" )
+modulate = Color(1, 1, 1, 0.247059)
+shape = SubResource( "CircleShape2D_avyee" )
 
 [node name="FireRateTimer" type="Timer" parent="."]
 one_shot = true

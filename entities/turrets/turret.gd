@@ -11,9 +11,9 @@ const DETECTOR_COLOR := Color(1, 0.22, 0.25, 0.25)  # for debug purposes
 @export var detect_radius: int = 200:
 	set = set_detect_radius
 @export var fire_rate: float = 0.5
-@export var rot_speed: float = 3.0
+@export var rot_speed: float = 5.0
 @export var bullet_type: PackedScene
-@export var bullet_spread: float = 0.02
+@export var bullet_spread: float = 0.2
 
 var targets: Array[Node2D]
 var can_shoot := true
