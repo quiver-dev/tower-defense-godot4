@@ -43,22 +43,24 @@ offset_right = 5.0
 offset_bottom = 5.0
 color = Color(0.443137, 0.505882, 1, 1)
 
-[node name="Turret1" parent="." instance=ExtResource( "5_bg8bs" )]
+[node name="Turrets" type="Node2D" parent="."]
+
+[node name="Turret1" parent="Turrets" instance=ExtResource( "5_bg8bs" )]
 position = Vector2(-416, 96)
 detect_radius = 250
 rot_speed = 6.5
 
-[node name="Turret2" parent="." instance=ExtResource( "5_bg8bs" )]
+[node name="Turret2" parent="Turrets" instance=ExtResource( "5_bg8bs" )]
 position = Vector2(-352, 408)
 fire_rate = 0.6
 rot_speed = 10.0
 
-[node name="Turret3" parent="." instance=ExtResource( "5_bg8bs" )]
+[node name="Turret3" parent="Turrets" instance=ExtResource( "5_bg8bs" )]
 position = Vector2(352, 608)
 detect_radius = 300
 rot_speed = 8.0
 
-[node name="Turret4" parent="." instance=ExtResource( "5_bg8bs" )]
+[node name="Turret4" parent="Turrets" instance=ExtResource( "5_bg8bs" )]
 position = Vector2(864, 288)
 detect_radius = 230
 rot_speed = 10.0

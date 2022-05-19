@@ -1,0 +1,56 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://d065e0bnj0me6"]
+
+[ext_resource type="Texture2D" uid="uid://dcrpwlbqmodwq" path="res://interfaces/assets/textures/blue_button00.png" id="1_6phi0"]
+[ext_resource type="Texture2D" uid="uid://ck7vibn3ou6up" path="res://interfaces/assets/textures/blue_button01.png" id="2_a7s8x"]
+[ext_resource type="Texture2D" uid="uid://ci0v86k1or1ag" path="res://interfaces/assets/textures/blue_panel.png" id="3_v2b56"]
+[ext_resource type="FontData" uid="uid://db33awc1pfsoi" path="res://assets/fonts/kenney_future_narrow.ttf" id="4_v4gs5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5l6x3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xx0lv"]
+texture = ExtResource( "1_6phi0" )
+region_rect = Rect2(0, 0, 190, 49)
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 10.0
+margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u8cw5"]
+texture = ExtResource( "1_6phi0" )
+region_rect = Rect2(0, 0, 190, 49)
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 10.0
+margin_bottom = 10.0
+modulate_color = Color(0.964706, 0.964706, 0.964706, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h53g5"]
+texture = ExtResource( "2_a7s8x" )
+region_rect = Rect2(0, 0, 190, 45)
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 10.0
+margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_05ttp"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+texture = ExtResource( "3_v2b56" )
+region_rect = Rect2(0, 0, 100, 100)
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="Font" id="Font_7jw7f"]
+data/0 = ExtResource( "4_v4gs5" )
+
+[resource]
+default_font = SubResource( "Font_7jw7f" )
+Button/styles/focus = SubResource( "StyleBoxEmpty_5l6x3" )
+Button/styles/hover = SubResource( "StyleBoxTexture_xx0lv" )
+Button/styles/normal = SubResource( "StyleBoxTexture_u8cw5" )
+Button/styles/pressed = SubResource( "StyleBoxTexture_h53g5" )
+PanelContainer/styles/panel = SubResource( "StyleBoxTexture_05ttp" )
