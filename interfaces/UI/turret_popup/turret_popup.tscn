@@ -1,38 +1,149 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpvufpsxvqgf3"]
+[gd_scene load_steps=12 format=3 uid="uid://cpvufpsxvqgf3"]
 
 [ext_resource type="Theme" uid="uid://d065e0bnj0me6" path="res://assets/themes/td_theme.tres" id="1_d4ywp"]
+[ext_resource type="Texture2D" uid="uid://bvrpxpt7jko5f" path="res://interfaces/assets/textures/red_circle.png" id="2_64a23"]
+[ext_resource type="Script" path="res://interfaces/UI/turret_popup/turret_popup.gd" id="2_hlo1n"]
+[ext_resource type="Texture2D" uid="uid://b3eye6kgwapmk" path="res://entities/turrets/assets/textures/gun_01.png" id="3_2hyf4"]
+[ext_resource type="Texture2D" uid="uid://cwjprn730kyb4" path="res://interfaces/assets/textures/grey_crossWhite.png" id="3_k6npk"]
 [ext_resource type="Texture2D" uid="uid://cn0fp8w7073hc" path="res://entities/turrets/assets/textures/gun_00.png" id="3_p61i4"]
+[ext_resource type="Texture2D" uid="uid://xeyypwb24yr0" path="res://entities/turrets/assets/textures/gun_02.png" id="4_csjj0"]
 
-[node name="TurretPopup" type="PanelContainer"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ssdq"]
+texture = ExtResource( "2_64a23" )
+region_rect = Rect2(0, 0, 36, 36)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7fftr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xfjc7"]
+texture = ExtResource( "2_64a23" )
+region_rect = Rect2(0, 0, 36, 36)
+modulate_color = Color(0.964706, 0.964706, 0.964706, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_jhmro"]
+
+[node name="TurretPopup" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.843137)
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -116.0
-offset_top = -82.0
-offset_right = 116.0
-offset_bottom = 82.0
+offset_left = -176.5
+offset_top = -107.0
+offset_right = 176.5
+offset_bottom = 107.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource( "1_d4ywp" )
+script = ExtResource( "2_hlo1n" )
 
-[node name="HFlowContainer" type="HFlowContainer" parent="."]
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 192.0
-offset_bottom = 124.0
+[node name="Close" type="Button" parent="Panel"]
+minimum_size = Vector2(36, 36)
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 0
+pivot_offset = Vector2(18, 18)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/hover = SubResource( "StyleBoxTexture_2ssdq" )
+theme_override_styles/pressed = SubResource( "StyleBoxTexture_2ssdq" )
+theme_override_styles/focus = SubResource( "StyleBoxEmpty_7fftr" )
+theme_override_styles/normal = SubResource( "StyleBoxTexture_xfjc7" )
+icon = ExtResource( "3_k6npk" )
+icon_alignment = 1
+metadata/_edit_layout_mode = 1
 
-[node name="Turrets" type="VFlowContainer" parent="HFlowContainer"]
-offset_right = 152.0
-offset_bottom = 84.0
+[node name="Turrets" type="HBoxContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -66.5
+offset_right = 136.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+metadata/_edit_layout_mode = 1
 
-[node name="TextureButton" type="TextureButton" parent="HFlowContainer/Turrets"]
-offset_right = 64.0
-offset_bottom = 64.0
-texture_normal = ExtResource( "3_p61i4" )
+[node name="Level1" type="HFlowContainer" parent="Panel/Turrets"]
+offset_right = 84.0
+offset_bottom = 133.0
+theme_override_constants/v_separation = 10
 
-[node name="TextureButton2" type="Button" parent="HFlowContainer/Turrets"]
-offset_left = 68.0
-offset_right = 152.0
+[node name="Button" type="Button" parent="Panel/Turrets/Level1"]
+offset_right = 84.0
 offset_bottom = 84.0
 toggle_mode = true
+button_group = SubResource( "ButtonGroup_jhmro" )
 icon = ExtResource( "3_p61i4" )
 icon_alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Turrets/Level1"]
+offset_top = 94.0
+offset_right = 84.0
+offset_bottom = 133.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 32
+text = "200"
+horizontal_alignment = 1
+
+[node name="Level2" type="HFlowContainer" parent="Panel/Turrets"]
+offset_left = 94.0
+offset_right = 178.0
+offset_bottom = 133.0
+theme_override_constants/v_separation = 10
+
+[node name="Button" type="Button" parent="Panel/Turrets/Level2"]
+offset_right = 84.0
+offset_bottom = 84.0
+toggle_mode = true
+button_group = SubResource( "ButtonGroup_jhmro" )
+icon = ExtResource( "3_2hyf4" )
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Turrets/Level2"]
+offset_top = 94.0
+offset_right = 84.0
+offset_bottom = 133.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 32
+text = "500"
+horizontal_alignment = 1
+
+[node name="Level3" type="HFlowContainer" parent="Panel/Turrets"]
+offset_left = 188.0
+offset_right = 272.0
+offset_bottom = 133.0
+theme_override_constants/v_separation = 10
+
+[node name="Button" type="Button" parent="Panel/Turrets/Level3"]
+offset_right = 84.0
+offset_bottom = 84.0
+toggle_mode = true
+button_group = SubResource( "ButtonGroup_jhmro" )
+icon = ExtResource( "4_csjj0" )
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Turrets/Level3"]
+offset_top = 94.0
+offset_right = 84.0
+offset_bottom = 133.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 32
+text = "1000"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/Close" to="Panel" method="_on_close_pressed"]

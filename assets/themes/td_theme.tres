@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://d065e0bnj0me6"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://d065e0bnj0me6"]
 
 [ext_resource type="Texture2D" uid="uid://dcrpwlbqmodwq" path="res://interfaces/assets/textures/blue_button00.png" id="1_6phi0"]
 [ext_resource type="Texture2D" uid="uid://ck7vibn3ou6up" path="res://interfaces/assets/textures/blue_button01.png" id="2_a7s8x"]
@@ -32,6 +32,18 @@ margin_top = 10.0
 margin_right = 10.0
 margin_bottom = 10.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d8fuc"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+texture = ExtResource( "3_v2b56" )
+region_rect = Rect2(0, 0, 100, 100)
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 1.0
+margin_bottom = 1.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_05ttp"]
 content_margin_left = 40.0
 content_margin_top = 40.0
@@ -53,4 +65,5 @@ Button/styles/focus = SubResource( "StyleBoxEmpty_5l6x3" )
 Button/styles/hover = SubResource( "StyleBoxTexture_xx0lv" )
 Button/styles/normal = SubResource( "StyleBoxTexture_u8cw5" )
 Button/styles/pressed = SubResource( "StyleBoxTexture_h53g5" )
+Panel/styles/panel = SubResource( "StyleBoxTexture_d8fuc" )
 PanelContainer/styles/panel = SubResource( "StyleBoxTexture_05ttp" )
