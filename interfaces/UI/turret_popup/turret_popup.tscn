@@ -22,6 +22,7 @@ modulate_color = Color(0.964706, 0.964706, 0.964706, 1)
 [sub_resource type="ButtonGroup" id="ButtonGroup_jhmro"]
 
 [node name="TurretPopup" type="CanvasLayer"]
+script = ExtResource( "2_hlo1n" )
 
 [node name="Panel" type="Panel" parent="."]
 modulate = Color(1, 1, 1, 0.843137)
@@ -36,7 +37,6 @@ offset_bottom = 107.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( "1_d4ywp" )
-script = ExtResource( "2_hlo1n" )
 
 [node name="Close" type="Button" parent="Panel"]
 minimum_size = Vector2(36, 36)
@@ -146,4 +146,5 @@ theme_override_font_sizes/font_size = 32
 text = "1000"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="Panel/Close" to="Panel" method="_on_close_pressed"]
+[connection signal="visibility_changed" from="." to="." method="_on_turret_popup_visibility_changed"]
+[connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
