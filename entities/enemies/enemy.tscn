@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
 [ext_resource type="Script" path="res://entities/enemies/states/move.gd" id="3_juveh"]
 [ext_resource type="Script" path="res://entities/enemies/states/idle.gd" id="4_vk1wn"]
-[ext_resource type="Texture2D" uid="uid://by5hmlojnbruq" path="res://entities/enemies/infantry/assets/textures/infantry_00.png" id="5_e4vuj"]
 [ext_resource type="FontData" uid="uid://db33awc1pfsoi" path="res://assets/fonts/kenney_future_narrow.ttf" id="5_o8crm"]
 [ext_resource type="Script" path="res://entities/enemies/states/hit.gd" id="5_t30j3"]
+[ext_resource type="Texture2D" path="res://entities/enemies/assets/textures/infantry_00.png" id="6_vda5g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b4bn"]
 size = Vector2(16, 32)
@@ -34,7 +34,7 @@ script = ExtResource( "4_vk1wn" )
 script = ExtResource( "5_t30j3" )
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource( "5_e4vuj" )
+texture = ExtResource( "6_vda5g" )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( "RectangleShape2D_7b4bn" )
