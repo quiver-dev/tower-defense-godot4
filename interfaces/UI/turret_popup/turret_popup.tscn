@@ -152,3 +152,6 @@ horizontal_alignment = 1
 
 [connection signal="gui_input" from="Background" to="." method="_on_background_gui_input"]
 [connection signal="pressed" from="Background/Panel/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Background/Panel/Turrets/Level1/Button" to="." method="_on_button_pressed" binds= ["L1"]]
+[connection signal="pressed" from="Background/Panel/Turrets/Level2/Button" to="." method="_on_button_pressed" binds= ["L2"]]
+[connection signal="pressed" from="Background/Panel/Turrets/Level3/Button" to="." method="_on_button_pressed" binds= ["L3"]]

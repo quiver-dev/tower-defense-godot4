@@ -20,7 +20,7 @@ func _ready() -> void:
 
 # Special case to force a switch to the Hit state.
 # Called when colliding with damaging objects. This is a limitation of
-# this implementation because we can't pass data directly to the hit state.
+# this implementation because we can't pass data directly to a state.
 # TODO: try finding a way to let the Hit state handle damage.
 func is_hit(damage: int) -> void:
 	if current_state.name == "Hit":
