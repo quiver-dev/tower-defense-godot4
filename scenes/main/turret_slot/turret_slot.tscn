@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cw82pqnr25xjn"]
+[gd_scene load_steps=5 format=3 uid="uid://bxk8oojwxk051"]
 
-[ext_resource type="Texture2D" uid="uid://b0v676ccr4ab0" path="res://scenes/main/prefabs/turret_slot/assets/textures/turret_slot_00.png" id="1_b7c7y"]
-[ext_resource type="Script" path="res://scenes/main/prefabs/turret_slot/turret_slot.gd" id="1_n7e2j"]
-[ext_resource type="PackedScene" uid="uid://cpvufpsxvqgf3" path="res://interfaces/UI/turret_popup/turret_popup.tscn" id="3_tynr8"]
+[ext_resource type="Script" path="res://scenes/main/turret_slot/turret_slot.gd" id="1_skyup"]
+[ext_resource type="Texture2D" uid="uid://b0v676ccr4ab0" path="res://scenes/main/turret_slot/assets/textures/turret_slot_00.png" id="2_e3avk"]
+[ext_resource type="PackedScene" uid="uid://cpvufpsxvqgf3" path="res://interfaces/UI/turret_popup/turret_popup.tscn" id="3_7p0hi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hunl7"]
 size = Vector2(64, 64)
@@ -12,15 +12,15 @@ position = Vector2(224, 160)
 collision_layer = 8
 collision_mask = 0
 monitoring = false
-script = ExtResource( "1_n7e2j" )
+script = ExtResource( "1_skyup" )
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource( "1_b7c7y" )
+texture = ExtResource( "2_e3avk" )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( "RectangleShape2D_hunl7" )
 
-[node name="TurretPopup" parent="." instance=ExtResource( "3_tynr8" )]
+[node name="TurretPopup" parent="." instance=ExtResource( "3_7p0hi" )]
 visible = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

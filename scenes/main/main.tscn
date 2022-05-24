@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfiiht3353wrk"]
+[gd_scene load_steps=7 format=3 uid="uid://bwer3dublskmw"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_emp5r"]
 [ext_resource type="TileSet" uid="uid://cfbpq32p4dvj7" path="res://scenes/main/assets/tilesets/main.tres" id="1_k6svi"]
 [ext_resource type="PackedScene" uid="uid://h6a1ygs71vw0" path="res://entities/enemies/enemy.tscn" id="3_ccynr"]
-[ext_resource type="PackedScene" path="res://scenes/main/prefabs/camera2D/camera2D.tscn" id="3_o2ded"]
+[ext_resource type="PackedScene" path="res://scenes/main/camera2D/camera2D.tscn" id="3_o2ded"]
 [ext_resource type="PackedScene" uid="uid://bd8d3ni18y5j3" path="res://entities/turrets/turret.tscn" id="5_bg8bs"]
-[ext_resource type="PackedScene" uid="uid://cw82pqnr25xjn" path="res://scenes/main/prefabs/turret_slot/turret_slot.tscn" id="6_m5pyv"]
+[ext_resource type="PackedScene" path="res://scenes/main/turret_slot/turret_slot.tscn" id="6_m5pyv"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( "1_emp5r" )

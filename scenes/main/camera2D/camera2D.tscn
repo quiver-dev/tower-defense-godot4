@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://scenes/main/prefabs/camera2D/camera2D.gd" id="1_w05dq"]
+[ext_resource type="Script" path="res://scenes/main/camera2D/camera2D.gd" id="1_w05dq"]
 
 [node name="Camera2D" type="Camera2D"]
 position = Vector2(696, 392)
