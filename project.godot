@@ -88,6 +88,7 @@ middle_mouse={
 2d_physics/layer_2="turret"
 2d_physics/layer_3="bullet"
 2d_physics/layer_4="turret_slot"
+2d_physics/layer_5="objective"
 
 [rendering]
 

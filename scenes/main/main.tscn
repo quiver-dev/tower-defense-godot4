@@ -4,8 +4,8 @@
 [ext_resource type="TileSet" uid="uid://cfbpq32p4dvj7" path="res://scenes/main/assets/tilesets/main.tres" id="1_k6svi"]
 [ext_resource type="PackedScene" uid="uid://h6a1ygs71vw0" path="res://entities/enemies/enemy.tscn" id="3_ccynr"]
 [ext_resource type="PackedScene" path="res://scenes/main/camera2D/camera2D.tscn" id="3_o2ded"]
-[ext_resource type="PackedScene" uid="uid://bd8d3ni18y5j3" path="res://entities/turrets/turret.tscn" id="5_bg8bs"]
-[ext_resource type="PackedScene" path="res://scenes/main/turret_slot/turret_slot.tscn" id="6_m5pyv"]
+[ext_resource type="PackedScene" uid="uid://d2n5cwp06kslg" path="res://scenes/main/objective/objective.tscn" id="4_e3sfc"]
+[ext_resource type="PackedScene" uid="uid://bxk8oojwxk051" path="res://scenes/main/turret_slot/turret_slot.tscn" id="6_m5pyv"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( "1_emp5r" )
@@ -26,19 +26,8 @@ layer_1/tile_data = PackedInt32Array(-14, 1048577, 5, 393202, 1179649, 5, 65523,
 [node name="Camera2D" parent="." instance=ExtResource( "3_o2ded" )]
 position = Vector2(-376, 440)
 
-[node name="Target" type="Position2D" parent="."]
-position = Vector2(592, 136)
-
-[node name="ColorRect" type="ColorRect" parent="Target"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 5.0
-offset_bottom = 5.0
-color = Color(0.443137, 0.505882, 1, 1)
+[node name="Objective" parent="." instance=ExtResource( "4_e3sfc" )]
+position = Vector2(1400, 352)
 
 [node name="TurretSlots" type="Node2D" parent="."]
 
@@ -54,30 +43,20 @@ position = Vector2(352, 864)
 [node name="TurretSlot4" parent="TurretSlots" instance=ExtResource( "6_m5pyv" )]
 position = Vector2(544, 160)
 
-[node name="Turrets" type="Node2D" parent="."]
+[node name="TurretSlot5" parent="TurretSlots" instance=ExtResource( "6_m5pyv" )]
+position = Vector2(-352, 416)
 
-[node name="Turret1" parent="Turrets" instance=ExtResource( "5_bg8bs" )]
+[node name="TurretSlot6" parent="TurretSlots" instance=ExtResource( "6_m5pyv" )]
 position = Vector2(-416, 96)
-detect_radius = 250
-rot_speed = 6.5
 
-[node name="Turret2" parent="Turrets" instance=ExtResource( "5_bg8bs" )]
-position = Vector2(-352, 408)
-fire_rate = 0.6
-rot_speed = 10.0
+[node name="TurretSlot7" parent="TurretSlots" instance=ExtResource( "6_m5pyv" )]
+position = Vector2(352, 864)
 
-[node name="Turret3" parent="Turrets" instance=ExtResource( "5_bg8bs" )]
-position = Vector2(352, 608)
-detect_radius = 300
-rot_speed = 8.0
-
-[node name="Turret4" parent="Turrets" instance=ExtResource( "5_bg8bs" )]
+[node name="TurretSlot8" parent="TurretSlots" instance=ExtResource( "6_m5pyv" )]
 position = Vector2(864, 288)
-detect_radius = 230
-rot_speed = 10.0
 
-[node name="Enemy" parent="." instance=ExtResource( "3_ccynr" )]
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource( "3_ccynr" )]
 position = Vector2(-736, 608)
 speed = 200
-
-[connection signal="target_changed" from="Enemy" to="." method="_on_enemy_target_changed"]

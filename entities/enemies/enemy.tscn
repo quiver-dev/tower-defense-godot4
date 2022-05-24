@@ -22,7 +22,7 @@ script = ExtResource( "1_cy1ia" )
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( "2_8ke4v" )
-START_STATE = NodePath("Idle")
+START_STATE = NodePath("Move")
 
 [node name="Move" type="Node" parent="StateMachine"]
 script = ExtResource( "3_juveh" )

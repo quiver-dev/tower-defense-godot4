@@ -15,6 +15,10 @@ signal enemy_dead
 @onready var collision: CollisionShape2D = $CollisionShape2D
 
 
+func _ready() -> void:
+	state_label.text = get_fsm().current_state.name
+
+
 func _physics_process(delta: float) -> void:
 	# Rotate based on current velocity
 	sprite.global_rotation = _calculate_rot(sprite.global_rotation, delta)
