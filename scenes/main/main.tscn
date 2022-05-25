@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwer3dublskmw"]
+[gd_scene load_steps=8 format=3 uid="uid://bwer3dublskmw"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_emp5r"]
 [ext_resource type="TileSet" uid="uid://cfbpq32p4dvj7" path="res://scenes/main/assets/tilesets/main.tres" id="1_k6svi"]
 [ext_resource type="PackedScene" uid="uid://h6a1ygs71vw0" path="res://entities/enemies/enemy.tscn" id="3_ccynr"]
 [ext_resource type="PackedScene" path="res://scenes/main/camera2D/camera2D.tscn" id="3_o2ded"]
 [ext_resource type="PackedScene" uid="uid://d2n5cwp06kslg" path="res://scenes/main/objective/objective.tscn" id="4_e3sfc"]
+[ext_resource type="Script" path="res://scenes/main/spawner.gd" id="5_q7jfg"]
 [ext_resource type="PackedScene" uid="uid://bxk8oojwxk051" path="res://scenes/main/turret_slot/turret_slot.tscn" id="6_m5pyv"]
 
 [node name="Main" type="Node2D"]
@@ -28,6 +29,16 @@ position = Vector2(-376, 440)
 
 [node name="Objective" parent="." instance=ExtResource( "4_e3sfc" )]
 position = Vector2(1400, 352)
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(-768, 608)
+script = ExtResource( "5_q7jfg" )
+enemy = ExtResource( "3_ccynr" )
+
+[node name="SpawnTimer" type="Timer" parent="Spawner"]
+one_shot = true
+
+[node name="Enemies" type="Node2D" parent="Spawner"]
 
 [node name="TurretSlots" type="Node2D" parent="."]
 
@@ -55,8 +66,4 @@ position = Vector2(352, 864)
 [node name="TurretSlot8" parent="TurretSlots" instance=ExtResource( "6_m5pyv" )]
 position = Vector2(864, 288)
 
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Enemy1" parent="Enemies" instance=ExtResource( "3_ccynr" )]
-position = Vector2(-736, 608)
-speed = 200
+[connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
