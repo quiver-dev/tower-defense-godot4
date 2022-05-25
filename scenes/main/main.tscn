@@ -32,6 +32,7 @@ position = Vector2(1400, 352)
 
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(-768, 608)
+z_index = 10
 script = ExtResource( "5_q7jfg" )
 enemy = ExtResource( "3_ccynr" )
 
