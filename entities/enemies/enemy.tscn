@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://h6a1ygs71vw0"]
+[gd_scene load_steps=11 format=3 uid="uid://h6a1ygs71vw0"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontData" uid="uid://db33awc1pfsoi" path="res://assets/fonts/kenney_future_narrow.ttf" id="5_o8crm"]
 [ext_resource type="Script" path="res://entities/enemies/states/hit.gd" id="5_t30j3"]
 [ext_resource type="Texture2D" uid="uid://by5hmlojnbruq" path="res://entities/enemies/assets/textures/infantry_00.png" id="6_vda5g"]
+[ext_resource type="Texture2D" uid="uid://bmf2ttwqiepms" path="res://assets/assets/textures/green_bar.png" id="8_nd6hx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b4bn"]
 size = Vector2(16, 32)
@@ -59,6 +60,21 @@ text = "Idle"
 horizontal_alignment = 1
 metadata/_edit_use_custom_anchors = false
 
+[node name="Healthbar" type="TextureProgressBar" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -61.0
+offset_right = 95.0
+offset_bottom = -16.0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(95, 22)
+value = 100.0
+texture_progress = ExtResource( "8_nd6hx" )
+
 [connection signal="state_changed" from="StateMachine" to="." method="_on_state_machine_state_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="StateMachine/Move" method="_on_navigation_agent_2d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
+[connection signal="value_changed" from="Healthbar" to="." method="_on_healthbar_value_changed"]

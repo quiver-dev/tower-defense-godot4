@@ -5,18 +5,25 @@ extends CharacterBody2D
 signal target_changed(pos: Vector2)
 signal enemy_dead
 
+const GREEN_BAR := preload("res://assets/assets/textures/green_bar.png")
+const RED_BAR := preload("res://assets/assets/textures/red_bar.png")
+
 @export var rot_speed: float = 10.0
 @export var health: int = 100
 @export var speed: int = 300
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var state_label: Label = $StateLabel
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var state_label: Label = $StateLabel
+@onready var healthbar: TextureProgressBar = $Healthbar
 
 
 func _ready() -> void:
+	# initialize HUD
 	state_label.text = get_fsm().current_state.name
+	healthbar.max_value = health
+	healthbar.value = healthbar.max_value
 
 
 func _physics_process(delta: float) -> void:
@@ -27,6 +34,7 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(damage: int) -> void:
 	health = max(0, health - damage)
+	healthbar.value = health
 	if health == 0:
 		# TODO: add logic
 		emit_signal("enemy_dead")
@@ -63,3 +71,9 @@ func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 
 func _on_state_machine_state_changed(states_stack: Array) -> void:
 	state_label.text = (states_stack[0] as State).name
+
+
+# Used to display different textures based on the health percentage
+func _on_healthbar_value_changed(value: float) -> void:
+	healthbar.texture_progress = RED_BAR if value <= healthbar.max_value / 4 \
+			else GREEN_BAR
