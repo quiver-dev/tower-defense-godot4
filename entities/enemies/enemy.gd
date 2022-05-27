@@ -24,6 +24,8 @@ func _ready() -> void:
 	state_label.text = get_fsm().current_state.name
 	healthbar.max_value = health
 	healthbar.value = healthbar.max_value
+	# initialize navigation agent
+	nav_agent.max_speed = speed
 
 
 func _physics_process(delta: float) -> void:

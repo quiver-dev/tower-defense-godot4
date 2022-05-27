@@ -16,8 +16,8 @@ size = Vector2(16, 32)
 data/0 = ExtResource( "5_o8crm" )
 
 [node name="Enemy" type="CharacterBody2D"]
-scale = Vector2(2, 2)
 collision_mask = 7
+motion_mode = 1
 script = ExtResource( "1_cy1ia" )
 
 [node name="StateMachine" type="Node" parent="."]
@@ -42,6 +42,8 @@ shape = SubResource( "RectangleShape2D_7b4bn" )
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 5.0
 radius = 32.0
+neighbor_dist = 64.0
+time_horizon = 32.0
 max_speed = 1000.0
 
 [node name="StateLabel" type="Label" parent="."]

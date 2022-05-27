@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://80vo8aqytvq1"]
+
+[ext_resource type="PackedScene" uid="uid://h6a1ygs71vw0" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
+[ext_resource type="Texture2D" uid="uid://d16nmbx5gc1dq" path="res://entities/enemies/assets/textures/tank_base_00.png" id="2_qerlr"]
+[ext_resource type="Texture2D" uid="uid://hub72po6nwk6" path="res://entities/enemies/assets/textures/tank_turret_00.png" id="3_5q5gj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
+size = Vector2(48, 32)
+
+[node name="Tank" instance=ExtResource( "1_o2qr5" )]
+floor_constant_speed = true
+rot_speed = 2.5
+health = 200
+speed = 150
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource( "2_qerlr" )
+
+[node name="Turret" type="Sprite2D" parent="." index="2"]
+texture = ExtResource( "3_5q5gj" )
+
+[node name="Muzzle" type="Position2D" parent="Turret" index="0"]
+position = Vector2(36, -2)
+
+[node name="CollisionShape2D" parent="." index="3"]
+shape = SubResource( "RectangleShape2D_b8s0v" )
+
+[node name="NavigationAgent2D" parent="." index="4"]
+max_speed = 300.0
