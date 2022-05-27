@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyadbuy30fb60"]
+[gd_scene load_steps=9 format=3 uid="uid://bacxhbiimsfh8"]
 
+[ext_resource type="Script" path="res://scenes/test/test.gd" id="1_antun"]
 [ext_resource type="TileSet" uid="uid://cfbpq32p4dvj7" path="res://scenes/main/assets/tilesets/main.tres" id="1_k6svi"]
-[ext_resource type="PackedScene" path="res://scenes/main/prefabs/camera2D/camera2D.tscn" id="3_7cmxw"]
+[ext_resource type="PackedScene" path="res://scenes/main/camera2D/camera2D.tscn" id="3_7cmxw"]
+[ext_resource type="PackedScene" uid="uid://h6a1ygs71vw0" path="res://entities/enemies/enemy.tscn" id="4_hyw7m"]
+[ext_resource type="Texture2D" uid="uid://d16nmbx5gc1dq" path="res://entities/enemies/assets/textures/tank_base_00.png" id="5_h43uo"]
+[ext_resource type="PackedScene" uid="uid://d2n5cwp06kslg" path="res://scenes/main/objective/objective.tscn" id="6_r1nlv"]
+[ext_resource type="PackedScene" uid="uid://80vo8aqytvq1" path="res://entities/enemies/tanks/tank.tscn" id="6_y4ox6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qjwl"]
+size = Vector2(48, 32)
 
 [node name="Test" type="Node2D"]
+script = ExtResource( "1_antun" )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(128, 96)
@@ -20,3 +29,69 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(393213, 1114113, 5, 720893, 983041, 5, 65534, 1179649, 5, 196606, 1048577, 5, -65537, 1114113, 5, 327679, 1245185, 5, 393215, 1179649, 5, 589824, 1114113, 5, 262147, 983041, 5, 393219, 1048577, 5, 655363, 983041, 5, 655365, 1114113, 5, 393222, 1048577, 5, 524294, 1114113, 5, -196600, 1179649, 5, 65544, 1048577, 5, 10, 983041, 5, 458762, 1048577, 5, -196597, 1245185, 5, -65524, 983041, 5, 458765, 1179649, 5, -131056, 1048577, 5, 196624, 1179649, 5, -196591, 983041, 5, -196590, 1179649, 5, -65518, 1048577, 5, 196626, 1114113, 5, 262162, 1048577, 5, 393234, 983041, 5, 589842, 1179649, 5)
 
 [node name="Camera2D" parent="." instance=ExtResource( "3_7cmxw" )]
+position = Vector2(448, 416)
+
+[node name="Obstacle" type="StaticBody2D" parent="."]
+position = Vector2(232, 40)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle"]
+texture = ExtResource( "5_h43uo" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
+shape = SubResource( "RectangleShape2D_6qjwl" )
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacle"]
+
+[node name="Obstacle2" type="StaticBody2D" parent="."]
+position = Vector2(928, 384)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle2"]
+texture = ExtResource( "5_h43uo" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle2"]
+shape = SubResource( "RectangleShape2D_6qjwl" )
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacle2"]
+
+[node name="Obstacle4" type="StaticBody2D" parent="."]
+position = Vector2(584, 384)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle4"]
+texture = ExtResource( "5_h43uo" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle4"]
+shape = SubResource( "RectangleShape2D_6qjwl" )
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacle4"]
+
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2(16, 576)
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( "4_hyw7m" )]
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( "4_hyw7m" )]
+position = Vector2(168, -296)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( "4_hyw7m" )]
+position = Vector2(200, -152)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( "4_hyw7m" )]
+position = Vector2(128, -8)
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource( "4_hyw7m" )]
+position = Vector2(224, 16)
+
+[node name="Tank" parent="Enemies" instance=ExtResource( "6_y4ox6" )]
+position = Vector2(640, -72)
+
+[node name="Tank2" parent="Enemies" instance=ExtResource( "6_y4ox6" )]
+position = Vector2(944, 128)
+
+[node name="Tank3" parent="Enemies" instance=ExtResource( "6_y4ox6" )]
+position = Vector2(480, -584)
+
+[node name="Objective" parent="." instance=ExtResource( "6_r1nlv" )]
+position = Vector2(1264, 192)

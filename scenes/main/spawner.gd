@@ -2,6 +2,8 @@ class_name Spawner
 extends Node2D
 
 
+const ENEMY_PATH := "res://entities/enemies/"
+
 @export_range(0.5, 5.0, 0.5) var spawn_rate: float = 2.0
 @export var enemy: PackedScene
 @export var enemy_count: int = 10
@@ -24,7 +26,9 @@ func _start_timer() -> void:
 
 func _on_spawn_timer_timeout() -> void:
 	# spawn an enemy
-	var _enemy: Enemy = enemy.instantiate()
+	var prob := randi_range(1, 10)
+	var _enemy = load(ENEMY_PATH.plus_file("tanks/tank.tscn" if prob < 4 else \
+			"enemy.tscn")).instantiate()
 	enemies.add_child(_enemy, true)
 	_enemy.move_to(objective_pos)
 	# reduce enemy count and repeat if necessary
