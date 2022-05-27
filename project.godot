@@ -44,6 +44,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://entities/state_machine.gd"
 }, {
+"base": "Enemy",
+"class": &"Tank",
+"language": &"GDScript",
+"path": "res://entities/enemies/tanks/tank.gd"
+}, {
 "base": "CharacterBody2D",
 "class": &"Turret",
 "language": &"GDScript",
@@ -57,6 +62,7 @@ _global_script_class_icons={
 "Spawner": "",
 "State": "",
 "StateMachine": "",
+"Tank": "",
 "Turret": ""
 }
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://80vo8aqytvq1"]
+[gd_scene load_steps=6 format=3 uid="uid://80vo8aqytvq1"]
 
 [ext_resource type="PackedScene" uid="uid://h6a1ygs71vw0" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
 [ext_resource type="Texture2D" uid="uid://d16nmbx5gc1dq" path="res://entities/enemies/assets/textures/tank_base_00.png" id="2_qerlr"]
+[ext_resource type="Script" path="res://entities/enemies/tanks/tank.gd" id="2_ri3h6"]
 [ext_resource type="Texture2D" uid="uid://hub72po6nwk6" path="res://entities/enemies/assets/textures/tank_turret_00.png" id="3_5q5gj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
@@ -9,9 +10,11 @@ size = Vector2(48, 32)
 
 [node name="Tank" instance=ExtResource( "1_o2qr5" )]
 floor_constant_speed = true
-rot_speed = 2.5
-health = 200
+script = ExtResource( "2_ri3h6" )
+rot_speed = 4.0
+health = 300
 speed = 150
+turret_speed = 1.0
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource( "2_qerlr" )

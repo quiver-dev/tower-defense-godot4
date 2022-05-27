@@ -30,8 +30,10 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Rotate based on current velocity
-	sprite.global_rotation = _calculate_rot(sprite.global_rotation, delta)
-	collision.global_rotation = _calculate_rot(collision.global_rotation, delta)
+	sprite.global_rotation = _calculate_rot(sprite.global_rotation,
+			rot_speed, delta)
+	collision.global_rotation = _calculate_rot(collision.global_rotation,
+			rot_speed, delta)
 
 
 func take_damage(damage: int) -> void:
@@ -60,8 +62,8 @@ func get_fsm() -> StateMachine:
 
 # Used to make the enemy rotate to face its current direction,
 # with the specified rotation speed
-func _calculate_rot(start_rot: float, delta: float) -> float:
-	return lerp_angle(start_rot, velocity.angle(), rot_speed * delta)
+func _calculate_rot(start_rot: float, _rot_speed: float, delta: float) -> float:
+	return lerp_angle(start_rot, velocity.angle(), _rot_speed * delta)
 
 
 # Emitted by NavigationAgent2D.set_velocity, which can be called by any 
