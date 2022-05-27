@@ -87,11 +87,5 @@ position = Vector2(224, 16)
 [node name="Tank" parent="Enemies" instance=ExtResource( "6_y4ox6" )]
 position = Vector2(640, -72)
 
-[node name="Tank2" parent="Enemies" instance=ExtResource( "6_y4ox6" )]
-position = Vector2(944, 128)
-
-[node name="Tank3" parent="Enemies" instance=ExtResource( "6_y4ox6" )]
-position = Vector2(480, -584)
-
 [node name="Objective" parent="." instance=ExtResource( "6_r1nlv" )]
 position = Vector2(1264, 192)

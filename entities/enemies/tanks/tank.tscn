@@ -26,4 +26,6 @@ position = Vector2(36, -2)
 shape = SubResource( "RectangleShape2D_b8s0v" )
 
 [node name="NavigationAgent2D" parent="." index="4"]
+radius = 24.0
+neighbor_dist = 24.0
 max_speed = 300.0
