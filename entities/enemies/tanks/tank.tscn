@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://80vo8aqytvq1"]
+[gd_scene load_steps=8 format=3 uid="uid://80vo8aqytvq1"]
 
 [ext_resource type="PackedScene" uid="uid://h6a1ygs71vw0" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
 [ext_resource type="Texture2D" uid="uid://d16nmbx5gc1dq" path="res://entities/enemies/assets/textures/tank_base_00.png" id="2_qerlr"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/tank.gd" id="2_ri3h6"]
 [ext_resource type="Texture2D" uid="uid://hub72po6nwk6" path="res://entities/enemies/assets/textures/tank_turret_00.png" id="3_5q5gj"]
+[ext_resource type="Script" path="res://entities/enemies/tanks/move.gd" id="3_7yovt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
 size = Vector2(48, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i2ab4"]
+radius = 200.0
 
 [node name="Tank" instance=ExtResource( "1_o2qr5" )]
 floor_constant_speed = true
@@ -15,20 +19,44 @@ rot_speed = 4.0
 health = 300
 speed = 150
 turret_speed = 1.0
+detect_radius = 150
+fire_rate = 3.0
+bullet_type = null
+bullet_spread = 0.1
+
+[node name="Move" parent="StateMachine" index="0"]
+script = ExtResource( "3_7yovt" )
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource( "2_qerlr" )
 
-[node name="Turret" type="Sprite2D" parent="." index="2"]
+[node name="Gun" type="Sprite2D" parent="." index="2"]
 texture = ExtResource( "3_5q5gj" )
 
-[node name="Muzzle" type="Position2D" parent="Turret" index="0"]
+[node name="Muzzle" type="Position2D" parent="Gun" index="0"]
 position = Vector2(36, -2)
 
 [node name="CollisionShape2D" parent="." index="3"]
 shape = SubResource( "RectangleShape2D_b8s0v" )
 
-[node name="NavigationAgent2D" parent="." index="4"]
+[node name="Detector" type="Area2D" parent="." index="4"]
+collision_layer = 0
+collision_mask = 18
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" index="0"]
+modulate = Color(1, 1, 1, 0.247059)
+shape = SubResource( "CircleShape2D_i2ab4" )
+
+[node name="NavigationAgent2D" parent="." index="5"]
 radius = 24.0
 neighbor_dist = 24.0
 max_speed = 300.0
+
+[node name="FireRateTimer" type="Timer" parent="." index="8"]
+one_shot = true
+
+[node name="BulletContainer" type="Node" parent="." index="9"]
+
+[connection signal="body_entered" from="Detector" to="StateMachine/Move" method="_on_detector_body_entered"]
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]

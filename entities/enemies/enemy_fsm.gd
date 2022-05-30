@@ -31,13 +31,12 @@ func is_hit(damage: int) -> void:
 
 
 func _change_state(state_name: String) -> void:
+	# exit the current state
 	current_state.exit()
-	
 	states_stack.push_front(states_map[state_name])
 	if states_stack.size() > STATES_STACK_COUNT:
 		states_stack.pop_back()
-	
+	# enter the new one
 	current_state = states_stack[0]
 	emit_signal("state_changed", states_stack)
-
 	current_state.enter()
