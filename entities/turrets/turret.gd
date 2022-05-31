@@ -67,6 +67,7 @@ func take_damage(damage: int) -> void:
 		# TODO: add logic
 		emit_signal("turret_disabled")
 		print("turret_disabled")
+		queue_free()
 
 
 func _on_fire_rate_timer_timeout() -> void:

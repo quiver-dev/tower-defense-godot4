@@ -28,20 +28,6 @@ func _ready() -> void:
 	detector_coll.shape = detector_shape
 
 
-func _physics_process(delta: float) -> void:
-	super._physics_process(delta)
-	if targets:
-		var target_pos: Vector2 = targets.front().global_position
-		var target_rot: float = global_position.direction_to(target_pos).angle()
-		gun.rotation = _calculate_rot(gun.rotation, target_rot,
-				rot_speed, delta)
-		if can_shoot:
-			shoot(targets.front().global_position)
-	else:
-		gun.rotation = _calculate_rot(gun.rotation, velocity.angle(),
-				turret_speed, delta)
-
-
 func shoot(_position: Vector2) -> void:
 	can_shoot = false
 	var bullet: Bullet = bullet_type.instantiate()

@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://80vo8aqytvq1"]
+[gd_scene load_steps=10 format=3 uid="uid://cykm8dqj2remm"]
 
 [ext_resource type="PackedScene" uid="uid://h6a1ygs71vw0" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
 [ext_resource type="Texture2D" uid="uid://d16nmbx5gc1dq" path="res://entities/enemies/assets/textures/tank_base_00.png" id="2_qerlr"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/tank.gd" id="2_ri3h6"]
 [ext_resource type="Texture2D" uid="uid://hub72po6nwk6" path="res://entities/enemies/assets/textures/tank_turret_00.png" id="3_5q5gj"]
-[ext_resource type="Script" path="res://entities/enemies/tanks/move.gd" id="3_7yovt"]
+[ext_resource type="Script" path="res://entities/enemies/tanks/states/move.gd" id="3_7yovt"]
 [ext_resource type="PackedScene" uid="uid://cg4yis4w1wk2v" path="res://entities/bullets/tank_bullet/tank_bullet.tscn" id="3_kr1yu"]
+[ext_resource type="Script" path="res://entities/enemies/tanks/states/shoot.gd" id="5_5f6sk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
 size = Vector2(48, 32)
@@ -27,6 +28,9 @@ bullet_spread = 0.1
 
 [node name="Move" parent="StateMachine" index="0"]
 script = ExtResource( "3_7yovt" )
+
+[node name="Shoot" type="Node" parent="StateMachine" index="3"]
+script = ExtResource( "5_5f6sk" )
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource( "2_qerlr" )
@@ -60,4 +64,5 @@ one_shot = true
 [node name="BulletContainer" type="Node" parent="." index="9"]
 
 [connection signal="body_entered" from="Detector" to="StateMachine/Move" method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="StateMachine/Shoot" method="_on_detector_body_exited"]
 [connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]

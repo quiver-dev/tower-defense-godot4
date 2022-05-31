@@ -10,12 +10,15 @@ extends StateMachine
 const STATES_STACK_COUNT := 2
 
 
+# We need to add states to states_map. It will look like this:
+#	states_map = {
+#		"move": $Move,
+#		"idle": $Idle,
+#		"hit": $Hit,
+#	}
 func _ready() -> void:
-	states_map = {
-		"move": $Move,
-		"idle": $Idle,
-		"hit": $Hit,
-	}
+	for node in get_children():
+		states_map[String(node.name).to_lower()] = node
 
 
 # Special case to force a switch to the Hit state.
