@@ -6,6 +6,8 @@ func update(delta: float) -> void:
 	(owner as Tank).gun.rotation = lerp_angle((owner as Tank).gun.rotation,
 			(owner as Tank).velocity.angle(),
 			(owner as Tank).turret_speed * delta)
+	if (owner as Tank).is_raycast_colliding():
+		emit_signal("finished", "idle")
 
 
 func _on_detector_body_entered(body: Node2D) -> void:

@@ -37,6 +37,15 @@ func shoot(_position: Vector2) -> void:
 	firerate_timer.start(fire_rate)
 
 
+# Checks if there are other tanks ahead
+func is_raycast_colliding() -> bool:
+	for raycast in [$LookAhead1, $LookAhead2]:
+		if (raycast as RayCast2D).is_colliding() and \
+				(raycast as RayCast2D).get_collider() is Tank:
+			return true
+	return false
+
+
 func set_detect_radius(value: int) -> void:
 	detect_radius = value
 	if detector_shape:
