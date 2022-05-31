@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o87d8"]
 size = Vector2(48, 48)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ufysd"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_4jktq"]
 radius = 200.0
 
 [node name="Turret" type="CharacterBody2D"]
@@ -40,7 +40,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 modulate = Color(1, 1, 1, 0.247059)
-shape = SubResource( "CircleShape2D_ufysd" )
+shape = SubResource( "CircleShape2D_4jktq" )
 
 [node name="FireRateTimer" type="Timer" parent="."]
 one_shot = true

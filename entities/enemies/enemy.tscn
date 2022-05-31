@@ -40,9 +40,8 @@ texture = ExtResource( "6_vda5g" )
 shape = SubResource( "RectangleShape2D_7b4bn" )
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-target_desired_distance = 5.0
+target_desired_distance = 2.5
 radius = 16.0
-neighbor_dist = 250.0
 time_horizon = 32.0
 
 [node name="StateLabel" type="Label" parent="."]

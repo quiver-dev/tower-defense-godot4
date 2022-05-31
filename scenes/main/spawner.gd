@@ -3,9 +3,9 @@ extends Node2D
 
 
 const ENEMY_PATH := "res://entities/enemies/"
+const INITIAL_WAIT := 5.0  # amount of seconds to wait before starting
 
 @export_range(0.5, 5.0, 0.5) var spawn_rate: float = 2.0
-@export var enemy: PackedScene
 @export var enemy_count: int = 10
 
 var objective_pos: Vector2
@@ -17,7 +17,7 @@ var objective_pos: Vector2
 # Called once by parent scene when ready
 func start(_objective_pos: Vector2) -> void:
 	objective_pos = _objective_pos
-	_start_timer()
+	spawn_timer.start(INITIAL_WAIT)
 
 
 func _start_timer() -> void:

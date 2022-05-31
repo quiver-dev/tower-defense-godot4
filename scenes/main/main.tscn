@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwer3dublskmw"]
+[gd_scene load_steps=7 format=3 uid="uid://bwer3dublskmw"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_emp5r"]
 [ext_resource type="TileSet" uid="uid://cfbpq32p4dvj7" path="res://scenes/main/assets/tilesets/main.tres" id="1_k6svi"]
-[ext_resource type="PackedScene" uid="uid://h6a1ygs71vw0" path="res://entities/enemies/enemy.tscn" id="3_ccynr"]
 [ext_resource type="PackedScene" path="res://scenes/main/camera2D/camera2D.tscn" id="3_o2ded"]
 [ext_resource type="PackedScene" uid="uid://d2n5cwp06kslg" path="res://scenes/main/objective/objective.tscn" id="4_e3sfc"]
 [ext_resource type="Script" path="res://scenes/main/spawner.gd" id="5_q7jfg"]
@@ -34,7 +33,7 @@ position = Vector2(1400, 352)
 position = Vector2(-768, 608)
 z_index = 10
 script = ExtResource( "5_q7jfg" )
-enemy = ExtResource( "3_ccynr" )
+enemy_count = 50
 
 [node name="SpawnTimer" type="Timer" parent="Spawner"]
 one_shot = true
