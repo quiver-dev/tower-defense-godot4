@@ -42,7 +42,7 @@ func take_damage(damage: int) -> void:
 	if health == 0:
 		# TODO: add logic
 		emit_signal("enemy_dead")
-		print("enemy dead")
+		queue_free()
 
 
 func move_to(pos: Vector2) -> void:

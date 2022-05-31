@@ -13,7 +13,14 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 
 
 func _on_turret_popup_turret_requested(_level: String) -> void:
-	var turret = load(TURRET_PATH.plus_file("turret.tscn")).instantiate()
+	# load turret into scene and disable input
+	var turret: Turret = load(TURRET_PATH.plus_file("turret.tscn")).instantiate()
 	turret.position = Vector2.ZERO
 	input_pickable = false
 	add_child(turret, true)
+	# connect turret signal to restore input detection on turret disabled
+	turret.turret_disabled.connect(_on_turret_disabled)
+
+
+func _on_turret_disabled() -> void:
+	input_pickable = true
