@@ -3,19 +3,19 @@
 [ext_resource type="Script" path="res://entities/turrets/turret.gd" id="1_mel1h"]
 [ext_resource type="Texture2D" uid="uid://dkyor5cvnlh4a" path="res://entities/turrets/assets/textures/base_00.png" id="1_rhox6"]
 [ext_resource type="Texture2D" uid="uid://cn0fp8w7073hc" path="res://entities/turrets/assets/textures/gun_00.png" id="2_2e7ls"]
-[ext_resource type="PackedScene" uid="uid://c0egye3vj4x04" path="res://entities/bullets/bullet.tscn" id="2_nwtwu"]
+[ext_resource type="PackedScene" uid="uid://ce0gkuchfnxws" path="res://entities/bullets/turret_bullet/turret_bullet.tscn" id="2_ahxch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o87d8"]
 size = Vector2(48, 48)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_15n2p"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ufysd"]
 radius = 200.0
 
 [node name="Turret" type="CharacterBody2D"]
 position = Vector2(256, 152)
 collision_layer = 2
 script = ExtResource( "1_mel1h" )
-bullet_type = ExtResource( "2_nwtwu" )
+bullet_type = ExtResource( "2_ahxch" )
 metadata/_edit_group_ = true
 
 [node name="Basement" type="Sprite2D" parent="."]
@@ -39,7 +39,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 modulate = Color(1, 1, 1, 0.247059)
-shape = SubResource( "CircleShape2D_15n2p" )
+shape = SubResource( "CircleShape2D_ufysd" )
 
 [node name="FireRateTimer" type="Timer" parent="."]
 one_shot = true

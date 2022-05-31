@@ -24,10 +24,14 @@ func start(_position: Vector2, _rotation: float) -> void:
 	velocity = Vector2.RIGHT.rotated(_rotation) * speed
 
 
-func _on_bullet_body_entered(body: Node2D) -> void:
-	if body is Enemy:
-		(body.get_fsm() as EnemyFSM).is_hit(damage)
-		queue_free()
+# Overridden by children scripts
+func _on_bullet_body_entered(_body: Node2D) -> void:
+	pass
+
+
+# Overridden by children scripts
+func _on_bullet_area_entered(_area: Area2D) -> void:
+	pass
 
 
 func _on_visible_on_screen_enabler_2d_screen_exited() -> void:

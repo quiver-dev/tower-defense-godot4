@@ -1,11 +1,16 @@
-class_name Tank
-extends Enemy
+class_name Shooter
+extends CharacterBody2D
+# Class extended by those entities which can shoot, e.g. turrets or tanks.
+# The scenes this script is attached to must have the nodes referenced by
+# the @onready variables, otherwise the game will crash on purpose.
+# TODO: see if it's best to eliminate hardcoded node references by assigning 
+# nodepaths in each of the childrens' _ready function.
 
 
-@export var turret_speed: float = 3.0
-@export var detect_radius: int = 150:
+@export var detect_radius: int = 200:
 	set = set_detect_radius
-@export var fire_rate: float = 2.5
+@export var fire_rate: float = 0.5
+@export var rot_speed: float = 5.0
 @export var bullet_type: PackedScene
 @export var bullet_spread: float = 0.2
 
@@ -21,32 +26,28 @@ var can_shoot := true
 
 
 func _ready() -> void:
-	# WARN: this is a workaround, see https://github.com/godotengine/godot/issues/60168
-	super._ready()
 	# initialize detector's shape
 	detector_shape.radius = detect_radius
 	detector_coll.shape = detector_shape
+	# connect signals
+	firerate_timer.timeout.connect(_on_fire_rate_timer_timeout)
 
 
 func _physics_process(delta: float) -> void:
-	super._physics_process(delta)
 	if targets:
 		var target_pos: Vector2 = targets.front().global_position
 		var target_rot: float = global_position.direction_to(target_pos).angle()
-		gun.rotation = _calculate_rot(gun.rotation, target_rot,
-				rot_speed, delta)
+		gun.rotation = lerp_angle(gun.rotation, target_rot + PI / 2,
+				rot_speed * delta)
 		if can_shoot:
 			shoot(targets.front().global_position)
-	else:
-		gun.rotation = _calculate_rot(gun.rotation, velocity.angle(),
-				turret_speed, delta)
 
 
 func shoot(_position: Vector2) -> void:
 	can_shoot = false
 	var bullet: Bullet = bullet_type.instantiate()
 	bullet.start(muzzle.global_position,
-			gun.rotation + randf_range(-bullet_spread, bullet_spread))
+			gun.rotation - PI / 2 + randf_range(-bullet_spread, bullet_spread))
 	bullet_container.add_child(bullet, true)
 	firerate_timer.start(fire_rate)
 

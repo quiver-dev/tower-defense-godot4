@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg4yis4w1wk2v"]
+
+[ext_resource type="PackedScene" uid="uid://b0jpx1fiwimuj" path="res://entities/bullets/bullet.tscn" id="1_tkkdn"]
+[ext_resource type="Texture2D" uid="uid://38oqann3bw16" path="res://entities/bullets/assets/textures/tank_00.png" id="2_8imh5"]
+[ext_resource type="Script" path="res://entities/bullets/tank_bullet/tank_bullet.gd" id="2_d72yd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_esl67"]
+radius = 8.0
+height = 16.0
+
+[node name="TankBullet" instance=ExtResource( "1_tkkdn" )]
+collision_mask = 18
+script = ExtResource( "2_d72yd" )
+speed = 800
+damage = 40
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource( "2_8imh5" )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( "CapsuleShape2D_esl67" )
