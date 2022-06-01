@@ -2,51 +2,35 @@
 
 [ext_resource type="Script" path="res://entities/turrets/turret.gd" id="1_mel1h"]
 [ext_resource type="Texture2D" uid="uid://dkyor5cvnlh4a" path="res://entities/turrets/assets/textures/base_00.png" id="1_rhox6"]
-[ext_resource type="Texture2D" uid="uid://cn0fp8w7073hc" path="res://entities/turrets/assets/textures/gun_00.png" id="2_2e7ls"]
 [ext_resource type="PackedScene" uid="uid://ce0gkuchfnxws" path="res://entities/bullets/turret_bullet/turret_bullet.tscn" id="2_ahxch"]
+[ext_resource type="PackedScene" uid="uid://b8b2v6payhflg" path="res://entities/shooter.tscn" id="4_wtpgl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o87d8"]
 size = Vector2(48, 48)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h3x1s"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_6agvs"]
 radius = 200.0
 
 [node name="Turret" type="CharacterBody2D"]
 position = Vector2(256, 152)
 collision_layer = 2
 script = ExtResource( "1_mel1h" )
-health = 100
-bullet_type = ExtResource( "2_ahxch" )
 metadata/_edit_group_ = true
 
 [node name="Basement" type="Sprite2D" parent="."]
 texture = ExtResource( "1_rhox6" )
 
-[node name="Gun" type="Sprite2D" parent="."]
-rotation = 1.5708
-texture = ExtResource( "2_2e7ls" )
-offset = Vector2(0, -11)
-
-[node name="Muzzle" type="Position2D" parent="Gun"]
-position = Vector2(0, -48)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true
 shape = SubResource( "RectangleShape2D_o87d8" )
 
-[node name="Detector" type="Area2D" parent="."]
-collision_layer = 0
-monitorable = false
+[node name="Shooter" parent="." instance=ExtResource( "4_wtpgl" )]
+bullet_type = ExtResource( "2_ahxch" )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
-modulate = Color(1, 1, 1, 0.247059)
-shape = SubResource( "CircleShape2D_h3x1s" )
+[node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
+shape = SubResource( "CircleShape2D_6agvs" )
 
-[node name="FireRateTimer" type="Timer" parent="."]
-one_shot = true
+[connection signal="body_entered" from="Shooter/Detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Shooter/Detector" to="." method="_on_detector_body_exited"]
 
-[node name="BulletContainer" type="Node" parent="."]
-
-[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
-[connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]
-[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]
+[editable path="Shooter"]

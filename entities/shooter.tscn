@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8b2v6payhflg"]
+
+[ext_resource type="Script" path="res://entities/shooter.gd" id="1_iyj4l"]
+[ext_resource type="Texture2D" uid="uid://cn0fp8w7073hc" path="res://entities/turrets/assets/textures/gun_00.png" id="1_q8i65"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rnxjh"]
+radius = 200.0
+
+[node name="Shooter" type="Node2D"]
+script = ExtResource( "1_iyj4l" )
+
+[node name="Gun" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource( "1_q8i65" )
+offset = Vector2(0, -11)
+
+[node name="Muzzle" type="Position2D" parent="Gun"]
+position = Vector2(0, -48)
+
+[node name="Detector" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+modulate = Color(1, 1, 1, 0.247059)
+shape = SubResource( "CircleShape2D_rnxjh" )
+
+[node name="FireRateTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]
