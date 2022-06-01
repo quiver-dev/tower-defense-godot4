@@ -49,7 +49,7 @@ position = Vector2(-96, -32)
 position = Vector2(288, -96)
 
 [node name="TurretSlot3" parent="TurretSlots" instance=ExtResource( "6_m5pyv" )]
-position = Vector2(352, 864)
+position = Vector2(224, 544)
 
 [node name="TurretSlot4" parent="TurretSlots" instance=ExtResource( "6_m5pyv" )]
 position = Vector2(544, 160)

@@ -10,7 +10,6 @@ radius = 200.0
 script = ExtResource( "1_iyj4l" )
 
 [node name="Gun" type="Sprite2D" parent="."]
-rotation = 1.5708
 texture = ExtResource( "1_q8i65" )
 offset = Vector2(0, -11)
 

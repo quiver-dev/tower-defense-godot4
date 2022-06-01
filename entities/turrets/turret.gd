@@ -14,9 +14,9 @@ func _physics_process(delta: float) -> void:
 		var target_pos: Vector2 = shooter.targets.front().global_position
 		var target_rot: float = global_position.direction_to(target_pos).angle()
 		shooter.gun.rotation = lerp_angle(shooter.gun.rotation,
-				target_rot + PI / 2, shooter.rot_speed * delta)
+				target_rot, shooter.rot_speed * delta)
 		if shooter.can_shoot:
-			shooter.shoot(shooter.targets.front().global_position)
+			shooter.shoot()
 
 
 func take_damage(damage: int) -> void:

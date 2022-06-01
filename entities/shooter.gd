@@ -40,11 +40,11 @@ func _draw() -> void:
 	draw_circle(Vector2.ZERO, detect_radius, detector_color)
 
 
-func shoot(_position: Vector2) -> void:
+func shoot() -> void:
 	can_shoot = false
 	var bullet: Bullet = bullet_type.instantiate()
 	bullet.start(muzzle.global_position,
-			gun.rotation - PI / 2 + randf_range(-bullet_spread, bullet_spread))
+			gun.rotation + randf_range(-bullet_spread, bullet_spread))
 	bullet_container.add_child(bullet, true)
 	firerate_timer.start(fire_rate)
 
