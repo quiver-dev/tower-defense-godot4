@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cykm8dqj2remm"]
 
-[ext_resource type="PackedScene" uid="uid://h6a1ygs71vw0" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
+[ext_resource type="PackedScene" uid="uid://28egx1tgd44c" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
 [ext_resource type="Texture2D" uid="uid://d16nmbx5gc1dq" path="res://entities/enemies/assets/textures/tank_base_00.png" id="2_qerlr"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/tank.gd" id="2_ri3h6"]
 [ext_resource type="Texture2D" uid="uid://hub72po6nwk6" path="res://entities/enemies/assets/textures/tank_turret_00.png" id="3_5q5gj"]
@@ -14,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
 size = Vector2(48, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wncv0"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1oys8"]
 radius = 150.0
 
 [node name="Tank" instance=ExtResource( "1_o2qr5" )]
@@ -62,12 +62,24 @@ position = Vector2(32, -2)
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_wncv0" )
+shape = SubResource( "CircleShape2D_1oys8" )
+
+[node name="ReloadBar" parent="Shooter" index="4"]
+visible = false
+value = 0.0
 
 [node name="NavigationAgent2D" parent="." index="4"]
 radius = 32.0
 neighbor_dist = 100.0
 max_speed = 300.0
+
+[node name="StateLabel" parent="." index="5"]
+offset_top = -80.0
+offset_bottom = -59.0
+
+[node name="Healthbar" parent="." index="6"]
+offset_top = -77.0
+offset_bottom = -32.0
 
 [node name="LookAhead1" type="RayCast2D" parent="." index="7"]
 position = Vector2(0, -16)

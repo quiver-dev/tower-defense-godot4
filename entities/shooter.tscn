@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8b2v6payhflg"]
+[gd_scene load_steps=5 format=3 uid="uid://b8b2v6payhflg"]
 
 [ext_resource type="Script" path="res://entities/shooter.gd" id="1_iyj4l"]
 [ext_resource type="Texture2D" uid="uid://cn0fp8w7073hc" path="res://entities/turrets/assets/textures/gun_00.png" id="1_q8i65"]
+[ext_resource type="Texture2D" uid="uid://b7vlnlvvwo1tm" path="res://assets/textures/white_bar.png" id="3_gtl0c"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4dyon"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_a2pth"]
 radius = 200.0
 
 [node name="Shooter" type="Node2D"]
@@ -14,7 +15,7 @@ texture = ExtResource( "1_q8i65" )
 offset = Vector2(0, -11)
 
 [node name="Muzzle" type="Position2D" parent="Gun"]
-position = Vector2(0, -48)
+position = Vector2(0, -40)
 
 [node name="Detector" type="Area2D" parent="."]
 collision_layer = 0
@@ -22,11 +23,26 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 modulate = Color(1, 1, 1, 0.247059)
-shape = SubResource( "CircleShape2D_4dyon" )
+shape = SubResource( "CircleShape2D_a2pth" )
 
 [node name="FireRateTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="BulletContainer" type="Node" parent="."]
+
+[node name="ReloadBar" type="TextureProgressBar" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -922.0
+offset_right = 96.0
+offset_bottom = -873.0
+scale = Vector2(0.25, 0.05)
+pivot_offset = Vector2(95, 922)
+rounded = true
+texture_progress = ExtResource( "3_gtl0c" )
 
 [connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]

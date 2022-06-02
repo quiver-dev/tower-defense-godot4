@@ -17,20 +17,25 @@ extends Node2D
 
 var targets: Array[Node2D]
 var can_shoot := true
+var tween: Tween
 
-@onready var gun: Sprite2D = $Gun
-@onready var muzzle: Position2D = $Gun/Muzzle
-@onready var detector: Area2D = $Detector
-@onready var detector_coll: CollisionShape2D = $Detector/CollisionShape2D
+@onready var gun := $Gun as Sprite2D
+@onready var muzzle := $Gun/Muzzle as Position2D
+@onready var detector := $Detector as Area2D
+@onready var detector_coll := $Detector/CollisionShape2D as CollisionShape2D
 @onready var detector_shape := CircleShape2D.new()
-@onready var bullet_container: Node = $BulletContainer
-@onready var firerate_timer: Timer = $FireRateTimer
+@onready var bullet_container := $BulletContainer as Node
+@onready var firerate_timer := $FireRateTimer as Timer
+@onready var reload_bar := $ReloadBar as TextureProgressBar
 
 
 func _ready() -> void:
 	# initialize detector's shape
 	detector_shape.radius = detect_radius
 	detector_coll.shape = detector_shape
+	# initialize reload bar
+	reload_bar.value = 0
+	reload_bar.hide()
 
 
 func _physics_process(_delta: float) -> void:
@@ -48,6 +53,12 @@ func shoot() -> void:
 			gun.rotation + randf_range(-bullet_spread, bullet_spread))
 	bullet_container.add_child(bullet, true)
 	firerate_timer.start(fire_rate)
+	# show reload time on HUD
+	tween = get_tree().create_tween()
+	tween.tween_callback(reload_bar.show)
+	tween.tween_method(_update_bar, reload_bar.value, reload_bar.max_value,
+			firerate_timer.wait_time)
+	tween.tween_callback(reload_bar.hide)
 
 
 func set_detect_radius(value: int) -> void:
@@ -56,5 +67,22 @@ func set_detect_radius(value: int) -> void:
 		detector_shape.radius = detect_radius
 
 
+# Called by parent node when it gets freed: used to perform cleanup operations
+func cleanup() -> void:
+	tween.kill()
+
+
 func _on_fire_rate_timer_timeout() -> void:
 	can_shoot = true
+
+
+func _update_bar(value) -> void:
+	reload_bar.value = value
+	if value > reload_bar.max_value * 0.0:
+		reload_bar.self_modulate = Color("#ab2929") # red
+	if value > reload_bar.max_value * 0.33:
+		reload_bar.self_modulate = Color("#d2b82d") # yellow
+	if value > reload_bar.max_value * 0.66:
+		reload_bar.self_modulate = Color("#54722e") # green
+	if value == reload_bar.max_value:
+		reload_bar.value = reload_bar.min_value

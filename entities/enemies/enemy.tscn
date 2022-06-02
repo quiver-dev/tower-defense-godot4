@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://h6a1ygs71vw0"]
+[gd_scene load_steps=11 format=3 uid="uid://28egx1tgd44c"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
@@ -7,7 +7,7 @@
 [ext_resource type="FontData" uid="uid://db33awc1pfsoi" path="res://assets/fonts/kenney_future_narrow.ttf" id="5_o8crm"]
 [ext_resource type="Script" path="res://entities/enemies/states/hit.gd" id="5_t30j3"]
 [ext_resource type="Texture2D" uid="uid://by5hmlojnbruq" path="res://entities/enemies/assets/textures/infantry_00.png" id="6_vda5g"]
-[ext_resource type="Texture2D" uid="uid://bmf2ttwqiepms" path="res://assets/assets/textures/green_bar.png" id="8_nd6hx"]
+[ext_resource type="Texture2D" uid="uid://bmf2ttwqiepms" path="res://assets/textures/green_bar.png" id="8_hbi1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b4bn"]
 size = Vector2(16, 32)
@@ -73,7 +73,7 @@ offset_bottom = -16.0
 scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(95, 22)
 value = 100.0
-texture_progress = ExtResource( "8_nd6hx" )
+texture_progress = ExtResource( "8_hbi1v" )
 
 [connection signal="state_changed" from="StateMachine" to="." method="_on_state_machine_state_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="StateMachine/Move" method="_on_navigation_agent_2d_target_reached"]

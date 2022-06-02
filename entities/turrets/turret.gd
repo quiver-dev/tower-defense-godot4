@@ -6,7 +6,7 @@ signal turret_disabled
 
 @export_range(0, 100) var health: int = 100
 
-@onready var shooter: Shooter = $Shooter
+@onready var shooter := $Shooter as Shooter
 
 
 func _physics_process(delta: float) -> void:
@@ -22,10 +22,14 @@ func _physics_process(delta: float) -> void:
 func take_damage(damage: int) -> void:
 	health = max(0, health - damage)
 	if health == 0:
-		# TODO: add logic
-		emit_signal("turret_disabled")
-		print("turret_disabled")
-		queue_free()
+		_explode()
+
+
+func _explode() -> void:
+	# TODO: add all necessary operations: e.g. play animation
+	shooter.cleanup()
+	emit_signal("turret_disabled")
+	queue_free()
 
 
 # Detector's Area2D can only scan for enemies. See its collision mask.

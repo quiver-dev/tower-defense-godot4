@@ -5,8 +5,8 @@ extends CharacterBody2D
 signal target_changed(pos: Vector2)
 signal enemy_dead
 
-const GREEN_BAR := preload("res://assets/assets/textures/green_bar.png")
-const RED_BAR := preload("res://assets/assets/textures/red_bar.png")
+const GREEN_BAR := preload("res://assets/textures/green_bar.png")
+const RED_BAR := preload("res://assets/textures/red_bar.png")
 
 @export var rot_speed: float = 10.0
 @export var health: int = 100
