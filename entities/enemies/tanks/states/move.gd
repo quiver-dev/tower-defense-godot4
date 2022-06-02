@@ -11,7 +11,8 @@ func update(delta: float) -> void:
 		emit_signal("finished", "idle")
 
 
-func _on_detector_body_entered(body: Node2D) -> void:
-	if not body in (owner as Tank).shooter.targets:
-		(owner as Tank).shooter.targets.append(body)
+# Called both when areas and bodies enter the detection radius
+func _on_detector_entity_entered(entity: Node2D) -> void:
+	if not entity in (owner as Tank).shooter.targets:
+		(owner as Tank).shooter.targets.append(entity)
 		emit_signal("finished", "shoot")

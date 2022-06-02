@@ -35,5 +35,4 @@ func _on_bullet_area_entered(_area: Area2D) -> void:
 
 
 func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
-	print("Freeing ", self.name)
 	queue_free()

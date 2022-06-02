@@ -15,8 +15,8 @@ func update(delta: float) -> void:
 		(owner as Tank).shooter.shoot()
 
 
-func _on_detector_body_exited(body: Node2D) -> void:
-	if body in (owner as Tank).shooter.targets:
-		(owner as Tank).shooter.targets.erase(body)
+func _on_detector_entity_exited(entity: Node2D) -> void:
+	if entity in (owner as Tank).shooter.targets:
+		(owner as Tank).shooter.targets.erase(entity)
 		if (owner as Tank).shooter.targets.is_empty():
 			emit_signal("finished", "move")

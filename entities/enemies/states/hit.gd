@@ -1,10 +1,10 @@
 extends Motion
 
 
-const DURATION := 0.5
-const SLOWDOWN_PERC := 0.2  # percentage of diminished speed
+@export var state_duration: float = 0.5
+@export var slowdown_percentage: float = 0.2  # percentage of diminished speed
 
-var prev_state: Node
+var prev_state: State
 
 @onready var timer := Timer.new()
 @onready var prev_speed := (owner as Enemy).speed
@@ -20,9 +20,9 @@ func _ready() -> void:
 # We just get the previous state and slow down the enemy
 # for the duration of this state
 func enter() -> void:
-	(owner as Enemy).speed -= int((owner as Enemy).speed * SLOWDOWN_PERC)
+	(owner as Enemy).speed -= int((owner as Enemy).speed * slowdown_percentage)
 	prev_state = (owner as Enemy).get_fsm().states_stack.back()
-	timer.start(DURATION)
+	timer.start(state_duration)
 	print("slowed speed: ", (owner as Enemy).speed)
 
 

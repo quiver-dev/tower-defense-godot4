@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cykm8dqj2remm"]
+[gd_scene load_steps=13 format=3 uid="uid://cykm8dqj2remm"]
 
 [ext_resource type="PackedScene" uid="uid://h6a1ygs71vw0" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
 [ext_resource type="Texture2D" uid="uid://d16nmbx5gc1dq" path="res://entities/enemies/assets/textures/tank_base_00.png" id="2_qerlr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://hub72po6nwk6" path="res://entities/enemies/assets/textures/tank_turret_00.png" id="3_5q5gj"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/move.gd" id="3_7yovt"]
 [ext_resource type="PackedScene" uid="uid://cg4yis4w1wk2v" path="res://entities/bullets/tank_bullet/tank_bullet.tscn" id="3_kr1yu"]
+[ext_resource type="Script" path="res://entities/enemies/tanks/states/hit.gd" id="5_3qes1"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/shoot.gd" id="5_5f6sk"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/idle.gd" id="5_ctw71"]
 [ext_resource type="PackedScene" uid="uid://b8b2v6payhflg" path="res://entities/shooter.tscn" id="8_frgp2"]
@@ -13,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
 size = Vector2(48, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lgwnl"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_wncv0"]
 radius = 150.0
 
 [node name="Tank" instance=ExtResource( "1_o2qr5" )]
@@ -28,6 +29,10 @@ script = ExtResource( "3_7yovt" )
 
 [node name="Idle" parent="StateMachine" index="1"]
 script = ExtResource( "5_ctw71" )
+
+[node name="Hit" parent="StateMachine" index="2"]
+script = ExtResource( "5_3qes1" )
+state_duration = 0.1
 
 [node name="Shoot" type="Node" parent="StateMachine" index="3"]
 script = ExtResource( "5_5f6sk" )
@@ -57,7 +62,7 @@ position = Vector2(32, -2)
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_lgwnl" )
+shape = SubResource( "CircleShape2D_wncv0" )
 
 [node name="NavigationAgent2D" parent="." index="4"]
 radius = 32.0
@@ -72,7 +77,9 @@ target_position = Vector2(50, 0)
 position = Vector2(0, 16)
 target_position = Vector2(50, 0)
 
-[connection signal="body_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_body_entered"]
-[connection signal="body_exited" from="Shooter/Detector" to="StateMachine/Shoot" method="_on_detector_body_exited"]
+[connection signal="area_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_entity_entered"]
+[connection signal="area_exited" from="Shooter/Detector" to="StateMachine/Shoot" method="_on_detector_entity_exited"]
+[connection signal="body_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_entity_entered"]
+[connection signal="body_exited" from="Shooter/Detector" to="StateMachine/Shoot" method="_on_detector_entity_exited"]
 
 [editable path="Shooter"]
