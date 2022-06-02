@@ -1,9 +1,10 @@
 @tool
 class_name Shooter
 extends Node2D
-# Class extended by those entities which can shoot, e.g. turrets or tanks.
-# The scenes this script is attached to must have the nodes referenced by
-# the @onready variables, otherwise the game will crash on purpose.
+# Class aggregated by those entities which can shoot, e.g. turrets or tanks.
+# We are using component-based programming principles by leveraging Godot's
+# node system to replace multiple inheritance, which is not supported by
+# the engine.
 
 
 @export var detector_color: Color = Color(1, 0.22, 0.25, 0.25)  # for debug
