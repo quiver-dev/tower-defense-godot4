@@ -2,12 +2,12 @@ class_name Tank
 extends Enemy
 
 
-@onready var shooter: Shooter = $Shooter
+@onready var shooter := $Shooter as Shooter
 
 
 func _ready() -> void:
 	# WARN: this is a workaround, see https://github.com/godotengine/godot/issues/60168
-	super._ready()
+	super()
 
 
 # Checks if there are other tanks ahead

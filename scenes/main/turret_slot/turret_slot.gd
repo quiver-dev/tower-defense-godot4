@@ -3,7 +3,7 @@ extends Area2D
 
 const TURRET_PATH := "res://entities/turrets/"
 
-@onready var turret_popup: CanvasLayer = $TurretPopup
+@onready var turret_popup := $TurretPopup as CanvasLayer
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

@@ -10,8 +10,8 @@ const INITIAL_WAIT := 5.0  # amount of seconds to wait before starting
 
 var objective_pos: Vector2
 
-@onready var spawn_timer: Timer = $SpawnTimer
-@onready var enemies: Node2D = $Enemies
+@onready var spawn_timer := $SpawnTimer as Timer
+@onready var enemies := $Enemies as Node2D
 
 
 # Called once by parent scene when ready

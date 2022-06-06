@@ -12,11 +12,11 @@ const RED_BAR := preload("res://assets/textures/red_bar.png")
 @export var health: int = 100
 @export var speed: int = 300
 
-@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var sprite: Sprite2D = $Sprite2D
-@onready var collision: CollisionShape2D = $CollisionShape2D
-@onready var state_label: Label = $StateLabel
-@onready var healthbar: TextureProgressBar = $Healthbar
+@onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
+@onready var sprite := $Sprite2D as Sprite2D
+@onready var collision := $CollisionShape2D as CollisionShape2D
+@onready var state_label := $StateLabel as Label
+@onready var healthbar := $Healthbar as TextureProgressBar
 
 
 func _ready() -> void:
