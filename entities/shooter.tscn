@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cn0fp8w7073hc" path="res://entities/turrets/assets/textures/gun_00.png" id="1_q8i65"]
 [ext_resource type="Texture2D" uid="uid://b7vlnlvvwo1tm" path="res://assets/textures/white_bar.png" id="3_gtl0c"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_a2pth"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vdrg1"]
 radius = 200.0
 
 [node name="Shooter" type="Node2D"]
@@ -23,7 +23,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 modulate = Color(1, 1, 1, 0.247059)
-shape = SubResource( "CircleShape2D_a2pth" )
+shape = SubResource( "CircleShape2D_vdrg1" )
 
 [node name="FireRateTimer" type="Timer" parent="."]
 one_shot = true
@@ -45,4 +45,5 @@ pivot_offset = Vector2(95, 922)
 rounded = true
 texture_progress = ExtResource( "3_gtl0c" )
 
+[connection signal="tree_exiting" from="." to="." method="_on_shooter_tree_exiting"]
 [connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]

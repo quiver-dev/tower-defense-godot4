@@ -4,7 +4,7 @@ extends Node2D
 # Class aggregated by those entities which can shoot, e.g. turrets or tanks.
 # We are using component-based programming principles by leveraging Godot's
 # node system to replace multiple inheritance, which is not supported by
-# the engine.
+# the engine. This method is called "composition", or "aggregation".
 
 
 @export var detector_color: Color = Color(1, 0.22, 0.25, 0.25)  # for debug
@@ -67,11 +67,6 @@ func set_detect_radius(value: int) -> void:
 		detector_shape.radius = detect_radius
 
 
-# Called by parent node when it gets freed: used to perform cleanup operations
-func cleanup() -> void:
-	tween.kill()
-
-
 func _on_fire_rate_timer_timeout() -> void:
 	can_shoot = true
 
@@ -86,3 +81,11 @@ func _update_bar(value) -> void:
 		reload_bar.self_modulate = Color("#54722e") # green
 	if value == reload_bar.max_value:
 		reload_bar.value = reload_bar.min_value
+
+
+# Quoting the documentation, the tree_exiting signal is "emitted when the node
+# is still active but about to exit the tree. This is the right place for 
+# de-initialization".
+func _on_shooter_tree_exiting() -> void:
+	if not Engine.is_editor_hint():
+		tween.kill()

@@ -27,7 +27,6 @@ func take_damage(damage: int) -> void:
 
 func _explode() -> void:
 	# TODO: add all necessary operations: e.g. play animation
-	shooter.cleanup()
 	emit_signal("turret_disabled")
 	queue_free()
 
