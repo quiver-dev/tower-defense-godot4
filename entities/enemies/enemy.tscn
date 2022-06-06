@@ -1,19 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://28egx1tgd44c"]
+[gd_scene load_steps=9 format=3 uid="uid://28egx1tgd44c"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
 [ext_resource type="Script" path="res://entities/enemies/states/move.gd" id="3_juveh"]
 [ext_resource type="Script" path="res://entities/enemies/states/idle.gd" id="4_vk1wn"]
-[ext_resource type="FontData" uid="uid://db33awc1pfsoi" path="res://assets/fonts/kenney_future_narrow.ttf" id="5_o8crm"]
 [ext_resource type="Script" path="res://entities/enemies/states/hit.gd" id="5_t30j3"]
 [ext_resource type="Texture2D" uid="uid://by5hmlojnbruq" path="res://entities/enemies/assets/textures/infantry_00.png" id="6_vda5g"]
-[ext_resource type="Texture2D" uid="uid://bmf2ttwqiepms" path="res://assets/textures/green_bar.png" id="8_hbi1v"]
+[ext_resource type="PackedScene" uid="uid://fposufd3xex3" path="res://interfaces/HUD/entity_hud.tscn" id="7_dxylf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b4bn"]
 size = Vector2(16, 32)
-
-[sub_resource type="Font" id="Font_yxjyq"]
-data/0 = ExtResource( "5_o8crm" )
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_mask = 7
@@ -47,37 +43,12 @@ time_horizon = 32.0
 path_max_distance = 20.0
 avoidance_enabled = true
 
-[node name="StateLabel" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -64.0
-offset_right = 29.0
-offset_bottom = -43.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = SubResource( "Font_yxjyq" )
-text = "Idle"
-horizontal_alignment = 1
-metadata/_edit_use_custom_anchors = false
-
-[node name="Healthbar" type="TextureProgressBar" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -95.0
-offset_top = -61.0
-offset_right = 95.0
-offset_bottom = -16.0
-scale = Vector2(0.25, 0.25)
-pivot_offset = Vector2(95, 22)
-value = 100.0
-texture_progress = ExtResource( "8_hbi1v" )
+[node name="EntityHUD" parent="." instance=ExtResource( "7_dxylf" )]
+offset_left = -31.0
+offset_top = -72.0
+offset_right = -31.0
+offset_bottom = -72.0
 
 [connection signal="state_changed" from="StateMachine" to="." method="_on_state_machine_state_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="StateMachine/Move" method="_on_navigation_agent_2d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
-[connection signal="value_changed" from="Healthbar" to="." method="_on_healthbar_value_changed"]

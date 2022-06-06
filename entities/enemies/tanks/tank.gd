@@ -17,3 +17,7 @@ func is_raycast_colliding() -> bool:
 				(raycast as RayCast2D).get_collider() is Tank:
 			return true
 	return false
+
+
+func _on_shooter_has_shot(reload_time: float) -> void:
+	hud.update_reloadbar(reload_time)

@@ -7,6 +7,8 @@ extends Node2D
 # the engine. This method is called "composition", or "aggregation".
 
 
+signal has_shot(reload_time: float)
+
 @export var detector_color: Color = Color(1, 0.22, 0.25, 0.25)  # for debug
 @export var detect_radius: int = 200:
 	set = set_detect_radius
@@ -17,7 +19,6 @@ extends Node2D
 
 var targets: Array[Node2D]
 var can_shoot := true
-var tween: Tween
 
 @onready var gun := $Gun as Sprite2D
 @onready var muzzle := $Gun/Muzzle as Position2D
@@ -26,16 +27,12 @@ var tween: Tween
 @onready var detector_shape := CircleShape2D.new()
 @onready var bullet_container := $BulletContainer as Node
 @onready var firerate_timer := $FireRateTimer as Timer
-@onready var reload_bar := $ReloadBar as TextureProgressBar
 
 
 func _ready() -> void:
 	# initialize detector's shape
 	detector_shape.radius = detect_radius
 	detector_coll.shape = detector_shape
-	# initialize reload bar
-	reload_bar.value = 0
-	reload_bar.hide()
 
 
 func _physics_process(_delta: float) -> void:
@@ -54,11 +51,7 @@ func shoot() -> void:
 	bullet_container.add_child(bullet, true)
 	firerate_timer.start(fire_rate)
 	# show reload time on HUD
-	tween = get_tree().create_tween()
-	tween.tween_callback(reload_bar.show)
-	tween.tween_method(_update_bar, reload_bar.value, reload_bar.max_value,
-			firerate_timer.wait_time)
-	tween.tween_callback(reload_bar.hide)
+	emit_signal("has_shot", firerate_timer.wait_time)
 
 
 func set_detect_radius(value: int) -> void:
@@ -69,23 +62,3 @@ func set_detect_radius(value: int) -> void:
 
 func _on_fire_rate_timer_timeout() -> void:
 	can_shoot = true
-
-
-func _update_bar(value) -> void:
-	reload_bar.value = value
-	if value > reload_bar.max_value * 0.0:
-		reload_bar.self_modulate = Color("#ab2929") # red
-	if value > reload_bar.max_value * 0.33:
-		reload_bar.self_modulate = Color("#d2b82d") # yellow
-	if value > reload_bar.max_value * 0.66:
-		reload_bar.self_modulate = Color("#54722e") # green
-	if value == reload_bar.max_value:
-		reload_bar.value = reload_bar.min_value
-
-
-# Quoting the documentation, the tree_exiting signal is "emitted when the node
-# is still active but about to exit the tree. This is the right place for 
-# de-initialization".
-func _on_shooter_tree_exiting() -> void:
-	if not Engine.is_editor_hint():
-		tween.kill()

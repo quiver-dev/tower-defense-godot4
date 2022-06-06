@@ -7,6 +7,12 @@ signal turret_disabled
 @export_range(0, 100) var health: int = 100
 
 @onready var shooter := $Shooter as Shooter
+@onready var hud := $EntityHUD as EntityHud
+
+
+func _ready() -> void:
+	# hide non-relevant HUD parts
+	hud.state_label.hide()
 
 
 func _physics_process(delta: float) -> void:
@@ -40,3 +46,7 @@ func _on_detector_body_entered(body: Node2D) -> void:
 func _on_detector_body_exited(body: Node2D) -> void:
 	if body in shooter.targets:
 		shooter.targets.erase(body)
+
+
+func _on_shooter_has_shot(reload_time: float) -> void:
+	hud.update_reloadbar(reload_time)

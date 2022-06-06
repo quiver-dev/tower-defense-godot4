@@ -15,15 +15,14 @@ const RED_BAR := preload("res://assets/textures/red_bar.png")
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @onready var sprite := $Sprite2D as Sprite2D
 @onready var collision := $CollisionShape2D as CollisionShape2D
-@onready var state_label := $StateLabel as Label
-@onready var healthbar := $Healthbar as TextureProgressBar
+@onready var hud := $EntityHUD as EntityHud
 
 
 func _ready() -> void:
 	# initialize HUD
-	state_label.text = get_fsm().current_state.name
-	healthbar.max_value = health
-	healthbar.value = healthbar.max_value
+	hud.state_label.text = get_fsm().current_state.name
+	hud.healthbar.max_value = health
+	hud.healthbar.value = health
 	# initialize navigation agent
 	nav_agent.max_speed = speed
 
@@ -38,7 +37,7 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(damage: int) -> void:
 	health = max(0, health - damage)
-	healthbar.value = health
+	hud.healthbar.value = health
 	if health == 0:
 		# TODO: add logic
 		emit_signal("enemy_dead")
@@ -74,10 +73,4 @@ func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 
 
 func _on_state_machine_state_changed(states_stack: Array) -> void:
-	state_label.text = (states_stack[0] as State).name
-
-
-# Used to display different textures based on the health percentage
-func _on_healthbar_value_changed(value: float) -> void:
-	healthbar.texture_progress = RED_BAR if value <= healthbar.max_value / 4 \
-			else GREEN_BAR
+	hud.state_label.text = (states_stack[0] as State).name

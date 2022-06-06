@@ -14,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
 size = Vector2(48, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xub1g"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ih3d"]
 radius = 150.0
 
 [node name="Tank" instance=ExtResource( "1_o2qr5" )]
@@ -62,7 +62,7 @@ position = Vector2(32, -2)
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_xub1g" )
+shape = SubResource( "CircleShape2D_8ih3d" )
 
 [node name="NavigationAgent2D" parent="." index="4"]
 radius = 32.0
@@ -70,22 +70,15 @@ neighbor_dist = 100.0
 max_speed = 300.0
 path_max_distance = 40.0
 
-[node name="StateLabel" parent="." index="5"]
-offset_top = -80.0
-offset_bottom = -59.0
-
-[node name="Healthbar" parent="." index="6"]
-offset_top = -77.0
-offset_bottom = -32.0
-
-[node name="LookAhead1" type="RayCast2D" parent="." index="7"]
+[node name="LookAhead1" type="RayCast2D" parent="." index="6"]
 position = Vector2(0, -16)
 target_position = Vector2(50, 0)
 
-[node name="LookAhead2" type="RayCast2D" parent="." index="8"]
+[node name="LookAhead2" type="RayCast2D" parent="." index="7"]
 position = Vector2(0, 16)
 target_position = Vector2(50, 0)
 
+[connection signal="has_shot" from="Shooter" to="." method="_on_shooter_has_shot"]
 [connection signal="area_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_entity_entered"]
 [connection signal="area_exited" from="Shooter/Detector" to="StateMachine/Shoot" method="_on_detector_entity_exited"]
 [connection signal="body_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_entity_entered"]
