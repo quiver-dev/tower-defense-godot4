@@ -5,6 +5,8 @@ extends Node2D
 # We are using component-based programming principles by leveraging Godot's
 # node system to replace multiple inheritance, which is not supported by
 # the engine. This method is called "composition", or "aggregation".
+# This scene supports multiple bullets per shot: just duplicate the Muzzle
+# node under the Gun node, tweak its position and a bullet will spawn there.
 
 
 signal has_shot(reload_time: float)
@@ -21,12 +23,12 @@ var targets: Array[Node2D]
 var can_shoot := true
 
 @onready var gun := $Gun as Sprite2D
-@onready var muzzle := $Gun/Muzzle as Position2D
 @onready var detector := $Detector as Area2D
 @onready var detector_coll := $Detector/CollisionShape2D as CollisionShape2D
 @onready var detector_shape := CircleShape2D.new()
 @onready var bullet_container := $BulletContainer as Node
 @onready var firerate_timer := $FireRateTimer as Timer
+@onready var bullet_count := gun.get_child_count()
 
 
 func _ready() -> void:
@@ -45,10 +47,11 @@ func _draw() -> void:
 
 func shoot() -> void:
 	can_shoot = false
-	var bullet: Bullet = bullet_type.instantiate()
-	bullet.start(muzzle.global_position,
-			gun.rotation + randf_range(-bullet_spread, bullet_spread))
-	bullet_container.add_child(bullet, true)
+	for muzzle in gun.get_children():
+		var bullet: Bullet = bullet_type.instantiate()
+		bullet.start(muzzle.global_position,
+				gun.rotation + randf_range(-bullet_spread, bullet_spread))
+		bullet_container.add_child(bullet, true)
 	firerate_timer.start(fire_rate)
 	# show reload time on HUD
 	emit_signal("has_shot", firerate_timer.wait_time)

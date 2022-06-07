@@ -1,7 +1,7 @@
 extends Area2D
 
 
-const TURRET_PATH := "res://entities/turrets/"
+const TURRET_PATH := "res://entities/turrets/level%d/turret_l%d.tscn"
 
 @onready var turret_popup := $TurretPopup as CanvasLayer
 
@@ -12,9 +12,11 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			turret_popup.show()
 
 
-func _on_turret_popup_turret_requested(_level: String) -> void:
+func _on_turret_popup_turret_requested(level: int) -> void:
+	if level > 2:
+		return  # FIXME
 	# load turret into scene and disable input
-	var turret: Turret = load(TURRET_PATH.plus_file("turret.tscn")).instantiate()
+	var turret: Turret = load(TURRET_PATH % [level, level]).instantiate()
 	turret.position = Vector2.ZERO
 	input_pickable = false
 	add_child(turret, true)

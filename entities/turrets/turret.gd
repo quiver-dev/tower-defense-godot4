@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(damage: int) -> void:
 	health = max(0, health - damage)
+	hud.healthbar.value = health
 	if health == 0:
 		_explode()
 

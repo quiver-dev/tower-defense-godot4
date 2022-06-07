@@ -4,7 +4,7 @@ extends CanvasLayer
 # understand how to use it.
 
 
-signal turret_requested(level: String)
+signal turret_requested(level: int)
 
 
 func _on_close_pressed() -> void:
@@ -22,7 +22,7 @@ func _on_background_gui_input(event: InputEvent) -> void:
 # Note that you can pass custom arguments to a signal by enabling advanced 
 # settings  when connecting a signal to a method using the editor.
 # In this case we are passing the turret level based on which button is pressed.
-func _on_button_pressed(level: String) -> void:
+func _on_button_pressed(level: int) -> void:
 	# TODO: define a consistent way to pass turret data to parent scenes
 	emit_signal("turret_requested", level)
 	hide()

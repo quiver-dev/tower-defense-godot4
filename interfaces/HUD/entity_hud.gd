@@ -6,7 +6,6 @@ const RED := Color("#e86a17")
 const YELLOW := Color("#d2b82d")
 const GREEN := Color("#88e060")
 
-
 var tween: Tween
 
 @onready var state_label := $Parameters/StateLabel as Label
@@ -31,9 +30,9 @@ func _update_bar(value) -> void:
 	if value > reload_bar.max_value * 0.0:
 		reload_bar.self_modulate = RED
 	if value > reload_bar.max_value * 0.33:
-		reload_bar.self_modulate = YELLOW # yellow
+		reload_bar.self_modulate = YELLOW
 	if value > reload_bar.max_value * 0.66:
-		reload_bar.self_modulate = GREEN # green
+		reload_bar.self_modulate = GREEN
 	if value == reload_bar.max_value:
 		reload_bar.value = reload_bar.min_value
 
