@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://chvdkoi7miifq"]
+
+[ext_resource type="PackedScene" uid="uid://b8b2v6payhflg" path="res://entities/shooter.tscn" id="1_wqn6v"]
+[ext_resource type="Script" path="res://entities/turrets/shooter_homing.gd" id="2_2x22q"]
+[ext_resource type="Texture2D" uid="uid://cksqmaug7a01r" path="res://entities/turrets/assets/textures/gun_02.png" id="2_u4xo4"]
+[ext_resource type="PackedScene" uid="uid://co36u7aep2rr2" path="res://entities/bullets/homing/homing_missile.tscn" id="3_srgww"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vho0k"]
+radius = 200.0
+
+[node name="ShooterHoming" instance=ExtResource( "1_wqn6v" )]
+position = Vector2(40, 32)
+script = ExtResource( "2_2x22q" )
+fire_rate = 5.0
+bullet_type = ExtResource( "3_srgww" )
+
+[node name="Gun" parent="." index="0"]
+texture = ExtResource( "2_u4xo4" )
+offset = Vector2(0, 0)
+
+[node name="Muzzle" parent="Gun" index="0"]
+position = Vector2(-9, -4)
+
+[node name="Muzzle2" type="Position2D" parent="Gun" index="1"]
+position = Vector2(9, -4)
+
+[node name="CollisionShape2D" parent="Detector" index="0"]
+shape = SubResource( "CircleShape2D_vho0k" )

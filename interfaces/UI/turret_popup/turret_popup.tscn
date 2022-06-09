@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpvufpsxvqgf3"]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="Theme" uid="uid://d065e0bnj0me6" path="res://assets/themes/td_theme.tres" id="1_d4ywp"]
 [ext_resource type="Texture2D" uid="uid://bvrpxpt7jko5f" path="res://interfaces/assets/textures/red_circle.png" id="2_64a23"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3eye6kgwapmk" path="res://entities/turrets/assets/textures/gun_01.png" id="3_2hyf4"]
 [ext_resource type="Texture2D" uid="uid://cwjprn730kyb4" path="res://interfaces/assets/textures/grey_crossWhite.png" id="3_k6npk"]
 [ext_resource type="Texture2D" uid="uid://cn0fp8w7073hc" path="res://entities/turrets/assets/textures/gun_00.png" id="3_p61i4"]
-[ext_resource type="Texture2D" uid="uid://xeyypwb24yr0" path="res://entities/turrets/assets/textures/gun_02.png" id="4_csjj0"]
+[ext_resource type="Texture2D" path="res://entities/turrets/assets/textures/gun_03.png" id="4_csjj0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xfjc7"]
 texture = ExtResource( "2_64a23" )
