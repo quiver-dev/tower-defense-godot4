@@ -11,6 +11,7 @@ extends Area2D
 @export var damage: int = 10
 
 var velocity: Vector2
+var target  # homing missiles only
 
 
 func _physics_process(delta: float) -> void:
@@ -18,9 +19,10 @@ func _physics_process(delta: float) -> void:
 
 
 # Called by the turret, which instantiates a bullet and gives it a target
-func start(_position: Vector2, _rotation: float) -> void:
+func start(_position: Vector2, _rotation: float, _target=null) -> void:
 	global_position = _position
 	rotation = _rotation
+	target = _target
 	velocity = Vector2.RIGHT.rotated(_rotation) * speed
 
 
