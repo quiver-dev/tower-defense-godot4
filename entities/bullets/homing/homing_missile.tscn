@@ -6,6 +6,6 @@
 [node name="HomingMissile" instance=ExtResource( "1_6qmsl" )]
 collision_mask = 1
 script = ExtResource( "2_dm4fp" )
-speed = 300
+speed = 350
 damage = 20
 steer_force = 40

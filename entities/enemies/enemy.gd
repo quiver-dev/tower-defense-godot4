@@ -39,9 +39,13 @@ func take_damage(damage: int) -> void:
 	health = max(0, health - damage)
 	hud.healthbar.value = health
 	if health == 0:
-		# TODO: add logic
-		emit_signal("enemy_dead")
-		queue_free()
+		die()
+
+
+func die() -> void:
+	# TODO: add logic
+	emit_signal("enemy_dead")
+	queue_free()
 
 
 func move_to(pos: Vector2) -> void:

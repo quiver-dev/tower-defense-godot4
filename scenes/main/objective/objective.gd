@@ -20,4 +20,4 @@ func take_damage(damage: int) -> void:
 func _on_objective_body_entered(body: Node2D) -> void:
 	if body is Enemy:
 		take_damage(DEFAULT_DAMAGE)
-		body.queue_free()
+		(body as Enemy).die()

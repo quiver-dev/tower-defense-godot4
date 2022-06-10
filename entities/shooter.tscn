@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://entities/shooter.gd" id="1_iyj4l"]
 [ext_resource type="Texture2D" uid="uid://cn0fp8w7073hc" path="res://entities/turrets/assets/textures/gun_00.png" id="1_q8i65"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8g3q2"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_sv05b"]
 radius = 200.0
 
 [node name="Shooter" type="Node2D"]
@@ -22,7 +22,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 modulate = Color(1, 1, 1, 0.247059)
-shape = SubResource( "CircleShape2D_8g3q2" )
+shape = SubResource( "CircleShape2D_sv05b" )
 
 [node name="FireRateTimer" type="Timer" parent="."]
 one_shot = true

@@ -13,8 +13,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 
 
 func _on_turret_popup_turret_requested(level: int) -> void:
-	if level > 2:
-		return  # FIXME
 	# load turret into scene and disable input
 	var turret: Turret = load(TURRET_PATH % [level, level]).instantiate()
 	turret.position = Vector2.ZERO

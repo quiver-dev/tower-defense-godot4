@@ -7,10 +7,10 @@ var acceleration: Vector2
 
 
 func _physics_process(delta: float) -> void:
-	if target:
+	if not target == null:  # as of alpha9, writing `if target` isn't working
 		acceleration += _steer()
 		velocity += acceleration * delta
-#		velocity = velocity.clamp(-speed, speed)
+		velocity = velocity.limit_length(speed)
 		rotation = velocity.angle()
 	global_position += velocity * delta
 
