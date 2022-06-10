@@ -1,3 +1,4 @@
+@tool  # WARN: this appears to be necessary. Investigate further.
 extends Shooter
 
 

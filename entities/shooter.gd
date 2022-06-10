@@ -5,8 +5,10 @@ extends Node2D
 # We are using component-based programming principles by leveraging Godot's
 # node system to replace multiple inheritance, which is not supported by
 # the engine. This method is called "composition", or "aggregation".
-# This scene supports multiple bullets per shot: just duplicate the Muzzle
-# node under the Gun node, tweak its position and a bullet will spawn there.
+# This scene supports multiple bullets per shot: just set the bullet count
+# parameter in the editor and it will spawn the corresponding number of
+# muzzles under the Gun node. Then just tweak their position and bullets
+# will spawn from there.
 
 
 signal has_shot(reload_time: float)
@@ -16,6 +18,8 @@ signal has_shot(reload_time: float)
 	set = set_detect_radius
 @export var fire_rate: float = 0.5
 @export var rot_speed: float = 5.0
+@export_range(1, 6) var bullet_count: int = 1:
+	set = set_bullet_count
 @export var bullet_type: PackedScene
 @export var bullet_spread: float = 0.2
 
@@ -28,7 +32,6 @@ var can_shoot := true
 @onready var detector_shape := CircleShape2D.new()
 @onready var bullet_container := $BulletContainer as Node
 @onready var firerate_timer := $FireRateTimer as Timer
-@onready var bullet_count := gun.get_child_count()
 
 
 func _ready() -> void:
@@ -47,9 +50,9 @@ func _draw() -> void:
 
 func shoot() -> void:
 	can_shoot = false
-	for muzzle in gun.get_children():
+	for _muzzle in gun.get_children():
 		var bullet: Bullet = bullet_type.instantiate()
-		bullet.start(muzzle.global_position,
+		bullet.start(_muzzle.global_position,
 				gun.rotation + randf_range(-bullet_spread, bullet_spread))
 		bullet_container.add_child(bullet, true)
 	firerate_timer.start(fire_rate)
@@ -61,6 +64,23 @@ func set_detect_radius(value: int) -> void:
 	detect_radius = value
 	if detector_shape:
 		detector_shape.radius = detect_radius
+
+
+# WARN: because of https://github.com/godotengine/godot/issues/60168, I need
+# to reference $Gun manually to make this setter work in inheriting classes
+# when running on the editor.
+func set_bullet_count(value: int) -> void:
+	bullet_count = value
+	var diff := value - $Gun.get_child_count()
+	match signi(diff):
+		1:
+			for i in diff:
+				var dup = $Gun/Muzzle.duplicate() as Position2D
+				$Gun.add_child(dup, true)
+				dup.owner = self
+		-1:
+			for i in abs(diff):
+				$Gun.get_child(i + 1).queue_free()
 
 
 func _on_fire_rate_timer_timeout() -> void:

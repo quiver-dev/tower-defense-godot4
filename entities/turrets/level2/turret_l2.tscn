@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dfd8j44jt40rw" path="res://entities/turrets/assets/textures/base_01.png" id="2_5txqx"]
 [ext_resource type="Texture2D" uid="uid://b3eye6kgwapmk" path="res://entities/turrets/assets/textures/gun_01.png" id="3_3dj31"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lbaj2"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_50whk"]
 radius = 250.0
 
 [node name="TurretL2" instance=ExtResource( "1_3mb3l" )]
@@ -16,6 +16,7 @@ texture = ExtResource( "2_5txqx" )
 detect_radius = 250
 fire_rate = 1.0
 rot_speed = 2.5
+bullet_count = 2
 
 [node name="Gun" parent="Shooter" index="0"]
 texture = ExtResource( "3_3dj31" )
@@ -23,10 +24,10 @@ texture = ExtResource( "3_3dj31" )
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
 position = Vector2(-6, -40)
 
-[node name="Muzzle2" type="Position2D" parent="Shooter/Gun" index="1"]
-position = Vector2(5.99986, -40)
+[node name="Muzzle2" parent="Shooter/Gun" index="1"]
+position = Vector2(6, -40.0001)
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_lbaj2" )
+shape = SubResource( "CircleShape2D_50whk" )
 
 [editable path="Shooter"]

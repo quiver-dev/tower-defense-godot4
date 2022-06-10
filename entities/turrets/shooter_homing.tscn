@@ -5,13 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://cksqmaug7a01r" path="res://entities/turrets/assets/textures/gun_02.png" id="2_u4xo4"]
 [ext_resource type="PackedScene" uid="uid://co36u7aep2rr2" path="res://entities/bullets/homing/homing_missile.tscn" id="3_srgww"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vho0k"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0fnpw"]
 radius = 200.0
 
 [node name="ShooterHoming" instance=ExtResource( "1_wqn6v" )]
 position = Vector2(40, 32)
 script = ExtResource( "2_2x22q" )
 fire_rate = 5.0
+bullet_count = 2
 bullet_type = ExtResource( "3_srgww" )
 
 [node name="Gun" parent="." index="0"]
@@ -25,4 +26,9 @@ position = Vector2(-9, -4)
 position = Vector2(9, -4)
 
 [node name="CollisionShape2D" parent="Detector" index="0"]
-shape = SubResource( "CircleShape2D_vho0k" )
+shape = SubResource( "CircleShape2D_0fnpw" )
+
+[connection signal="area_entered" from="Gun/Muzzle/Missile1" to="Gun/Muzzle/Missile1" method="_on_bullet_area_entered"]
+[connection signal="body_entered" from="Gun/Muzzle/Missile1" to="Gun/Muzzle/Missile1" method="_on_bullet_body_entered"]
+[connection signal="area_entered" from="Gun/Muzzle2/Missile3" to="Gun/Muzzle2/Missile3" method="_on_bullet_area_entered"]
+[connection signal="body_entered" from="Gun/Muzzle2/Missile3" to="Gun/Muzzle2/Missile3" method="_on_bullet_body_entered"]

@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o87d8"]
 size = Vector2(48, 48)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wys7b"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_obbcd"]
 radius = 200.0
 
 [node name="Turret" type="CharacterBody2D"]
@@ -30,7 +30,7 @@ rotation = 1.5708
 bullet_type = ExtResource( "2_ahxch" )
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_wys7b" )
+shape = SubResource( "CircleShape2D_obbcd" )
 
 [node name="EntityHUD" parent="." instance=ExtResource( "5_owktb" )]
 offset_left = -31.0
