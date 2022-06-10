@@ -9,28 +9,28 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xx0lv"]
 texture = ExtResource( "1_6phi0" )
+region_rect = Rect2(0, 0, 190, 49)
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 10.0
 margin_bottom = 10.0
-region_rect = Rect2(0, 0, 190, 49)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u8cw5"]
 texture = ExtResource( "1_6phi0" )
+region_rect = Rect2(0, 0, 190, 49)
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 10.0
 margin_bottom = 10.0
-region_rect = Rect2(0, 0, 190, 49)
 modulate_color = Color(0.964706, 0.964706, 0.964706, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h53g5"]
 texture = ExtResource( "2_a7s8x" )
+region_rect = Rect2(0, 0, 190, 45)
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 10.0
 margin_bottom = 10.0
-region_rect = Rect2(0, 0, 190, 45)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d8fuc"]
 content_margin_left = 40.0
@@ -38,11 +38,11 @@ content_margin_top = 40.0
 content_margin_right = 40.0
 content_margin_bottom = 40.0
 texture = ExtResource( "3_v2b56" )
+region_rect = Rect2(0, 0, 100, 100)
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 1.0
 margin_bottom = 1.0
-region_rect = Rect2(0, 0, 100, 100)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_05ttp"]
 content_margin_left = 40.0
@@ -50,11 +50,11 @@ content_margin_top = 40.0
 content_margin_right = 40.0
 content_margin_bottom = 40.0
 texture = ExtResource( "3_v2b56" )
+region_rect = Rect2(0, 0, 100, 100)
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 1.0
 margin_bottom = 1.0
-region_rect = Rect2(0, 0, 100, 100)
 
 [sub_resource type="Font" id="Font_7jw7f"]
 data/0 = ExtResource( "4_v4gs5" )
