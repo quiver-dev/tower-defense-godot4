@@ -14,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
 size = Vector2(48, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wc3e2"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vau8a"]
 radius = 150.0
 
 [node name="Tank" instance=ExtResource( "1_o2qr5" )]
@@ -62,7 +62,7 @@ position = Vector2(32, -2)
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_wc3e2" )
+shape = SubResource( "CircleShape2D_vau8a" )
 
 [node name="NavigationAgent2D" parent="." index="4"]
 radius = 32.0

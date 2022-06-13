@@ -41,6 +41,7 @@ radius = 16.0
 neighbor_dist = 250.0
 time_horizon = 32.0
 path_max_distance = 20.0
+avoidance_enabled = true
 
 [node name="EntityHUD" parent="." instance=ExtResource( "7_dxylf" )]
 offset_left = -31.0

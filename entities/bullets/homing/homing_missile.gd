@@ -7,7 +7,7 @@ var acceleration: Vector2
 
 
 func _physics_process(delta: float) -> void:
-	if not target == null:  # as of alpha9, writing `if target` isn't working
+	if is_instance_valid(target):
 		acceleration += _steer()
 		velocity += acceleration * delta
 		velocity = velocity.limit_length(speed)
