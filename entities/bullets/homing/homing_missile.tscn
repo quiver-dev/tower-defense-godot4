@@ -9,3 +9,6 @@ script = ExtResource( "2_dm4fp" )
 speed = 350
 damage = 20
 steer_force = 40
+
+[node name="VisibleOnScreenEnabler2D" parent="." index="2"]
+scale = Vector2(28.8, 25.6)
