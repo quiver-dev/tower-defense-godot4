@@ -22,9 +22,11 @@ signal has_shot(reload_time: float)
 	set = set_bullet_count
 @export var bullet_type: PackedScene
 @export var bullet_spread: float = 0.2
+@export var kickback_intensity: int = 4  # amount of pixels the gun kicks back
 
 var targets: Array[Node2D]
 var can_shoot := true
+var kickback: Tween
 
 @onready var gun := $Gun as Sprite2D
 @onready var detector := $Detector as Area2D
@@ -56,6 +58,12 @@ func shoot() -> void:
 				gun.rotation + randf_range(-bullet_spread, bullet_spread))
 		bullet_container.add_child(bullet, true)
 	firerate_timer.start(fire_rate)
+	# play kickback animation
+	var delta_pos := Vector2(kickback_intensity, 0).rotated(gun.global_rotation)
+	kickback = get_tree().create_tween()
+	kickback.tween_property(gun, "position", gun.position - delta_pos, 0.0)
+	kickback.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	kickback.tween_property(gun, "position", Vector2.ZERO, 0.1)
 	# show reload time on HUD
 	emit_signal("has_shot", firerate_timer.wait_time)
 
@@ -85,3 +93,8 @@ func set_bullet_count(value: int) -> void:
 
 func _on_fire_rate_timer_timeout() -> void:
 	can_shoot = true
+
+
+func _on_shooter_tree_exiting() -> void:
+	if kickback:
+		kickback.kill()
