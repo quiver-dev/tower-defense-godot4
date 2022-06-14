@@ -14,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
 size = Vector2(48, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vau8a"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hsg6w"]
 radius = 150.0
 
 [node name="Tank" instance=ExtResource( "1_o2qr5" )]
@@ -50,6 +50,7 @@ fire_rate = 3.0
 rot_speed = 1.0
 bullet_type = ExtResource( "3_kr1yu" )
 bullet_spread = 0.1
+kickback_intensity = 8
 
 [node name="Gun" parent="Shooter" index="0"]
 texture = ExtResource( "3_5q5gj" )
@@ -62,7 +63,7 @@ position = Vector2(32, -2)
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_vau8a" )
+shape = SubResource( "CircleShape2D_hsg6w" )
 
 [node name="NavigationAgent2D" parent="." index="4"]
 radius = 32.0
