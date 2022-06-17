@@ -18,14 +18,37 @@ A 2D tile-based tower defense game built using Godot 4.0 alpha.
 	- Physics bodies, including the new `CharacterBody2D`
 - Signals
 - Class inheritance
+- Scene composition (or *aggregation*)
 - Character movement
 - Collision detection
 - AI implementing the Finite State Machine (FSM) pattern and states
 - Following Godot's [best practices](https://docs.godotengine.org/en/latest/tutorials/best_practices/index.html)
+- Creating UI **themes** with the built-in Theme Editor
 
 ## Code style and guidelines
 The code will be written using static typing whenever possible and
 following the official GDScript [style guide](https://docs.godotengine.org/en/latest/tutorials/scripting/gdscript/gdscript_styleguide.html).
+
+Every asset will be named using *snake_case* for usability.
+`snake_case` means the first letter of each word is written in lowercase and spaces are replaced by underscores `_`.
+
+The following convention will be used: `entity_animation_xx` where *entity* is the entity itself (e.g. _turret_, _player_, *muzzle_flash* etc.), 
+*animation* refers to the type of animation and _xx_ are numbers indicating the sprite's order in the animation (starting from 00). 
+Examples: `infantry_idle_00.png`, `infantry_idle_01.png`, `explosion_13.png`, `infantry_move_00.png`, etc.
+Optionally, `entity` can be omitted if its sprites are in a folder named after the entity itself. 
+For example, if we have tanks and infantry, we could have the following folder structure:
+```
+tank/idle_00.png
+tank/idle_01.png
+tank/move_00.png
+tank/move_01.png
+...
+infantry/idle_00.png
+...
+infantry/move_00.png
+...
+```
+`animation` can also be omitted in case an entity only has one animation (e.g. a bullet flash or an explosion).
 
 ## LFS
 This project uses Git Large File Storage (LFS) to store asset binaries.
