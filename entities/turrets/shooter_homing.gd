@@ -20,7 +20,7 @@ func shoot() -> void:
 	muzzle.remove_child(bullet)
 	bullet_container.add_child(bullet, true)
 	bullet.start(muzzle.global_position,
-			gun.rotation + randf_range(-bullet_spread, bullet_spread),
+			rotation + randf_range(-bullet_spread, bullet_spread),
 			targets.front())
 	firerate_timer.start(fire_rate)
 	muzzle_idx = _wrap_index(muzzle_idx + 1, bullet_count)

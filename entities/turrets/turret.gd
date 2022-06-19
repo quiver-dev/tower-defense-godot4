@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if shooter.targets:
-		if shooter.can_shoot:
+		if shooter.can_shoot and shooter.lookahead.is_colliding():
 			shooter.shoot()
 
 

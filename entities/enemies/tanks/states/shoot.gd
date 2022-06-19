@@ -3,11 +3,6 @@ extends State
 
 func enter() -> void:
 	(owner as Enemy).stop()
-	(owner as Tank).shooter.can_rotate = true
-
-
-func exit() -> void:
-	(owner as Tank).shooter.can_rotate = false
 
 
 func update(_delta: float) -> void:

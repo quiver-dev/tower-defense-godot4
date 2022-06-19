@@ -26,14 +26,13 @@ signal has_shot(reload_time: float)
 
 var targets: Array[Node2D]
 var can_shoot := true
-var can_rotate := true
 var kickback: Tween
 
 @onready var gun := $Gun as Sprite2D
 @onready var detector := $Detector as Area2D
 @onready var detector_coll := $Detector/CollisionShape2D as CollisionShape2D
 @onready var detector_shape := CircleShape2D.new()
-@onready var lookahead  := $Gun/LookAhead as RayCast2D
+@onready var lookahead  := $LookAhead as RayCast2D
 @onready var bullet_container := $BulletContainer as Node
 @onready var firerate_timer := $FireRateTimer as Timer
 
@@ -49,11 +48,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# update draw
 	update()
-	# handle the gun rotation
-	if not targets.is_empty() and can_rotate:
+	if not targets.is_empty():
+		# handle the gun rotation
 		var target_pos: Vector2 = targets.front().global_position
 		var target_rot: float = global_position.direction_to(target_pos).angle()
-		gun.rotation = lerp_angle(gun.rotation, target_rot, rot_speed * delta)
+		rotation = lerp_angle(rotation, target_rot, rot_speed * delta)
 
 
 func _draw() -> void:
@@ -65,11 +64,11 @@ func shoot() -> void:
 	for _muzzle in gun.get_children():
 		var bullet: Bullet = bullet_type.instantiate()
 		bullet.start(_muzzle.global_position,
-				gun.rotation + randf_range(-bullet_spread, bullet_spread))
+				rotation + randf_range(-bullet_spread, bullet_spread))
 		bullet_container.add_child(bullet, true)
 	firerate_timer.start(fire_rate)
 	# play kickback animation
-	var delta_pos := Vector2(kickback_intensity, 0).rotated(gun.global_rotation)
+	var delta_pos := Vector2(kickback_intensity, 0).rotated(gun.rotation)
 	kickback = get_tree().create_tween()
 	kickback.tween_property(gun, "position", gun.position - delta_pos, 0.0)
 	kickback.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)

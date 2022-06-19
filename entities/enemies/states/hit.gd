@@ -23,7 +23,6 @@ func enter() -> void:
 	(owner as Enemy).speed -= int((owner as Enemy).speed * slowdown_percentage)
 	prev_state = (owner as Enemy).get_fsm().states_stack.back()
 	timer.start(state_duration)
-	print("slowed speed: ", (owner as Enemy).speed)
 
 
 # Restore original speed
