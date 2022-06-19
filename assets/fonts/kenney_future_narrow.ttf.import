@@ -12,7 +12,9 @@ dest_files=["res://.godot/imported/kenney_future_narrow.ttf-3f53f9c8bf68abfb26e5
 
 [params]
 
+face_index=0
 antialiased=true
+generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
