@@ -15,12 +15,8 @@ func _ready() -> void:
 	hud.state_label.hide()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if shooter.targets:
-		var target_pos: Vector2 = shooter.targets.front().global_position
-		var target_rot: float = global_position.direction_to(target_pos).angle()
-		shooter.gun.rotation = lerp_angle(shooter.gun.rotation,
-				target_rot, shooter.rot_speed * delta)
 		if shooter.can_shoot:
 			shooter.shoot()
 

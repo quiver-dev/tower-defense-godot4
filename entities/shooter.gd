@@ -26,12 +26,14 @@ signal has_shot(reload_time: float)
 
 var targets: Array[Node2D]
 var can_shoot := true
+var can_rotate := true
 var kickback: Tween
 
 @onready var gun := $Gun as Sprite2D
 @onready var detector := $Detector as Area2D
 @onready var detector_coll := $Detector/CollisionShape2D as CollisionShape2D
 @onready var detector_shape := CircleShape2D.new()
+@onready var lookahead  := $Gun/LookAhead as RayCast2D
 @onready var bullet_container := $BulletContainer as Node
 @onready var firerate_timer := $FireRateTimer as Timer
 
@@ -40,10 +42,18 @@ func _ready() -> void:
 	# initialize detector's shape
 	detector_shape.radius = detect_radius
 	detector_coll.shape = detector_shape
+	# initialize raycast's length
+	lookahead.target_position.x = detect_radius
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	# update draw
 	update()
+	# handle the gun rotation
+	if not targets.is_empty() and can_rotate:
+		var target_pos: Vector2 = targets.front().global_position
+		var target_rot: float = global_position.direction_to(target_pos).angle()
+		gun.rotation = lerp_angle(gun.rotation, target_rot, rot_speed * delta)
 
 
 func _draw() -> void:
@@ -72,6 +82,7 @@ func set_detect_radius(value: int) -> void:
 	detect_radius = value
 	if detector_shape:
 		detector_shape.radius = detect_radius
+		lookahead.target_position.x = detect_radius
 
 
 # WARN: because of https://github.com/godotengine/godot/issues/60168, I need

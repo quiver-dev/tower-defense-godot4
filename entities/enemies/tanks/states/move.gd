@@ -1,12 +1,16 @@
 extends "res://entities/enemies/states/move.gd"
 
 
+func enter() -> void:
+	(owner as Tank).shooter.can_rotate = true
+
+
+func exit() -> void:
+	(owner as Tank).shooter.can_rotate = false
+
+
 func update(delta: float) -> void:
 	super.update(delta)
-	(owner as Tank).shooter.gun.rotation = lerp_angle(
-			(owner as Tank).shooter.gun.rotation, 
-			(owner as Tank).velocity.angle(),
-			(owner as Tank).shooter.rot_speed * delta)
 	if (owner as Tank).is_raycast_colliding():
 		emit_signal("finished", "idle")
 

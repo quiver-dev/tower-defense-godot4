@@ -3,14 +3,14 @@ extends State
 
 func enter() -> void:
 	(owner as Enemy).stop()
+	(owner as Tank).shooter.can_rotate = true
 
 
-func update(delta: float) -> void:
-	var target_pos: Vector2 = (owner as Tank).shooter.targets.front().global_position
-	var target_rot: float = (owner as Tank).global_position.direction_to(target_pos).angle()
-	(owner as Tank).shooter.gun.rotation = lerp_angle(
-			(owner as Tank).shooter.gun.rotation,
-			target_rot, (owner as Tank).shooter.rot_speed * delta)
+func exit() -> void:
+	(owner as Tank).shooter.can_rotate = false
+
+
+func update(_delta: float) -> void:
 	if (owner as Tank).shooter.can_shoot:
 		(owner as Tank).shooter.shoot()
 

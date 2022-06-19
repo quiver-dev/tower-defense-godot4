@@ -14,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
 size = Vector2(48, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_50qin"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgpmy"]
 radius = 150.0
 
 [node name="Tank" instance=ExtResource( "1_o2qr5" )]
@@ -59,11 +59,14 @@ offset = Vector2(0, 0)
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
 position = Vector2(32, -2)
 
+[node name="LookAhead" parent="Shooter/Gun" index="1"]
+target_position = Vector2(150, 0)
+
 [node name="Detector" parent="Shooter" index="1"]
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_50qin" )
+shape = SubResource( "CircleShape2D_vgpmy" )
 
 [node name="NavigationAgent2D" parent="." index="4"]
 radius = 32.0
