@@ -102,7 +102,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/theme_switcher/plugin.cfg")
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
 
 [input]
 

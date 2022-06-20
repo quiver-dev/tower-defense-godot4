@@ -2,17 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://bd8d3ni18y5j3" path="res://entities/turrets/turret.tscn" id="1_vd0th"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_w4x6w"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_w2twk"]
 radius = 350.0
 
 [node name="TurretL1" instance=ExtResource( "1_vd0th" )]
 
 [node name="Shooter" parent="." index="2"]
-rotation = 0.0
 detect_radius = 350
 bullet_spread = 0.1
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_w4x6w" )
+shape = SubResource( "CircleShape2D_w2twk" )
+
+[node name="LookAhead" parent="Shooter" index="2"]
+target_position = Vector2(350, 0)
 
 [editable path="Shooter"]
