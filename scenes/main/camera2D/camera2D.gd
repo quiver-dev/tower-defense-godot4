@@ -7,7 +7,7 @@ extends Camera2D
 
 const MIN_ZOOM: float = 0.1
 const MAX_ZOOM: float = 1.0
-const ZOOM_RATE: float = 8.0
+const ZOOM_RATE: float = 32.0
 const ZOOM_DELTA: float = 0.1
 
 var target_zoom: float = 1.0

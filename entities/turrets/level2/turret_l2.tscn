@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dfd8j44jt40rw" path="res://entities/turrets/assets/textures/base_01.png" id="2_5txqx"]
 [ext_resource type="Texture2D" uid="uid://b3eye6kgwapmk" path="res://entities/turrets/assets/textures/gun_01.png" id="3_3dj31"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nh7cj"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_43ahf"]
 radius = 250.0
 
 [node name="TurretL2" instance=ExtResource( "1_3mb3l" )]
@@ -30,7 +30,7 @@ position = Vector2(40, -6)
 position = Vector2(40, 6)
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_nh7cj" )
+shape = SubResource( "CircleShape2D_43ahf" )
 
 [node name="LookAhead" parent="Shooter" index="2"]
 target_position = Vector2(250, 0)
