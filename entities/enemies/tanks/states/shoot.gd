@@ -6,7 +6,8 @@ func enter() -> void:
 
 
 func update(_delta: float) -> void:
-	if (owner as Tank).shooter.can_shoot:
+	if (owner as Tank).shooter.can_shoot and \
+			(owner as Tank).shooter.lookahead.is_colliding():
 		(owner as Tank).shooter.shoot()
 
 

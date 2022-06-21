@@ -14,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
 size = Vector2(48, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mahvg"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2soqs"]
 radius = 150.0
 
 [node name="Tank" instance=ExtResource( "1_o2qr5" )]
@@ -63,7 +63,7 @@ position = Vector2(32, -2)
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_mahvg" )
+shape = SubResource( "CircleShape2D_2soqs" )
 
 [node name="LookAhead" parent="Shooter" index="2"]
 target_position = Vector2(150, 0)
@@ -73,7 +73,6 @@ collision_mask = 18
 radius = 32.0
 neighbor_dist = 100.0
 max_speed = 300.0
-path_max_distance = 40.0
 
 [node name="LookAhead1" type="RayCast2D" parent="." index="6"]
 position = Vector2(0, -16)
