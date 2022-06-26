@@ -28,8 +28,8 @@ func _on_spawn_timer_timeout() -> void:
 	# spawn an enemy
 	var prob := randi_range(1, 10)
 	var enemy: Enemy = load(ENEMY_PATH.plus_file("tanks/tank.tscn" \
-			if prob < 2 else "enemy.tscn")).instantiate()
-	enemies.add_child(enemy, true)
+			if prob < 2 else "infantry/infantry_t1.tscn")).instantiate()
+	enemies.add_child(enemy)
 	enemy.move_to(objective_pos)
 	# reduce enemy count and repeat if necessary
 	enemy_count -= 1

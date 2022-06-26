@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://co36u7aep2rr2" path="res://entities/bullets/homing/homing_missile.tscn" id="3_u6k60"]
 [ext_resource type="Texture2D" uid="uid://cksqmaug7a01r" path="res://entities/turrets/assets/textures/gun_02.png" id="4_4sbiv"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_j6xs0"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hcxk"]
 radius = 500.0
 
 [node name="TurretL3" instance=ExtResource( "1_6shn0" )]
@@ -32,7 +32,7 @@ position = Vector2(5, 9)
 rotation = 1.5708
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_j6xs0" )
+shape = SubResource( "CircleShape2D_0hcxk" )
 
 [node name="LookAhead" parent="Shooter" index="2"]
 target_position = Vector2(500, 0)

@@ -13,7 +13,7 @@ const RED_BAR := preload("res://assets/textures/red_bar.png")
 @export var speed: int = 300
 
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
-@onready var sprite := $Sprite2D as Sprite2D
+@onready var sprite := $Sprite2D as AnimatedSprite2D
 @onready var collision := $CollisionShape2D as CollisionShape2D
 @onready var hud := $EntityHUD as EntityHud
 
@@ -57,6 +57,11 @@ func stop() -> void:
 	if velocity == Vector2.ZERO:
 		return
 	nav_agent.set_velocity(Vector2.ZERO)
+
+
+func apply_animation(anim_name: String) -> void:
+	if sprite:
+		sprite.play(anim_name)
 
 
 func get_fsm() -> StateMachine:

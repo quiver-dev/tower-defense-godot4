@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvuetxoyichc3"
-path="res://.godot/imported/move_00.png-12d761ea89c889c4ebd5ea90e2063990.ctex"
+uid="uid://bugl2ged0xisq"
+path="res://.godot/imported/move_06.png-a8e1098cd642dd847073e7d382c7f086.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemies/infantry/assets/textures/tier1/tier1/move_00.png"
-dest_files=["res://.godot/imported/move_00.png-12d761ea89c889c4ebd5ea90e2063990.ctex"]
+source_file="res://entities/enemies/infantry/assets/textures/tier1/move_06.png"
+dest_files=["res://.godot/imported/move_06.png-a8e1098cd642dd847073e7d382c7f086.ctex"]
 
 [params]
 

@@ -17,6 +17,7 @@ const STATES_STACK_COUNT := 2
 #		"hit": $Hit,
 #	}
 func _ready() -> void:
+	super()
 	for node in get_children():
 		states_map[String(node.name).to_lower()] = node
 

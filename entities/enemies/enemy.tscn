@@ -1,15 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://28egx1tgd44c"]
+[gd_scene load_steps=10 format=3 uid="uid://28egx1tgd44c"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
 [ext_resource type="Script" path="res://entities/enemies/states/move.gd" id="3_juveh"]
 [ext_resource type="Script" path="res://entities/enemies/states/idle.gd" id="4_vk1wn"]
 [ext_resource type="Script" path="res://entities/enemies/states/hit.gd" id="5_t30j3"]
-[ext_resource type="Texture2D" uid="uid://by5hmlojnbruq" path="res://entities/enemies/assets/textures/infantry_00.png" id="6_vda5g"]
+[ext_resource type="Texture2D" uid="uid://6ouf3x1nqfpw" path="res://entities/enemies/infantry/assets/textures/tier1/idle_00.png" id="6_5wdx0"]
 [ext_resource type="PackedScene" uid="uid://fposufd3xex3" path="res://interfaces/HUD/entity_hud.tscn" id="7_dxylf"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_6olqj"]
+animations = [{
+"frames": [ExtResource( "6_5wdx0" )],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [ExtResource( "6_5wdx0" )],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b4bn"]
-size = Vector2(16, 32)
+size = Vector2(48, 48)
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_mask = 7
@@ -29,8 +47,10 @@ script = ExtResource( "4_vk1wn" )
 [node name="Hit" type="Node" parent="StateMachine"]
 script = ExtResource( "5_t30j3" )
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource( "6_vda5g" )
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+frames = SubResource( "SpriteFrames_6olqj" )
+animation = &"move"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( "RectangleShape2D_7b4bn" )
@@ -42,9 +62,9 @@ avoidance_enabled = true
 
 [node name="EntityHUD" parent="." instance=ExtResource( "7_dxylf" )]
 offset_left = -31.0
-offset_top = -72.0
+offset_top = -75.0
 offset_right = -31.0
-offset_bottom = -72.0
+offset_bottom = -75.0
 
 [connection signal="state_changed" from="StateMachine" to="." method="_on_state_machine_state_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="StateMachine/Move" method="_on_navigation_agent_2d_target_reached"]

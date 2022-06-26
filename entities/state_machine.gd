@@ -26,9 +26,7 @@ var states_stack: Array[Object] = []
 var current_state: State = null
 
 
-# WARN: using this instead of _ready because for some reason _physics_process
-# and _*input get called before _ready. Check if this is alpha-related
-func _enter_tree() -> void:
+func _ready() -> void:
 	for state_node in get_children():
 		state_node.finished.connect(_change_state)
 	initialize(START_STATE)
