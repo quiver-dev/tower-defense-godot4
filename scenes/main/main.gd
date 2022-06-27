@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var objective := $Objective as Area2D
+@onready var tower := $Tower as Area2D
 @onready var spawner := $Spawner as Spawner
 @onready var camera := $Camera2D as Camera2D
 @onready var tilemap := $TileMap as TileMap
@@ -9,7 +9,7 @@ extends Node2D
 
 func _ready() -> void:
 	# start spawning enemies
-	spawner.start(objective.global_position)
+	spawner.start(tower.global_position)
 	# initialize camera
 #	var map_limits := tilemap.get_used_rect()
 #	var cell_size := tilemap.tile_set.tile_size

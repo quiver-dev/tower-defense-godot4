@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwer3dublskmw"]
+[gd_scene load_steps=7 format=3 uid="uid://bjrisn2h7wm10"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_emp5r"]
 [ext_resource type="TileSet" uid="uid://rswkry406j5l" path="res://scenes/main/assets/tilesets/field.tres" id="2_pffaj"]
 [ext_resource type="PackedScene" path="res://scenes/main/camera2D/camera2D.tscn" id="3_o2ded"]
-[ext_resource type="PackedScene" uid="uid://d2n5cwp06kslg" path="res://scenes/main/objective/objective.tscn" id="4_e3sfc"]
+[ext_resource type="PackedScene" uid="uid://dkfo0baxvyvf1" path="res://scenes/main/tower/tower.tscn" id="4_e3sfc"]
 [ext_resource type="Script" path="res://scenes/main/spawner.gd" id="5_q7jfg"]
 [ext_resource type="PackedScene" uid="uid://bxk8oojwxk051" path="res://scenes/main/turret_slot/turret_slot.tscn" id="6_m5pyv"]
 
@@ -26,8 +26,8 @@ layer_1/tile_data = PackedInt32Array(262133, 196609, 3, 196598, 65537, 3, 393207
 [node name="Camera2D" parent="." instance=ExtResource( "3_o2ded" )]
 position = Vector2(-376, 464)
 
-[node name="Objective" parent="." instance=ExtResource( "4_e3sfc" )]
-position = Vector2(1400, 352)
+[node name="Tower" parent="." instance=ExtResource( "4_e3sfc" )]
+position = Vector2(1408, 320)
 
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(-1272, 1032)

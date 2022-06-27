@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bacxhbiimsfh8"]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://scenes/test/test.gd" id="1_antun"]
 [ext_resource type="TileSet" uid="uid://cfbpq32p4dvj7" path="res://scenes/main/assets/tilesets/main.tres" id="1_k6svi"]
 [ext_resource type="PackedScene" path="res://scenes/main/camera2D/camera2D.tscn" id="3_7cmxw"]
-[ext_resource type="PackedScene" uid="uid://h6a1ygs71vw0" path="res://entities/enemies/enemy.tscn" id="4_hyw7m"]
+[ext_resource type="PackedScene" uid="uid://28egx1tgd44c" path="res://entities/enemies/enemy.tscn" id="4_hyw7m"]
 [ext_resource type="Texture2D" uid="uid://d16nmbx5gc1dq" path="res://entities/enemies/assets/textures/tank_base_00.png" id="5_h43uo"]
-[ext_resource type="PackedScene" uid="uid://d2n5cwp06kslg" path="res://scenes/main/objective/objective.tscn" id="6_r1nlv"]
-[ext_resource type="PackedScene" uid="uid://80vo8aqytvq1" path="res://entities/enemies/tanks/tank.tscn" id="6_y4ox6"]
+[ext_resource type="PackedScene" path="res://scenes/main/tower/tower.tscn" id="6_r1nlv"]
+[ext_resource type="PackedScene" uid="uid://cykm8dqj2remm" path="res://entities/enemies/tanks/tank.tscn" id="6_y4ox6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qjwl"]
 size = Vector2(48, 32)
