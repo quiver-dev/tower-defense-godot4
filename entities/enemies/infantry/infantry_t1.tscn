@@ -36,6 +36,3 @@ animations = [{
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource( "SpriteFrames_hgfy3" )
 frame = 4
-
-[node name="NavigationAgent2D" parent="." index="3"]
-radius = 45.0

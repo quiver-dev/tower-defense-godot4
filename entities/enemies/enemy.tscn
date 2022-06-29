@@ -1,21 +1,31 @@
-[gd_scene load_steps=10 format=3 uid="uid://28egx1tgd44c"]
+[gd_scene load_steps=20 format=3 uid="uid://28egx1tgd44c"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
 [ext_resource type="Script" path="res://entities/enemies/states/move.gd" id="3_juveh"]
 [ext_resource type="Script" path="res://entities/enemies/states/idle.gd" id="4_vk1wn"]
 [ext_resource type="Script" path="res://entities/enemies/states/hit.gd" id="5_t30j3"]
-[ext_resource type="Texture2D" uid="uid://6ouf3x1nqfpw" path="res://entities/enemies/infantry/assets/textures/tier1/idle_00.png" id="6_5wdx0"]
+[ext_resource type="Texture2D" uid="uid://c2kw4wa37hx6d" path="res://entities/enemies/infantry/assets/textures/tier2/tier2/idle_00.png" id="6_ic7wi"]
 [ext_resource type="PackedScene" uid="uid://fposufd3xex3" path="res://interfaces/HUD/entity_hud.tscn" id="7_dxylf"]
+[ext_resource type="Texture2D" uid="uid://qf1r4mreb4qp" path="res://entities/enemies/infantry/assets/textures/tier2/tier2/move_00.png" id="7_p5ao0"]
+[ext_resource type="Texture2D" uid="uid://b062p8m3h458m" path="res://entities/enemies/infantry/assets/textures/tier2/tier2/move_01.png" id="8_bl5vh"]
+[ext_resource type="Texture2D" uid="uid://b06tl5ljmiq8s" path="res://entities/enemies/infantry/assets/textures/tier2/tier2/move_02.png" id="9_j8c11"]
+[ext_resource type="Texture2D" uid="uid://donh5td74jb72" path="res://entities/enemies/infantry/assets/textures/tier2/tier2/move_03.png" id="10_irr8p"]
+[ext_resource type="Texture2D" uid="uid://kl7ls2paa0h8" path="res://entities/enemies/infantry/assets/textures/tier2/tier2/move_04.png" id="11_83b1a"]
+[ext_resource type="Texture2D" uid="uid://dvq2mk1c5pdhw" path="res://entities/enemies/infantry/assets/textures/tier2/tier2/move_05.png" id="12_7n4yk"]
+[ext_resource type="Texture2D" uid="uid://d15r580h16qdq" path="res://entities/enemies/infantry/assets/textures/tier2/tier2/move_06.png" id="13_ciwdb"]
+[ext_resource type="Texture2D" uid="uid://btghqfuy68bb2" path="res://entities/enemies/infantry/assets/textures/tier2/tier2/move_07.png" id="14_vd38d"]
+[ext_resource type="Texture2D" uid="uid://b8d5grglo2sxu" path="res://entities/enemies/infantry/assets/textures/tier2/tier2/move_08.png" id="15_pu376"]
+[ext_resource type="Texture2D" uid="uid://b8m8dcmidlgi3" path="res://entities/enemies/infantry/assets/textures/tier2/tier2/move_09.png" id="16_dgf2x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6olqj"]
 animations = [{
-"frames": [ExtResource( "6_5wdx0" )],
+"frames": [ExtResource( "6_ic7wi" )],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource( "6_5wdx0" )],
+"frames": [ExtResource( "7_p5ao0" ), ExtResource( "8_bl5vh" ), ExtResource( "9_j8c11" ), ExtResource( "10_irr8p" ), ExtResource( "11_83b1a" ), ExtResource( "12_7n4yk" ), ExtResource( "13_ciwdb" ), ExtResource( "14_vd38d" ), ExtResource( "15_pu376" ), ExtResource( "16_dgf2x" )],
 "loop": true,
 "name": &"move",
 "speed": 5.0
@@ -50,6 +60,7 @@ script = ExtResource( "5_t30j3" )
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 frames = SubResource( "SpriteFrames_6olqj" )
 animation = &"move"
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -57,7 +68,7 @@ shape = SubResource( "RectangleShape2D_7b4bn" )
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 2.5
-radius = 16.0
+radius = 48.0
 avoidance_enabled = true
 
 [node name="EntityHUD" parent="." instance=ExtResource( "7_dxylf" )]
