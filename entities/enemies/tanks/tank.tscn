@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cykm8dqj2remm"]
 
-[ext_resource type="PackedScene" uid="uid://28egx1tgd44c" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
+[ext_resource type="PackedScene" uid="uid://35uxlbs6h5dh" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
 [ext_resource type="Texture2D" uid="uid://d16nmbx5gc1dq" path="res://entities/enemies/assets/textures/tank_base_00.png" id="2_qerlr"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/tank.gd" id="2_ri3h6"]
 [ext_resource type="Texture2D" uid="uid://hub72po6nwk6" path="res://entities/enemies/assets/textures/tank_turret_00.png" id="3_5q5gj"]
@@ -37,7 +37,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
 size = Vector2(48, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ojxsa"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_yopeq"]
 radius = 150.0
 
 [node name="Tank" instance=ExtResource( "1_o2qr5" )]
@@ -92,7 +92,7 @@ position = Vector2(32, -2)
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_ojxsa" )
+shape = SubResource( "CircleShape2D_yopeq" )
 
 [node name="LookAhead" parent="Shooter" index="2"]
 target_position = Vector2(150, 0)
