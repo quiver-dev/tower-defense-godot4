@@ -60,7 +60,7 @@ script = ExtResource( "5_t30j3" )
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 frames = SubResource( "SpriteFrames_6olqj" )
 animation = &"move"
-frame = 7
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

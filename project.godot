@@ -94,6 +94,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://assets/scripts/global.gd"
+Scenes="*res://assets/scripts/scenes.gd"
 
 [display]
 
@@ -102,7 +103,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
 
 [input]
 

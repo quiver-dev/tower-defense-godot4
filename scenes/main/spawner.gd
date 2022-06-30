@@ -2,16 +2,20 @@ class_name Spawner
 extends Node2D
 
 
-const ENEMY_PATH := "res://entities/enemies/"
 const INITIAL_WAIT := 5.0  # amount of seconds to wait before starting
 
 @export_range(0.5, 5.0, 0.5) var spawn_rate: float = 2.0
 @export var enemy_count: int = 10
+@export var enemies: Dictionary = {
+	"infantry_t1": 45,  # higher probability of spawn
+	"infantry_t2": 40,
+	"tank": 15,
+}
 
 var objective_pos: Vector2
 
 @onready var spawn_timer := $SpawnTimer as Timer
-@onready var enemies := $Enemies as Node2D
+@onready var enemy_container := $EnemyContainer as Node2D
 
 
 # Called once by parent scene when ready
@@ -26,10 +30,9 @@ func _start_timer() -> void:
 
 func _on_spawn_timer_timeout() -> void:
 	# spawn an enemy
-	var prob := randi_range(1, 10)
-	var enemy: Enemy = load(ENEMY_PATH.plus_file("tanks/tank.tscn" \
-			if prob < 2 else "infantry/infantry_t2.tscn")).instantiate()
-	enemies.add_child(enemy)
+	var chosen_enemy_path := Scenes.get_enemy_path(_spawn_item())
+	var enemy: Enemy = load(chosen_enemy_path).instantiate()
+	enemy_container.add_child(enemy)
 	enemy.move_to(objective_pos)
 	# reduce enemy count and repeat if necessary
 	enemy_count -= 1
@@ -37,3 +40,19 @@ func _on_spawn_timer_timeout() -> void:
 		_start_timer()
 	else:
 		spawn_timer.stop()
+
+
+# Implementation of the Cumulative Distribution Algorithm, used to spawn 
+# things randomly based on weight
+func _spawn_item() -> String:
+	var tot_probability: int = 0
+	for key in enemies.keys():
+		tot_probability += enemies[key]
+	var rand_number = randi_range(0, tot_probability)
+	var item: String
+	for key in enemies.keys():
+		if rand_number < enemies[key]:
+			item = key
+			break
+		rand_number -= enemies[key]
+	return item

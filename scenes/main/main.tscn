@@ -24,7 +24,7 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(262133, 196609, 3, 196598, 65537, 3, 393207, 393217, 2, -262148, 262145, 3, 65533, 393217, 1, 196606, 393217, 0, -196605, 262145, 3, 3, 327681, 2, -262138, 393217, 1, 131080, 1, 3, 393227, 131073, 3, -196596, 393217, 3, -327667, 393217, 2, -131083, 393217, 3, -11, 262145, 3, 720885, 327681, 2, -262154, 393217, 3, -262147, 327681, 2, 589827, 65537, 3, -327671, 131073, 3, 655369, 196609, 3, 196619, 262145, 3, 589835, 393217, 3, 327692, 393217, 2, 589836, 393217, 1, 65549, 393217, 0, 458765, 327681, 1, 262136, 1, 3, 65537, 1, 3, 327681, 1, 3, 589822, 1, 3, 589815, 262145, 3, 327685, 262145, 3, 262153, 262145, 3, 65546, 1, 3)
 
 [node name="Camera2D" parent="." instance=ExtResource( "3_o2ded" )]
-position = Vector2(-376, 464)
+position = Vector2(-832, 984)
 
 [node name="Tower" parent="." instance=ExtResource( "4_e3sfc" )]
 position = Vector2(1408, 320)
@@ -38,7 +38,7 @@ enemy_count = 50
 [node name="SpawnTimer" type="Timer" parent="Spawner"]
 one_shot = true
 
-[node name="Enemies" type="Node2D" parent="Spawner"]
+[node name="EnemyContainer" type="Node2D" parent="Spawner"]
 
 [node name="TurretSlots" type="Node2D" parent="."]
 

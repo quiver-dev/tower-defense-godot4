@@ -8,6 +8,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	randomize()
 	# start spawning enemies
 	spawner.start(tower.global_position)
 	# initialize camera
