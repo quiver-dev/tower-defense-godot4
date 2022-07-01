@@ -35,4 +35,4 @@ animations = [{
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource( "SpriteFrames_hgfy3" )
-frame = 2
+frame = 8

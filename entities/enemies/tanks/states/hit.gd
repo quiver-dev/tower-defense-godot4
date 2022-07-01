@@ -4,5 +4,11 @@ extends "res://entities/enemies/states/hit.gd"
 
 
 func enter() -> void:
-	prev_state = (owner as Enemy).get_fsm().states_stack.back()
-	timer.start(state_duration)
+	super.enter()
+	# freeze the reload time for the duration of this state
+	(owner as Tank).shooter.set_firerate_timer_paused(true)
+
+
+func exit() -> void:
+	super.exit()
+	(owner as Tank).shooter.set_firerate_timer_paused(false)

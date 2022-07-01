@@ -77,6 +77,12 @@ func shoot() -> void:
 	emit_signal("has_shot", firerate_timer.wait_time)
 
 
+# Could be called by enemy states, e.g. to freeze the tank's reload time
+# when hit.
+func set_firerate_timer_paused(value: bool) -> void:
+	firerate_timer.paused = value
+
+
 func set_detect_radius(value: int) -> void:
 	detect_radius = value
 	if detector_shape:
