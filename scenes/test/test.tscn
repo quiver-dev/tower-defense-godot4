@@ -1,15 +1,11 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://k073sdcqs28c"]
 
 [ext_resource type="Script" path="res://scenes/test/test.gd" id="1_antun"]
 [ext_resource type="TileSet" uid="uid://cfbpq32p4dvj7" path="res://scenes/main/assets/tilesets/main.tres" id="1_k6svi"]
 [ext_resource type="PackedScene" path="res://scenes/main/camera2D/camera2D.tscn" id="3_7cmxw"]
-[ext_resource type="PackedScene" uid="uid://28egx1tgd44c" path="res://entities/enemies/enemy.tscn" id="4_hyw7m"]
-[ext_resource type="Texture2D" uid="uid://d16nmbx5gc1dq" path="res://entities/enemies/assets/textures/tank_base_00.png" id="5_h43uo"]
-[ext_resource type="PackedScene" path="res://scenes/main/tower/tower.tscn" id="6_r1nlv"]
-[ext_resource type="PackedScene" uid="uid://cykm8dqj2remm" path="res://entities/enemies/tanks/tank.tscn" id="6_y4ox6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qjwl"]
-size = Vector2(48, 32)
+[ext_resource type="PackedScene" uid="uid://35uxlbs6h5dh" path="res://entities/enemies/enemy.tscn" id="4_hyw7m"]
+[ext_resource type="PackedScene" uid="uid://dkfo0baxvyvf1" path="res://scenes/main/tower/tower.tscn" id="6_r1nlv"]
+[ext_resource type="PackedScene" uid="uid://eolbdcvr16fc" path="res://entities/enemies/tanks/tank.tscn" id="6_y4ox6"]
 
 [node name="Test" type="Node2D"]
 script = ExtResource( "1_antun" )
@@ -30,42 +26,6 @@ layer_1/tile_data = PackedInt32Array(393213, 1114113, 5, 720893, 983041, 5, 6553
 
 [node name="Camera2D" parent="." instance=ExtResource( "3_7cmxw" )]
 position = Vector2(448, 416)
-
-[node name="Obstacle" type="StaticBody2D" parent="."]
-position = Vector2(232, 40)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Obstacle"]
-texture = ExtResource( "5_h43uo" )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
-shape = SubResource( "RectangleShape2D_6qjwl" )
-
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacle"]
-
-[node name="Obstacle2" type="StaticBody2D" parent="."]
-position = Vector2(928, 384)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Obstacle2"]
-texture = ExtResource( "5_h43uo" )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle2"]
-shape = SubResource( "RectangleShape2D_6qjwl" )
-
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacle2"]
-
-[node name="Obstacle4" type="StaticBody2D" parent="."]
-position = Vector2(584, 384)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Obstacle4"]
-texture = ExtResource( "5_h43uo" )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle4"]
-shape = SubResource( "RectangleShape2D_6qjwl" )
-
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacle4"]
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(16, 576)

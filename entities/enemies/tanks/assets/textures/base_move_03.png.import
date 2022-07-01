@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c16f5de181msg"
-path="res://.godot/imported/tank_muzzleflash_00.png-bf618281c94d21db73c5114f2b1b36c8.ctex"
+uid="uid://bxyr6p43d0kka"
+path="res://.godot/imported/base_move_03.png-af7c1787df2948a1ca3ea42a627b84b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemies/assets/textures/tank_muzzleflash_00.png"
-dest_files=["res://.godot/imported/tank_muzzleflash_00.png-bf618281c94d21db73c5114f2b1b36c8.ctex"]
+source_file="res://entities/enemies/tanks/assets/textures/base_move_03.png"
+dest_files=["res://.godot/imported/base_move_03.png-af7c1787df2948a1ca3ea42a627b84b5.ctex"]
 
 [params]
 

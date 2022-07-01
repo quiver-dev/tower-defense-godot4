@@ -1,43 +1,47 @@
-[gd_scene load_steps=14 format=3 uid="uid://cykm8dqj2remm"]
+[gd_scene load_steps=18 format=3 uid="uid://eolbdcvr16fc"]
 
 [ext_resource type="PackedScene" uid="uid://35uxlbs6h5dh" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
-[ext_resource type="Texture2D" uid="uid://d16nmbx5gc1dq" path="res://entities/enemies/assets/textures/tank_base_00.png" id="2_qerlr"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/tank.gd" id="2_ri3h6"]
-[ext_resource type="Texture2D" uid="uid://hub72po6nwk6" path="res://entities/enemies/assets/textures/tank_turret_00.png" id="3_5q5gj"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/move.gd" id="3_7yovt"]
 [ext_resource type="PackedScene" uid="uid://cg4yis4w1wk2v" path="res://entities/bullets/tank_bullet/tank_bullet.tscn" id="3_kr1yu"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/hit.gd" id="5_3qes1"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/shoot.gd" id="5_5f6sk"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/idle.gd" id="5_ctw71"]
+[ext_resource type="Texture2D" uid="uid://c0x7de1x4cgyd" path="res://entities/enemies/tanks/assets/textures/base_idle_00.png" id="7_njutd"]
+[ext_resource type="Texture2D" uid="uid://tj0jur40bwbc" path="res://entities/enemies/tanks/assets/textures/base_move_00.png" id="8_3jmn4"]
 [ext_resource type="PackedScene" uid="uid://b8b2v6payhflg" path="res://entities/shooter.tscn" id="8_frgp2"]
+[ext_resource type="Texture2D" uid="uid://r4gr5408elga" path="res://entities/enemies/tanks/assets/textures/base_move_01.png" id="9_hkl2s"]
+[ext_resource type="Texture2D" uid="uid://blsnswwbrmjvu" path="res://entities/enemies/tanks/assets/textures/base_move_02.png" id="10_b3kxo"]
+[ext_resource type="Texture2D" uid="uid://bxyr6p43d0kka" path="res://entities/enemies/tanks/assets/textures/base_move_03.png" id="11_tx6lo"]
+[ext_resource type="Texture2D" uid="uid://da37u4ah5hxaw" path="res://entities/enemies/tanks/assets/textures/gun_idle_00.png" id="14_1atkj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2qc3e"]
 animations = [{
-"frames": [ExtResource( "2_qerlr" )],
+"frames": [ExtResource( "7_njutd" )],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource( "2_qerlr" )],
+"frames": [ExtResource( "7_njutd" )],
 "loop": true,
 "name": &"shoot",
 "speed": 5.0
 }, {
-"frames": [ExtResource( "2_qerlr" )],
+"frames": [ExtResource( "8_3jmn4" ), ExtResource( "9_hkl2s" ), ExtResource( "10_b3kxo" ), ExtResource( "11_tx6lo" )],
 "loop": true,
 "name": &"move",
-"speed": 5.0
+"speed": 7.0
 }, {
-"frames": [ExtResource( "2_qerlr" )],
+"frames": [ExtResource( "7_njutd" )],
 "loop": true,
 "name": &"hit",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
-size = Vector2(48, 32)
+size = Vector2(144, 96)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yopeq"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4r4m"]
 radius = 150.0
 
 [node name="Tank" instance=ExtResource( "1_o2qr5" )]
@@ -62,15 +66,19 @@ script = ExtResource( "5_5f6sk" )
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource( "SpriteFrames_2qc3e" )
-frame = 0
+frame = 2
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource( "RectangleShape2D_b8s0v" )
 
 [node name="NavigationAgent2D" parent="." index="3"]
-radius = 64.0
-neighbor_dist = 100.0
+radius = 80.0
+neighbor_dist = 200.0
 max_speed = 300.0
+
+[node name="EntityHUD" parent="." index="4"]
+offset_top = -115.0
+offset_bottom = -115.0
 
 [node name="Shooter" parent="." index="5" instance=ExtResource( "8_frgp2" )]
 detector_color = Color(0.431373, 1, 0.372549, 0.25098)
@@ -82,17 +90,17 @@ bullet_spread = 0.1
 kickback_intensity = 8
 
 [node name="Gun" parent="Shooter" index="0"]
-texture = ExtResource( "3_5q5gj" )
+texture = ExtResource( "14_1atkj" )
 offset = Vector2(0, 0)
 
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
-position = Vector2(32, -2)
+position = Vector2(64, 0)
 
 [node name="Detector" parent="Shooter" index="1"]
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_yopeq" )
+shape = SubResource( "CircleShape2D_p4r4m" )
 
 [node name="LookAhead" parent="Shooter" index="2"]
 target_position = Vector2(150, 0)
@@ -100,11 +108,11 @@ collision_mask = 18
 
 [node name="LookAhead1" type="RayCast2D" parent="." index="6"]
 position = Vector2(0, -16)
-target_position = Vector2(50, 0)
+target_position = Vector2(100, 0)
 
 [node name="LookAhead2" type="RayCast2D" parent="." index="7"]
 position = Vector2(0, 16)
-target_position = Vector2(50, 0)
+target_position = Vector2(100, 0)
 
 [connection signal="has_shot" from="Shooter" to="." method="_on_shooter_has_shot"]
 [connection signal="area_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_entity_entered"]

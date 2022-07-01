@@ -1,6 +1,10 @@
 extends Motion
 
 
+func enter() -> void:
+	(owner as Enemy).apply_animation("move")
+
+
 func update(_delta: float) -> void:
 	_move()
 

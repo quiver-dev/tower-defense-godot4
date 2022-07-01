@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hub72po6nwk6"
-path="res://.godot/imported/tank_turret_00.png-9b0404d701485e31999d248ef5664d27.ctex"
+uid="uid://r4gr5408elga"
+path="res://.godot/imported/base_move_01.png-a2f5d60c23497d2b8767d1ccb7fce6d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemies/assets/textures/tank_turret_00.png"
-dest_files=["res://.godot/imported/tank_turret_00.png-9b0404d701485e31999d248ef5664d27.ctex"]
+source_file="res://entities/enemies/tanks/assets/textures/base_move_01.png"
+dest_files=["res://.godot/imported/base_move_01.png-a2f5d60c23497d2b8767d1ccb7fce6d7.ctex"]
 
 [params]
 
