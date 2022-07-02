@@ -18,5 +18,6 @@ static func get_enemy_path(enemy_name: String) -> String:
 		"tank":
 			enemy_path = TANK
 		_:
-			push_error("Cannot get enemy scene from name %s" % enemy_name)
+			print("Cannot get enemy scene from name %s" % enemy_name)
+			enemy_path = INFANTRY_T1
 	return enemy_path

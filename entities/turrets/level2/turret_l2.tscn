@@ -24,7 +24,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rbu3s"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ismu"]
 radius = 250.0
 
 [node name="TurretL2" instance=ExtResource("1_3mb3l")]
@@ -37,11 +37,9 @@ bullet_spread = 0.05
 
 [node name="Gun" parent="Shooter" index="0"]
 frames = SubResource("SpriteFrames_qvsj1")
-animation = &"idle"
-frame = 0
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_rbu3s")
+shape = SubResource("CircleShape2D_7ismu")
 
 [node name="LookAhead" parent="Shooter" index="2"]
 target_position = Vector2(250, 0)
