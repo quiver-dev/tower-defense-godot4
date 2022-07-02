@@ -1,20 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbox7qayne2ht"]
+[gd_scene load_steps=9 format=3 uid="uid://c1ebhbidcgkk6"]
 
 [ext_resource type="PackedScene" uid="uid://bd8d3ni18y5j3" path="res://entities/turrets/turret.tscn" id="1_vd0th"]
+[ext_resource type="Texture2D" uid="uid://e6asxs20t7o5" path="res://entities/turrets/level1/assets/textures/gun_idle_00.png" id="2_7yndc"]
+[ext_resource type="Texture2D" uid="uid://gq8pq86casir" path="res://entities/turrets/level1/assets/textures/gun_shoot_00.png" id="3_h8mct"]
+[ext_resource type="Texture2D" uid="uid://dnwd7ldth2udn" path="res://entities/turrets/level1/assets/textures/gun_shoot_01.png" id="4_dicl7"]
+[ext_resource type="Texture2D" uid="uid://bvx3soli23whp" path="res://entities/turrets/level1/assets/textures/gun_shoot_02.png" id="5_pwytm"]
+[ext_resource type="Texture2D" uid="uid://bwxa6eqkjyheu" path="res://entities/turrets/level1/assets/textures/gun_shoot_03.png" id="6_b184u"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_myip4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3a16"]
+animations = [{
+"frames": [ExtResource("2_7yndc")],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [ExtResource("3_h8mct"), ExtResource("4_dicl7"), ExtResource("5_pwytm"), ExtResource("6_b184u")],
+"loop": true,
+"name": &"shoot",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kxwvw"]
 radius = 350.0
 
-[node name="TurretL1" instance=ExtResource( "1_vd0th" )]
+[node name="TurretL1" instance=ExtResource("1_vd0th")]
 
 [node name="Shooter" parent="." index="2"]
 detect_radius = 350
+bullet_count = 2
 bullet_spread = 0.1
 
+[node name="Gun" parent="Shooter" index="0"]
+frames = SubResource("SpriteFrames_v3a16")
+frame = 2
+offset = Vector2(11, 0)
+
+[node name="Muzzle" parent="Shooter/Gun" index="0"]
+position = Vector2(80, -20)
+
+[node name="Muzzle2" parent="Shooter/Gun" index="1"]
+position = Vector2(80, 19)
+
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_myip4" )
+shape = SubResource("CircleShape2D_kxwvw")
 
 [node name="LookAhead" parent="Shooter" index="2"]
 target_position = Vector2(350, 0)
+
+[node name="EntityHUD" parent="." index="3"]
+offset_left = -30.0
+offset_right = -30.0
 
 [editable path="Shooter"]

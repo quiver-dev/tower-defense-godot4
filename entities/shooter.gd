@@ -41,6 +41,8 @@ func _ready() -> void:
 	detector_coll.shape = detector_shape
 	# initialize raycast's length
 	lookahead.target_position.x = detect_radius
+	# init gun animation
+	gun.play("idle")
 
 
 func _physics_process(delta: float) -> void:

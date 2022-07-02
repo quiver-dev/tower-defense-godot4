@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0v676ccr4ab0"
-path="res://.godot/imported/turret_slot_00.png-20588cb7a3bce6eac3420d88fcdf2cd5.ctex"
+uid="uid://dphnv0moemc3v"
+path="res://.godot/imported/gun_shoot_03.png-9979b5409e0191ecdb459dc9ff223a3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/main/turret_slot/assets/textures/turret_slot_00.png"
-dest_files=["res://.godot/imported/turret_slot_00.png-20588cb7a3bce6eac3420d88fcdf2cd5.ctex"]
+source_file="res://entities/turrets/level2/assets/textures/gun_shoot_03.png"
+dest_files=["res://.godot/imported/gun_shoot_03.png-9979b5409e0191ecdb459dc9ff223a3f.ctex"]
 
 [params]
 
