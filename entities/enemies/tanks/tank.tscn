@@ -17,22 +17,22 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2qc3e"]
 animations = [{
-"frames": [ExtResource( "7_njutd" )],
+"frames": [ExtResource("7_njutd")],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource( "7_njutd" )],
+"frames": [ExtResource("7_njutd")],
 "loop": true,
 "name": &"shoot",
 "speed": 5.0
 }, {
-"frames": [ExtResource( "8_3jmn4" ), ExtResource( "9_hkl2s" ), ExtResource( "10_b3kxo" ), ExtResource( "11_tx6lo" )],
+"frames": [ExtResource("8_3jmn4"), ExtResource("9_hkl2s"), ExtResource("10_b3kxo"), ExtResource("11_tx6lo")],
 "loop": true,
 "name": &"move",
 "speed": 7.0
 }, {
-"frames": [ExtResource( "7_njutd" )],
+"frames": [ExtResource("7_njutd")],
 "loop": true,
 "name": &"hit",
 "speed": 5.0
@@ -41,35 +41,35 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
 size = Vector2(144, 96)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_od0i7"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_uxfx7"]
 radius = 250.0
 
-[node name="Tank" instance=ExtResource( "1_o2qr5" )]
+[node name="Tank" instance=ExtResource("1_o2qr5")]
 floor_constant_speed = true
-script = ExtResource( "2_ri3h6" )
+script = ExtResource("2_ri3h6")
 rot_speed = 4.0
 health = 300
 speed = 150
 
 [node name="Move" parent="StateMachine" index="0"]
-script = ExtResource( "3_7yovt" )
+script = ExtResource("3_7yovt")
 
 [node name="Idle" parent="StateMachine" index="1"]
-script = ExtResource( "5_ctw71" )
+script = ExtResource("5_ctw71")
 
 [node name="Hit" parent="StateMachine" index="2"]
-script = ExtResource( "5_3qes1" )
+script = ExtResource("5_3qes1")
 state_duration = 0.1
 
 [node name="Shoot" type="Node" parent="StateMachine" index="3"]
-script = ExtResource( "5_5f6sk" )
+script = ExtResource("5_5f6sk")
 
 [node name="Sprite2D" parent="." index="1"]
-frames = SubResource( "SpriteFrames_2qc3e" )
-frame = 1
+frames = SubResource("SpriteFrames_2qc3e")
+frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
-shape = SubResource( "RectangleShape2D_b8s0v" )
+shape = SubResource("RectangleShape2D_b8s0v")
 
 [node name="NavigationAgent2D" parent="." index="3"]
 radius = 80.0
@@ -80,17 +80,17 @@ max_speed = 300.0
 offset_top = -115.0
 offset_bottom = -115.0
 
-[node name="Shooter" parent="." index="5" instance=ExtResource( "8_frgp2" )]
+[node name="Shooter" parent="." index="5" instance=ExtResource("8_frgp2")]
 detector_color = Color(0.431373, 1, 0.372549, 0.0431373)
 detect_radius = 250
 fire_rate = 3.0
 rot_speed = 1.0
-bullet_type = ExtResource( "3_kr1yu" )
+bullet_type = ExtResource("3_kr1yu")
 bullet_spread = 0.1
 kickback_intensity = 8
 
 [node name="Gun" parent="Shooter" index="0"]
-texture = ExtResource( "14_1atkj" )
+texture = ExtResource("14_1atkj")
 offset = Vector2(0, 0)
 
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
@@ -100,7 +100,7 @@ position = Vector2(64, 0)
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource( "CircleShape2D_od0i7" )
+shape = SubResource("CircleShape2D_uxfx7")
 
 [node name="LookAhead" parent="Shooter" index="2"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)

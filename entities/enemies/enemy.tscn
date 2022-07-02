@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://35uxlbs6h5dh"]
+[gd_scene load_steps=18 format=3 uid="uid://35uxlbs6h5dh"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
@@ -15,17 +15,15 @@
 [ext_resource type="Texture2D" uid="uid://dvq2mk1c5pdhw" path="res://entities/enemies/infantry/assets/textures/tier2/move_05.png" id="12_7n4yk"]
 [ext_resource type="Texture2D" uid="uid://d15r580h16qdq" path="res://entities/enemies/infantry/assets/textures/tier2/move_06.png" id="13_ciwdb"]
 [ext_resource type="Texture2D" uid="uid://btghqfuy68bb2" path="res://entities/enemies/infantry/assets/textures/tier2/move_07.png" id="14_vd38d"]
-[ext_resource type="Texture2D" uid="uid://b8d5grglo2sxu" path="res://entities/enemies/infantry/assets/textures/tier2/move_08.png" id="15_pu376"]
-[ext_resource type="Texture2D" uid="uid://b8m8dcmidlgi3" path="res://entities/enemies/infantry/assets/textures/tier2/move_09.png" id="16_dgf2x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6olqj"]
 animations = [{
-"frames": [ExtResource( "6_ic7wi" )],
+"frames": [ExtResource("6_ic7wi")],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource( "7_p5ao0" ), ExtResource( "8_bl5vh" ), ExtResource( "9_j8c11" ), ExtResource( "10_irr8p" ), ExtResource( "11_83b1a" ), ExtResource( "12_7n4yk" ), ExtResource( "13_ciwdb" ), ExtResource( "14_vd38d" ), ExtResource( "15_pu376" ), ExtResource( "16_dgf2x" )],
+"frames": [ExtResource("7_p5ao0"), ExtResource("8_bl5vh"), ExtResource("9_j8c11"), ExtResource("10_irr8p"), ExtResource("11_83b1a"), ExtResource("12_7n4yk"), ExtResource("13_ciwdb"), ExtResource("14_vd38d")],
 "loop": true,
 "name": &"move",
 "speed": 5.0
@@ -42,36 +40,36 @@ size = Vector2(48, 48)
 [node name="Enemy" type="CharacterBody2D"]
 collision_mask = 7
 motion_mode = 1
-script = ExtResource( "1_cy1ia" )
+script = ExtResource("1_cy1ia")
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource( "2_8ke4v" )
+script = ExtResource("2_8ke4v")
 START_STATE = NodePath("Move")
 
 [node name="Move" type="Node" parent="StateMachine"]
-script = ExtResource( "3_juveh" )
+script = ExtResource("3_juveh")
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource( "4_vk1wn" )
+script = ExtResource("4_vk1wn")
 
 [node name="Hit" type="Node" parent="StateMachine"]
-script = ExtResource( "5_t30j3" )
+script = ExtResource("5_t30j3")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-frames = SubResource( "SpriteFrames_6olqj" )
+frames = SubResource("SpriteFrames_6olqj")
 animation = &"move"
-frame = 3
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( "RectangleShape2D_7b4bn" )
+shape = SubResource("RectangleShape2D_7b4bn")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 2.5
-radius = 48.0
 avoidance_enabled = true
+radius = 48.0
 
-[node name="EntityHUD" parent="." instance=ExtResource( "7_dxylf" )]
+[node name="EntityHUD" parent="." instance=ExtResource("7_dxylf")]
 offset_left = -31.0
 offset_top = -75.0
 offset_right = -31.0
