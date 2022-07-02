@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://0h6p5kq7bwnw"]
+[gd_scene load_steps=12 format=3 uid="uid://0h6p5kq7bwnw"]
 
 [ext_resource type="PackedScene" uid="uid://35uxlbs6h5dh" path="res://entities/enemies/enemy.tscn" id="1_xcp6m"]
 [ext_resource type="Texture2D" uid="uid://c2kw4wa37hx6d" path="res://entities/enemies/infantry/assets/textures/tier2/idle_00.png" id="2_j37t7"]
@@ -10,20 +10,18 @@
 [ext_resource type="Texture2D" uid="uid://dvq2mk1c5pdhw" path="res://entities/enemies/infantry/assets/textures/tier2/move_05.png" id="8_qrgjc"]
 [ext_resource type="Texture2D" uid="uid://d15r580h16qdq" path="res://entities/enemies/infantry/assets/textures/tier2/move_06.png" id="9_251sx"]
 [ext_resource type="Texture2D" uid="uid://btghqfuy68bb2" path="res://entities/enemies/infantry/assets/textures/tier2/move_07.png" id="10_s43qq"]
-[ext_resource type="Texture2D" uid="uid://b8d5grglo2sxu" path="res://entities/enemies/infantry/assets/textures/tier2/move_08.png" id="11_7jgtn"]
-[ext_resource type="Texture2D" uid="uid://b8m8dcmidlgi3" path="res://entities/enemies/infantry/assets/textures/tier2/move_09.png" id="12_blcaq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_65d1v"]
 animations = [{
-"frames": [ExtResource( "2_j37t7" )],
+"frames": [ExtResource("2_j37t7")],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource( "3_x1adw" ), ExtResource( "4_jc6u6" ), ExtResource( "5_b2h8l" ), ExtResource( "6_4n4bj" ), ExtResource( "7_0id6p" ), ExtResource( "8_qrgjc" ), ExtResource( "9_251sx" ), ExtResource( "10_s43qq" ), ExtResource( "11_7jgtn" ), ExtResource( "12_blcaq" )],
+"frames": [ExtResource("3_x1adw"), ExtResource("4_jc6u6"), ExtResource("5_b2h8l"), ExtResource("6_4n4bj"), ExtResource("7_0id6p"), ExtResource("8_qrgjc"), ExtResource("9_251sx"), ExtResource("10_s43qq")],
 "loop": true,
 "name": &"move",
-"speed": 10.0
+"speed": 9.0
 }, {
 "frames": [],
 "loop": true,
@@ -31,14 +29,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="InfantryT2" instance=ExtResource( "1_xcp6m" )]
+[node name="InfantryT2" instance=ExtResource("1_xcp6m")]
 
 [node name="Sprite2D" parent="." index="1"]
-frames = SubResource( "SpriteFrames_65d1v" )
-frame = 9
+frames = SubResource("SpriteFrames_65d1v")
+frame = 3
 
 [node name="NavigationAgent2D" parent="." index="3"]
 target_desired_distance = 10.0
+path_max_distance = 25.0
 radius = 64.0
 time_horizon = 32.0
-path_max_distance = 25.0

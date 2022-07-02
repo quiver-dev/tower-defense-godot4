@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c0qro2s61gqnu"]
+[gd_scene load_steps=12 format=3 uid="uid://c0qro2s61gqnu"]
 
 [ext_resource type="PackedScene" uid="uid://35uxlbs6h5dh" path="res://entities/enemies/enemy.tscn" id="1_l80xx"]
 [ext_resource type="Texture2D" uid="uid://6ouf3x1nqfpw" path="res://entities/enemies/infantry/assets/textures/tier1/idle_00.png" id="2_6871t"]
@@ -10,29 +10,27 @@
 [ext_resource type="Texture2D" uid="uid://7oa5f4okcjwm" path="res://entities/enemies/infantry/assets/textures/tier1/move_05.png" id="8_nxxus"]
 [ext_resource type="Texture2D" uid="uid://bugl2ged0xisq" path="res://entities/enemies/infantry/assets/textures/tier1/move_06.png" id="9_ncrbs"]
 [ext_resource type="Texture2D" uid="uid://ddcnwxfatjjr2" path="res://entities/enemies/infantry/assets/textures/tier1/move_07.png" id="10_1pmrk"]
-[ext_resource type="Texture2D" uid="uid://bo61ctl67jvqv" path="res://entities/enemies/infantry/assets/textures/tier1/move_08.png" id="11_r4rki"]
-[ext_resource type="Texture2D" uid="uid://uyjw0gvuquh6" path="res://entities/enemies/infantry/assets/textures/tier1/move_09.png" id="12_aww5c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hgfy3"]
 animations = [{
-"frames": [ExtResource( "2_6871t" )],
+"frames": [ExtResource("2_6871t")],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource( "3_xv4qf" ), ExtResource( "4_jt6hq" ), ExtResource( "5_si78p" ), ExtResource( "6_213yh" ), ExtResource( "7_n5a11" ), ExtResource( "8_nxxus" ), ExtResource( "9_ncrbs" ), ExtResource( "10_1pmrk" ), ExtResource( "11_r4rki" ), ExtResource( "12_aww5c" )],
+"frames": [ExtResource("3_xv4qf"), ExtResource("4_jt6hq"), ExtResource("5_si78p"), ExtResource("6_213yh"), ExtResource("7_n5a11"), ExtResource("8_nxxus"), ExtResource("9_ncrbs"), ExtResource("10_1pmrk")],
 "loop": true,
 "name": &"move",
 "speed": 9.0
 }, {
-"frames": [ExtResource( "2_6871t" )],
+"frames": [ExtResource("2_6871t")],
 "loop": true,
 "name": &"hit",
 "speed": 5.0
 }]
 
-[node name="InfantryT1" instance=ExtResource( "1_l80xx" )]
+[node name="InfantryT1" instance=ExtResource("1_l80xx")]
 
 [node name="Sprite2D" parent="." index="1"]
-frames = SubResource( "SpriteFrames_hgfy3" )
-frame = 4
+frames = SubResource("SpriteFrames_hgfy3")
+frame = 5
