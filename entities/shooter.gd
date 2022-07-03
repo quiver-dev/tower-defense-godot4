@@ -72,6 +72,7 @@ func shoot() -> void:
 		projectile.collision_mask = detector.collision_mask
 	firerate_timer.start(fire_rate)
 	# play animation
+	gun.frame = 0
 	gun.play("shoot")
 	# show reload time on HUD
 	emit_signal("has_shot", firerate_timer.wait_time)
@@ -109,4 +110,5 @@ func set_projectile_count(value: int) -> void:
 
 func _on_fire_rate_timer_timeout() -> void:
 	can_shoot = true
-	gun.play("idle")
+	if targets.is_empty():
+		gun.play("idle")
