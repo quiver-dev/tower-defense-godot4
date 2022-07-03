@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://dwajgbcawitna"]
 
 [ext_resource type="PackedScene" uid="uid://dj75m05jgefvw" path="res://entities/projectiles/projectile.tscn" id="1_tkkdn"]
 [ext_resource type="Texture2D" uid="uid://38oqann3bw16" path="res://entities/projectiles/assets/textures/tank_00.png" id="2_8imh5"]
@@ -8,14 +8,11 @@
 radius = 8.0
 height = 16.0
 
-[node name="TankBullet" instance=ExtResource( "1_tkkdn" )]
-collision_mask = 18
-script = ExtResource( "2_d72yd" )
-speed = 800
-damage = 40
+[node name="TankBullet" instance=ExtResource("1_tkkdn")]
+script = ExtResource("2_d72yd")
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource( "2_8imh5" )
+texture = ExtResource("2_8imh5")
 
 [node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource( "CapsuleShape2D_esl67" )
+shape = SubResource("CapsuleShape2D_esl67")

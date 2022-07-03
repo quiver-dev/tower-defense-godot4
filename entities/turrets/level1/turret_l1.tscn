@@ -21,7 +21,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qyxpj"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwnph"]
 radius = 350.0
 
 [node name="TurretL1" instance=ExtResource("1_vd0th")]
@@ -33,6 +33,8 @@ visible = true
 detect_radius = 350
 projectile_count = 2
 projectile_type = ExtResource("2_gcg0p")
+projectile_speed = 1000
+projectile_damage = 10
 
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(3, 0)
@@ -46,7 +48,7 @@ position = Vector2(80, -20)
 position = Vector2(80, 19)
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_qyxpj")
+shape = SubResource("CircleShape2D_bwnph")
 
 [node name="LookAhead" parent="Shooter" index="2"]
 target_position = Vector2(350, 0)

@@ -1,13 +1,10 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://c1rirmycygtdv"]
 
-[ext_resource type="PackedScene" path="res://entities/projectiles/projectile.tscn" id="1_6qmsl"]
+[ext_resource type="PackedScene" uid="uid://dj75m05jgefvw" path="res://entities/projectiles/projectile.tscn" id="1_6qmsl"]
 [ext_resource type="Script" path="res://entities/projectiles/homing/homing_missile.gd" id="2_dm4fp"]
 
-[node name="HomingMissile" instance=ExtResource( "1_6qmsl" )]
-collision_mask = 1
-script = ExtResource( "2_dm4fp" )
-speed = 400
-damage = 20
+[node name="HomingMissile" instance=ExtResource("1_6qmsl")]
+script = ExtResource("2_dm4fp")
 steer_force = 40
 
 [node name="VisibleOnScreenEnabler2D" parent="." index="2"]

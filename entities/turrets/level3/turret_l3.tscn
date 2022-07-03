@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bar5yrgi6jejj" path="res://entities/turrets/turret.tscn" id="1_6shn0"]
 [ext_resource type="Script" path="res://entities/turrets/shooter_homing.gd" id="2_tnudh"]
-[ext_resource type="PackedScene" path="res://entities/projectiles/homing/homing_missile.tscn" id="3_u6k60"]
+[ext_resource type="PackedScene" uid="uid://c1rirmycygtdv" path="res://entities/projectiles/homing/homing_missile.tscn" id="3_u6k60"]
 [ext_resource type="Texture2D" uid="uid://cliy7gyk3tt3r" path="res://entities/turrets/level3/assets/textures/gun_idle_00.png" id="4_gt3jg"]
 [ext_resource type="Texture2D" uid="uid://cywo7plu2xy2f" path="res://entities/turrets/level3/assets/textures/gun_shoot_a_00.png" id="5_4ieq5"]
 [ext_resource type="Texture2D" uid="uid://dcgjesv5o8qp" path="res://entities/turrets/level3/assets/textures/gun_shoot_a_01.png" id="6_1ttbq"]
@@ -54,6 +54,9 @@ detect_radius = 500
 fire_rate = 5.0
 projectile_count = 2
 projectile_type = ExtResource("3_u6k60")
+projectile_spread = 0.0
+projectile_speed = 400
+projectile_damage = 20
 
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(2, 0)
@@ -62,10 +65,6 @@ offset = Vector2(-2, 0)
 
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
 position = Vector2(17, -31)
-rotation = 1.5708
-
-[node name="Muzzle2" parent="Shooter/Gun" index="1"]
-position = Vector2(17, 29)
 rotation = 1.5708
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
