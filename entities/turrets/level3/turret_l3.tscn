@@ -56,8 +56,9 @@ projectile_count = 2
 projectile_type = ExtResource("3_u6k60")
 
 [node name="Gun" parent="Shooter" index="0"]
-position = Vector2(-6, 2)
+position = Vector2(2, 0)
 frames = SubResource("SpriteFrames_pwq6h")
+offset = Vector2(-2, 0)
 
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
 position = Vector2(17, -31)

@@ -26,14 +26,18 @@ radius = 350.0
 
 [node name="TurretL1" instance=ExtResource("1_vd0th")]
 
+[node name="Basement" parent="." index="0"]
+visible = true
+
 [node name="Shooter" parent="." index="2"]
 detect_radius = 350
 projectile_count = 2
 projectile_type = ExtResource("2_gcg0p")
 
 [node name="Gun" parent="Shooter" index="0"]
+position = Vector2(3, 0)
 frames = SubResource("SpriteFrames_v3a16")
-offset = Vector2(8, 0)
+offset = Vector2(10, 1)
 
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
 position = Vector2(80, -20)
