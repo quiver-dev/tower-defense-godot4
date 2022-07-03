@@ -1,11 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj75m05jgefvw"]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://entities/projectiles/projectile.gd" id="1_orxkc"]
-[ext_resource type="Texture2D" uid="uid://dqkkexn4peet5" path="res://entities/projectiles/assets/textures/turret_00.png" id="2_1m856"]
+[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/bullet/idle_00.png" id="2_cyqn1"]
+[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/bullet/idle_01.png" id="3_18gee"]
+[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/bullet/idle_02.png" id="4_kdb4y"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_1wkj2"]
+frames = 3
+fps = 8.0
+frame_0/texture = ExtResource("2_cyqn1")
+frame_1/texture = ExtResource("3_18gee")
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource("4_kdb4y")
+frame_2/delay_sec = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_er61a"]
-radius = 8.0
-height = 32.0
+radius = 3.0
+height = 9.99999
 
 [node name="Projectile" type="Area2D"]
 collision_layer = 4
@@ -13,10 +24,10 @@ collision_mask = 0
 script = ExtResource("1_orxkc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
-texture = ExtResource("2_1m856")
+texture = SubResource("AnimatedTexture_1wkj2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(27, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_er61a")
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://38oqann3bw16"
-path="res://.godot/imported/tank_00.png-bf28f5642ddb968e317bc5669038544b.ctex"
+uid="uid://b3dqs6ib0wsxx"
+path="res://.godot/imported/idle_03.png-c3cf5019a6ec1683c3fe98bac1735d0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/projectiles/assets/textures/tank_00.png"
-dest_files=["res://.godot/imported/tank_00.png-bf28f5642ddb968e317bc5669038544b.ctex"]
+source_file="res://entities/projectiles/assets/textures/shell/idle_03.png"
+dest_files=["res://.godot/imported/idle_03.png-c3cf5019a6ec1683c3fe98bac1735d0f.ctex"]
 
 [params]
 

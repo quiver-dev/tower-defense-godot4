@@ -30,14 +30,22 @@ func start(_position: Vector2, _rotation: float, _speed: int, _damage: int, _tar
 	velocity = Vector2.RIGHT.rotated(_rotation) * speed
 
 
-# Overridden by children scripts
-func _on_projectile_body_entered(_body: Node2D) -> void:
-	pass
+# Each child of this scene will have a different collision mask.
+# Thus we can be sure the right method will be triggered by each instance
+func _on_projectile_body_entered(body: Node2D) -> void:
+	if body is Enemy:
+		(body.get_fsm() as EnemyFSM).is_hit(damage)
+		queue_free()
+	if body is Turret:
+		(body as Turret).take_damage(damage)
+		queue_free()
 
 
-# Overridden by children scripts
-func _on_projectile_area_entered(_area: Area2D) -> void:
-	pass
+# See comment on the method above
+func _on_projectile_area_entered(area: Area2D) -> void:
+	if area is Objective:
+		(area as Objective).take_damage(damage)
+		queue_free()
 
 
 func _on_visible_on_screen_enabler_2d_screen_exited() -> void:

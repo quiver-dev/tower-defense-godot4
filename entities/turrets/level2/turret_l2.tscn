@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dntwxy2nw74kx"]
+[gd_scene load_steps=14 format=3 uid="uid://cyrt4frhmhxdd"]
 
 [ext_resource type="PackedScene" uid="uid://bar5yrgi6jejj" path="res://entities/turrets/turret.tscn" id="1_3mb3l"]
-[ext_resource type="PackedScene" uid="uid://n1s51mnug0yv" path="res://entities/projectiles/turret/turret_projectile.tscn" id="2_0nt1p"]
+[ext_resource type="PackedScene" path="res://entities/projectiles/shell/shell.tscn" id="2_2t0xy"]
 [ext_resource type="Texture2D" uid="uid://dm7pxbc4sw21l" path="res://entities/turrets/level2/assets/textures/gun_idle_00.png" id="3_37s4r"]
 [ext_resource type="Texture2D" uid="uid://djmhh26sa4xo" path="res://entities/turrets/level2/assets/textures/gun_shoot_00.png" id="4_vcmy3"]
 [ext_resource type="Texture2D" uid="uid://pus7ugvpejf2" path="res://entities/turrets/level2/assets/textures/gun_shoot_01.png" id="5_wkynf"]
@@ -25,7 +25,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fun8h"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ooex3"]
 radius = 250.0
 
 [node name="TurretL2" instance=ExtResource("1_3mb3l")]
@@ -34,7 +34,7 @@ radius = 250.0
 detect_radius = 250
 fire_rate = 1.0
 rot_speed = 2.5
-projectile_type = ExtResource("2_0nt1p")
+projectile_type = ExtResource("2_2t0xy")
 projectile_spread = 0.05
 projectile_speed = 800
 projectile_damage = 40
@@ -43,7 +43,7 @@ projectile_damage = 40
 frames = SubResource("SpriteFrames_qvsj1")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_fun8h")
+shape = SubResource("CircleShape2D_ooex3")
 
 [node name="LookAhead" parent="Shooter" index="2"]
 target_position = Vector2(250, 0)

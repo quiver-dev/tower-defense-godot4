@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0i8efn2ow88m"]
+
+[ext_resource type="PackedScene" uid="uid://dj75m05jgefvw" path="res://entities/projectiles/projectile.tscn" id="1_6qmsl"]
+[ext_resource type="Script" path="res://entities/projectiles/missile/homing_missile.gd" id="2_dm4fp"]
+[ext_resource type="Texture2D" uid="uid://bh1q18jyebtux" path="res://entities/projectiles/assets/textures/missile/idle_00.png" id="3_xpo2u"]
+[ext_resource type="Texture2D" uid="uid://c3vojfshvegn6" path="res://entities/projectiles/assets/textures/missile/idle_01.png" id="4_57q64"]
+[ext_resource type="Texture2D" uid="uid://guljjke2wk8q" path="res://entities/projectiles/assets/textures/missile/idle_02.png" id="5_7h6gu"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_hvawp"]
+frames = 3
+fps = 8.0
+frame_0/texture = ExtResource("3_xpo2u")
+frame_1/texture = ExtResource("4_57q64")
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource("5_7h6gu")
+frame_2/delay_sec = 0.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_70r35"]
+radius = 4.0
+height = 34.0
+
+[node name="HomingMissile" instance=ExtResource("1_6qmsl")]
+script = ExtResource("2_dm4fp")
+steer_force = 40
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AnimatedTexture_hvawp")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(21, 0)
+shape = SubResource("CapsuleShape2D_70r35")
+
+[node name="VisibleOnScreenEnabler2D" parent="." index="2"]
+scale = Vector2(28.8, 25.6)

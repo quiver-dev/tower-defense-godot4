@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" uid="uid://dj75m05jgefvw" path="res://entities/projectiles/projectile.tscn" id="1_ry2b2"]
+[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/bullet/idle_00.png" id="2_5apyx"]
+[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/bullet/idle_01.png" id="3_dcw82"]
+[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/bullet/idle_02.png" id="4_x3yx5"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_m08r3"]
+frames = 3
+fps = 8.0
+frame_0/texture = ExtResource("2_5apyx")
+frame_1/texture = ExtResource("3_dcw82")
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource("4_x3yx5")
+frame_2/delay_sec = 0.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txwll"]
+radius = 3.0
+height = 9.99999
+
+[node name="TurretBullet" instance=ExtResource("1_ry2b2")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AnimatedTexture_m08r3")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_txwll")

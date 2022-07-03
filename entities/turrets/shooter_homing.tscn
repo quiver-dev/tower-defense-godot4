@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dyfe44jtk41xc" path="res://entities/shooter.tscn" id="1_wqn6v"]
 [ext_resource type="Script" path="res://entities/turrets/shooter_homing.gd" id="2_2x22q"]
 [ext_resource type="Texture2D" uid="uid://cksqmaug7a01r" path="res://entities/turrets/assets/textures/gun_02.png" id="2_u4xo4"]
-[ext_resource type="PackedScene" path="res://entities/projectiles/homing/homing_missile.tscn" id="3_srgww"]
+[ext_resource type="PackedScene" path="res://entities/projectiles/missile/homing_missile.tscn" id="3_srgww"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0fnpw"]
 radius = 200.0

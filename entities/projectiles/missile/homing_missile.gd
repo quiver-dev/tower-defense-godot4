@@ -20,9 +20,3 @@ func _steer() -> Vector2:
 	var desired := global_position.direction_to(target.global_position) * speed
 	# return the amount we can turn towards the desired direction
 	return velocity.direction_to(desired) * steer_force
-
-
-func _on_projectile_body_entered(body: Node2D) -> void:
-	if body is Enemy:
-		(body.get_fsm() as EnemyFSM).is_hit(damage)
-		queue_free()
