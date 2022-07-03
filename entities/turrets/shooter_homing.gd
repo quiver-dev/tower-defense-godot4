@@ -18,7 +18,9 @@ func shoot() -> void:
 	projectile_container.add_child(projectile, true)
 	projectile.start(muzzle.global_position,
 			rotation + randf_range(-projectile_spread, projectile_spread),
+			projectile_speed, projectile_damage,
 			targets.front())
+	projectile.collision_mask = detector.collision_mask
 	firerate_timer.start(fire_rate)
 	muzzle_idx = Global.wrap_index(muzzle_idx + 1, projectile_count)
 	# play animation

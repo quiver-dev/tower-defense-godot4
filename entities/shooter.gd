@@ -66,7 +66,7 @@ func shoot() -> void:
 	for _muzzle in gun.get_children():
 		var projectile: Projectile = projectile_type.instantiate()
 		projectile.start(_muzzle.global_position,
-				rotation + randf_range(-projectile_spread, projectile_spread), \
+				rotation + randf_range(-projectile_spread, projectile_spread),
 				projectile_speed, projectile_damage)
 		projectile_container.add_child(projectile, true)
 		projectile.collision_mask = detector.collision_mask

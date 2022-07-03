@@ -62,7 +62,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m4cfc"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vk66"]
 radius = 250.0
 
 [node name="Tank" instance=ExtResource("1_o2qr5")]
@@ -87,7 +87,7 @@ script = ExtResource("5_5f6sk")
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_2qc3e")
-frame = 0
+frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("RectangleShape2D_b8s0v")
@@ -121,7 +121,7 @@ position = Vector2(64, 0)
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_m4cfc")
+shape = SubResource("CircleShape2D_5vk66")
 
 [node name="LookAhead" parent="Shooter" index="2"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)
