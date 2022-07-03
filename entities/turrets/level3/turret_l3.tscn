@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://dhc6gmg828hcw"]
 
-[ext_resource type="PackedScene" uid="uid://bd8d3ni18y5j3" path="res://entities/turrets/turret.tscn" id="1_6shn0"]
+[ext_resource type="PackedScene" uid="uid://bar5yrgi6jejj" path="res://entities/turrets/turret.tscn" id="1_6shn0"]
 [ext_resource type="Script" path="res://entities/turrets/shooter_homing.gd" id="2_tnudh"]
 [ext_resource type="PackedScene" path="res://entities/projectiles/homing/homing_missile.tscn" id="3_u6k60"]
 [ext_resource type="Texture2D" uid="uid://cliy7gyk3tt3r" path="res://entities/turrets/level3/assets/textures/gun_idle_00.png" id="4_gt3jg"]
@@ -39,7 +39,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vvg82"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqjux"]
 radius = 500.0
 
 [node name="TurretL3" instance=ExtResource("1_6shn0")]
@@ -52,23 +52,23 @@ visible = true
 script = ExtResource("2_tnudh")
 detect_radius = 500
 fire_rate = 5.0
-bullet_count = 2
-bullet_type = ExtResource("3_u6k60")
+projectile_count = 2
+projectile_type = ExtResource("3_u6k60")
 
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(-6, 2)
 frames = SubResource("SpriteFrames_pwq6h")
 
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
-position = Vector2(16, -29)
+position = Vector2(17, -31)
 rotation = 1.5708
 
 [node name="Muzzle2" parent="Shooter/Gun" index="1"]
-position = Vector2(16, 31)
+position = Vector2(17, 29)
 rotation = 1.5708
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_vvg82")
+shape = SubResource("CircleShape2D_nqjux")
 
 [node name="LookAhead" parent="Shooter" index="2"]
 target_position = Vector2(500, 0)

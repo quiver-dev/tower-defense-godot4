@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://k7pd58g0i34s"]
+[gd_scene load_steps=27 format=3 uid="uid://k7pd58g0i34s"]
 
 [ext_resource type="PackedScene" uid="uid://35uxlbs6h5dh" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/tank.gd" id="2_ri3h6"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://r4gr5408elga" path="res://entities/enemies/tanks/assets/textures/base_move_01.png" id="9_hkl2s"]
 [ext_resource type="Texture2D" uid="uid://blsnswwbrmjvu" path="res://entities/enemies/tanks/assets/textures/base_move_02.png" id="10_b3kxo"]
 [ext_resource type="Texture2D" uid="uid://bxyr6p43d0kka" path="res://entities/enemies/tanks/assets/textures/base_move_03.png" id="11_tx6lo"]
+[ext_resource type="PackedScene" path="res://entities/projectiles/tank/tank_shell.tscn" id="13_2c4hm"]
 [ext_resource type="Texture2D" uid="uid://da37u4ah5hxaw" path="res://entities/enemies/tanks/assets/textures/gun_idle_00.png" id="14_1atkj"]
 [ext_resource type="Texture2D" uid="uid://dlubdcr53fh50" path="res://entities/enemies/tanks/assets/textures/gun_shoot_00.png" id="15_p4ovp"]
 [ext_resource type="Texture2D" uid="uid://bmfy3a51dmq05" path="res://entities/enemies/tanks/assets/textures/gun_shoot_01.png" id="16_rrapg"]
@@ -61,7 +62,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n1f8o"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ejr0t"]
 radius = 250.0
 
 [node name="Tank" instance=ExtResource("1_o2qr5")]
@@ -105,6 +106,7 @@ detector_color = Color(0.431373, 1, 0.372549, 0.0431373)
 detect_radius = 250
 fire_rate = 3.0
 rot_speed = 1.0
+projectile_type = ExtResource("13_2c4hm")
 
 [node name="Gun" parent="Shooter" index="0"]
 frames = SubResource("SpriteFrames_mdejl")
@@ -117,7 +119,7 @@ position = Vector2(64, 0)
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_n1f8o")
+shape = SubResource("CircleShape2D_ejr0t")
 
 [node name="LookAhead" parent="Shooter" index="2"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)
