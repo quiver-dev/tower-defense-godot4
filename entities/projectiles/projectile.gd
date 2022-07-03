@@ -1,9 +1,9 @@
-class_name Bullet
+class_name Projectile
 extends Area2D
 # This class extends the Area2D node because we don't need advanced
 # physics or player-controlled movement.
 # It also uses a VisibleOnScreenEnabler2D node to automatically
-# disable this scene when the bullet exits the screen.
+# disable this scene when the projectile exits the screen.
 # WARN: this is probably not optimal due to the presence of a camera
 
 
@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	global_position += velocity * delta
 
 
-# Called by the turret, which instantiates a bullet and gives it a target
+# Called by the turret, which instantiates a projectile and gives it a target
 func start(_position: Vector2, _rotation: float, _target=null) -> void:
 	global_position = _position
 	rotation = _rotation
@@ -27,12 +27,12 @@ func start(_position: Vector2, _rotation: float, _target=null) -> void:
 
 
 # Overridden by children scripts
-func _on_bullet_body_entered(_body: Node2D) -> void:
+func _on_projectile_body_entered(_body: Node2D) -> void:
 	pass
 
 
 # Overridden by children scripts
-func _on_bullet_area_entered(_area: Area2D) -> void:
+func _on_projectile_area_entered(_area: Area2D) -> void:
 	pass
 
 

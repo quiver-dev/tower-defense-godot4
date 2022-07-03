@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bd8d3ni18y5j3" path="res://entities/turrets/turret.tscn" id="1_6shn0"]
 [ext_resource type="Script" path="res://entities/turrets/shooter_homing.gd" id="2_tnudh"]
-[ext_resource type="PackedScene" uid="uid://co36u7aep2rr2" path="res://entities/bullets/homing/homing_missile.tscn" id="3_u6k60"]
+[ext_resource type="PackedScene" path="res://entities/projectiles/homing/homing_missile.tscn" id="3_u6k60"]
 [ext_resource type="Texture2D" uid="uid://cliy7gyk3tt3r" path="res://entities/turrets/level3/assets/textures/gun_idle_00.png" id="4_gt3jg"]
 [ext_resource type="Texture2D" uid="uid://cywo7plu2xy2f" path="res://entities/turrets/level3/assets/textures/gun_shoot_a_00.png" id="5_4ieq5"]
 [ext_resource type="Texture2D" uid="uid://dcgjesv5o8qp" path="res://entities/turrets/level3/assets/textures/gun_shoot_a_01.png" id="6_1ttbq"]
@@ -39,7 +39,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1uexe"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vvg82"]
 radius = 500.0
 
 [node name="TurretL3" instance=ExtResource("1_6shn0")]
@@ -68,7 +68,7 @@ position = Vector2(16, 31)
 rotation = 1.5708
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_1uexe")
+shape = SubResource("CircleShape2D_vvg82")
 
 [node name="LookAhead" parent="Shooter" index="2"]
 target_position = Vector2(500, 0)
