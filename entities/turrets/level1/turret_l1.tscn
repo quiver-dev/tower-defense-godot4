@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjtvb6ahoojoj"]
+[gd_scene load_steps=13 format=3 uid="uid://cjtvb6ahoojoj"]
 
 [ext_resource type="PackedScene" uid="uid://bar5yrgi6jejj" path="res://entities/turrets/turret.tscn" id="1_vd0th"]
 [ext_resource type="Texture2D" uid="uid://e6asxs20t7o5" path="res://entities/turrets/level1/assets/textures/gun_idle_00.png" id="2_7yndc"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dnwd7ldth2udn" path="res://entities/turrets/level1/assets/textures/gun_shoot_01.png" id="4_dicl7"]
 [ext_resource type="Texture2D" uid="uid://bvx3soli23whp" path="res://entities/turrets/level1/assets/textures/gun_shoot_02.png" id="5_pwytm"]
 [ext_resource type="Texture2D" uid="uid://bwxa6eqkjyheu" path="res://entities/turrets/level1/assets/textures/gun_shoot_03.png" id="6_b184u"]
+[ext_resource type="Texture2D" uid="uid://b6gww3jtv8iue" path="res://entities/turrets/level1/assets/textures/gun_fx_00.png" id="8_srx1s"]
+[ext_resource type="Texture2D" uid="uid://bnijscy26tnxb" path="res://entities/turrets/level1/assets/textures/gun_fx_01.png" id="9_ppvj3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v3a16"]
 animations = [{
@@ -21,7 +23,21 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qkgi3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_r51ql"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [ExtResource("8_srx1s"), ExtResource("9_ppvj3")],
+"loop": true,
+"name": &"shoot",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7vdet"]
 radius = 350.0
 
 [node name="TurretL1" instance=ExtResource("1_vd0th")]
@@ -56,10 +72,16 @@ position = Vector2(82, 24)
 [node name="Muzzle6" parent="Shooter/Gun" index="5"]
 position = Vector2(82, 20)
 
-[node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_qkgi3")
+[node name="MuzzleFlash" parent="Shooter" index="1"]
+position = Vector2(93, 1)
+frames = SubResource("SpriteFrames_r51ql")
+animation = &"idle"
+playing = true
 
-[node name="LookAhead" parent="Shooter" index="2"]
+[node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
+shape = SubResource("CircleShape2D_7vdet")
+
+[node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(350, 0)
 
 [node name="EntityHUD" parent="." index="3"]

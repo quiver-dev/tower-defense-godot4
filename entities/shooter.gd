@@ -29,6 +29,7 @@ var targets: Array[Node2D]
 var can_shoot := true
 
 @onready var gun := $Gun as AnimatedSprite2D
+@onready var muzzle_flash := $MuzzleFlash as AnimatedSprite2D
 @onready var detector := $Detector as Area2D
 @onready var detector_coll := $Detector/CollisionShape2D as CollisionShape2D
 @onready var detector_shape := CircleShape2D.new()
@@ -43,8 +44,8 @@ func _ready() -> void:
 	detector_coll.shape = detector_shape
 	# initialize raycast's length
 	lookahead.target_position.x = detect_radius
-	# init gun animation
-	gun.play("idle")
+	# init animations
+	_play_animations("idle")
 
 
 func _physics_process(delta: float) -> void:
@@ -61,6 +62,7 @@ func _draw() -> void:
 	draw_circle(Vector2.ZERO, detect_radius, detector_color)
 
 
+# Gets called by its parents. This way we have more control on when to shoot
 func shoot() -> void:
 	can_shoot = false
 	for _muzzle in gun.get_children():
@@ -71,9 +73,8 @@ func shoot() -> void:
 		projectile_container.add_child(projectile, true)
 		projectile.collision_mask = detector.collision_mask
 	firerate_timer.start(fire_rate)
-	# play animation
-	gun.frame = 0
-	gun.play("shoot")
+	# play animations
+	_play_animations("shoot")
 	# show reload time on HUD
 	emit_signal("has_shot", firerate_timer.wait_time)
 
@@ -110,5 +111,11 @@ func set_projectile_count(value: int) -> void:
 
 func _on_fire_rate_timer_timeout() -> void:
 	can_shoot = true
-	if targets.is_empty():
-		gun.play("idle")
+	_play_animations("idle")
+
+
+func _play_animations(anim_name: String) -> void:
+	gun.frame = 0
+	muzzle_flash.frame = 0
+	gun.play(anim_name)
+	muzzle_flash.play(anim_name)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c3jnmrhthj3q2"]
+[gd_scene load_steps=28 format=3 uid="uid://c3jnmrhthj3q2"]
 
 [ext_resource type="PackedScene" uid="uid://35uxlbs6h5dh" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/tank.gd" id="2_ri3h6"]
@@ -62,7 +62,21 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lktq6"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5y1r"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mde24"]
 radius = 250.0
 
 [node name="Tank" instance=ExtResource("1_o2qr5")]
@@ -107,8 +121,6 @@ detect_radius = 250
 fire_rate = 3.0
 rot_speed = 1.0
 projectile_type = ExtResource("13_2c4hm")
-projectile_speed = 1000
-projectile_damage = 10
 
 [node name="Gun" parent="Shooter" index="0"]
 frames = SubResource("SpriteFrames_mdejl")
@@ -117,13 +129,18 @@ offset = Vector2(0, 0)
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
 position = Vector2(64, 0)
 
-[node name="Detector" parent="Shooter" index="1"]
+[node name="MuzzleFlash" parent="Shooter" index="1"]
+frames = SubResource("SpriteFrames_x5y1r")
+animation = &"idle"
+playing = true
+
+[node name="Detector" parent="Shooter" index="2"]
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_lktq6")
+shape = SubResource("CircleShape2D_mde24")
 
-[node name="LookAhead" parent="Shooter" index="2"]
+[node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)
 target_position = Vector2(250, 0)
 collision_mask = 18

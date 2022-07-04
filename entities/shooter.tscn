@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyfe44jtk41xc"]
+[gd_scene load_steps=14 format=3 uid="uid://dyfe44jtk41xc"]
 
 [ext_resource type="Script" path="res://entities/shooter.gd" id="1_iyj4l"]
 [ext_resource type="Texture2D" uid="uid://dm7pxbc4sw21l" path="res://entities/turrets/level2/assets/textures/gun_idle_00.png" id="2_31pp5"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://pidagis5t7y5" path="res://entities/turrets/level2/assets/textures/gun_shoot_07.png" id="11_ecrc2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m3rfr"]
+resource_local_to_scene = true
 animations = [{
 "frames": [ExtResource("2_31pp5")],
 "loop": true,
@@ -24,13 +25,25 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_upq4b"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0m3mx"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0nqu6"]
 radius = 200.0
 
 [node name="Shooter" type="Node2D"]
 script = ExtResource("1_iyj4l")
-projectile_speed = null
-projectile_damage = null
 
 [node name="Gun" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_m3rfr")
@@ -41,13 +54,19 @@ offset = Vector2(11, -2)
 [node name="Muzzle" type="Position2D" parent="Gun"]
 position = Vector2(80, 0)
 
+[node name="MuzzleFlash" type="AnimatedSprite2D" parent="."]
+position = Vector2(80, 0)
+frames = SubResource("SpriteFrames_0m3mx")
+animation = &"idle"
+playing = true
+
 [node name="Detector" type="Area2D" parent="."]
 collision_layer = 0
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 modulate = Color(1, 1, 1, 0.247059)
-shape = SubResource("CircleShape2D_upq4b")
+shape = SubResource("CircleShape2D_0nqu6")
 
 [node name="LookAhead" type="RayCast2D" parent="."]
 target_position = Vector2(200, 0)
