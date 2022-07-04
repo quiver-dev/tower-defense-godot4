@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3]
 
-[ext_resource type="PackedScene" path="res://entities/projectiles/projectile.tscn" id="1_tkkdn"]
+[ext_resource type="PackedScene" uid="uid://8ja2wvw63xvb" path="res://entities/projectiles/projectile.tscn" id="1_tkkdn"]
 [ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/shell/idle_00.png" id="3_b0pds"]
 [ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/shell/idle_01.png" id="4_btc3t"]
 [ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/shell/idle_02.png" id="5_ngfwe"]

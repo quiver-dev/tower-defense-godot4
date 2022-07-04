@@ -28,7 +28,6 @@ func _ready() -> void:
 # TODO: try finding a way to let the Hit state handle damage.
 func is_hit(damage: int) -> void:
 	if current_state.name == "Hit":
-		print("Already in Hit state")
 		return
 	(owner as Enemy).take_damage(damage)
 	current_state.emit_signal("finished", "hit")

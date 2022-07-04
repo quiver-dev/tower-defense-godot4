@@ -39,14 +39,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_r8l1x"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_txprp"]
 radius = 500.0
 
 [node name="TurretL3" instance=ExtResource("1_6shn0")]
 position = Vector2(192, 64)
-
-[node name="Basement" parent="." index="0"]
-visible = true
 
 [node name="Shooter" parent="." index="2"]
 script = ExtResource("2_tnudh")
@@ -62,17 +59,17 @@ projectile_damage = 20
 position = Vector2(2, 0)
 frames = SubResource("SpriteFrames_pwq6h")
 offset = Vector2(-2, 0)
+metadata/_edit_lock_ = true
 
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
-position = Vector2(17, -31)
+position = Vector2(17, -30)
 rotation = 1.5708
 
 [node name="Muzzle2" parent="Shooter/Gun" index="1"]
 position = Vector2(17, 30)
-rotation = 1.5708
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_r8l1x")
+shape = SubResource("CircleShape2D_txprp")
 
 [node name="LookAhead" parent="Shooter" index="2"]
 target_position = Vector2(500, 0)
