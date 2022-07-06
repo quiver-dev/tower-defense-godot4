@@ -1,0 +1,108 @@
+[gd_scene load_steps=32 format=3 uid="uid://oh4cd280eo3m"]
+
+[ext_resource type="PackedScene" uid="uid://bar5yrgi6jejj" path="res://entities/turrets/turret.tscn" id="1_46fx6"]
+[ext_resource type="Script" path="res://entities/turrets/shooter_homing.gd" id="2_b7udo"]
+[ext_resource type="PackedScene" uid="uid://d0i8efn2ow88m" path="res://entities/projectiles/missile/homing_missile.tscn" id="3_mk2yu"]
+[ext_resource type="Texture2D" uid="uid://cliy7gyk3tt3r" path="res://entities/turrets/missile/assets/textures/gun_idle_00.png" id="4_utfvp"]
+[ext_resource type="Texture2D" uid="uid://cywo7plu2xy2f" path="res://entities/turrets/missile/assets/textures/gun_shoot_a_00.png" id="5_luclg"]
+[ext_resource type="Texture2D" uid="uid://dcgjesv5o8qp" path="res://entities/turrets/missile/assets/textures/gun_shoot_a_01.png" id="6_j64sg"]
+[ext_resource type="Texture2D" uid="uid://bjgwnr33tsinl" path="res://entities/turrets/missile/assets/textures/gun_shoot_a_02.png" id="7_en265"]
+[ext_resource type="Texture2D" uid="uid://crl7prt8787ak" path="res://entities/turrets/missile/assets/textures/gun_shoot_a_03.png" id="8_4xsnx"]
+[ext_resource type="Texture2D" uid="uid://dcrdindfnanfp" path="res://entities/turrets/missile/assets/textures/gun_shoot_a_04.png" id="9_oympy"]
+[ext_resource type="Texture2D" uid="uid://cprvbywiig5w1" path="res://entities/turrets/missile/assets/textures/gun_shoot_a_05.png" id="10_pv3tn"]
+[ext_resource type="Texture2D" uid="uid://bjish3ua1cbi1" path="res://entities/turrets/missile/assets/textures/gun_shoot_a_06.png" id="11_gcv3r"]
+[ext_resource type="Texture2D" uid="uid://c6ear3do3w2mm" path="res://entities/turrets/missile/assets/textures/gun_shoot_a_07.png" id="12_8qoh3"]
+[ext_resource type="Texture2D" uid="uid://bsk5eadyraqcu" path="res://entities/turrets/missile/assets/textures/gun_shoot_b_00.png" id="13_ilnkr"]
+[ext_resource type="Texture2D" uid="uid://bjh47156p3gua" path="res://entities/turrets/missile/assets/textures/gun_shoot_b_01.png" id="14_askng"]
+[ext_resource type="Texture2D" uid="uid://caljlf00xt16q" path="res://entities/turrets/missile/assets/textures/gun_shoot_b_02.png" id="15_tm7ph"]
+[ext_resource type="Texture2D" uid="uid://b7cu2i0ajgiun" path="res://entities/turrets/missile/assets/textures/gun_shoot_b_03.png" id="16_iigwa"]
+[ext_resource type="Texture2D" uid="uid://bu3rpqkpfntf7" path="res://entities/turrets/missile/assets/textures/gun_shoot_b_04.png" id="17_3ouq7"]
+[ext_resource type="Texture2D" uid="uid://do75ptv86u01w" path="res://entities/turrets/missile/assets/textures/gun_shoot_b_05.png" id="18_yxbt6"]
+[ext_resource type="Texture2D" uid="uid://dheoa7vbi687i" path="res://entities/turrets/missile/assets/textures/gun_shoot_b_06.png" id="19_1ifk6"]
+[ext_resource type="Texture2D" uid="uid://cx0r1117a5xta" path="res://entities/turrets/missile/assets/textures/gun_shoot_b_07.png" id="20_cqmx5"]
+[ext_resource type="Texture2D" uid="uid://dat1u2jr1n54h" path="res://entities/assets/textures/missile_vfx/gun_fx_00.png" id="21_xkwgg"]
+[ext_resource type="Texture2D" uid="uid://0nqxb5aias7b" path="res://entities/assets/textures/missile_vfx/gun_fx_01.png" id="22_oy58g"]
+[ext_resource type="Texture2D" uid="uid://dhdw8umur4wry" path="res://entities/assets/textures/missile_vfx/gun_fx_02.png" id="23_5cym0"]
+[ext_resource type="Texture2D" uid="uid://dyrb3yn3pjljv" path="res://entities/assets/textures/missile_vfx/gun_fx_03.png" id="24_b0roi"]
+[ext_resource type="Texture2D" uid="uid://b51xwl1nt7eig" path="res://entities/assets/textures/missile_vfx/gun_fx_04.png" id="25_3rpo1"]
+[ext_resource type="Texture2D" uid="uid://bcklf566ymctf" path="res://entities/assets/textures/missile_vfx/gun_fx_05.png" id="26_rbkuv"]
+[ext_resource type="Texture2D" uid="uid://c6jma3iiarg4n" path="res://entities/assets/textures/missile_vfx/gun_fx_06.png" id="27_ccrje"]
+[ext_resource type="Texture2D" uid="uid://d04k16lu1laqu" path="res://entities/assets/textures/missile_vfx/gun_fx_07.png" id="28_36qse"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pwq6h"]
+animations = [{
+"frames": [ExtResource("4_utfvp")],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [ExtResource("5_luclg"), ExtResource("6_j64sg"), ExtResource("7_en265"), ExtResource("8_4xsnx"), ExtResource("9_oympy"), ExtResource("10_pv3tn"), ExtResource("11_gcv3r"), ExtResource("12_8qoh3")],
+"loop": false,
+"name": &"shoot_a",
+"speed": 10.0
+}, {
+"frames": [ExtResource("13_ilnkr"), ExtResource("14_askng"), ExtResource("15_tm7ph"), ExtResource("16_iigwa"), ExtResource("17_3ouq7"), ExtResource("18_yxbt6"), ExtResource("19_1ifk6"), ExtResource("20_cqmx5")],
+"loop": false,
+"name": &"shoot_b",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncayq"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [ExtResource("21_xkwgg"), ExtResource("22_oy58g"), ExtResource("23_5cym0"), ExtResource("24_b0roi"), ExtResource("25_3rpo1"), ExtResource("26_rbkuv"), ExtResource("27_ccrje"), ExtResource("28_36qse"), null],
+"loop": false,
+"name": &"shoot_a",
+"speed": 10.0
+}, {
+"frames": [ExtResource("21_xkwgg"), ExtResource("22_oy58g"), ExtResource("23_5cym0"), ExtResource("24_b0roi"), ExtResource("25_3rpo1"), ExtResource("26_rbkuv"), ExtResource("27_ccrje"), ExtResource("28_36qse"), null],
+"loop": false,
+"name": &"shoot_b",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3prw"]
+radius = 500.0
+
+[node name="MissileTurret" instance=ExtResource("1_46fx6")]
+position = Vector2(192, 64)
+
+[node name="Shooter" parent="." index="2"]
+script = ExtResource("2_b7udo")
+detect_radius = 500
+fire_rate = 5.0
+projectile_count = 2
+projectile_type = ExtResource("3_mk2yu")
+projectile_spread = 0.0
+projectile_speed = 400
+projectile_damage = 20
+
+[node name="Gun" parent="Shooter" index="0"]
+position = Vector2(2, 0)
+frames = SubResource("SpriteFrames_pwq6h")
+offset = Vector2(-2, 0)
+metadata/_edit_lock_ = true
+
+[node name="Muzzle" parent="Shooter/Gun" index="0"]
+position = Vector2(17, -30)
+
+[node name="Muzzle2" parent="Shooter/Gun" index="1"]
+position = Vector2(17, 30)
+
+[node name="MuzzleFlash" parent="Shooter" index="1"]
+position = Vector2(19, -30)
+frames = SubResource("SpriteFrames_ncayq")
+offset = Vector2(12, 3)
+
+[node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
+shape = SubResource("CircleShape2D_y3prw")
+
+[node name="LookAhead" parent="Shooter" index="3"]
+target_position = Vector2(500, 0)
+
+[editable path="Shooter"]

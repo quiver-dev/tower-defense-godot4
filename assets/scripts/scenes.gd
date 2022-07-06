@@ -6,6 +6,10 @@ extends Node
 const INFANTRY_T1 := "res://entities/enemies/infantry/infantry_t1.tscn"
 const INFANTRY_T2 := "res://entities/enemies/infantry/infantry_t2.tscn"
 const TANK := "res://entities/enemies/tanks/tank.tscn"
+# Turrets
+const GATLING_TURRET := "res://entities/turrets/gatling/gatling_turret.tscn"
+const SINGLE_TURRET := "res://entities/turrets/single/single_turret.tscn"
+const MISSILE_TURRET := "res://entities/turrets/missile/missile_turret.tscn"
 
 
 static func get_enemy_path(enemy_name: String) -> String:
@@ -18,6 +22,20 @@ static func get_enemy_path(enemy_name: String) -> String:
 		"tank":
 			enemy_path = TANK
 		_:
-			print("Cannot get enemy scene from name %s" % enemy_name)
-			enemy_path = INFANTRY_T1
+			printerr("Cannot get enemy scene from name %s" % enemy_name)
+			enemy_path = INFANTRY_T1  # FIXME: temporary fix, investigate
 	return enemy_path
+
+
+static func get_turret_path(turret_name: String) -> String:
+	var turret_path: String
+	match turret_name:
+		"gatling":
+			turret_path = GATLING_TURRET
+		"single":
+			turret_path = SINGLE_TURRET
+		"missile":
+			turret_path = MISSILE_TURRET
+		_:
+			printerr("Cannot get turret scene from name %s" % turret_name)
+	return turret_path

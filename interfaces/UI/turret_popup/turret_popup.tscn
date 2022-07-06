@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfmd55tx5we00"]
+[gd_scene load_steps=12 format=3 uid="uid://bjphbghinurfr"]
 
 [ext_resource type="Theme" uid="uid://d065e0bnj0me6" path="res://assets/themes/td_theme.tres" id="1_d4ywp"]
 [ext_resource type="Texture2D" uid="uid://bvrpxpt7jko5f" path="res://interfaces/assets/textures/red_circle.png" id="2_64a23"]
 [ext_resource type="Script" path="res://interfaces/UI/turret_popup/turret_popup.gd" id="2_hlo1n"]
 [ext_resource type="Texture2D" uid="uid://cwjprn730kyb4" path="res://interfaces/assets/textures/grey_crossWhite.png" id="3_k6npk"]
-[ext_resource type="Texture2D" uid="uid://e6asxs20t7o5" path="res://entities/turrets/level1/assets/textures/gun_idle_00.png" id="5_rke2o"]
-[ext_resource type="Texture2D" uid="uid://dm7pxbc4sw21l" path="res://entities/turrets/level2/assets/textures/gun_idle_00.png" id="6_q3pv8"]
-[ext_resource type="Texture2D" uid="uid://cliy7gyk3tt3r" path="res://entities/turrets/level3/assets/textures/gun_idle_00.png" id="7_jtx3o"]
+[ext_resource type="Texture2D" uid="uid://dm7pxbc4sw21l" path="res://entities/turrets/single/assets/textures/gun_idle_00.png" id="5_uaj7d"]
+[ext_resource type="Texture2D" uid="uid://cliy7gyk3tt3r" path="res://entities/turrets/missile/assets/textures/gun_idle_00.png" id="6_ye7vx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xfjc7"]
 texture = ExtResource("2_64a23")
@@ -20,6 +19,9 @@ region_rect = Rect2(0, 0, 36, 36)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7fftr"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_jhmro"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_owfrb"]
+load_path = "res://.godot/imported/gun_idle_00.png-a454b234c8292ccdc3241a21e6a2e551.ctex"
 
 [node name="TurretPopup" type="CanvasLayer"]
 script = ExtResource("2_hlo1n")
@@ -93,7 +95,7 @@ theme_override_constants/v_separation = 10
 offset_right = 148.0
 offset_bottom = 148.0
 button_group = SubResource("ButtonGroup_jhmro")
-icon = ExtResource("5_rke2o")
+icon = SubResource("CompressedTexture2D_owfrb")
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="Background/Panel/Turrets/Gatling"]
@@ -117,7 +119,7 @@ theme_override_constants/v_separation = 10
 offset_right = 148.0
 offset_bottom = 148.0
 button_group = SubResource("ButtonGroup_jhmro")
-icon = ExtResource("6_q3pv8")
+icon = ExtResource("5_uaj7d")
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="Background/Panel/Turrets/Single"]
@@ -141,7 +143,7 @@ theme_override_constants/v_separation = 10
 offset_right = 148.0
 offset_bottom = 148.0
 button_group = SubResource("ButtonGroup_jhmro")
-icon = ExtResource("7_jtx3o")
+icon = ExtResource("6_ye7vx")
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="Background/Panel/Turrets/Missile"]
@@ -157,6 +159,6 @@ horizontal_alignment = 1
 
 [connection signal="gui_input" from="Background" to="." method="_on_background_gui_input"]
 [connection signal="pressed" from="Background/Panel/Close" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="Background/Panel/Turrets/Gatling/Button" to="." method="_on_button_pressed" binds= [1]]
-[connection signal="pressed" from="Background/Panel/Turrets/Single/Button" to="." method="_on_button_pressed" binds= [2]]
-[connection signal="pressed" from="Background/Panel/Turrets/Missile/Button" to="." method="_on_button_pressed" binds= [3]]
+[connection signal="pressed" from="Background/Panel/Turrets/Gatling/Button" to="." method="_on_button_pressed" binds= ["gatling"]]
+[connection signal="pressed" from="Background/Panel/Turrets/Single/Button" to="." method="_on_button_pressed" binds= ["single"]]
+[connection signal="pressed" from="Background/Panel/Turrets/Missile/Button" to="." method="_on_button_pressed" binds= ["missile"]]
