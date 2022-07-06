@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dk2a1kn6s85wf"]
+[gd_scene load_steps=32 format=3 uid="uid://blnkwfd6orxwl"]
 
 [ext_resource type="PackedScene" uid="uid://bar5yrgi6jejj" path="res://entities/turrets/turret.tscn" id="1_6shn0"]
 [ext_resource type="Script" path="res://entities/turrets/shooter_homing.gd" id="2_tnudh"]
@@ -20,14 +20,14 @@
 [ext_resource type="Texture2D" uid="uid://do75ptv86u01w" path="res://entities/turrets/level3/assets/textures/gun_shoot_b_05.png" id="18_3nxnb"]
 [ext_resource type="Texture2D" uid="uid://dheoa7vbi687i" path="res://entities/turrets/level3/assets/textures/gun_shoot_b_06.png" id="19_0tpwj"]
 [ext_resource type="Texture2D" uid="uid://cx0r1117a5xta" path="res://entities/turrets/level3/assets/textures/gun_shoot_b_07.png" id="20_p3p1x"]
-[ext_resource type="Texture2D" uid="uid://dat1u2jr1n54h" path="res://entities/turrets/level3/assets/textures/gun_fx_00.png" id="21_6io74"]
-[ext_resource type="Texture2D" uid="uid://0nqxb5aias7b" path="res://entities/turrets/level3/assets/textures/gun_fx_01.png" id="22_iiqxd"]
-[ext_resource type="Texture2D" uid="uid://dhdw8umur4wry" path="res://entities/turrets/level3/assets/textures/gun_fx_02.png" id="23_ne8in"]
-[ext_resource type="Texture2D" uid="uid://dyrb3yn3pjljv" path="res://entities/turrets/level3/assets/textures/gun_fx_03.png" id="24_8etvl"]
-[ext_resource type="Texture2D" uid="uid://b51xwl1nt7eig" path="res://entities/turrets/level3/assets/textures/gun_fx_04.png" id="25_xxw8m"]
-[ext_resource type="Texture2D" uid="uid://bcklf566ymctf" path="res://entities/turrets/level3/assets/textures/gun_fx_05.png" id="26_enjgj"]
-[ext_resource type="Texture2D" uid="uid://c6jma3iiarg4n" path="res://entities/turrets/level3/assets/textures/gun_fx_06.png" id="27_wlk0x"]
-[ext_resource type="Texture2D" uid="uid://d04k16lu1laqu" path="res://entities/turrets/level3/assets/textures/gun_fx_07.png" id="28_5nb8w"]
+[ext_resource type="Texture2D" uid="uid://dat1u2jr1n54h" path="res://entities/assets/textures/missile_vfx/gun_fx_00.png" id="21_6io74"]
+[ext_resource type="Texture2D" uid="uid://0nqxb5aias7b" path="res://entities/assets/textures/missile_vfx/gun_fx_01.png" id="22_iiqxd"]
+[ext_resource type="Texture2D" uid="uid://dhdw8umur4wry" path="res://entities/assets/textures/missile_vfx/gun_fx_02.png" id="23_ne8in"]
+[ext_resource type="Texture2D" uid="uid://dyrb3yn3pjljv" path="res://entities/assets/textures/missile_vfx/gun_fx_03.png" id="24_8etvl"]
+[ext_resource type="Texture2D" uid="uid://b51xwl1nt7eig" path="res://entities/assets/textures/missile_vfx/gun_fx_04.png" id="25_xxw8m"]
+[ext_resource type="Texture2D" uid="uid://bcklf566ymctf" path="res://entities/assets/textures/missile_vfx/gun_fx_05.png" id="26_enjgj"]
+[ext_resource type="Texture2D" uid="uid://c6jma3iiarg4n" path="res://entities/assets/textures/missile_vfx/gun_fx_06.png" id="27_wlk0x"]
+[ext_resource type="Texture2D" uid="uid://d04k16lu1laqu" path="res://entities/assets/textures/missile_vfx/gun_fx_07.png" id="28_5nb8w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pwq6h"]
 animations = [{
@@ -66,7 +66,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6l0nc"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bod6p"]
 radius = 500.0
 
 [node name="TurretL3" instance=ExtResource("1_6shn0")]
@@ -97,12 +97,10 @@ position = Vector2(17, 30)
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 position = Vector2(19, -30)
 frames = SubResource("SpriteFrames_ncayq")
-frame = 8
-playing = true
 offset = Vector2(12, 3)
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_6l0nc")
+shape = SubResource("CircleShape2D_bod6p")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(500, 0)

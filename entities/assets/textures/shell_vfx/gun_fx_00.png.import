@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0nqxb5aias7b"
-path="res://.godot/imported/gun_fx_01.png-fbb9425377c898d674822be29018a1f4.ctex"
+uid="uid://cl4dq8alctrx5"
+path="res://.godot/imported/gun_fx_00.png-693b7039a949569e38f84ac485a3ab57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/turrets/level3/assets/textures/gun_fx_01.png"
-dest_files=["res://.godot/imported/gun_fx_01.png-fbb9425377c898d674822be29018a1f4.ctex"]
+source_file="res://entities/assets/textures/shell_vfx/gun_fx_00.png"
+dest_files=["res://.godot/imported/gun_fx_00.png-693b7039a949569e38f84ac485a3ab57.ctex"]
 
 [params]
 
