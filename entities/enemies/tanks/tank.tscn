@@ -83,7 +83,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_540o6"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5o4r"]
 radius = 250.0
 
 [node name="Tank" instance=ExtResource("1_o2qr5")]
@@ -108,15 +108,15 @@ script = ExtResource("5_5f6sk")
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_2qc3e")
-frame = 2
+frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("RectangleShape2D_b8s0v")
 
 [node name="NavigationAgent2D" parent="." index="3"]
-radius = 80.0
-neighbor_dist = 200.0
-max_speed = 300.0
+path_desired_distance = 8.0
+path_max_distance = 16.0
+radius = 72.0
 
 [node name="EntityHUD" parent="." index="4"]
 offset_top = -115.0
@@ -144,7 +144,7 @@ frames = SubResource("SpriteFrames_x5y1r")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_540o6")
+shape = SubResource("CircleShape2D_p5o4r")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)

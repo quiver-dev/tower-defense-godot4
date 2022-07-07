@@ -21,7 +21,7 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(262133, 196609, 3, 196598, 65537, 3, 393207, 393217, 2, -262148, 262145, 3, 65533, 393217, 1, 196606, 393217, 0, -196605, 262145, 3, 3, 327681, 2, -262138, 393217, 1, 131080, 1, 3, 393227, 131073, 3, -196596, 393217, 3, -327667, 393217, 2, -131083, 393217, 3, -11, 262145, 3, 720885, 327681, 2, -262154, 393217, 3, -262147, 327681, 2, 589827, 65537, 3, -327671, 131073, 3, 655369, 196609, 3, 196619, 262145, 3, 589835, 393217, 3, 327692, 393217, 2, 589836, 393217, 1, 65549, 393217, 0, 458765, 327681, 1, 262136, 1, 3, 65537, 1, 3, 327681, 1, 3, 589822, 1, 3, 589815, 262145, 3, 327685, 262145, 3, 262153, 262145, 3, 65546, 1, 3)
+layer_1/tile_data = PackedInt32Array(262133, 196609, 3, 196598, 65537, 3, 393207, 393217, 2, -262148, 262145, 3, 65533, 393217, 1, 196606, 393217, 0, -196605, 262145, 3, 3, 327681, 2, -262138, 393217, 1, 131080, 1, 3, -196596, 393217, 3, -327667, 393217, 2, -131083, 393217, 3, -11, 262145, 3, 720885, 327681, 2, -262154, 393217, 3, -262147, 327681, 2, 589827, 65537, 3, -327671, 131073, 3, 655369, 196609, 3, 196619, 262145, 3, 589835, 393217, 3, 589836, 393217, 1, 65549, 393217, 0, 458765, 327681, 1, 262136, 1, 3, 65537, 1, 3, 327681, 1, 3, 589822, 1, 3, 589815, 262145, 3, 327685, 262145, 3, 262153, 262145, 3, 65546, 1, 3, 327693, 327681, 2, 720893, 327681, 0, 720895, 393217, 1)
 
 [node name="Camera2D" parent="." instance=ExtResource("3_o2ded")]
 position = Vector2(-832, 984)
@@ -43,27 +43,39 @@ one_shot = true
 [node name="TurretSlots" type="Node2D" parent="."]
 
 [node name="TurretSlot1" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(-32, -96)
+position = Vector2(-128, 0)
 
 [node name="TurretSlot2" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(480, 544)
+position = Vector2(640, 1152)
 
 [node name="TurretSlot3" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(-672, 864)
+position = Vector2(448, 704)
 
 [node name="TurretSlot4" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(-32, 352)
+position = Vector2(-128, 512)
 
 [node name="TurretSlot5" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(-736, 224)
+position = Vector2(-640, 0)
 
 [node name="TurretSlot6" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(-32, 864)
+position = Vector2(-128, 768)
 
 [node name="TurretSlot7" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(928, 736)
+position = Vector2(1536, 776)
 
 [node name="TurretSlot8" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(1000, 64)
+position = Vector2(1408, -384)
+
+[node name="TurretSlot9" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
+position = Vector2(512, -512)
+
+[node name="TurretSlot10" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
+position = Vector2(-1280, 128)
+
+[node name="TurretSlot11" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
+position = Vector2(960, 320)
+
+[node name="TurretSlot12" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
+position = Vector2(448, -64)
 
 [connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
