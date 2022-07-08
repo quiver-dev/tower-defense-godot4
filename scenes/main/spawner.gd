@@ -48,7 +48,7 @@ func _spawn_item() -> String:
 	var tot_probability: int = 0
 	for key in enemies.keys():
 		tot_probability += enemies[key]
-	var rand_number = randi_range(0, tot_probability)
+	var rand_number = randi_range(0, tot_probability - 1)
 	var item: String
 	for key in enemies.keys():
 		if rand_number < enemies[key]:

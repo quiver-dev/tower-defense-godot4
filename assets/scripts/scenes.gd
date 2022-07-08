@@ -23,7 +23,6 @@ static func get_enemy_path(enemy_name: String) -> String:
 			enemy_path = TANK
 		_:
 			printerr("Cannot get enemy scene from name %s" % enemy_name)
-			enemy_path = INFANTRY_T1  # FIXME: temporary fix, investigate
 	return enemy_path
 
 
