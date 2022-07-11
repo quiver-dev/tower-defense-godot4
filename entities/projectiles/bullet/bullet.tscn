@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://cfmt0lvu6g0mw"]
 
 [ext_resource type="PackedScene" uid="uid://8ja2wvw63xvb" path="res://entities/projectiles/projectile.tscn" id="1_ry2b2"]
-[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/bullet/idle_00.png" id="2_5apyx"]
-[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/bullet/idle_01.png" id="3_dcw82"]
-[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/bullet/idle_02.png" id="4_x3yx5"]
+[ext_resource type="Texture2D" uid="uid://b344yuti171ff" path="res://entities/projectiles/assets/textures/bullet/idle_00.png" id="2_5apyx"]
+[ext_resource type="Texture2D" uid="uid://bj70rjxc02p1v" path="res://entities/projectiles/assets/textures/bullet/idle_01.png" id="3_dcw82"]
+[ext_resource type="Texture2D" uid="uid://bu8xd2cr206ig" path="res://entities/projectiles/assets/textures/bullet/idle_02.png" id="4_x3yx5"]
+[ext_resource type="Texture2D" uid="uid://bq8jlct5t46lx" path="res://entities/projectiles/assets/textures/bullet/hit_vfx_00.png" id="5_pycns"]
+[ext_resource type="Texture2D" uid="uid://cocdevj1ephxt" path="res://entities/projectiles/assets/textures/bullet/hit_vfx_01.png" id="6_k3bh3"]
+[ext_resource type="Texture2D" uid="uid://bjaungrya108h" path="res://entities/projectiles/assets/textures/bullet/hit_vfx_02.png" id="7_vfvte"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_m08r3"]
 frames = 3
@@ -18,6 +21,15 @@ frame_2/delay_sec = 0.0
 radius = 3.0
 height = 9.99999
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_mb2m8"]
+resource_local_to_scene = true
+animations = [{
+"frames": [ExtResource("5_pycns"), ExtResource("6_k3bh3"), ExtResource("7_vfvte"), null],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}]
+
 [node name="TurretBullet" instance=ExtResource("1_ry2b2")]
 
 [node name="Sprite2D" parent="." index="0"]
@@ -25,3 +37,6 @@ texture = SubResource("AnimatedTexture_m08r3")
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CapsuleShape2D_txwll")
+
+[node name="HitVfx" parent="." index="3"]
+frames = SubResource("SpriteFrames_mb2m8")

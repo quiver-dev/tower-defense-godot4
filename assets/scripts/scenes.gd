@@ -1,5 +1,5 @@
 extends Node
-# Helper global class used to get information about game scenes.
+# Global helper class used to get information about game scenes.
 
 
 # Enemies

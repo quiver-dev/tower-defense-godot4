@@ -1,10 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0i8efn2ow88m"]
+[gd_scene load_steps=22 format=3 uid="uid://d0i8efn2ow88m"]
 
 [ext_resource type="PackedScene" uid="uid://8ja2wvw63xvb" path="res://entities/projectiles/projectile.tscn" id="1_6qmsl"]
 [ext_resource type="Script" path="res://entities/projectiles/missile/homing_missile.gd" id="2_dm4fp"]
 [ext_resource type="Texture2D" uid="uid://bh1q18jyebtux" path="res://entities/projectiles/assets/textures/missile/idle_00.png" id="3_xpo2u"]
 [ext_resource type="Texture2D" uid="uid://c3vojfshvegn6" path="res://entities/projectiles/assets/textures/missile/idle_01.png" id="4_57q64"]
 [ext_resource type="Texture2D" uid="uid://guljjke2wk8q" path="res://entities/projectiles/assets/textures/missile/idle_02.png" id="5_7h6gu"]
+[ext_resource type="Texture2D" uid="uid://ds83s8ylrfpmr" path="res://entities/projectiles/assets/textures/missile/hit_vfx_00.png" id="6_fulv4"]
+[ext_resource type="Texture2D" uid="uid://cl742monuvo54" path="res://entities/projectiles/assets/textures/missile/hit_vfx_01.png" id="7_b5667"]
+[ext_resource type="Texture2D" uid="uid://br4qbgfq2n0tq" path="res://entities/projectiles/assets/textures/missile/hit_vfx_02.png" id="8_26fk2"]
+[ext_resource type="Texture2D" uid="uid://70cne0t3h4oh" path="res://entities/projectiles/assets/textures/missile/hit_vfx_03.png" id="9_1427d"]
+[ext_resource type="Texture2D" uid="uid://dfqyso5tptpi5" path="res://entities/projectiles/assets/textures/missile/hit_vfx_04.png" id="10_18i06"]
+[ext_resource type="Texture2D" uid="uid://bktpnj1bl61ef" path="res://entities/projectiles/assets/textures/missile/hit_vfx_05.png" id="11_4oeus"]
+[ext_resource type="Texture2D" uid="uid://c5iikx2fgwrw6" path="res://entities/projectiles/assets/textures/missile/hit_vfx_06.png" id="12_f2oct"]
+[ext_resource type="Texture2D" uid="uid://c83kltxru67r" path="res://entities/projectiles/assets/textures/missile/hit_vfx_07.png" id="13_sfb1q"]
+[ext_resource type="Texture2D" uid="uid://dv5knhqhs5q48" path="res://entities/projectiles/assets/textures/missile/hit_vfx_08.png" id="14_k7lsb"]
+[ext_resource type="Texture2D" uid="uid://yjbjwjoch755" path="res://entities/projectiles/assets/textures/missile/hit_vfx_09.png" id="15_x35fu"]
+[ext_resource type="Texture2D" uid="uid://dx75240obg0lk" path="res://entities/projectiles/assets/textures/missile/hit_vfx_10.png" id="16_d57mj"]
+[ext_resource type="Texture2D" uid="uid://cw1jnmicfuoqd" path="res://entities/projectiles/assets/textures/missile/hit_vfx_11.png" id="17_jiv8u"]
+[ext_resource type="Texture2D" uid="uid://dkcynts54jcar" path="res://entities/projectiles/assets/textures/missile/hit_vfx_12.png" id="18_gyoyx"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_hvawp"]
 frames = 3
@@ -19,6 +32,15 @@ frame_2/delay_sec = 0.0
 radius = 4.0
 height = 34.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_dg37q"]
+resource_local_to_scene = true
+animations = [{
+"frames": [ExtResource("6_fulv4"), ExtResource("7_b5667"), ExtResource("8_26fk2"), ExtResource("9_1427d"), ExtResource("10_18i06"), ExtResource("11_4oeus"), ExtResource("12_f2oct"), ExtResource("13_sfb1q"), ExtResource("14_k7lsb"), ExtResource("15_x35fu"), ExtResource("16_d57mj"), ExtResource("17_jiv8u"), ExtResource("18_gyoyx"), null],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}]
+
 [node name="HomingMissile" instance=ExtResource("1_6qmsl")]
 script = ExtResource("2_dm4fp")
 steer_force = 40
@@ -32,3 +54,7 @@ shape = SubResource("CapsuleShape2D_70r35")
 
 [node name="VisibleOnScreenEnabler2D" parent="." index="2"]
 scale = Vector2(28.8, 25.6)
+
+[node name="HitVfx" parent="." index="3"]
+position = Vector2(85, 0)
+frames = SubResource("SpriteFrames_dg37q")

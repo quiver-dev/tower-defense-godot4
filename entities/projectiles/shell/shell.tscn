@@ -1,10 +1,21 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=20 format=3 uid="uid://dt26eh0iir35o"]
 
 [ext_resource type="PackedScene" uid="uid://8ja2wvw63xvb" path="res://entities/projectiles/projectile.tscn" id="1_tkkdn"]
-[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/shell/idle_00.png" id="3_b0pds"]
-[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/shell/idle_01.png" id="4_btc3t"]
-[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/shell/idle_02.png" id="5_ngfwe"]
-[ext_resource type="Texture2D" path="res://entities/projectiles/assets/textures/shell/idle_03.png" id="6_uuiht"]
+[ext_resource type="Texture2D" uid="uid://0rbmcmvh5jeo" path="res://entities/projectiles/assets/textures/shell/idle_00.png" id="3_b0pds"]
+[ext_resource type="Texture2D" uid="uid://bg7mvao66jkbj" path="res://entities/projectiles/assets/textures/shell/idle_01.png" id="4_btc3t"]
+[ext_resource type="Texture2D" uid="uid://ub5rvndomlu" path="res://entities/projectiles/assets/textures/shell/idle_02.png" id="5_ngfwe"]
+[ext_resource type="Texture2D" uid="uid://cyr1tgkglb6d2" path="res://entities/projectiles/assets/textures/shell/hit_vfx_00.png" id="6_nb3n6"]
+[ext_resource type="Texture2D" uid="uid://b3dqs6ib0wsxx" path="res://entities/projectiles/assets/textures/shell/idle_03.png" id="6_uuiht"]
+[ext_resource type="Texture2D" uid="uid://8ub355sq30tp" path="res://entities/projectiles/assets/textures/shell/hit_vfx_01.png" id="7_8h77b"]
+[ext_resource type="Texture2D" uid="uid://k3co8df5aoul" path="res://entities/projectiles/assets/textures/shell/hit_vfx_02.png" id="8_cgx24"]
+[ext_resource type="Texture2D" uid="uid://w8oduo6fmf3d" path="res://entities/projectiles/assets/textures/shell/hit_vfx_03.png" id="9_mft6p"]
+[ext_resource type="Texture2D" uid="uid://8bkyd2r0ec5p" path="res://entities/projectiles/assets/textures/shell/hit_vfx_04.png" id="10_dviqr"]
+[ext_resource type="Texture2D" uid="uid://d2tgco81iqiof" path="res://entities/projectiles/assets/textures/shell/hit_vfx_05.png" id="11_ko8n7"]
+[ext_resource type="Texture2D" uid="uid://bxst0o0l7xqvm" path="res://entities/projectiles/assets/textures/shell/hit_vfx_06.png" id="12_eccky"]
+[ext_resource type="Texture2D" uid="uid://yo6oecq61kl3" path="res://entities/projectiles/assets/textures/shell/hit_vfx_07.png" id="13_nxurx"]
+[ext_resource type="Texture2D" uid="uid://beu05qwopn7ls" path="res://entities/projectiles/assets/textures/shell/hit_vfx_08.png" id="14_lseg6"]
+[ext_resource type="Texture2D" uid="uid://rdwig1ervb84" path="res://entities/projectiles/assets/textures/shell/hit_vfx_09.png" id="15_2xcdg"]
+[ext_resource type="Texture2D" uid="uid://djjym017e4ox8" path="res://entities/projectiles/assets/textures/shell/hit_vfx_10.png" id="16_s0kxe"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_sre88"]
 frames = 4
@@ -21,6 +32,15 @@ frame_3/delay_sec = 0.0
 radius = 8.0
 height = 24.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_52x2d"]
+resource_local_to_scene = true
+animations = [{
+"frames": [ExtResource("6_nb3n6"), ExtResource("7_8h77b"), ExtResource("8_cgx24"), ExtResource("9_mft6p"), ExtResource("10_dviqr"), ExtResource("11_ko8n7"), ExtResource("12_eccky"), ExtResource("13_nxurx"), ExtResource("14_lseg6"), ExtResource("15_2xcdg"), ExtResource("16_s0kxe"), null],
+"loop": false,
+"name": &"hit",
+"speed": 8.0
+}]
+
 [node name="TankBullet" instance=ExtResource("1_tkkdn")]
 
 [node name="Sprite2D" parent="." index="0"]
@@ -29,3 +49,7 @@ texture = SubResource("AnimatedTexture_sre88")
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(20, 0)
 shape = SubResource("CapsuleShape2D_qpee1")
+
+[node name="HitVfx" parent="." index="3"]
+position = Vector2(86, 0)
+frames = SubResource("SpriteFrames_52x2d")

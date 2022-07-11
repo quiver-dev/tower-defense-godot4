@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://8ja2wvw63xvb"]
+[gd_scene load_steps=11 format=3 uid="uid://8ja2wvw63xvb"]
 
 [ext_resource type="Script" path="res://entities/projectiles/projectile.gd" id="1_orxkc"]
 [ext_resource type="Texture2D" uid="uid://b344yuti171ff" path="res://entities/projectiles/assets/textures/bullet/idle_00.png" id="2_cyqn1"]
 [ext_resource type="Texture2D" uid="uid://bj70rjxc02p1v" path="res://entities/projectiles/assets/textures/bullet/idle_01.png" id="3_18gee"]
 [ext_resource type="Texture2D" uid="uid://bu8xd2cr206ig" path="res://entities/projectiles/assets/textures/bullet/idle_02.png" id="4_kdb4y"]
+[ext_resource type="Texture2D" uid="uid://bq8jlct5t46lx" path="res://entities/projectiles/assets/textures/bullet/hit_vfx_00.png" id="5_hg75i"]
+[ext_resource type="Texture2D" uid="uid://cocdevj1ephxt" path="res://entities/projectiles/assets/textures/bullet/hit_vfx_01.png" id="6_f5msy"]
+[ext_resource type="Texture2D" uid="uid://bjaungrya108h" path="res://entities/projectiles/assets/textures/bullet/hit_vfx_02.png" id="7_4o8dh"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_1wkj2"]
 frames = 3
@@ -17,6 +20,15 @@ frame_2/delay_sec = 0.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_er61a"]
 radius = 3.0
 height = 9.99999
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6sp82"]
+resource_local_to_scene = true
+animations = [{
+"frames": [ExtResource("5_hg75i"), ExtResource("6_f5msy"), ExtResource("7_4o8dh"), null],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}]
 
 [node name="Projectile" type="Area2D"]
 collision_layer = 4
@@ -34,6 +46,13 @@ shape = SubResource("CapsuleShape2D_er61a")
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 scale = Vector2(4, 4)
 
+[node name="HitVfx" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(40, 0)
+frames = SubResource("SpriteFrames_6sp82")
+animation = &"hit"
+
 [connection signal="area_entered" from="." to="." method="_on_projectile_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_projectile_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
+[connection signal="animation_finished" from="HitVfx" to="." method="_on_hit_vfx_animation_finished"]
