@@ -53,8 +53,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8s0v"]
-size = Vector2(144, 96)
+[sub_resource type="CircleShape2D" id="CircleShape2D_piq2n"]
+radius = 60.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mdejl"]
 animations = [{
@@ -83,7 +83,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2hvc6"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_b3jb2"]
 radius = 250.0
 
 [node name="Tank" instance=ExtResource("1_o2qr5")]
@@ -108,10 +108,10 @@ script = ExtResource("5_5f6sk")
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_2qc3e")
-frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
-shape = SubResource("RectangleShape2D_b8s0v")
+position = Vector2(-14, 0)
+shape = SubResource("CircleShape2D_piq2n")
 
 [node name="NavigationAgent2D" parent="." index="3"]
 path_desired_distance = 8.0
@@ -144,7 +144,7 @@ frames = SubResource("SpriteFrames_x5y1r")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_2hvc6")
+shape = SubResource("CircleShape2D_b3jb2")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)

@@ -38,7 +38,7 @@ animations = [{
 "frames": [ExtResource("6_fulv4"), ExtResource("7_b5667"), ExtResource("8_26fk2"), ExtResource("9_1427d"), ExtResource("10_18i06"), ExtResource("11_4oeus"), ExtResource("12_f2oct"), ExtResource("13_sfb1q"), ExtResource("14_k7lsb"), ExtResource("15_x35fu"), ExtResource("16_d57mj"), ExtResource("17_jiv8u"), ExtResource("18_gyoyx"), null],
 "loop": false,
 "name": &"hit",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [node name="HomingMissile" instance=ExtResource("1_6qmsl")]

@@ -27,7 +27,7 @@ animations = [{
 "frames": [ExtResource("5_pycns"), ExtResource("6_k3bh3"), ExtResource("7_vfvte"), null],
 "loop": false,
 "name": &"hit",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [node name="TurretBullet" instance=ExtResource("1_ry2b2")]

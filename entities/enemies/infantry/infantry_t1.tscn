@@ -29,18 +29,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v00yk"]
-resource_local_to_scene = true
-size = Vector2(48, 48)
+[sub_resource type="CircleShape2D" id="CircleShape2D_recve"]
+radius = 24.0
 
 [node name="InfantryT1" instance=ExtResource("1_l80xx")]
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_hgfy3")
-frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
-shape = SubResource("RectangleShape2D_v00yk")
+shape = SubResource("CircleShape2D_recve")
 
 [node name="NavigationAgent2D" parent="." index="3"]
 path_desired_distance = 16.0

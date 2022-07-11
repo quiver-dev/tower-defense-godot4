@@ -38,7 +38,7 @@ animations = [{
 "frames": [ExtResource("6_nb3n6"), ExtResource("7_8h77b"), ExtResource("8_cgx24"), ExtResource("9_mft6p"), ExtResource("10_dviqr"), ExtResource("11_ko8n7"), ExtResource("12_eccky"), ExtResource("13_nxurx"), ExtResource("14_lseg6"), ExtResource("15_2xcdg"), ExtResource("16_s0kxe"), null],
 "loop": false,
 "name": &"hit",
-"speed": 8.0
+"speed": 12.0
 }]
 
 [node name="TankBullet" instance=ExtResource("1_tkkdn")]

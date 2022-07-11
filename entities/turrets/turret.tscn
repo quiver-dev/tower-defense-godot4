@@ -15,7 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://pidagis5t7y5" path="res://entities/turrets/single/assets/textures/gun_shoot_07.png" id="12_kj0np"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o87d8"]
-size = Vector2(48, 48)
+resource_local_to_scene = true
+size = Vector2(96, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lyc1n"]
 resource_local_to_scene = true
@@ -45,7 +46,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_52cp7"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_dvsi4"]
 radius = 200.0
 
 [node name="Turret" type="CharacterBody2D"]
@@ -59,7 +60,8 @@ visible = false
 texture = ExtResource("2_nf4vx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-show_behind_parent = true
+position = Vector2(5, 0)
+z_index = 1
 shape = SubResource("RectangleShape2D_o87d8")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
@@ -75,7 +77,7 @@ offset = Vector2(7, -2)
 frames = SubResource("SpriteFrames_7qxgd")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_52cp7")
+shape = SubResource("CircleShape2D_dvsi4")
 
 [node name="EntityHUD" parent="." instance=ExtResource("5_owktb")]
 offset_left = -31.0

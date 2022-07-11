@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cegwjidelabux"]
+[gd_scene load_steps=23 format=3 uid="uid://cegwjidelabux"]
 
 [ext_resource type="PackedScene" uid="uid://bar5yrgi6jejj" path="res://entities/turrets/turret.tscn" id="1_ewq6e"]
 [ext_resource type="PackedScene" uid="uid://dt26eh0iir35o" path="res://entities/projectiles/shell/shell.tscn" id="2_1800l"]
@@ -18,6 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://bcafe5b48ltly" path="res://entities/assets/textures/shell_vfx/gun_fx_04.png" id="16_2afws"]
 [ext_resource type="Texture2D" uid="uid://ceak4ctloj3bs" path="res://entities/assets/textures/shell_vfx/gun_fx_05.png" id="17_28ano"]
 [ext_resource type="Texture2D" uid="uid://btvwwgocom5h8" path="res://entities/assets/textures/shell_vfx/gun_fx_06.png" id="18_a70jf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecyxc"]
+resource_local_to_scene = true
+size = Vector2(96, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qvsj1"]
 animations = [{
@@ -46,10 +50,13 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_masn8"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_n2ngt"]
 radius = 250.0
 
 [node name="SingleTurret" instance=ExtResource("1_ewq6e")]
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_ecyxc")
 
 [node name="Shooter" parent="." index="3"]
 detect_radius = 250
@@ -68,7 +75,7 @@ position = Vector2(56, 0)
 frames = SubResource("SpriteFrames_xiki0")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_masn8")
+shape = SubResource("CircleShape2D_n2ngt")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(250, 0)
