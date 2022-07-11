@@ -58,7 +58,7 @@ func _on_projectile_area_entered(area: Area2D) -> void:
 
 func _explode() -> void:
 	# stop the bullet and disable collision
-	velocity = Vector2.ZERO
+	set_physics_process(false)
 	collision_shape.set_deferred("disabled", true)
 	# play vfx
 	sprite.hide()
