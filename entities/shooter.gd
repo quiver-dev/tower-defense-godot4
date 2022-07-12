@@ -59,7 +59,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _draw() -> void:
-	draw_circle(Vector2.ZERO, detect_radius, detector_color)
+	draw_arc(Vector2.ZERO, detect_radius, 0, 2 * PI, 500, detector_color)
 
 
 # Gets called by its parents. This way we have more control on when to shoot
