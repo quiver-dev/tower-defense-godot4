@@ -44,12 +44,13 @@ animations = [{
 [node name="TankBullet" instance=ExtResource("1_tkkdn")]
 
 [node name="Sprite2D" parent="." index="0"]
+position = Vector2(-20, 0)
 texture = SubResource("AnimatedTexture_sre88")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(20, 0)
+position = Vector2(0, 0)
 shape = SubResource("CapsuleShape2D_qpee1")
 
 [node name="HitVfx" parent="." index="3"]
-position = Vector2(86, 0)
+position = Vector2(66, 0)
 frames = SubResource("SpriteFrames_52x2d")

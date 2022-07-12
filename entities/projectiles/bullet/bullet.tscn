@@ -33,10 +33,13 @@ animations = [{
 [node name="TurretBullet" instance=ExtResource("1_ry2b2")]
 
 [node name="Sprite2D" parent="." index="0"]
+position = Vector2(-27, 0)
 texture = SubResource("AnimatedTexture_m08r3")
 
 [node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
 shape = SubResource("CapsuleShape2D_txwll")
 
 [node name="HitVfx" parent="." index="3"]
+position = Vector2(13, 0)
 frames = SubResource("SpriteFrames_mb2m8")

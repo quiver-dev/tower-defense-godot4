@@ -46,15 +46,16 @@ script = ExtResource("2_dm4fp")
 steer_force = 40
 
 [node name="Sprite2D" parent="." index="0"]
+position = Vector2(-21, 0)
 texture = SubResource("AnimatedTexture_hvawp")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(21, 0)
+position = Vector2(0, 0)
 shape = SubResource("CapsuleShape2D_70r35")
 
 [node name="VisibleOnScreenEnabler2D" parent="." index="2"]
 scale = Vector2(28.8, 25.6)
 
 [node name="HitVfx" parent="." index="3"]
-position = Vector2(85, 0)
+position = Vector2(64, 0)
 frames = SubResource("SpriteFrames_dg37q")
