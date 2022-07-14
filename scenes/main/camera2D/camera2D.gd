@@ -5,17 +5,18 @@ extends Camera2D
 # speed is not influenced by the framerate, since it's always updated at 60 FPS.
 
 
-const MIN_ZOOM: float = 0.1
-const MAX_ZOOM: float = 1.0
-const ZOOM_RATE: float = 32.0
-const ZOOM_DELTA: float = 0.1
+@export var min_zoom: float = 0.1
+@export var max_zoom: float = 1.0
+@export var zoom_rate: float = 16.0
+@export var zoom_delta: float = 0.1
+@export var drag_speed: float = 4.0
 
 var target_zoom: float = 1.0
 
 
 func _physics_process(delta: float) -> void:
-	zoom.x = lerp(zoom.x, target_zoom, ZOOM_RATE * delta)
-	zoom.y = lerp(zoom.y, target_zoom, ZOOM_RATE * delta)
+	zoom.x = lerp(zoom.x, target_zoom, zoom_rate * delta)
+	zoom.y = lerp(zoom.y, target_zoom, zoom_rate * delta)
 	# disable physics process when zoom has reached its target
 	set_physics_process(not is_equal_approx(zoom.x, target_zoom))
 
@@ -30,7 +31,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			event.button_mask == MOUSE_BUTTON_MASK_MIDDLE:
 		# go the opposite direction of the dragging and multiply the current
 		# zoom to regulate the dragging speed
-		position -= event.relative * zoom
+		position -= event.relative * drag_speed * zoom 
 	# apply custom mouse cursor by mapping middle mouse button in the InputMap
 	if event.is_action_pressed("middle_mouse"):
 		Input.set_default_cursor_shape(Input.CURSOR_DRAG)
@@ -39,10 +40,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func zoom_in() -> void:
-	target_zoom = min(target_zoom + ZOOM_DELTA, MAX_ZOOM)
+	target_zoom = min(target_zoom + zoom_delta, max_zoom)
 	set_physics_process(true)
 
 
 func zoom_out() -> void:
-	target_zoom = max(target_zoom - ZOOM_DELTA, MIN_ZOOM)
+	target_zoom = max(target_zoom - zoom_delta, min_zoom)
 	set_physics_process(true)
