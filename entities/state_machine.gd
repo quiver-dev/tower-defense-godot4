@@ -66,6 +66,6 @@ func _change_state(_state_name: String) -> void:
 # a state change to the state objects. The base script state.gd,
 # which all states extend, makes sure that all states have the same
 # interface, that is to say access to the same base methods, including
-# _on_animation_finished. See state.gd
+# on_animation_finished. See state.gd
 func _on_Sprite_animation_finished() -> void:
-	current_state._on_animation_finished()
+	current_state.on_animation_finished()

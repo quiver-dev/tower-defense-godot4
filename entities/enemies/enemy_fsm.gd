@@ -29,8 +29,8 @@ func _ready() -> void:
 func is_hit(damage: int) -> void:
 	if current_state.name == "Hit":
 		return
-	(owner as Enemy).take_damage(damage)
-	current_state.emit_signal("finished", "hit")
+	(owner as Enemy).health -= damage
+	current_state.finished.emit("die" if (owner as Enemy).health == 0 else "hit")
 
 
 func _change_state(state_name: String) -> void:

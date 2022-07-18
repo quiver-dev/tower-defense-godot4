@@ -6,7 +6,8 @@ signal target_changed(pos: Vector2)
 signal enemy_dead
 
 @export var rot_speed: float = 10.0
-@export var health: int = 100
+@export var health: int = 100:
+	set = set_health
 @export var speed: int = 300
 
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
@@ -33,19 +34,6 @@ func _physics_process(delta: float) -> void:
 			velocity.angle(), rot_speed, delta)
 
 
-func take_damage(damage: int) -> void:
-	health = max(0, health - damage)
-	hud.healthbar.value = health
-	if health == 0:
-		die()
-
-
-func die() -> void:
-	# TODO: add logic
-	emit_signal("enemy_dead")
-	queue_free()
-
-
 func move_to(pos: Vector2) -> void:
 	nav_agent.set_target_location(pos)
 	emit_signal("target_changed", nav_agent.get_target_location())
@@ -60,6 +48,13 @@ func stop() -> void:
 func apply_animation(anim_name: String) -> void:
 	if sprite:
 		sprite.play(anim_name)
+
+
+# Health is modified by the state machine, which will eventually trigger
+# the 'die' state if health goes to zero
+func set_health(value: int) -> void:
+	health = max(0, value)
+	hud.healthbar.value = health
 
 
 func get_fsm() -> StateMachine:

@@ -39,7 +39,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xwxnb"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_r7su7"]
 radius = 400.0
 
 [node name="Shooter" type="Node2D"]
@@ -68,10 +68,10 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 modulate = Color(1, 1, 1, 0.247059)
-shape = SubResource("CircleShape2D_xwxnb")
+shape = SubResource("CircleShape2D_r7su7")
 
 [node name="LookAhead" type="RayCast2D" parent="."]
-target_position = Vector2(400, 0)
+target_position = Vector2(410, 0)
 
 [node name="FireRateTimer" type="Timer" parent="."]
 one_shot = true

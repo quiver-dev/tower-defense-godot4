@@ -26,5 +26,6 @@ func update(_delta: float) -> void:
 	return
 
 
-func _on_animation_finished() -> void:
+# Called by the state machine
+func on_animation_finished() -> void:
 	return

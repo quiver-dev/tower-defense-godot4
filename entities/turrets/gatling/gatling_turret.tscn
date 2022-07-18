@@ -41,7 +41,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_muvol"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hvbuq"]
 radius = 700.0
 
 [node name="GatlingTurret" instance=ExtResource("1_yb6wj")]
@@ -85,10 +85,10 @@ position = Vector2(93, 1)
 frames = SubResource("SpriteFrames_r51ql")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_muvol")
+shape = SubResource("CircleShape2D_hvbuq")
 
 [node name="LookAhead" parent="Shooter" index="3"]
-target_position = Vector2(700, 0)
+target_position = Vector2(710, 0)
 
 [node name="EntityHUD" parent="." index="4"]
 offset_left = -30.0

@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://k073sdcqs28c"]
+[gd_scene load_steps=9 format=3 uid="uid://k073sdcqs28c"]
 
 [ext_resource type="Script" path="res://scenes/test/test.gd" id="1_antun"]
 [ext_resource type="TileSet" uid="uid://rswkry406j5l" path="res://scenes/main/assets/tilesets/field.tres" id="2_738ea"]
-[ext_resource type="PackedScene" path="res://scenes/main/camera2D/camera2D.tscn" id="3_7cmxw"]
+[ext_resource type="PackedScene" uid="uid://bdo8t3u7f3n35" path="res://scenes/main/camera2D/camera2D.tscn" id="3_7cmxw"]
 [ext_resource type="PackedScene" uid="uid://c0qro2s61gqnu" path="res://entities/enemies/infantry/infantry_t1.tscn" id="5_sqult"]
 [ext_resource type="PackedScene" uid="uid://dkfo0baxvyvf1" path="res://scenes/main/tower/tower.tscn" id="6_r1nlv"]
 [ext_resource type="PackedScene" uid="uid://c3jnmrhthj3q2" path="res://entities/enemies/tanks/tank.tscn" id="6_y4ox6"]
 [ext_resource type="PackedScene" uid="uid://oh4cd280eo3m" path="res://entities/turrets/missile/missile_turret.tscn" id="7_wvnqr"]
+[ext_resource type="PackedScene" uid="uid://drun68eboqy33" path="res://entities/turrets/gatling/gatling_turret.tscn" id="8_ipdmw"]
 
 [node name="Test" type="Node2D"]
 script = ExtResource("1_antun")
@@ -46,6 +47,12 @@ position = Vector2(184, -744)
 [node name="InfantryT3" parent="Enemies" instance=ExtResource("5_sqult")]
 position = Vector2(416, -240)
 
+[node name="StateMachine" parent="Enemies/InfantryT3" index="0"]
+START_STATE = NodePath("Idle")
+
+[node name="Sprite2D" parent="Enemies/InfantryT3" index="1"]
+frame = 1
+
 [node name="InfantryT4" parent="Enemies" instance=ExtResource("5_sqult")]
 position = Vector2(184, 80)
 
@@ -57,3 +64,8 @@ position = Vector2(2304, 272)
 
 [node name="MissileTurret" parent="." instance=ExtResource("7_wvnqr")]
 position = Vector2(624, 120)
+
+[node name="GatlingTurret" parent="." instance=ExtResource("8_ipdmw")]
+position = Vector2(32, 224)
+
+[editable path="Enemies/InfantryT3"]

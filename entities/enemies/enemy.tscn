@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://35uxlbs6h5dh"]
+[gd_scene load_steps=19 format=3 uid="uid://35uxlbs6h5dh"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
 [ext_resource type="Script" path="res://entities/enemies/states/move.gd" id="3_juveh"]
 [ext_resource type="Script" path="res://entities/enemies/states/idle.gd" id="4_vk1wn"]
 [ext_resource type="Script" path="res://entities/enemies/states/hit.gd" id="5_t30j3"]
+[ext_resource type="Script" path="res://entities/enemies/states/die.gd" id="6_70kam"]
 [ext_resource type="Texture2D" uid="uid://c2kw4wa37hx6d" path="res://entities/enemies/infantry/assets/textures/tier2/idle_00.png" id="6_ic7wi"]
 [ext_resource type="PackedScene" uid="uid://fposufd3xex3" path="res://interfaces/HUD/entity_hud.tscn" id="7_dxylf"]
 [ext_resource type="Texture2D" uid="uid://qf1r4mreb4qp" path="res://entities/enemies/infantry/assets/textures/tier2/move_00.png" id="7_p5ao0"]
@@ -19,6 +20,11 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_6olqj"]
 resource_local_to_scene = true
 animations = [{
+"frames": [],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"hit",
@@ -56,10 +62,13 @@ script = ExtResource("4_vk1wn")
 [node name="Hit" type="Node" parent="StateMachine"]
 script = ExtResource("5_t30j3")
 
+[node name="Die" type="Node" parent="StateMachine"]
+script = ExtResource("6_70kam")
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_6olqj")
 animation = &"move"
-frame = 6
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -81,5 +90,6 @@ offset_right = -31.0
 offset_bottom = -75.0
 
 [connection signal="state_changed" from="StateMachine" to="." method="_on_state_machine_state_changed"]
+[connection signal="animation_finished" from="Sprite2D" to="StateMachine" method="_on_Sprite_animation_finished"]
 [connection signal="target_reached" from="NavigationAgent2D" to="StateMachine/Move" method="_on_navigation_agent_2d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
