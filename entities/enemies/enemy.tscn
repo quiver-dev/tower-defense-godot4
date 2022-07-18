@@ -19,6 +19,11 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_6olqj"]
 resource_local_to_scene = true
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
 "frames": [ExtResource("6_ic7wi")],
 "loop": true,
 "name": &"idle",
@@ -27,11 +32,6 @@ animations = [{
 "frames": [ExtResource("7_p5ao0"), ExtResource("8_bl5vh"), ExtResource("9_j8c11"), ExtResource("10_irr8p"), ExtResource("11_83b1a"), ExtResource("12_7n4yk"), ExtResource("13_ciwdb"), ExtResource("14_vd38d")],
 "loop": true,
 "name": &"move",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"hit",
 "speed": 5.0
 }]
 
@@ -59,15 +59,17 @@ script = ExtResource("5_t30j3")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_6olqj")
 animation = &"move"
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_q2pkr")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 2.5
 target_desired_distance = 2.5
 avoidance_enabled = true
-radius = 48.0
+radius = 24.0
 
 [node name="EntityHUD" parent="." instance=ExtResource("7_dxylf")]
 offset_left = -31.0

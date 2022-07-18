@@ -13,6 +13,11 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_65d1v"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
 "frames": [ExtResource("2_j37t7")],
 "loop": true,
 "name": &"idle",
@@ -22,11 +27,6 @@ animations = [{
 "loop": true,
 "name": &"move",
 "speed": 9.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"hit",
-"speed": 5.0
 }]
 
 [node name="InfantryT2" instance=ExtResource("1_xcp6m")]
@@ -36,7 +36,6 @@ frames = SubResource("SpriteFrames_65d1v")
 frame = 3
 
 [node name="NavigationAgent2D" parent="." index="3"]
-path_desired_distance = 2.5
-neighbor_dist = 1000.0
-max_neighbors = 20
+path_max_distance = 16.0
+neighbor_dist = 800.0
 time_horizon = 32.0

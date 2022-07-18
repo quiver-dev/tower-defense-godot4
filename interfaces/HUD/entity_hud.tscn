@@ -1,17 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://fposufd3xex3"]
+[gd_scene load_steps=6 format=3 uid="uid://fposufd3xex3"]
 
 [ext_resource type="Script" path="res://interfaces/HUD/entity_hud.gd" id="1_qyud4"]
-[ext_resource type="FontData" uid="uid://db33awc1pfsoi" path="res://assets/fonts/kenney_future_narrow.ttf" id="1_sumco"]
-
-[sub_resource type="Font" id="Font_64sue"]
-data/0 = ExtResource( "1_sumco" )
 
 [sub_resource type="Gradient" id="Gradient_20pti"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0.533333, 0.878431, 0.376471, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_j8pgm"]
-gradient = SubResource( "Gradient_20pti" )
+gradient = SubResource("Gradient_20pti")
 width = 50
 height = 10
 
@@ -20,12 +16,12 @@ offsets = PackedFloat32Array(0)
 colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_y4p0d"]
-gradient = SubResource( "Gradient_xebfl" )
+gradient = SubResource("Gradient_xebfl")
 width = 50
 height = 4
 
 [node name="EntityHUD" type="Control"]
-script = ExtResource( "1_qyud4" )
+script = ExtResource("1_qyud4")
 
 [node name="Parameters" type="VBoxContainer" parent="."]
 offset_right = 40.0
@@ -33,39 +29,38 @@ offset_bottom = 40.0
 alignment = 2
 
 [node name="StateLabel" type="Label" parent="Parameters"]
-offset_right = 63.0
-offset_bottom = 21.0
+offset_right = 54.0
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 6
-theme_override_fonts/font = SubResource( "Font_64sue" )
 text = " Shoot "
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_custom_anchors = false
 
 [node name="Healthbar" type="TextureProgressBar" parent="Parameters"]
-offset_left = 6.0
-offset_top = 25.0
-offset_right = 56.0
-offset_bottom = 35.0
+offset_left = 2.0
+offset_top = 30.0
+offset_right = 52.0
+offset_bottom = 40.0
 pivot_offset = Vector2(95, 22)
 size_flags_horizontal = 4
 size_flags_vertical = 6
 value = 100.0
-texture_progress = SubResource( "GradientTexture2D_j8pgm" )
+texture_progress = SubResource("GradientTexture2D_j8pgm")
 
 [node name="ReloadBar" type="TextureProgressBar" parent="Parameters"]
-offset_left = 6.0
-offset_top = 39.0
-offset_right = 56.0
-offset_bottom = 43.0
+offset_left = 2.0
+offset_top = 44.0
+offset_right = 52.0
+offset_bottom = 48.0
 pivot_offset = Vector2(95, 922)
 size_flags_horizontal = 4
 size_flags_vertical = 6
 value = 100.0
 rounded = true
-texture_progress = SubResource( "GradientTexture2D_y4p0d" )
+texture_progress = SubResource("GradientTexture2D_y4p0d")
 
 [connection signal="tree_exiting" from="." to="." method="_on_entity_hud_tree_exiting"]
 [connection signal="value_changed" from="Parameters/Healthbar" to="." method="_on_healthbar_value_changed"]

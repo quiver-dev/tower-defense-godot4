@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://interfaces/UI/turret_popup/turret_popup.gd" id="2_hlo1n"]
 [ext_resource type="Texture2D" uid="uid://cwjprn730kyb4" path="res://interfaces/assets/textures/grey_crossWhite.png" id="3_k6npk"]
 [ext_resource type="Texture2D" uid="uid://dm7pxbc4sw21l" path="res://entities/turrets/single/assets/textures/gun_idle_00.png" id="5_uaj7d"]
+[ext_resource type="Texture2D" uid="uid://e6asxs20t7o5" path="res://entities/turrets/gatling/assets/textures/gun_idle_00.png" id="5_yom2w"]
 [ext_resource type="Texture2D" uid="uid://cliy7gyk3tt3r" path="res://entities/turrets/missile/assets/textures/gun_idle_00.png" id="6_ye7vx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xfjc7"]
@@ -19,9 +20,6 @@ region_rect = Rect2(0, 0, 36, 36)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7fftr"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_jhmro"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_owfrb"]
-load_path = "res://.godot/imported/gun_idle_00.png-a454b234c8292ccdc3241a21e6a2e551.ctex"
 
 [node name="TurretPopup" type="CanvasLayer"]
 script = ExtResource("2_hlo1n")
@@ -88,20 +86,20 @@ metadata/_edit_layout_mode = 1
 
 [node name="Gatling" type="HFlowContainer" parent="Background/Panel/Turrets"]
 offset_right = 148.0
-offset_bottom = 197.0
+offset_bottom = 206.0
 theme_override_constants/v_separation = 10
 
 [node name="Button" type="Button" parent="Background/Panel/Turrets/Gatling"]
 offset_right = 148.0
 offset_bottom = 148.0
 button_group = SubResource("ButtonGroup_jhmro")
-icon = SubResource("CompressedTexture2D_owfrb")
+icon = ExtResource("5_yom2w")
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="Background/Panel/Turrets/Gatling"]
 offset_top = 158.0
 offset_right = 148.0
-offset_bottom = 197.0
+offset_bottom = 206.0
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
@@ -112,7 +110,7 @@ horizontal_alignment = 1
 [node name="Single" type="HFlowContainer" parent="Background/Panel/Turrets"]
 offset_left = 158.0
 offset_right = 306.0
-offset_bottom = 197.0
+offset_bottom = 206.0
 theme_override_constants/v_separation = 10
 
 [node name="Button" type="Button" parent="Background/Panel/Turrets/Single"]
@@ -125,7 +123,7 @@ icon_alignment = 1
 [node name="Label" type="Label" parent="Background/Panel/Turrets/Single"]
 offset_top = 158.0
 offset_right = 148.0
-offset_bottom = 197.0
+offset_bottom = 206.0
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
@@ -136,7 +134,7 @@ horizontal_alignment = 1
 [node name="Missile" type="HFlowContainer" parent="Background/Panel/Turrets"]
 offset_left = 316.0
 offset_right = 464.0
-offset_bottom = 197.0
+offset_bottom = 206.0
 theme_override_constants/v_separation = 10
 
 [node name="Button" type="Button" parent="Background/Panel/Turrets/Missile"]
@@ -149,7 +147,7 @@ icon_alignment = 1
 [node name="Label" type="Label" parent="Background/Panel/Turrets/Missile"]
 offset_top = 158.0
 offset_right = 148.0
-offset_bottom = 197.0
+offset_bottom = 206.0
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0

@@ -1,7 +1,7 @@
 [remap]
 
 importer="font_data_dynamic"
-type="FontData"
+type="FontFile"
 uid="uid://db33awc1pfsoi"
 path="res://.godot/imported/kenney_future_narrow.ttf-3f53f9c8bf68abfb26e51af09b37d68b.fontdata"
 
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/kenney_future_narrow.ttf-3f53f9c8bf68abfb26e5
 
 [params]
 
-face_index=0
+Rendering=null
 antialiased=true
 generate_mipmaps=false
 multichannel_signed_distance_field=false
@@ -21,15 +21,12 @@ msdf_size=48
 force_autohinter=false
 hinting=1
 subpixel_positioning=1
-embolden=0.0
-transform=Transform2D(1, 0, 0, 1, 0, 0)
 oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
 compress=true
-opentype_feature_overrides={}
-preload/char_ranges=PackedStringArray()
-preload/glyph_ranges=PackedStringArray()
-preload/configurations=PackedStringArray()
-support_overrides/language_enabled=PackedStringArray()
-support_overrides/language_disabled=PackedStringArray()
-support_overrides/script_enabled=PackedStringArray()
-support_overrides/script_disabled=PackedStringArray()
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}
