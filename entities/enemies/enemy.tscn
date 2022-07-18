@@ -59,17 +59,20 @@ script = ExtResource("5_t30j3")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_6olqj")
 animation = &"move"
-frame = 5
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_q2pkr")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 2.5
-target_desired_distance = 2.5
+path_desired_distance = 5.0
+target_desired_distance = 5.0
 avoidance_enabled = true
 radius = 24.0
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 5.0
 
 [node name="EntityHUD" parent="." instance=ExtResource("7_dxylf")]
 offset_left = -31.0

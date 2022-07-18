@@ -104,6 +104,7 @@ script = ExtResource("5_5f6sk")
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_2qc3e")
+frame = 0
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-14, 0)
@@ -118,6 +119,7 @@ detect_radius = 500
 fire_rate = 3.0
 rot_speed = 1.0
 projectile_type = ExtResource("13_2c4hm")
+projectile_spread = 0.1
 
 [node name="Gun" parent="Shooter" index="0"]
 frames = SubResource("SpriteFrames_mdejl")

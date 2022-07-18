@@ -33,9 +33,7 @@ animations = [{
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_65d1v")
-frame = 3
 
 [node name="NavigationAgent2D" parent="." index="3"]
-path_max_distance = 16.0
 neighbor_dist = 800.0
 time_horizon = 32.0

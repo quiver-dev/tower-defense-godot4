@@ -41,7 +41,5 @@ frames = SubResource("SpriteFrames_hgfy3")
 shape = SubResource("CircleShape2D_recve")
 
 [node name="NavigationAgent2D" parent="." index="3"]
-path_desired_distance = 16.0
-path_max_distance = 64.0
 neighbor_dist = 800.0
 time_horizon = 32.0

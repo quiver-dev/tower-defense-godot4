@@ -13,6 +13,7 @@ signal enemy_dead
 @onready var sprite := $Sprite2D as AnimatedSprite2D
 @onready var collision := $CollisionShape2D as CollisionShape2D
 @onready var hud := $EntityHUD as EntityHud
+@onready var line2d := $Line2D as Line2D
 
 
 func _ready() -> void:
