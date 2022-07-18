@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bokn8lw3um7jf"]
+
+[ext_resource type="Script" path="res://scenes/main/spawner.gd" id="1_hhcuf"]
+
+[node name="Spawner" type="Node2D"]
+z_index = 10
+script = ExtResource("1_hhcuf")
+spawn_rate = 3.0
+enemy_count = 40
+
+[node name="SpawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="EnemyContainer" type="Node2D" parent="."]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

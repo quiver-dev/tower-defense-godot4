@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://rswkry406j5l" path="res://scenes/main/assets/tilesets/field.tres" id="2_pffaj"]
 [ext_resource type="PackedScene" uid="uid://bdo8t3u7f3n35" path="res://scenes/main/camera2D/camera2D.tscn" id="3_o2ded"]
 [ext_resource type="PackedScene" uid="uid://dkfo0baxvyvf1" path="res://scenes/main/tower/tower.tscn" id="4_e3sfc"]
-[ext_resource type="Script" path="res://scenes/main/spawner.gd" id="5_q7jfg"]
+[ext_resource type="PackedScene" uid="uid://bokn8lw3um7jf" path="res://scenes/main/spawner/Spawner.tscn" id="5_fn71b"]
 [ext_resource type="PackedScene" uid="uid://bxk8oojwxk051" path="res://scenes/main/turret_slot/turret_slot.tscn" id="6_m5pyv"]
 
 [node name="Main" type="Node2D"]
@@ -29,34 +29,8 @@ position = Vector2(1496, 944)
 [node name="Tower" parent="." instance=ExtResource("4_e3sfc")]
 position = Vector2(5184, 960)
 
-[node name="Spawner" type="Node2D" parent="."]
-position = Vector2(1072, 2944)
-z_index = 10
-script = ExtResource("5_q7jfg")
-spawn_rate = 3.0
-enemy_count = 40
-
-[node name="SpawnTimer" type="Timer" parent="Spawner"]
-one_shot = true
-
-[node name="EnemyContainer" type="Node2D" parent="Spawner"]
-
-[node name="Spawner2" type="Node2D" parent="."]
-position = Vector2(1040, 904)
-z_index = 10
-script = ExtResource("5_q7jfg")
-spawn_rate = 4.0
-enemy_count = 40
-enemies = {
-"infantry_t1": 55,
-"infantry_t2": 35,
-"tank": 10
-}
-
-[node name="SpawnTimer" type="Timer" parent="Spawner2"]
-one_shot = true
-
-[node name="EnemyContainer" type="Node2D" parent="Spawner2"]
+[node name="Spawner" parent="." instance=ExtResource("5_fn71b")]
+position = Vector2(1080, 904)
 
 [node name="TurretSlots" type="Node2D" parent="."]
 
@@ -95,6 +69,3 @@ position = Vector2(1728, 448)
 
 [node name="TurretSlot12" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
 position = Vector2(3776, 1984)
-
-[connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
-[connection signal="timeout" from="Spawner2/SpawnTimer" to="Spawner2" method="_on_spawn_timer_timeout"]
