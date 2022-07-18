@@ -43,7 +43,7 @@ func _ready() -> void:
 	detector_shape.radius = detect_radius
 	detector_coll.shape = detector_shape
 	# initialize raycast's length
-	lookahead.target_position.x = detect_radius
+	lookahead.target_position.x = detect_radius + 10
 	# init animations
 	_play_animations("idle")
 
