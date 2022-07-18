@@ -5,19 +5,5 @@ extends Enemy
 @onready var shooter := $Shooter as Shooter
 
 
-func _ready() -> void:
-	# WARN: this is a workaround, see https://github.com/godotengine/godot/issues/60168
-	super()
-
-
-# Checks if there are other tanks ahead
-func is_raycast_colliding() -> bool:
-	for raycast in [$LookAhead1, $LookAhead2]:
-		if (raycast as RayCast2D).is_colliding() and \
-				(raycast as RayCast2D).get_collider() is Tank:
-			return true
-	return false
-
-
 func _on_shooter_has_shot(reload_time: float) -> void:
 	hud.update_reloadbar(reload_time)

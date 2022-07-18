@@ -1,11 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://c3jnmrhthj3q2"]
+[gd_scene load_steps=34 format=3 uid="uid://c3jnmrhthj3q2"]
 
 [ext_resource type="PackedScene" uid="uid://35uxlbs6h5dh" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/tank.gd" id="2_ri3h6"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/move.gd" id="3_7yovt"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/hit.gd" id="5_3qes1"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/shoot.gd" id="5_5f6sk"]
-[ext_resource type="Script" path="res://entities/enemies/tanks/states/idle.gd" id="5_ctw71"]
 [ext_resource type="Texture2D" uid="uid://c0x7de1x4cgyd" path="res://entities/enemies/tanks/assets/textures/base_idle_00.png" id="7_njutd"]
 [ext_resource type="Texture2D" uid="uid://tj0jur40bwbc" path="res://entities/enemies/tanks/assets/textures/base_move_00.png" id="8_3jmn4"]
 [ext_resource type="PackedScene" uid="uid://r1b440sc0tkl" path="res://entities/shooter.tscn" id="8_frgp2"]
@@ -34,12 +33,12 @@
 animations = [{
 "frames": [ExtResource("7_njutd")],
 "loop": true,
-"name": &"idle",
+"name": &"hit",
 "speed": 5.0
 }, {
 "frames": [ExtResource("7_njutd")],
 "loop": true,
-"name": &"shoot",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [ExtResource("8_3jmn4"), ExtResource("9_hkl2s"), ExtResource("10_b3kxo"), ExtResource("11_tx6lo")],
@@ -49,7 +48,7 @@ animations = [{
 }, {
 "frames": [ExtResource("7_njutd")],
 "loop": true,
-"name": &"hit",
+"name": &"shoot",
 "speed": 5.0
 }]
 
@@ -83,7 +82,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bcao6"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_w3bbu"]
 radius = 500.0
 
 [node name="Tank" instance=ExtResource("1_o2qr5")]
@@ -96,9 +95,6 @@ speed = 150
 [node name="Move" parent="StateMachine" index="0"]
 script = ExtResource("3_7yovt")
 
-[node name="Idle" parent="StateMachine" index="1"]
-script = ExtResource("5_ctw71")
-
 [node name="Hit" parent="StateMachine" index="2"]
 script = ExtResource("5_3qes1")
 state_duration = 0.1
@@ -108,20 +104,13 @@ script = ExtResource("5_5f6sk")
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_2qc3e")
-frame = 1
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-14, 0)
 shape = SubResource("CircleShape2D_piq2n")
 
 [node name="NavigationAgent2D" parent="." index="3"]
-path_max_distance = 16.0
 radius = 100.0
-neighbor_dist = 150.0
-
-[node name="EntityHUD" parent="." index="4"]
-offset_top = -115.0
-offset_bottom = -115.0
 
 [node name="Shooter" parent="." index="5" instance=ExtResource("8_frgp2")]
 detector_color = Color(0.909804, 0.054902, 0.109804, 0.490196)
@@ -145,20 +134,16 @@ frames = SubResource("SpriteFrames_x5y1r")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_bcao6")
+shape = SubResource("CircleShape2D_w3bbu")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)
 target_position = Vector2(500, 0)
 collision_mask = 18
 
-[node name="LookAhead1" type="RayCast2D" parent="." index="6"]
-position = Vector2(0, -16)
-target_position = Vector2(100, 0)
-
-[node name="LookAhead2" type="RayCast2D" parent="." index="7"]
-position = Vector2(0, 16)
-target_position = Vector2(100, 0)
+[node name="EntityHUD" parent="." index="6"]
+offset_top = -115.0
+offset_bottom = -115.0
 
 [connection signal="has_shot" from="Shooter" to="." method="_on_shooter_has_shot"]
 [connection signal="area_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_entity_entered"]
