@@ -3,7 +3,7 @@ extends State
 
 func enter() -> void:
 	(owner as Enemy).stop()
-	(owner as Enemy).apply_animation("shoot")
+	(owner as Tank).apply_animation("shoot")
 
 
 func update(_delta: float) -> void:

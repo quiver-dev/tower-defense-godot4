@@ -79,6 +79,14 @@ func shoot() -> void:
 	emit_signal("has_shot", firerate_timer.wait_time)
 
 
+func explode() -> void:
+	# stop processing and prevent from shooting
+	set_physics_process(false)
+	can_shoot = false
+	# play animation
+	_play_animations("explode")
+
+
 # Could be called by enemy states, e.g. to freeze the tank's reload time
 # when hit.
 func set_firerate_timer_paused(value: bool) -> void:

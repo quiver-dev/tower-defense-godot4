@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://0h6p5kq7bwnw"]
+[gd_scene load_steps=20 format=3 uid="uid://0h6p5kq7bwnw"]
 
 [ext_resource type="PackedScene" uid="uid://35uxlbs6h5dh" path="res://entities/enemies/enemy.tscn" id="1_xcp6m"]
 [ext_resource type="Texture2D" uid="uid://c2kw4wa37hx6d" path="res://entities/enemies/infantry/assets/textures/tier2/idle_00.png" id="2_j37t7"]
@@ -17,14 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://cyya56btvkq7n" path="res://entities/enemies/infantry/assets/textures/tier2/die_06.png" id="8_vswck"]
 [ext_resource type="Texture2D" uid="uid://b7n50elnouehn" path="res://entities/enemies/infantry/assets/textures/tier2/die_07.png" id="9_6jx2e"]
 [ext_resource type="Texture2D" uid="uid://d15r580h16qdq" path="res://entities/enemies/infantry/assets/textures/tier2/move_06.png" id="9_251sx"]
-[ext_resource type="Texture2D" uid="uid://c6pwnr75snjr4" path="res://entities/enemies/infantry/assets/textures/tier2/die_08.png" id="10_kc0q4"]
 [ext_resource type="Texture2D" uid="uid://btghqfuy68bb2" path="res://entities/enemies/infantry/assets/textures/tier2/move_07.png" id="10_s43qq"]
-[ext_resource type="Texture2D" uid="uid://b0p1vomiugbc7" path="res://entities/enemies/infantry/assets/textures/tier2/die_09.png" id="11_socvm"]
-[ext_resource type="Texture2D" uid="uid://gv4iotvdkixy" path="res://entities/enemies/infantry/assets/textures/tier2/die_10.png" id="12_eavdu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_65d1v"]
 animations = [{
-"frames": [ExtResource("2_us1ld"), ExtResource("3_bmrip"), ExtResource("4_6ih2m"), ExtResource("5_mfdcg"), ExtResource("6_2pw3q"), ExtResource("7_nahaf"), ExtResource("8_vswck"), ExtResource("9_6jx2e"), ExtResource("10_kc0q4"), ExtResource("11_socvm"), ExtResource("12_eavdu")],
+"frames": [ExtResource("2_us1ld"), ExtResource("3_bmrip"), ExtResource("4_6ih2m"), ExtResource("5_mfdcg"), ExtResource("6_2pw3q"), ExtResource("7_nahaf"), ExtResource("8_vswck"), ExtResource("9_6jx2e")],
 "loop": false,
 "name": &"die",
 "speed": 12.0
@@ -49,6 +46,7 @@ animations = [{
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_65d1v")
+frame = 5
 
 [node name="NavigationAgent2D" parent="." index="3"]
 neighbor_dist = 800.0
