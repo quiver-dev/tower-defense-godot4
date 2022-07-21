@@ -54,7 +54,10 @@ func apply_animation(anim_name: String) -> void:
 # the 'die' state if health goes to zero
 func set_health(value: int) -> void:
 	health = max(0, value)
-	hud.healthbar.value = health
+	# TODO: see if this gets fixed in future builds. Setter gets called
+	# before inheriting scenes (e.g. tank) call their _ready function
+	if hud:
+		hud.healthbar.value = health
 
 
 func get_fsm() -> StateMachine:
