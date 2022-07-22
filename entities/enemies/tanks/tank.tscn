@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://c3jnmrhthj3q2"]
+[gd_scene load_steps=85 format=3 uid="uid://c3jnmrhthj3q2"]
 
 [ext_resource type="PackedScene" uid="uid://35uxlbs6h5dh" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/tank.gd" id="2_ri3h6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/hit.gd" id="5_3qes1"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/shoot.gd" id="5_5f6sk"]
 [ext_resource type="Texture2D" uid="uid://1ptfan0lyh0i" path="res://entities/enemies/tanks/assets/textures/base_die_00.png" id="6_6jwar"]
+[ext_resource type="Script" path="res://entities/enemies/tanks/states/die.gd" id="6_8s8ji"]
 [ext_resource type="Texture2D" uid="uid://dtk7kwfxp1olr" path="res://entities/enemies/tanks/assets/textures/base_die_01.png" id="7_k0ppf"]
 [ext_resource type="Texture2D" uid="uid://c0x7de1x4cgyd" path="res://entities/enemies/tanks/assets/textures/base_idle_00.png" id="7_njutd"]
 [ext_resource type="Texture2D" uid="uid://tj0jur40bwbc" path="res://entities/enemies/tanks/assets/textures/base_move_00.png" id="8_3jmn4"]
@@ -147,7 +148,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yu1y1"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_yj616"]
 radius = 500.0
 
 [node name="Tank" instance=ExtResource("1_o2qr5")]
@@ -164,12 +165,15 @@ script = ExtResource("3_7yovt")
 script = ExtResource("5_3qes1")
 state_duration = 0.1
 
-[node name="Shoot" type="Node" parent="StateMachine" index="3"]
+[node name="Die" parent="StateMachine" index="3"]
+script = ExtResource("6_8s8ji")
+
+[node name="Shoot" type="Node" parent="StateMachine" index="4"]
 script = ExtResource("5_5f6sk")
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_2qc3e")
-frame = 3
+frame = 1
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-14, 0)
@@ -196,13 +200,12 @@ position = Vector2(64, 0)
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 position = Vector2(44, 0)
 frames = SubResource("SpriteFrames_x5y1r")
-animation = &"idle"
 
 [node name="Detector" parent="Shooter" index="2"]
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_yu1y1")
+shape = SubResource("CircleShape2D_yj616")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)

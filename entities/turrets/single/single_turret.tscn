@@ -83,7 +83,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7exah"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_3h7bb"]
 radius = 500.0
 
 [node name="SingleTurret" instance=ExtResource("1_ewq6e")]
@@ -108,7 +108,7 @@ position = Vector2(56, 0)
 frames = SubResource("SpriteFrames_xiki0")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_7exah")
+shape = SubResource("CircleShape2D_3h7bb")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(510, 0)

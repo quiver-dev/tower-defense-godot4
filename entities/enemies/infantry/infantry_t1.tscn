@@ -49,6 +49,7 @@ radius = 24.0
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_hgfy3")
+frame = 4
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_recve")

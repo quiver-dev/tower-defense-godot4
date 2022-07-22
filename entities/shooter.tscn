@@ -49,7 +49,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jxj0a"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0nt0t"]
 radius = 400.0
 
 [node name="Shooter" type="Node2D"]
@@ -69,7 +69,7 @@ position = Vector2(80, 0)
 [node name="MuzzleFlash" type="AnimatedSprite2D" parent="."]
 position = Vector2(80, 0)
 frames = SubResource("SpriteFrames_0m3mx")
-animation = &"explode"
+animation = &"idle"
 playing = true
 
 [node name="Detector" type="Area2D" parent="."]
@@ -78,7 +78,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 modulate = Color(1, 1, 1, 0.247059)
-shape = SubResource("CircleShape2D_jxj0a")
+shape = SubResource("CircleShape2D_0nt0t")
 
 [node name="LookAhead" type="RayCast2D" parent="."]
 target_position = Vector2(410, 0)

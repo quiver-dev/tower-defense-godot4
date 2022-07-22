@@ -34,6 +34,7 @@ position = Vector2(16, 576)
 
 [node name="Tank" parent="Enemies" instance=ExtResource("6_y4ox6")]
 position = Vector2(696, -584)
+health = 40
 
 [node name="Tank2" parent="Enemies" instance=ExtResource("6_y4ox6")]
 position = Vector2(272, 216)
@@ -51,7 +52,7 @@ position = Vector2(416, -240)
 START_STATE = NodePath("Idle")
 
 [node name="Sprite2D" parent="Enemies/InfantryT3" index="1"]
-frame = 1
+frame = 3
 
 [node name="InfantryT4" parent="Enemies" instance=ExtResource("5_sqult")]
 position = Vector2(184, 80)
@@ -67,5 +68,6 @@ position = Vector2(624, 120)
 
 [node name="GatlingTurret" parent="." instance=ExtResource("8_ipdmw")]
 position = Vector2(32, 224)
+health = 10
 
 [editable path="Enemies/InfantryT3"]
