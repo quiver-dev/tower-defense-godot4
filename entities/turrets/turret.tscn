@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://entities/turrets/turret.gd" id="1_mel1h"]
 [ext_resource type="Texture2D" uid="uid://cdt1rsj4xbkq3" path="res://entities/turrets/assets/textures/base_idle_00.png" id="2_nf4vx"]
 [ext_resource type="Texture2D" uid="uid://dm7pxbc4sw21l" path="res://entities/turrets/single/assets/textures/gun_idle_00.png" id="4_o5cln"]
-[ext_resource type="PackedScene" path="res://entities/shooter.tscn" id="4_wtpgl"]
+[ext_resource type="PackedScene" uid="uid://r1b440sc0tkl" path="res://entities/shooter.tscn" id="4_wtpgl"]
 [ext_resource type="Texture2D" uid="uid://djmhh26sa4xo" path="res://entities/turrets/single/assets/textures/gun_shoot_00.png" id="5_7xp4l"]
 [ext_resource type="PackedScene" uid="uid://fposufd3xex3" path="res://interfaces/HUD/entity_hud.tscn" id="5_owktb"]
 [ext_resource type="Texture2D" uid="uid://pus7ugvpejf2" path="res://entities/turrets/single/assets/textures/gun_shoot_01.png" id="6_73w7d"]
@@ -21,6 +21,11 @@ size = Vector2(96, 80)
 [sub_resource type="SpriteFrames" id="SpriteFrames_lyc1n"]
 resource_local_to_scene = true
 animations = [{
+"frames": [],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}, {
 "frames": [ExtResource("4_o5cln")],
 "loop": true,
 "name": &"idle",
@@ -29,12 +34,17 @@ animations = [{
 "frames": [ExtResource("5_7xp4l"), ExtResource("6_73w7d"), ExtResource("7_2g8oo"), ExtResource("8_37pud"), ExtResource("9_ujgii"), ExtResource("10_g16i6"), ExtResource("11_lja6c"), ExtResource("12_kj0np")],
 "loop": false,
 "name": &"shoot",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7qxgd"]
 resource_local_to_scene = true
 animations = [{
+"frames": [],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"idle",
@@ -46,8 +56,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dvsi4"]
-radius = 200.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_xu28e"]
+radius = 400.0
 
 [node name="Turret" type="CharacterBody2D"]
 position = Vector2(179, 192)
@@ -75,9 +85,10 @@ offset = Vector2(7, -2)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 frames = SubResource("SpriteFrames_7qxgd")
+animation = &"idle"
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_dvsi4")
+shape = SubResource("CircleShape2D_xu28e")
 
 [node name="EntityHUD" parent="." instance=ExtResource("5_owktb")]
 offset_left = -31.0
