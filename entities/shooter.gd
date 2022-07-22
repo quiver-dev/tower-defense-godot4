@@ -83,6 +83,7 @@ func explode() -> void:
 	# stop processing and prevent from shooting
 	set_physics_process(false)
 	can_shoot = false
+	firerate_timer.stop()
 	# play animation
 	_play_animations("explode")
 

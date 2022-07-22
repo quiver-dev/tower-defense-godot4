@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 signal turret_disabled
 
+const FADE_OUT_DURATION := 0.25
+
 @export_range(0, 100) var health: int = 100
 
 @onready var shooter := $Shooter as Shooter
@@ -25,12 +27,19 @@ func take_damage(damage: int) -> void:
 	health = max(0, health - damage)
 	hud.healthbar.value = health
 	if health == 0:
-		_explode()
+		# trigger the exploding animation
+		shooter.explode()
 
 
-func _explode() -> void:
-	# TODO: add all necessary operations: e.g. play animation
-	emit_signal("turret_disabled")
+func _on_gun_animation_finished() -> void:
+	if shooter.gun.animation == "explode":
+		var tween := get_tree().create_tween()
+		tween.tween_property(self, "modulate:a", 0.0, FADE_OUT_DURATION)
+		tween.finished.connect(_on_tween_finished)
+
+
+func _on_tween_finished() -> void:
+	turret_disabled.emit()
 	queue_free()
 
 

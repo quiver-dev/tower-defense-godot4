@@ -56,7 +56,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xu28e"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_5d1wg"]
 radius = 400.0
 
 [node name="Turret" type="CharacterBody2D"]
@@ -85,10 +85,9 @@ offset = Vector2(7, -2)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 frames = SubResource("SpriteFrames_7qxgd")
-animation = &"idle"
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_xu28e")
+shape = SubResource("CircleShape2D_5d1wg")
 
 [node name="EntityHUD" parent="." instance=ExtResource("5_owktb")]
 offset_left = -31.0
@@ -97,6 +96,7 @@ offset_right = -31.0
 offset_bottom = -107.0
 
 [connection signal="has_shot" from="Shooter" to="." method="_on_shooter_has_shot"]
+[connection signal="animation_finished" from="Shooter/Gun" to="." method="_on_gun_animation_finished"]
 [connection signal="body_entered" from="Shooter/Detector" to="." method="_on_detector_body_entered"]
 [connection signal="body_exited" from="Shooter/Detector" to="." method="_on_detector_body_exited"]
 
