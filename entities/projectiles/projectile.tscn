@@ -44,7 +44,7 @@ position = Vector2(27, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_er61a")
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(4, 4)
 
 [node name="HitVfx" type="AnimatedSprite2D" parent="."]
@@ -55,5 +55,4 @@ animation = &"hit"
 
 [connection signal="area_entered" from="." to="." method="_on_projectile_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_projectile_body_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
 [connection signal="animation_finished" from="HitVfx" to="." method="_on_hit_vfx_animation_finished"]

@@ -2,12 +2,15 @@ class_name Projectile
 extends Area2D
 # This class extends the Area2D node because we don't need advanced
 # physics or player-controlled movement.
-# It also uses a VisibleOnScreenEnabler2D node to disable this scene 
-# when the projectile exits the screen.
-# WARN: this is probably not optimal due to the presence of a camera
+# It also uses a VisibleOnScreenNotifier2D node to hide/show this scene 
+# when the projectile exits/enters the screen improve performance.
+# A lifetime parameter ensures that projectiles will be freed if they don't
+# hit anything.
 # Its parameters, such as collision_mask, speed and damage are passed to
 # the "start" method by parent Shooter scenes.
 
+
+@export var lifetime: int = 10  # seconds
 
 var speed: int
 var damage: int
@@ -17,10 +20,17 @@ var target  # homing missiles only
 @onready var sprite := $Sprite2D as Sprite2D
 @onready var hit_vfx := $HitVfx as AnimatedSprite2D
 @onready var collision_shape := $CollisionShape2D as CollisionShape2D
+@onready var visibility_notifier := $VisibleOnScreenNotifier2D as VisibleOnScreenNotifier2D
 
 
 func _ready() -> void:
 	hit_vfx.hide()
+	# handle visilibity via VisibleOnScreenNotifier2D node
+	visibility_notifier.screen_entered.connect(show)
+	visibility_notifier.screen_exited.connect(hide)
+	# create a one-shot timer for lifetime
+	var timer := get_tree().create_timer(lifetime)
+	timer.timeout.connect(_on_lifetime_timer_timeout)
 
 
 func _physics_process(delta: float) -> void:
@@ -67,7 +77,7 @@ func _explode() -> void:
 	hit_vfx.play("hit")
 
 
-func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
+func _on_lifetime_timer_timeout() -> void:
 	queue_free()
 
 

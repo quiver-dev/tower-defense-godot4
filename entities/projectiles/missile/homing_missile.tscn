@@ -43,6 +43,7 @@ animations = [{
 
 [node name="HomingMissile" instance=ExtResource("1_6qmsl")]
 script = ExtResource("2_dm4fp")
+lifetime = 20
 steer_force = 40
 
 [node name="Sprite2D" parent="." index="0"]
@@ -52,9 +53,6 @@ texture = SubResource("AnimatedTexture_hvawp")
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 0)
 shape = SubResource("CapsuleShape2D_70r35")
-
-[node name="VisibleOnScreenEnabler2D" parent="." index="2"]
-scale = Vector2(28.8, 25.6)
 
 [node name="HitVfx" parent="." index="3"]
 position = Vector2(64, 0)
