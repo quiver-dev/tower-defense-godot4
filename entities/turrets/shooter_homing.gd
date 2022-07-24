@@ -25,4 +25,4 @@ func shoot() -> void:
 	_play_animations("shoot_%s" % ["b" if muzzle_idx == 0 else "a"])
 	muzzle_flash.global_position = muzzle.global_position
 	# show reload time on HUD
-	emit_signal("has_shot", firerate_timer.wait_time)
+	has_shot.emit(firerate_timer.wait_time)

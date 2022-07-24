@@ -40,4 +40,4 @@ func update(_delta: float) -> void:
 # In this case we can use it to restore the state the owner was in
 # before entering this one.
 func _on_Timer_timeout() -> void:
-	emit_signal("finished", (prev_state.name as String).to_lower())
+	finished.emit((prev_state.name as String).to_lower())

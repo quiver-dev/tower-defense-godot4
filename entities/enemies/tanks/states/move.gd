@@ -5,4 +5,4 @@ extends "res://entities/enemies/states/move.gd"
 func _on_detector_entity_entered(entity: Node2D) -> void:
 	if not entity in (owner as Tank).shooter.targets:
 		(owner as Tank).shooter.targets.append(entity)
-		emit_signal("finished", "shoot")
+		finished.emit("shoot")

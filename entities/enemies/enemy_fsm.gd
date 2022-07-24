@@ -41,5 +41,5 @@ func _change_state(state_name: String) -> void:
 		states_stack.pop_back()
 	# enter the new one
 	current_state = states_stack[0]
-	emit_signal("state_changed", states_stack)
+	state_changed.emit(states_stack)
 	current_state.enter()

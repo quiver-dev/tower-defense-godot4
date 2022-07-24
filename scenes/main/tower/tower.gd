@@ -13,7 +13,7 @@ func take_damage(damage: int) -> void:
 	health = max(0, health - damage)
 	if health == 0:
 		# TODO: add logic
-		emit_signal("tower_destroyed")
+		tower_destroyed.emit()
 		print("tower destroyed")
 
 

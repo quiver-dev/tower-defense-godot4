@@ -76,7 +76,7 @@ func shoot() -> void:
 	# play animations
 	_play_animations("shoot")
 	# show reload time on HUD
-	emit_signal("has_shot", firerate_timer.wait_time)
+	has_shot.emit(firerate_timer.wait_time)
 
 
 func explode() -> void:

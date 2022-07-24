@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 
 func move_to(pos: Vector2) -> void:
 	nav_agent.set_target_location(pos)
-	emit_signal("target_changed", nav_agent.get_target_location())
+	target_changed.emit(nav_agent.get_target_location())
 
 
 func stop() -> void:
