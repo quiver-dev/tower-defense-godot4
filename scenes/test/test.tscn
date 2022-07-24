@@ -65,14 +65,11 @@ position = Vector2(2304, 272)
 
 [node name="MissileTurret" parent="." instance=ExtResource("7_wvnqr")]
 position = Vector2(624, 120)
-health = 30
 
 [node name="GatlingTurret" parent="." instance=ExtResource("8_ipdmw")]
 position = Vector2(-32, 352)
-health = 20
 
 [node name="SingleTurret" parent="." instance=ExtResource("9_d6hjm")]
 position = Vector2(544, 800)
-health = 20
 
 [editable path="Enemies/InfantryT3"]

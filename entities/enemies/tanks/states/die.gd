@@ -7,3 +7,5 @@ extends "res://entities/enemies/states/die.gd"
 func enter() -> void:
 	super.enter()
 	(owner as Tank).shooter.explode()
+	(owner as Tank).explosion.show()
+	(owner as Tank).explosion.play("default")

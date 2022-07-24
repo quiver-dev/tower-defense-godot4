@@ -16,7 +16,6 @@ const FADE_OUT_DURATION := 0.25
 func _ready() -> void:
 	# hide non-relevant HUD parts
 	hud.state_label.hide()
-	explosion.hide()
 
 
 func _physics_process(_delta: float) -> void:
