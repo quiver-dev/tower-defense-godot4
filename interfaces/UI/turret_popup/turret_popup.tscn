@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://d065e0bnj0me6" path="res://assets/themes/td_theme.tres" id="1_d4ywp"]
 [ext_resource type="Texture2D" uid="uid://bvrpxpt7jko5f" path="res://interfaces/assets/textures/red_circle.png" id="2_64a23"]
 [ext_resource type="Script" path="res://interfaces/UI/turret_popup/turret_popup.gd" id="2_hlo1n"]
-[ext_resource type="Texture2D" uid="uid://cwjprn730kyb4" path="res://interfaces/assets/textures/grey_crossWhite.png" id="3_k6npk"]
+[ext_resource type="Texture2D" uid="uid://dst6k2hllrnby" path="res://interfaces/assets/textures/red_circle_cross.png" id="4_x5xtb"]
 [ext_resource type="Texture2D" uid="uid://dm7pxbc4sw21l" path="res://entities/turrets/single/assets/textures/gun_idle_00.png" id="5_uaj7d"]
 [ext_resource type="Texture2D" uid="uid://e6asxs20t7o5" path="res://entities/turrets/gatling/assets/textures/gun_idle_00.png" id="5_yom2w"]
 [ext_resource type="Texture2D" uid="uid://cliy7gyk3tt3r" path="res://entities/turrets/missile/assets/textures/gun_idle_00.png" id="6_ye7vx"]
@@ -66,7 +66,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_xfjc7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_2ssdq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2ssdq")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7fftr")
-icon = ExtResource("3_k6npk")
+icon = ExtResource("4_x5xtb")
 icon_alignment = 1
 metadata/_edit_layout_mode = 1
 
