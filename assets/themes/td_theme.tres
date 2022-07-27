@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bm0sor5rybpl0" path="res://interfaces/assets/textures/button_00.png" id="1_cko5f"]
 [ext_resource type="Texture2D" uid="uid://clkoa2dndccgd" path="res://interfaces/assets/textures/button_01.png" id="2_2cjyg"]
-[ext_resource type="Texture2D" uid="uid://dd527xcndwx0s" path="res://interfaces/assets/textures/turret_value_tier1.png" id="3_bojem"]
+[ext_resource type="Texture2D" uid="uid://cyning8j8aw85" path="res://interfaces/assets/textures/turret_value.png" id="3_fhauj"]
 [ext_resource type="Texture2D" uid="uid://cnw56j0v5sbfg" path="res://interfaces/assets/textures/turret_panel.png" id="4_j1wig"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5l6x3"]
@@ -37,10 +37,10 @@ content_margin_left = 8.0
 content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
-texture = ExtResource("3_bojem")
+texture = ExtResource("3_fhauj")
 margin_top = 6.0
-margin_bottom = 8.0
-region_rect = Rect2(0, 0, 142, 68)
+margin_bottom = 6.0
+region_rect = Rect2(0, 0, 142, 66)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d8fuc"]
 content_margin_left = 40.0
