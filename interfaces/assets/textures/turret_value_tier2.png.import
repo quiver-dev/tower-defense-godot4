@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck7vibn3ou6up"
-path="res://.godot/imported/blue_button01.png-3f7b98bbd5616c946d9457cc45728707.ctex"
+uid="uid://dg1l3ihwbs8t0"
+path="res://.godot/imported/turret_value_tier2.png-971adb15fa04cf004386488d9a6847af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/assets/textures/blue_button01.png"
-dest_files=["res://.godot/imported/blue_button01.png-3f7b98bbd5616c946d9457cc45728707.ctex"]
+source_file="res://interfaces/assets/textures/turret_value_tier2.png"
+dest_files=["res://.godot/imported/turret_value_tier2.png-971adb15fa04cf004386488d9a6847af.ctex"]
 
 [params]
 

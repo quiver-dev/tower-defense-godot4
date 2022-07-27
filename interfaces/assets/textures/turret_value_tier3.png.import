@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjqb7e2pg50jp"
-path="res://.godot/imported/missile_button_01.png-a877dba0c476372119059acfa6692022.ctex"
+uid="uid://d38v8upq8utjf"
+path="res://.godot/imported/turret_value_tier3.png-d8d88623d82f55bbb623a8807c6b83b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/assets/textures/missile_button_01.png"
-dest_files=["res://.godot/imported/missile_button_01.png-a877dba0c476372119059acfa6692022.ctex"]
+source_file="res://interfaces/assets/textures/turret_value_tier3.png"
+dest_files=["res://.godot/imported/turret_value_tier3.png-d8d88623d82f55bbb623a8807c6b83b4.ctex"]
 
 [params]
 

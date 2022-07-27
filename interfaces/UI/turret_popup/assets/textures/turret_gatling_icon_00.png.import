@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sa6yll8usx02"
-path="res://.godot/imported/grey_panel.png-e7c59afc2d64b7253030004daca5f767.ctex"
+uid="uid://dinopcc5mam56"
+path="res://.godot/imported/turret_gatling_icon_00.png-621ce6473dd65a8cbc3ee38a1cabd58e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/assets/textures/grey_panel.png"
-dest_files=["res://.godot/imported/grey_panel.png-e7c59afc2d64b7253030004daca5f767.ctex"]
+source_file="res://interfaces/UI/turret_popup/assets/textures/turret_gatling_icon_00.png"
+dest_files=["res://.godot/imported/turret_gatling_icon_00.png-621ce6473dd65a8cbc3ee38a1cabd58e.ctex"]
 
 [params]
 

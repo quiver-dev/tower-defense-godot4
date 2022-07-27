@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvrpxpt7jko5f"
-path="res://.godot/imported/red_circle.png-345a1265566f2eee9b6f917956a796a1.ctex"
+uid="uid://5xc6f46op58o"
+path="res://.godot/imported/turret_single_icon_01.png-b50d6932580c1a08b2fc825a4f7454ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/assets/textures/red_circle.png"
-dest_files=["res://.godot/imported/red_circle.png-345a1265566f2eee9b6f917956a796a1.ctex"]
+source_file="res://interfaces/UI/turret_popup/assets/textures/turret_single_icon_01.png"
+dest_files=["res://.godot/imported/turret_single_icon_01.png-b50d6932580c1a08b2fc825a4f7454ff.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b088fn153afpo"
-path="res://.godot/imported/blue_cross.png-f10dd932ce86e7324c664b336ef32ee2.ctex"
+uid="uid://dd527xcndwx0s"
+path="res://.godot/imported/turret_value_tier1.png-679cf18bc87c9a6c5839f6e7c3e722d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/assets/textures/blue_cross.png"
-dest_files=["res://.godot/imported/blue_cross.png-f10dd932ce86e7324c664b336ef32ee2.ctex"]
+source_file="res://interfaces/assets/textures/turret_value_tier1.png"
+dest_files=["res://.godot/imported/turret_value_tier1.png-679cf18bc87c9a6c5839f6e7c3e722d1.ctex"]
 
 [params]
 

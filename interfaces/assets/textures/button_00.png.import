@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwkbr8u1ri5p7"
-path="res://.godot/imported/gatling_button_01.png-5399ad2794a8ac57fac3fefb2dbe0b93.ctex"
+uid="uid://bm0sor5rybpl0"
+path="res://.godot/imported/button_00.png-e94c82a873770c17e3417e3cfa1e5028.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/assets/textures/gatling_button_01.png"
-dest_files=["res://.godot/imported/gatling_button_01.png-5399ad2794a8ac57fac3fefb2dbe0b93.ctex"]
+source_file="res://interfaces/assets/textures/button_00.png"
+dest_files=["res://.godot/imported/button_00.png-e94c82a873770c17e3417e3cfa1e5028.ctex"]
 
 [params]
 
