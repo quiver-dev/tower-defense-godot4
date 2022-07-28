@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://0h6p5kq7bwnw"]
 
-[ext_resource type="PackedScene" uid="uid://35uxlbs6h5dh" path="res://entities/enemies/enemy.tscn" id="1_xcp6m"]
+[ext_resource type="PackedScene" path="res://entities/enemies/enemy.tscn" id="1_xcp6m"]
 [ext_resource type="Texture2D" uid="uid://c2kw4wa37hx6d" path="res://entities/enemies/infantry/assets/textures/tier2/idle_00.png" id="2_j37t7"]
 [ext_resource type="Texture2D" uid="uid://dvslmim8gtmdm" path="res://entities/enemies/infantry/assets/textures/tier2/die_00.png" id="2_us1ld"]
 [ext_resource type="Texture2D" uid="uid://cyqia0ngmbbst" path="res://entities/enemies/infantry/assets/textures/tier2/die_01.png" id="3_bmrip"]

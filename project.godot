@@ -22,7 +22,7 @@ _global_script_classes=[{
 "base": "Control",
 "class": &"EntityHud",
 "language": &"GDScript",
-"path": "res://interfaces/HUD/entity_hud.gd"
+"path": "res://interfaces/HUD/entity/entity_hud.gd"
 }, {
 "base": "State",
 "class": &"Motion",

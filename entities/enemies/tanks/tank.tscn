@@ -1,6 +1,6 @@
 [gd_scene load_steps=86 format=3 uid="uid://c3jnmrhthj3q2"]
 
-[ext_resource type="PackedScene" uid="uid://35uxlbs6h5dh" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
+[ext_resource type="PackedScene" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/tank.gd" id="2_ri3h6"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/move.gd" id="3_7yovt"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/hit.gd" id="5_3qes1"]

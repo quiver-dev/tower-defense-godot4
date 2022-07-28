@@ -1,11 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://bar5yrgi6jejj"]
+[gd_scene load_steps=19 format=3]
 
 [ext_resource type="Script" path="res://entities/turrets/turret.gd" id="1_mel1h"]
 [ext_resource type="Texture2D" uid="uid://cdt1rsj4xbkq3" path="res://entities/turrets/assets/textures/base_idle_00.png" id="2_nf4vx"]
 [ext_resource type="Texture2D" uid="uid://dm7pxbc4sw21l" path="res://entities/turrets/single/assets/textures/gun_idle_00.png" id="4_o5cln"]
 [ext_resource type="PackedScene" uid="uid://r1b440sc0tkl" path="res://entities/shooter.tscn" id="4_wtpgl"]
 [ext_resource type="Texture2D" uid="uid://djmhh26sa4xo" path="res://entities/turrets/single/assets/textures/gun_shoot_00.png" id="5_7xp4l"]
-[ext_resource type="PackedScene" uid="uid://fposufd3xex3" path="res://interfaces/HUD/entity_hud.tscn" id="5_owktb"]
+[ext_resource type="PackedScene" path="res://interfaces/HUD/entity/entity_hud.tscn" id="5_owktb"]
 [ext_resource type="Texture2D" uid="uid://pus7ugvpejf2" path="res://entities/turrets/single/assets/textures/gun_shoot_01.png" id="6_73w7d"]
 [ext_resource type="Texture2D" uid="uid://d0jreoinmscsr" path="res://entities/turrets/single/assets/textures/gun_shoot_02.png" id="7_2g8oo"]
 [ext_resource type="Texture2D" uid="uid://dphnv0moemc3v" path="res://entities/turrets/single/assets/textures/gun_shoot_03.png" id="8_37pud"]

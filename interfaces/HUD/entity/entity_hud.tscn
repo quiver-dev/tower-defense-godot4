@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://fposufd3xex3"]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="Script" path="res://interfaces/HUD/entity_hud.gd" id="1_qyud4"]
+[ext_resource type="Script" path="res://interfaces/HUD/entity/entity_hud.gd" id="1_qyud4"]
 
 [sub_resource type="Gradient" id="Gradient_20pti"]
 offsets = PackedFloat32Array(0)

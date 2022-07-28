@@ -80,13 +80,13 @@ theme_override_constants/separation = 10
 metadata/_edit_layout_mode = 1
 
 [node name="Gatling" type="HFlowContainer" parent="Background/Panel/Turrets"]
-offset_right = 156.0
+offset_right = 158.0
 offset_bottom = 202.0
 size_flags_vertical = 4
 theme_override_constants/v_separation = 10
 
 [node name="Button" type="Button" parent="Background/Panel/Turrets/Gatling"]
-offset_right = 156.0
+offset_right = 158.0
 offset_bottom = 128.0
 button_group = SubResource("ButtonGroup_jhmro")
 icon = ExtResource("4_1pplw")
@@ -94,7 +94,7 @@ icon_alignment = 1
 
 [node name="Label" type="Label" parent="Background/Panel/Turrets/Gatling"]
 offset_top = 138.0
-offset_right = 156.0
+offset_right = 158.0
 offset_bottom = 202.0
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -104,24 +104,23 @@ text = "200"
 horizontal_alignment = 1
 
 [node name="Single" type="HFlowContainer" parent="Background/Panel/Turrets"]
-offset_left = 166.0
-offset_top = 1.0
-offset_right = 324.0
-offset_bottom = 201.0
+offset_left = 168.0
+offset_right = 326.0
+offset_bottom = 202.0
 size_flags_vertical = 4
 theme_override_constants/v_separation = 10
 
 [node name="Button" type="Button" parent="Background/Panel/Turrets/Single"]
 offset_right = 158.0
-offset_bottom = 126.0
+offset_bottom = 128.0
 button_group = SubResource("ButtonGroup_jhmro")
 icon = ExtResource("5_hubt0")
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="Background/Panel/Turrets/Single"]
-offset_top = 136.0
+offset_top = 138.0
 offset_right = 158.0
-offset_bottom = 200.0
+offset_bottom = 202.0
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
@@ -130,24 +129,23 @@ text = "500"
 horizontal_alignment = 1
 
 [node name="Missile" type="HFlowContainer" parent="Background/Panel/Turrets"]
-offset_left = 334.0
-offset_top = 1.0
-offset_right = 466.0
-offset_bottom = 201.0
+offset_left = 336.0
+offset_right = 494.0
+offset_bottom = 202.0
 size_flags_vertical = 4
 theme_override_constants/v_separation = 10
 
 [node name="Button" type="Button" parent="Background/Panel/Turrets/Missile"]
-offset_right = 132.0
-offset_bottom = 126.0
+offset_right = 158.0
+offset_bottom = 128.0
 button_group = SubResource("ButtonGroup_jhmro")
 icon = ExtResource("6_khrde")
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="Background/Panel/Turrets/Missile"]
-offset_top = 136.0
-offset_right = 132.0
-offset_bottom = 200.0
+offset_top = 138.0
+offset_right = 158.0
+offset_bottom = 202.0
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
