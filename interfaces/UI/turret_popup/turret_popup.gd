@@ -6,6 +6,20 @@ extends CanvasLayer
 
 signal turret_requested(type: String)
 
+const PRICE_LABEL_PATH := "Background/Panel/Turrets/%s/Label"
+
+@export var turret_prices := {
+	"gatling": 250,
+	"single": 400,
+	"missile": 800,
+}
+
+func _ready() -> void:
+	# initialize turret prices
+	for turret in $Background/Panel/Turrets.get_children():
+		var price_label := turret.get_node("Label") as Label
+		price_label.text = str(turret_prices[String(turret.name).to_lower()])
+
 
 func _on_close_pressed() -> void:
 	hide()
@@ -23,5 +37,13 @@ func _on_background_gui_input(event: InputEvent) -> void:
 # settings  when connecting a signal to a method using the editor.
 # In this case we are passing the turret type based on which button is pressed.
 func _on_button_pressed(type: String) -> void:
-	turret_requested.emit(type)
-	hide()
+	if Global.money >= turret_prices[type]:
+		Global.money -= turret_prices[type]
+		turret_requested.emit(type)
+		hide()
+	else:
+		var tween := create_tween().set_trans(Tween.TRANS_BACK).\
+				set_ease(Tween.EASE_IN_OUT)
+		var price_label := get_node(PRICE_LABEL_PATH % [type.capitalize()]) as Label
+		price_label.modulate = Color("ff383f")
+		tween.tween_property(price_label, "modulate", Color("fff"), 0.5)

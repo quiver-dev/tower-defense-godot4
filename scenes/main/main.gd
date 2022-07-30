@@ -1,6 +1,8 @@
 extends Node2D
 
 
+const STARTING_MONEY := 10000
+
 @onready var tower := $Tower as Area2D
 @onready var spawner := $Spawner as Spawner
 @onready var camera := $Camera2D as Camera2D
@@ -11,6 +13,8 @@ func _ready() -> void:
 	randomize()
 	# start spawning enemies
 	spawner.start(tower.global_position)
+	# initialize money
+	Global.money = STARTING_MONEY
 	# initialize camera
 #	var map_limits := tilemap.get_used_rect()
 #	var cell_size := tilemap.tile_set.tile_size
