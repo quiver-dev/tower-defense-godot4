@@ -1,3 +1,93 @@
-[gd_scene format=3 uid="uid://cmyjsqt6idilt"]
+[gd_scene load_steps=9 format=3 uid="uid://cmyjsqt6idilt"]
+
+[ext_resource type="Texture2D" uid="uid://cv3gquuloagcv" path="res://interfaces/HUD/assets/textures/headsup_panel.png" id="1_mn5ua"]
+[ext_resource type="Texture2D" uid="uid://d4c51lqtqgi8d" path="res://interfaces/HUD/assets/textures/tower_icon.png" id="2_mdkkp"]
+[ext_resource type="Texture2D" uid="uid://byfsni62bnnso" path="res://interfaces/HUD/assets/textures/lifebar_window.png" id="3_3fdlk"]
+[ext_resource type="Texture2D" uid="uid://b3k3dvxq7kud" path="res://interfaces/HUD/assets/textures/lifebar.png" id="4_mlvjf"]
+[ext_resource type="Texture2D" uid="uid://cmfwrpuk3xmij" path="res://interfaces/HUD/assets/textures/coin_icon.png" id="5_5kl3n"]
+[ext_resource type="Texture2D" uid="uid://1vslx0kwx2ql" path="res://interfaces/HUD/assets/textures/currency_window.png" id="6_11lp7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6t2jm"]
+content_margin_left = 15.0
+content_margin_top = 45.0
+content_margin_right = 30.0
+content_margin_bottom = 30.0
+texture = ExtResource("1_mn5ua")
+margin_top = 29.0
+margin_right = 16.0
+margin_bottom = 13.0
+region_rect = Rect2(0, 0, 344, 175)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nmveo"]
+content_margin_left = 15.0
+content_margin_right = 7.0
+texture = ExtResource("6_11lp7")
+margin_left = 8.0
+region_rect = Rect2(0, 0, 237, 40)
 
 [node name="Hud" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+
+[node name="Info" type="PanelContainer" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -264.0
+offset_top = 8.0
+offset_right = 77.0
+offset_bottom = 159.0
+grow_horizontal = 0
+scale = Vector2(0.75, 0.75)
+theme_override_styles/panel = SubResource("StyleBoxTexture_6t2jm")
+metadata/_edit_layout_mode = 1
+
+[node name="Rows" type="VBoxContainer" parent="Control/Info"]
+offset_left = 15.0
+offset_top = 45.0
+offset_right = 311.0
+offset_bottom = 126.0
+
+[node name="Health" type="HBoxContainer" parent="Control/Info/Rows"]
+offset_right = 296.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="Control/Info/Rows/Health"]
+offset_right = 51.0
+offset_bottom = 40.0
+texture = ExtResource("2_mdkkp")
+stretch_mode = 3
+
+[node name="HealthBar" type="TextureProgressBar" parent="Control/Info/Rows/Health"]
+offset_left = 55.0
+offset_right = 296.0
+offset_bottom = 40.0
+size_flags_horizontal = 10
+value = 100.0
+texture_under = ExtResource("3_3fdlk")
+texture_progress = ExtResource("4_mlvjf")
+texture_progress_offset = Vector2(4, 4)
+
+[node name="Money" type="HBoxContainer" parent="Control/Info/Rows"]
+offset_top = 44.0
+offset_right = 296.0
+offset_bottom = 81.0
+
+[node name="Icon" type="TextureRect" parent="Control/Info/Rows/Money"]
+offset_right = 37.0
+offset_bottom = 37.0
+texture = ExtResource("5_5kl3n")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Control/Info/Rows/Money"]
+offset_left = 41.0
+offset_right = 296.0
+offset_bottom = 37.0
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_nmveo")
+text = "10000"
+horizontal_alignment = 2
+vertical_alignment = 1
