@@ -8,12 +8,12 @@ size = Vector2(320, 256)
 
 [node name="Tower" type="Area2D"]
 collision_layer = 16
-script = ExtResource( "1_ksxrn" )
+script = ExtResource("1_ksxrn")
 
 [node name="ColorRect" type="Sprite2D" parent="."]
-texture = ExtResource( "2_0e3jm" )
+texture = ExtResource("2_0e3jm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( "RectangleShape2D_pxjbe" )
+shape = SubResource("RectangleShape2D_pxjbe")
 
 [connection signal="body_entered" from="." to="." method="_on_objective_body_entered"]

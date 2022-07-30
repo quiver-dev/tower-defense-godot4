@@ -2,19 +2,28 @@ class_name Objective
 extends Area2D
 
 
-signal tower_destroyed
+signal initialized(max_health: int)
+signal health_changed(cur_health: int)
+signal destroyed
 
-const DEFAULT_DAMAGE := 1  # default damage dealt by enemies
+# TODO: this could probably be an Enemy parameter: let that scene check damage
+const DEFAULT_DAMAGE := 10  # default damage dealt by enemies
 
 @export_range(0, 1000) var health: int = 500
+
+
+func _ready() -> void:
+	initialized.emit(health)
 
 
 func take_damage(damage: int) -> void:
 	health = max(0, health - damage)
 	if health == 0:
 		# TODO: add logic
-		tower_destroyed.emit()
+		destroyed.emit()
 		print("tower destroyed")
+	else:
+		health_changed.emit(health)
 
 
 func _on_objective_body_entered(body: Node2D) -> void:
