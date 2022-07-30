@@ -62,5 +62,4 @@ value = 100.0
 rounded = true
 texture_progress = SubResource("GradientTexture2D_y4p0d")
 
-[connection signal="tree_exiting" from="." to="." method="_on_entity_hud_tree_exiting"]
 [connection signal="value_changed" from="Parameters/Healthbar" to="." method="_on_healthbar_value_changed"]
