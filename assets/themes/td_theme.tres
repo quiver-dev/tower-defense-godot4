@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://d065e0bnj0me6"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://d065e0bnj0me6"]
 
 [ext_resource type="Texture2D" uid="uid://bm0sor5rybpl0" path="res://interfaces/assets/textures/button_00.png" id="1_cko5f"]
 [ext_resource type="Texture2D" uid="uid://clkoa2dndccgd" path="res://interfaces/assets/textures/button_01.png" id="2_2cjyg"]
 [ext_resource type="Texture2D" uid="uid://cyning8j8aw85" path="res://interfaces/assets/textures/turret_value.png" id="3_fhauj"]
 [ext_resource type="Texture2D" uid="uid://cnw56j0v5sbfg" path="res://interfaces/assets/textures/turret_panel.png" id="4_j1wig"]
+[ext_resource type="FontFile" uid="uid://buidmv0e1ecxg" path="res://assets/fonts/DigitalNormal-xO6j.otf" id="5_jky7u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5l6x3"]
 
@@ -67,6 +68,7 @@ margin_bottom = 30.0
 region_rect = Rect2(0, 1, 605, 384)
 
 [resource]
+default_font = ExtResource("5_jky7u")
 Button/styles/focus = SubResource("StyleBoxEmpty_5l6x3")
 Button/styles/hover = SubResource("StyleBoxTexture_xx0lv")
 Button/styles/normal = SubResource("StyleBoxTexture_u8cw5")

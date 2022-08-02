@@ -80,8 +80,9 @@ theme_override_constants/separation = 10
 metadata/_edit_layout_mode = 1
 
 [node name="Gatling" type="HFlowContainer" parent="Background/Panel/Turrets"]
+offset_top = 6.0
 offset_right = 158.0
-offset_bottom = 202.0
+offset_bottom = 196.0
 size_flags_vertical = 4
 theme_override_constants/v_separation = 10
 
@@ -95,7 +96,7 @@ icon_alignment = 1
 [node name="Label" type="Label" parent="Background/Panel/Turrets/Gatling"]
 offset_top = 138.0
 offset_right = 158.0
-offset_bottom = 202.0
+offset_bottom = 190.0
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
@@ -105,8 +106,9 @@ horizontal_alignment = 1
 
 [node name="Single" type="HFlowContainer" parent="Background/Panel/Turrets"]
 offset_left = 168.0
+offset_top = 6.0
 offset_right = 326.0
-offset_bottom = 202.0
+offset_bottom = 196.0
 size_flags_vertical = 4
 theme_override_constants/v_separation = 10
 
@@ -120,7 +122,7 @@ icon_alignment = 1
 [node name="Label" type="Label" parent="Background/Panel/Turrets/Single"]
 offset_top = 138.0
 offset_right = 158.0
-offset_bottom = 202.0
+offset_bottom = 190.0
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
@@ -130,8 +132,9 @@ horizontal_alignment = 1
 
 [node name="Missile" type="HFlowContainer" parent="Background/Panel/Turrets"]
 offset_left = 336.0
+offset_top = 6.0
 offset_right = 494.0
-offset_bottom = 202.0
+offset_bottom = 196.0
 size_flags_vertical = 4
 theme_override_constants/v_separation = 10
 
@@ -145,7 +148,7 @@ icon_alignment = 1
 [node name="Label" type="Label" parent="Background/Panel/Turrets/Missile"]
 offset_top = 138.0
 offset_right = 158.0
-offset_bottom = 202.0
+offset_bottom = 190.0
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
