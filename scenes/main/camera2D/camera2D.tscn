@@ -7,5 +7,6 @@
 position = Vector2(640, 360)
 current = true
 script = ExtResource("1_w05dq")
+zoom_rate = 8.0
 
 [node name="Hud" parent="." instance=ExtResource("2_e4o7p")]
