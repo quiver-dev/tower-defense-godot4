@@ -10,6 +10,9 @@ const TANK := "res://entities/enemies/tanks/tank.tscn"
 const GATLING_TURRET := "res://entities/turrets/gatling/gatling_turret.tscn"
 const SINGLE_TURRET := "res://entities/turrets/single/single_turret.tscn"
 const MISSILE_TURRET := "res://entities/turrets/missile/missile_turret.tscn"
+# Scenes
+const MAIN_MENU := "res://interfaces/UI/menu/menu.tscn"
+const MAP := "res://scenes/main/main.tscn"
 
 
 static func get_enemy_path(enemy_name: String) -> String:
@@ -38,3 +41,9 @@ static func get_turret_path(turret_name: String) -> String:
 		_:
 			printerr("Cannot get turret scene from name %s" % turret_name)
 	return turret_path
+
+
+func change_scene(scene: String) -> void:
+	var e = get_tree().change_scene(scene)
+	if e != OK:
+		push_error("Error while changing scene: %s" % str(e))
