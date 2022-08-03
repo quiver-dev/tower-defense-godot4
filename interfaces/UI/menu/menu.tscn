@@ -51,15 +51,15 @@ theme_override_font_sizes/font_size = 42
 text = "   START   "
 
 [node name="HowToPlay" type="Button" parent="PanelContainer/Sections"]
-offset_left = 227.0
+offset_left = 241.0
 offset_top = 334.0
-offset_right = 628.0
+offset_right = 614.0
 offset_bottom = 398.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.25
 theme_override_font_sizes/font_size = 42
-text = "   HOW TO PLAY   "
+text = "  HOW TO PLAY  "
 
 [node name="Quit" type="Button" parent="PanelContainer/Sections"]
 offset_left = 326.0

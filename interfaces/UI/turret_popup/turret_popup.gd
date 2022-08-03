@@ -47,4 +47,4 @@ func _on_button_pressed(type: String) -> void:
 				set_ease(Tween.EASE_IN_OUT)
 		var price_label := get_node(PRICE_LABEL_PATH % [type.capitalize()]) as Label
 		price_label.modulate = Color("ff383f")
-		tween.tween_property(price_label, "modulate", Color("fff"), 0.5)
+		tween.tween_property(price_label, "modulate", Color("fff"), 0.25)
