@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyning8j8aw85"
-path="res://.godot/imported/turret_value.png-7e6ea968958305dd7dbe124215310bbd.ctex"
+uid="uid://couss16qkquin"
+path="res://.godot/imported/button_pressed.png-0b2c063efa00b37065c8afee8c8948e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/assets/textures/turret_value.png"
-dest_files=["res://.godot/imported/turret_value.png-7e6ea968958305dd7dbe124215310bbd.ctex"]
+source_file="res://interfaces/assets/textures/button_pressed.png"
+dest_files=["res://.godot/imported/button_pressed.png-0b2c063efa00b37065c8afee8c8948e6.ctex"]
 
 [params]
 

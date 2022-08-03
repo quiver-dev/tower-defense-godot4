@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5xc6f46op58o"
-path="res://.godot/imported/turret_single_icon_01.png-b50d6932580c1a08b2fc825a4f7454ff.ctex"
+uid="uid://c2ookcth4of4a"
+path="res://.godot/imported/label.png-3b1ccc735de8374a4a838d7bdb6aa6aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/UI/turret_popup/assets/textures/turret_single_icon_01.png"
-dest_files=["res://.godot/imported/turret_single_icon_01.png-b50d6932580c1a08b2fc825a4f7454ff.ctex"]
+source_file="res://interfaces/assets/textures/label.png"
+dest_files=["res://.godot/imported/label.png-3b1ccc735de8374a4a838d7bdb6aa6aa.ctex"]
 
 [params]
 

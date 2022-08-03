@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://db33awc1pfsoi"
-path="res://.godot/imported/kenney_future_narrow.ttf-3f53f9c8bf68abfb26e51af09b37d68b.fontdata"
+uid="uid://cpljxadpw4tjq"
+path="res://.godot/imported/akashi.ttf-3aa2e1823ae9ea2bfeca04d856914b1d.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/kenney_future_narrow.ttf"
-dest_files=["res://.godot/imported/kenney_future_narrow.ttf-3f53f9c8bf68abfb26e51af09b37d68b.fontdata"]
+source_file="res://assets/fonts/akashi.ttf"
+dest_files=["res://.godot/imported/akashi.ttf-3aa2e1823ae9ea2bfeca04d856914b1d.fontdata"]
 
 [params]
 

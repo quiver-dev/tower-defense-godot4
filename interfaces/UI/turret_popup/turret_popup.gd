@@ -14,6 +14,7 @@ const PRICE_LABEL_PATH := "Background/Panel/Turrets/%s/Label"
 	"missile": 800,
 }
 
+
 func _ready() -> void:
 	# initialize turret prices
 	for turret in $Background/Panel/Turrets.get_children():

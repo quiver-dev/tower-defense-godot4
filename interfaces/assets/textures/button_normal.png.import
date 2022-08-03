@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnw56j0v5sbfg"
-path="res://.godot/imported/turret_panel.png-7b95d32c0641dd90e06a55d5f23328a6.ctex"
+uid="uid://c0u8f8uj0opdi"
+path="res://.godot/imported/button_normal.png-0a58a3ef023253f32e22c61c29476a67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/assets/textures/turret_panel.png"
-dest_files=["res://.godot/imported/turret_panel.png-7b95d32c0641dd90e06a55d5f23328a6.ctex"]
+source_file="res://interfaces/assets/textures/button_normal.png"
+dest_files=["res://.godot/imported/button_normal.png-0a58a3ef023253f32e22c61c29476a67.ctex"]
 
 [params]
 
