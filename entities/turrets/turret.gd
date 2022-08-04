@@ -8,6 +8,7 @@ const FADE_OUT_DURATION := 0.25
 
 @export_range(0, 100) var health: int = 100
 
+@onready var collision := $CollisionShape2D as CollisionShape2D
 @onready var shooter := $Shooter as Shooter
 @onready var explosion := $Explosion as AnimatedSprite2D
 @onready var hud := $EntityHUD as EntityHud
@@ -28,6 +29,7 @@ func take_damage(damage: int) -> void:
 	health = max(0, health - damage)
 	hud.healthbar.value = health
 	if health == 0:
+		collision.set_deferred("disabled", true)
 		shooter.explode()
 		explosion.play("default")
 

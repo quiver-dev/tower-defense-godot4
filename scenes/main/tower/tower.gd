@@ -11,6 +11,7 @@ const DEFAULT_DAMAGE := 10  # default damage dealt by enemies
 
 @export_range(0, 1000) var health: int = 500
 
+@onready var collision := $CollisionShape2D as CollisionShape2D
 @onready var anim_sprite := $AnimatedSprite as AnimatedSprite2D
 @onready var explosion := $Explosion as AnimatedSprite2D
 
@@ -22,6 +23,7 @@ func _ready() -> void:
 func take_damage(damage: int) -> void:
 	health = max(0, health - damage)
 	if health == 0:
+		collision.set_deferred("disabled", true)
 		anim_sprite.play("die")
 		explosion.play("tower")
 	else:
