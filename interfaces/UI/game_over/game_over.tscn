@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://jmm71rgqfd1r"]
+
+[ext_resource type="Theme" uid="uid://d065e0bnj0me6" path="res://assets/themes/td_theme.tres" id="1_4hwqe"]
+[ext_resource type="Texture2D" uid="uid://bh2j3w7sn76or" path="res://interfaces/UI/game_over/assets/textures/gameover.png" id="2_rdkds"]
+
+[node name="GameOver" type="PanelContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -430.0
+offset_top = -183.0
+offset_right = 430.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4hwqe")
+metadata/_edit_layout_mode = 1
+
+[node name="Sections" type="VBoxContainer" parent="."]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 820.0
+offset_bottom = 326.0
+theme_override_constants/separation = 10
+
+[node name="Title" type="TextureRect" parent="Sections"]
+offset_top = 29.0
+offset_right = 780.0
+offset_bottom = 124.0
+size_flags_vertical = 6
+size_flags_stretch_ratio = 1.25
+texture = ExtResource("2_rdkds")
+stretch_mode = 5
+
+[node name="Buttons" type="HBoxContainer" parent="Sections"]
+offset_top = 192.0
+offset_right = 780.0
+offset_bottom = 256.0
+size_flags_vertical = 6
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Retry" type="Button" parent="Sections/Buttons"]
+offset_left = 219.0
+offset_right = 367.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.25
+theme_override_font_sizes/font_size = 42
+text = " RETRY "
+
+[node name="Exit" type="Button" parent="Sections/Buttons"]
+offset_left = 417.0
+offset_right = 560.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.25
+theme_override_font_sizes/font_size = 42
+text = "  EXIT  "

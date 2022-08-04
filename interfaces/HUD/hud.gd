@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 
-@onready var healthbar := $Control/Info/Rows/Health/HealthBar as TextureProgressBar
-@onready var money_label := $Control/Info/Rows/Money/Label as Label
+@onready var healthbar := $Info/PanelContainer/Rows/Health/HealthBar as TextureProgressBar
+@onready var money_label := $Info/PanelContainer/Rows/Money/Label as Label
 
 
 func _process(_delta: float) -> void:

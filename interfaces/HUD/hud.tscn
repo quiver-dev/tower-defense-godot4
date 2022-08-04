@@ -31,13 +31,13 @@ region_rect = Rect2(0, 0, 237, 40)
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_yy7wq")
 
-[node name="Control" type="Control" parent="."]
+[node name="Info" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 theme = ExtResource("2_itll1")
 
-[node name="Info" type="PanelContainer" parent="Control"]
+[node name="PanelContainer" type="PanelContainer" parent="Info"]
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -264.0
@@ -49,23 +49,23 @@ scale = Vector2(0.75, 0.75)
 theme_override_styles/panel = SubResource("StyleBoxTexture_6t2jm")
 metadata/_edit_layout_mode = 1
 
-[node name="Rows" type="VBoxContainer" parent="Control/Info"]
+[node name="Rows" type="VBoxContainer" parent="Info/PanelContainer"]
 offset_left = 15.0
 offset_top = 45.0
 offset_right = 311.0
 offset_bottom = 128.0
 
-[node name="Health" type="HBoxContainer" parent="Control/Info/Rows"]
+[node name="Health" type="HBoxContainer" parent="Info/PanelContainer/Rows"]
 offset_right = 296.0
 offset_bottom = 40.0
 
-[node name="Icon" type="TextureRect" parent="Control/Info/Rows/Health"]
+[node name="Icon" type="TextureRect" parent="Info/PanelContainer/Rows/Health"]
 offset_right = 51.0
 offset_bottom = 40.0
 texture = ExtResource("2_mdkkp")
 stretch_mode = 3
 
-[node name="HealthBar" type="TextureProgressBar" parent="Control/Info/Rows/Health"]
+[node name="HealthBar" type="TextureProgressBar" parent="Info/PanelContainer/Rows/Health"]
 offset_left = 55.0
 offset_right = 296.0
 offset_bottom = 40.0
@@ -75,18 +75,18 @@ texture_under = ExtResource("3_3fdlk")
 texture_progress = ExtResource("4_mlvjf")
 texture_progress_offset = Vector2(4, 4)
 
-[node name="Money" type="HBoxContainer" parent="Control/Info/Rows"]
+[node name="Money" type="HBoxContainer" parent="Info/PanelContainer/Rows"]
 offset_top = 44.0
 offset_right = 296.0
 offset_bottom = 83.0
 
-[node name="Icon" type="TextureRect" parent="Control/Info/Rows/Money"]
+[node name="Icon" type="TextureRect" parent="Info/PanelContainer/Rows/Money"]
 offset_right = 51.0
 offset_bottom = 39.0
 texture = ExtResource("5_5kl3n")
 stretch_mode = 3
 
-[node name="Label" type="Label" parent="Control/Info/Rows/Money"]
+[node name="Label" type="Label" parent="Info/PanelContainer/Rows/Money"]
 offset_left = 55.0
 offset_top = 2.0
 offset_right = 296.0
