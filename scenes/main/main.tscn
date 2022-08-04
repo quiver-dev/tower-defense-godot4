@@ -71,6 +71,7 @@ position = Vector2(1728, 448)
 [node name="TurretSlot12" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
 position = Vector2(3776, 1984)
 
+[connection signal="destroyed" from="Tower" to="Camera2D/Hud" method="_on_tower_destroyed"]
 [connection signal="health_changed" from="Tower" to="Camera2D/Hud" method="_on_tower_health_changed"]
 [connection signal="initialized" from="Tower" to="Camera2D/Hud" method="_on_tower_initialized"]
 

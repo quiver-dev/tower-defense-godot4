@@ -3,6 +3,7 @@ extends CanvasLayer
 
 @onready var healthbar := $Info/PanelContainer/Rows/Health/HealthBar as TextureProgressBar
 @onready var money_label := $Info/PanelContainer/Rows/Money/Label as Label
+@onready var gameover := $UI/GameOver as GameOver
 
 
 func _process(_delta: float) -> void:
@@ -18,3 +19,7 @@ func _on_tower_initialized(max_health) -> void:
 # Used to update the tower's health
 func _on_tower_health_changed(cur_health: int) -> void:
 	healthbar.value = cur_health
+
+
+func _on_tower_destroyed() -> void:
+	gameover.appear()

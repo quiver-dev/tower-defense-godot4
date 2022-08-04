@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmyjsqt6idilt"]
+[gd_scene load_steps=12 format=3 uid="uid://cmyjsqt6idilt"]
 
 [ext_resource type="Texture2D" uid="uid://cv3gquuloagcv" path="res://interfaces/HUD/assets/textures/headsup_panel.png" id="1_mn5ua"]
 [ext_resource type="Script" path="res://interfaces/HUD/hud.gd" id="1_yy7wq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b3k3dvxq7kud" path="res://interfaces/HUD/assets/textures/lifebar.png" id="4_mlvjf"]
 [ext_resource type="Texture2D" uid="uid://cmfwrpuk3xmij" path="res://interfaces/HUD/assets/textures/coin_icon.png" id="5_5kl3n"]
 [ext_resource type="Texture2D" uid="uid://1vslx0kwx2ql" path="res://interfaces/HUD/assets/textures/currency_window.png" id="6_11lp7"]
+[ext_resource type="PackedScene" uid="uid://jmm71rgqfd1r" path="res://interfaces/UI/game_over/game_over.tscn" id="9_vrddp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6t2jm"]
 content_margin_left = 15.0
@@ -97,3 +98,15 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_nmveo")
 text = "10000"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="UI" type="Control" parent="."]
+process_mode = 3
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameOver" parent="UI" instance=ExtResource("9_vrddp")]
+visible = false
+offset_left = 469.0
+offset_top = 288.5
+offset_right = 811.0
+offset_bottom = 431.5
