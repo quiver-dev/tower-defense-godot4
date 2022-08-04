@@ -57,7 +57,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fy660"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jukhv"]
 radius = 400.0
 
 [node name="Turret" type="CharacterBody2D"]
@@ -88,7 +88,7 @@ offset = Vector2(7, -2)
 frames = SubResource("SpriteFrames_7qxgd")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_fy660")
+shape = SubResource("CircleShape2D_jukhv")
 
 [node name="Explosion" parent="." instance=ExtResource("13_iceo6")]
 
