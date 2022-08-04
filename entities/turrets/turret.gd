@@ -30,7 +30,6 @@ func take_damage(damage: int) -> void:
 	hud.healthbar.value = health
 	if health == 0:
 		shooter.explode()
-		explosion.show()
 		explosion.play("default")
 
 

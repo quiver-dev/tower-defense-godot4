@@ -79,7 +79,7 @@
 [ext_resource type="Texture2D" uid="uid://dw525fp6dypo6" path="res://entities/enemies/tanks/assets/textures/gun_die_22.png" id="35_g8g41"]
 [ext_resource type="Texture2D" uid="uid://b6v8231dwf7bt" path="res://entities/enemies/tanks/assets/textures/gun_die_23.png" id="36_674xu"]
 [ext_resource type="Texture2D" uid="uid://r4gggac6rpj0" path="res://entities/enemies/tanks/assets/textures/gun_die_24.png" id="37_1rp3f"]
-[ext_resource type="PackedScene" uid="uid://c3nrpfw5kmwqm" path="res://entities/explosion_vfx/explosion.tscn" id="80_sm072"]
+[ext_resource type="PackedScene" uid="uid://x6ivhnvyfp45" path="res://entities/explosion_vfx/explosion.tscn" id="80_sm072"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2qc3e"]
 animations = [{
@@ -149,7 +149,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hafic"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_75dgw"]
 radius = 500.0
 
 [node name="Tank" instance=ExtResource("1_o2qr5")]
@@ -174,7 +174,7 @@ script = ExtResource("5_5f6sk")
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_2qc3e")
-frame = 0
+frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-14, 0)
@@ -206,7 +206,7 @@ frames = SubResource("SpriteFrames_x5y1r")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_hafic")
+shape = SubResource("CircleShape2D_75dgw")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)
@@ -214,7 +214,6 @@ target_position = Vector2(510, 0)
 collision_mask = 18
 
 [node name="Explosion" parent="." index="6" instance=ExtResource("80_sm072")]
-visible = false
 
 [node name="EntityHUD" parent="." index="7"]
 offset_top = -115.0
