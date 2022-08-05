@@ -14,3 +14,17 @@ func enable(value: bool) -> void:
 	get_tree().paused = value
 	visible = value
 	anim_player.play("show" if value else "hide")
+
+
+func _on_resume_pressed() -> void:
+	enable(false)
+
+
+func _on_restart_pressed() -> void:
+	enable(false)
+	Scenes.change_scene(Scenes.MAP)
+
+
+func _on_exit_pressed() -> void:
+	enable(false)
+	Scenes.change_scene(Scenes.MAIN_MENU)

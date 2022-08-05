@@ -31,12 +31,13 @@ margin_left = 8.0
 region_rect = Rect2(0, 0, 237, 40)
 
 [node name="Hud" type="CanvasLayer"]
+layer = 5
 script = ExtResource("1_yy7wq")
 
 [node name="Info" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 1
+mouse_filter = 2
 theme = ExtResource("2_itll1")
 
 [node name="PanelContainer" type="PanelContainer" parent="Info"]
@@ -107,6 +108,14 @@ offset_bottom = 40.0
 
 [node name="GameOver" parent="UI" instance=ExtResource("9_vrddp")]
 visible = false
+offset_left = 449.0
+offset_top = 268.5
+offset_right = 791.0
+offset_bottom = 411.5
 
 [node name="Pause" parent="UI" instance=ExtResource("10_h1mxi")]
 visible = false
+offset_left = 245.0
+offset_top = 748.0
+offset_right = 995.0
+offset_bottom = 1291.0

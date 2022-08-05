@@ -63,10 +63,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -375.0
-offset_top = 408.0
-offset_right = 375.0
-offset_bottom = 951.0
+offset_left = 265.0
+offset_top = 768.0
+offset_right = 1015.0
+offset_bottom = 1311.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_4hwqe")
@@ -134,3 +134,7 @@ autoplay = "RESET"
 libraries = {
 "": SubResource("AnimationLibrary_fuhf4")
 }
+
+[connection signal="pressed" from="Sections/Buttons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Sections/Buttons/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Sections/Buttons/Exit" to="." method="_on_exit_pressed"]
