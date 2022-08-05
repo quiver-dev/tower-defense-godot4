@@ -22,4 +22,4 @@ func _on_tower_health_changed(cur_health: int) -> void:
 
 
 func _on_tower_destroyed() -> void:
-	gameover.appear()
+	gameover.enable(true)

@@ -6,24 +6,19 @@ extends PanelContainer
 
 
 # Note that the parent node MUST have its process mode set to "Always"
-# in order for this to work
-func appear() -> void:
-	get_tree().paused = true
-	visible = true
-	anim_player.play("show")
-
-
-func disappear() -> void:
-	get_tree().paused = false
-	visible = false
-	anim_player.play("RESET")
+# in order for this node to keep processing after we pause the tree
+func enable(value: bool) -> void:
+	Global.is_gameover = value
+	get_tree().paused = value
+	visible = value
+	anim_player.play("show" if value else "RESET")
 
 
 func _on_retry_pressed() -> void:
-	disappear()
+	enable(false)
 	Scenes.change_scene(Scenes.MAP)
 
 
 func _on_exit_pressed() -> void:
-	disappear()
+	enable(false)
 	Scenes.change_scene(Scenes.MAIN_MENU)

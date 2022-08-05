@@ -1,6 +1,7 @@
 extends Node
 
 
+var is_gameover := false
 var money: int
 
 

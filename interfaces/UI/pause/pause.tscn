@@ -1,0 +1,136 @@
+[gd_scene load_steps=8 format=3 uid="uid://dln6ttdt8iopd"]
+
+[ext_resource type="Theme" uid="uid://d065e0bnj0me6" path="res://assets/themes/td_theme.tres" id="1_4hwqe"]
+[ext_resource type="Script" path="res://interfaces/UI/pause/pause.gd" id="2_tlwqt"]
+[ext_resource type="Texture2D" uid="uid://crhpljtoq2vwr" path="res://interfaces/UI/pause/assets/textures/pause.png" id="3_t0lgw"]
+
+[sub_resource type="Animation" id="Animation_5rfcn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(265, 768)]
+}
+
+[sub_resource type="Animation" id="Animation_1drwa"]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(265, 88.5), Vector2(265, 44), Vector2(265, 768)]
+}
+
+[sub_resource type="Animation" id="Animation_1g827"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(265, 768), Vector2(265, 44), Vector2(265, 88.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fuhf4"]
+_data = {
+"RESET": SubResource("Animation_5rfcn"),
+"hide": SubResource("Animation_1drwa"),
+"show": SubResource("Animation_1g827")
+}
+
+[node name="Pause" type="PanelContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = 408.0
+offset_right = 375.0
+offset_bottom = 951.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4hwqe")
+script = ExtResource("2_tlwqt")
+metadata/_edit_group_ = true
+
+[node name="Sections" type="VBoxContainer" parent="."]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 710.0
+offset_bottom = 503.0
+theme_override_constants/separation = 10
+
+[node name="Title" type="TextureRect" parent="Sections"]
+offset_top = 44.0
+offset_right = 670.0
+offset_bottom = 136.0
+size_flags_vertical = 6
+texture = ExtResource("3_t0lgw")
+stretch_mode = 5
+
+[node name="Buttons" type="VBoxContainer" parent="Sections"]
+offset_top = 211.0
+offset_right = 670.0
+offset_bottom = 443.0
+size_flags_vertical = 6
+size_flags_stretch_ratio = 1.5
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Resume" type="Button" parent="Sections/Buttons"]
+offset_left = 221.0
+offset_right = 449.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.25
+theme_override_font_sizes/font_size = 42
+text = " RESUME "
+
+[node name="Restart" type="Button" parent="Sections/Buttons"]
+offset_left = 211.0
+offset_top = 84.0
+offset_right = 458.0
+offset_bottom = 148.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.25
+theme_override_font_sizes/font_size = 42
+text = " RESTART "
+
+[node name="Exit" type="Button" parent="Sections/Buttons"]
+offset_left = 249.0
+offset_top = 168.0
+offset_right = 420.0
+offset_bottom = 232.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.25
+theme_override_font_sizes/font_size = 42
+text = "  EXIT  "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_fuhf4")
+}
