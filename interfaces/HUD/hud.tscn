@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cv3gquuloagcv" path="res://interfaces/HUD/assets/textures/headsup_panel.png" id="1_mn5ua"]
 [ext_resource type="Script" path="res://interfaces/HUD/hud.gd" id="1_yy7wq"]
-[ext_resource type="Theme" uid="uid://d065e0bnj0me6" path="res://assets/themes/td_theme.tres" id="2_itll1"]
+[ext_resource type="Theme" uid="uid://dp6cm6aj7bu7g" path="res://assets/themes/td_theme.tres" id="2_itll1"]
 [ext_resource type="Texture2D" uid="uid://d4c51lqtqgi8d" path="res://interfaces/HUD/assets/textures/tower_icon.png" id="2_mdkkp"]
 [ext_resource type="Texture2D" uid="uid://byfsni62bnnso" path="res://interfaces/HUD/assets/textures/lifebar_window.png" id="3_3fdlk"]
 [ext_resource type="Texture2D" uid="uid://b3k3dvxq7kud" path="res://interfaces/HUD/assets/textures/lifebar.png" id="4_mlvjf"]
@@ -108,14 +108,6 @@ offset_bottom = 40.0
 
 [node name="GameOver" parent="UI" instance=ExtResource("9_vrddp")]
 visible = false
-offset_left = 449.0
-offset_top = 268.5
-offset_right = 791.0
-offset_bottom = 411.5
 
 [node name="Pause" parent="UI" instance=ExtResource("10_h1mxi")]
 visible = false
-offset_left = 245.0
-offset_top = 748.0
-offset_right = 995.0
-offset_bottom = 1291.0

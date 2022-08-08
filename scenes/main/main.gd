@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const STARTING_MONEY := 10000
+const STARTING_MONEY := 5000
 
 @onready var tower := $Tower as Area2D
 @onready var spawner := $Spawner as Spawner
@@ -12,7 +12,7 @@ const STARTING_MONEY := 10000
 func _ready() -> void:
 	randomize()
 	# start spawning enemies
-	spawner.start(tower.global_position)
+	spawner.initialize(tower.global_position)
 	# initialize money
 	Global.money = STARTING_MONEY
 	# initialize camera
