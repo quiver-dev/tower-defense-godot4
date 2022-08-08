@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var healthbar := $Info/PanelContainer/Rows/Health/HealthBar as TextureProgressBar
 @onready var money_label := $Info/PanelContainer/Rows/Money/Label as Label
 @onready var gameover := $UI/GameOver as GameOver
+@onready var wave_label := $Info/WaveLabel as Label
 
 
 func _process(_delta: float) -> void:
@@ -23,3 +24,7 @@ func _on_tower_health_changed(cur_health: int) -> void:
 
 func _on_tower_destroyed() -> void:
 	gameover.enable(true)
+
+
+func _on_spawner_wave_started(current_wave: int) -> void:
+	wave_label.text = "Wave: %d" % current_wave

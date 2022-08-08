@@ -42,6 +42,7 @@ func _start_wave() -> void:
 		var spawn_delay := randf_range(spawn_rate / 2, spawn_rate)
 		tween.tween_callback(_spawn_enemy.bind(chosen_enemy_path)).\
 				set_delay(spawn_delay)
+	_end_wave()
 
 
 func _end_wave() -> void:

@@ -29,6 +29,7 @@ content_margin_right = 7.0
 texture = ExtResource("6_11lp7")
 margin_left = 8.0
 region_rect = Rect2(0, 0, 237, 40)
+modulate_color = Color(1, 1, 1, 0.627451)
 
 [node name="Hud" type="CanvasLayer"]
 layer = 5
@@ -101,6 +102,17 @@ text = "10000"
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="WaveLabel" type="Label" parent="Info"]
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 155.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_nmveo")
+text = "Wave: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="UI" type="Control" parent="."]
 process_mode = 3
 offset_right = 40.0
@@ -108,6 +120,14 @@ offset_bottom = 40.0
 
 [node name="GameOver" parent="UI" instance=ExtResource("9_vrddp")]
 visible = false
+offset_left = 449.0
+offset_top = 268.5
+offset_right = 791.0
+offset_bottom = 411.5
 
 [node name="Pause" parent="UI" instance=ExtResource("10_h1mxi")]
 visible = false
+offset_left = 245.0
+offset_top = 748.0
+offset_right = 995.0
+offset_bottom = 1291.0
