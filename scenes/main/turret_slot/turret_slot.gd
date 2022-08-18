@@ -11,9 +11,26 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if event is InputEventMouseButton and event.pressed and \
 			event.button_index == MOUSE_BUTTON_LEFT:
 		if turret:
-			turret_actions.show()
+			turret_actions.visible = not turret_actions.visible
 		else:
 			turret_popup.show()
+
+
+func _on_turret_replace_requested() -> void:
+	# get current turret's value, give back half money
+	# show turret popup menu
+	pass
+
+
+func _on_turret_repair_requested() -> void:
+	# pay money and fix turret
+	pass
+
+
+func _on_turret_remove_requested() -> void:
+	# remove the turret
+	# give back half money
+	pass
 
 
 func _on_turret_popup_turret_requested(type: String) -> void:
