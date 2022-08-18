@@ -32,6 +32,7 @@ position = Vector2(5184, 960)
 
 [node name="Spawner" parent="." instance=ExtResource("5_fn71b")]
 position = Vector2(1080, 904)
+enemy_count = 20
 
 [node name="SpawnLocation2" parent="Spawner" index="1"]
 position = Vector2(16, 1208)

@@ -1,10 +1,10 @@
 [gd_resource type="Theme" load_steps=13 format=3 uid="uid://dp6cm6aj7bu7g"]
 
-[ext_resource type="Texture2D" path="res://interfaces/assets/textures/button_normal.png" id="1_nfnj4"]
-[ext_resource type="Texture2D" path="res://interfaces/assets/textures/button_pressed.png" id="2_5jg5x"]
-[ext_resource type="Texture2D" path="res://interfaces/assets/textures/label.png" id="3_a32lc"]
-[ext_resource type="Texture2D" path="res://interfaces/assets/textures/panel.png" id="4_cipta"]
-[ext_resource type="FontFile" path="res://assets/fonts/akashi.ttf" id="5_k6ddo"]
+[ext_resource type="Texture2D" uid="uid://c0u8f8uj0opdi" path="res://interfaces/assets/textures/button_normal.png" id="1_nfnj4"]
+[ext_resource type="Texture2D" uid="uid://couss16qkquin" path="res://interfaces/assets/textures/button_pressed.png" id="2_5jg5x"]
+[ext_resource type="Texture2D" uid="uid://c2ookcth4of4a" path="res://interfaces/assets/textures/label.png" id="3_a32lc"]
+[ext_resource type="Texture2D" uid="uid://b0fu7s1bm5tyy" path="res://interfaces/assets/textures/panel.png" id="4_cipta"]
+[ext_resource type="FontFile" uid="uid://cpljxadpw4tjq" path="res://assets/fonts/akashi.ttf" id="5_k6ddo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmp7h"]
 

@@ -5,7 +5,7 @@ extends Node2D
 signal wave_started(current_wave: int)
 signal waves_finished
 
-const INITIAL_WAIT := 5.0  # amount of seconds to wait before starting
+const INITIAL_WAIT := 5.0  # amount of seconds to wait before starting a wave
 
 @export_range(0.5, 5.0, 0.5) var spawn_rate: float = 2.0
 @export var wave_count: int = 3
@@ -42,7 +42,7 @@ func _start_wave() -> void:
 		var spawn_delay := randf_range(spawn_rate / 2, spawn_rate)
 		tween.tween_callback(_spawn_enemy.bind(chosen_enemy_path)).\
 				set_delay(spawn_delay)
-	_end_wave()
+	tween.tween_callback(_end_wave)
 
 
 func _end_wave() -> void:

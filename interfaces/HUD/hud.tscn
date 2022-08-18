@@ -120,14 +120,14 @@ offset_bottom = 40.0
 
 [node name="GameOver" parent="UI" instance=ExtResource("9_vrddp")]
 visible = false
-offset_left = 449.0
-offset_top = 268.5
-offset_right = 791.0
-offset_bottom = 411.5
+offset_left = 469.0
+offset_top = 288.5
+offset_right = 811.0
+offset_bottom = 431.5
 
 [node name="Pause" parent="UI" instance=ExtResource("10_h1mxi")]
 visible = false
-offset_left = 245.0
-offset_top = 748.0
-offset_right = 995.0
-offset_bottom = 1291.0
+offset_left = 265.0
+offset_top = 768.0
+offset_right = 1015.0
+offset_bottom = 1311.0

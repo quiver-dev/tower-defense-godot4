@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://jmm71rgqfd1r"]
 
-[ext_resource type="Theme" uid="uid://d065e0bnj0me6" path="res://assets/themes/td_theme.tres" id="1_4hwqe"]
+[ext_resource type="Theme" uid="uid://dp6cm6aj7bu7g" path="res://assets/themes/td_theme.tres" id="1_4hwqe"]
 [ext_resource type="Texture2D" uid="uid://bh2j3w7sn76or" path="res://interfaces/UI/game_over/assets/textures/gameover.png" id="2_rdkds"]
 [ext_resource type="Script" path="res://interfaces/UI/game_over/game_over.gd" id="2_s1ogn"]
 
@@ -166,10 +166,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 469.0
-offset_top = 288.5
-offset_right = 811.0
-offset_bottom = 431.5
+offset_left = -171.0
+offset_top = -71.5
+offset_right = 171.0
+offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_4hwqe")
