@@ -174,7 +174,7 @@ script = ExtResource("5_5f6sk")
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_2qc3e")
-frame = 3
+frame = 2
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-14, 0)

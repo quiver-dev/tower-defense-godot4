@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxk8oojwxk051"]
+[gd_scene load_steps=6 format=3 uid="uid://bxk8oojwxk051"]
 
 [ext_resource type="Script" path="res://scenes/main/turret_slot/turret_slot.gd" id="1_skyup"]
 [ext_resource type="Texture2D" uid="uid://cdt1rsj4xbkq3" path="res://entities/turrets/assets/textures/base_idle_00.png" id="2_h7gu8"]
 [ext_resource type="PackedScene" uid="uid://bjphbghinurfr" path="res://interfaces/UI/turret_popup/turret_popup.tscn" id="3_7p0hi"]
+[ext_resource type="PackedScene" uid="uid://bj4pwhsawsoqx" path="res://interfaces/UI/turret_actions/turret_actions.tscn" id="4_hrs4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hunl7"]
 size = Vector2(128, 128)
@@ -22,6 +23,13 @@ shape = SubResource("RectangleShape2D_hunl7")
 
 [node name="TurretPopup" parent="." instance=ExtResource("3_7p0hi")]
 visible = false
+
+[node name="TurretActions" parent="." instance=ExtResource("4_hrs4w")]
+visible = false
+offset_left = 88.0
+offset_top = -248.0
+offset_right = 249.0
+offset_bottom = 237.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="turret_requested" from="TurretPopup" to="." method="_on_turret_popup_turret_requested"]

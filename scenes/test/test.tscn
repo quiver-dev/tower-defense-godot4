@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://k073sdcqs28c"]
 
 [ext_resource type="Script" path="res://scenes/test/test.gd" id="1_antun"]
-[ext_resource type="TileSet" uid="uid://rswkry406j5l" path="res://scenes/main/assets/tilesets/field.tres" id="2_738ea"]
+[ext_resource type="TileSet" uid="uid://djmpsk0ufljcv" path="res://scenes/main/assets/tilesets/field.tres" id="2_738ea"]
 [ext_resource type="PackedScene" uid="uid://bdo8t3u7f3n35" path="res://scenes/main/camera2D/camera2D.tscn" id="3_7cmxw"]
 [ext_resource type="PackedScene" uid="uid://c0qro2s61gqnu" path="res://entities/enemies/infantry/infantry_t1.tscn" id="5_sqult"]
 [ext_resource type="PackedScene" uid="uid://dkfo0baxvyvf1" path="res://scenes/main/tower/tower.tscn" id="6_r1nlv"]
 [ext_resource type="PackedScene" uid="uid://c3jnmrhthj3q2" path="res://entities/enemies/tanks/tank.tscn" id="6_y4ox6"]
 [ext_resource type="PackedScene" uid="uid://oh4cd280eo3m" path="res://entities/turrets/missile/missile_turret.tscn" id="7_wvnqr"]
 [ext_resource type="PackedScene" uid="uid://drun68eboqy33" path="res://entities/turrets/gatling/gatling_turret.tscn" id="8_ipdmw"]
-[ext_resource type="PackedScene" uid="uid://cegwjidelabux" path="res://entities/turrets/single/single_turret.tscn" id="9_d6hjm"]
+[ext_resource type="PackedScene" uid="uid://bxk8oojwxk051" path="res://scenes/main/turret_slot/turret_slot.tscn" id="9_u5vgl"]
 
 [node name="Test" type="Node2D"]
 script = ExtResource("1_antun")
@@ -37,7 +37,7 @@ position = Vector2(16, 576)
 position = Vector2(696, -584)
 
 [node name="Tank2" parent="Enemies" instance=ExtResource("6_y4ox6")]
-position = Vector2(272, 216)
+position = Vector2(360, 464)
 
 [node name="InfantryT1" parent="Enemies" instance=ExtResource("5_sqult")]
 position = Vector2(-192, 392)
@@ -69,7 +69,7 @@ position = Vector2(624, 120)
 [node name="GatlingTurret" parent="." instance=ExtResource("8_ipdmw")]
 position = Vector2(-32, 352)
 
-[node name="SingleTurret" parent="." instance=ExtResource("9_d6hjm")]
-position = Vector2(544, 800)
+[node name="TurretSlot" parent="." instance=ExtResource("9_u5vgl")]
+position = Vector2(576, 752)
 
 [editable path="Enemies/InfantryT3"]
