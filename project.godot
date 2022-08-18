@@ -92,7 +92,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Tower Defense"
+config/name="Outpost Assault"
 run/main_scene="res://interfaces/UI/menu/menu.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Mobile")
 config/icon="res://icon.png"
