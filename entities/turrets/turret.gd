@@ -35,9 +35,21 @@ func _physics_process(_delta: float) -> void:
 # Called by the UI: gives some value back based on current health percentage
 func remove() -> void:
 	var health_perc: float = hud.healthbar.value / hud.healthbar.max_value
-	var money_returned := int(Global.turret_prices[type] * health_perc)
+	var money_returned := int(Global.turret_prices[type] * health_perc / 2)
 	Global.money += money_returned
 	queue_free()
+
+
+# Called by the UI: returns false if there isn't enough money to fix the turret
+func repair() -> bool:
+	var missing_health_perc: float = 1.0 - \
+			(hud.healthbar.value / hud.healthbar.max_value)
+	var money_needed := int(Global.turret_prices[type] * missing_health_perc)
+	var can_repair := Global.money >= money_needed
+	if can_repair:
+		Global.money -= money_needed
+		health = int(hud.healthbar.max_value)
+	return can_repair
 
 
 func set_health(value: int) -> void:

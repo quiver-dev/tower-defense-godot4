@@ -23,8 +23,14 @@ func _on_turret_replace_requested() -> void:
 
 
 func _on_turret_repair_requested() -> void:
-	turret_actions.hide()
-	# pay money and fix turret
+	if turret.repair():
+		turret_actions.hide()
+	else:
+		var tween := create_tween().set_trans(Tween.TRANS_BACK).\
+				set_ease(Tween.EASE_IN_OUT)
+		var repair_btn := get_node("TurretActions/Repair") as Button
+		repair_btn.modulate = Color("ff383f")
+		tween.tween_property(repair_btn, "modulate", Color("fff"), 0.25)
 
 
 func _on_turret_remove_requested() -> void:
