@@ -8,6 +8,11 @@ const FADE_OUT_DURATION := 0.25
 
 @export_range(0, 100) var health: int = 100
 
+# This works as long as all turrets are a single child of each turret slot,
+# i.e. their name will always be "SingleTurret" or "MissileTurret", etc.
+var type: String:
+	get: return String(name).trim_suffix("Turret").to_lower()
+
 @onready var collision := $CollisionShape2D as CollisionShape2D
 @onready var shooter := $Shooter as Shooter
 @onready var explosion := $Explosion as AnimatedSprite2D
@@ -32,6 +37,7 @@ func take_damage(damage: int) -> void:
 		collision.set_deferred("disabled", true)
 		shooter.explode()
 		explosion.play("default")
+		turret_disabled.emit()
 
 
 func _on_gun_animation_finished() -> void:
@@ -43,7 +49,6 @@ func _on_gun_animation_finished() -> void:
 
 
 func _on_tween_finished() -> void:
-	turret_disabled.emit()
 	queue_free()
 
 

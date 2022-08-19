@@ -73,11 +73,6 @@ _global_script_classes=[{
 "class": &"Turret",
 "language": &"GDScript",
 "path": "res://entities/turrets/turret.gd"
-}, {
-"base": "VBoxContainer",
-"class": &"TurretActions",
-"language": &"GDScript",
-"path": "res://interfaces/UI/turret_actions/turret_actions.gd"
 }]
 _global_script_class_icons={
 "Enemy": "",
@@ -92,8 +87,7 @@ _global_script_class_icons={
 "State": "",
 "StateMachine": "",
 "Tank": "",
-"Turret": "",
-"TurretActions": ""
+"Turret": ""
 }
 
 [application]

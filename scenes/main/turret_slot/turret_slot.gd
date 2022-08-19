@@ -17,20 +17,22 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 
 
 func _on_turret_replace_requested() -> void:
-	# get current turret's value, give back half money
-	# show turret popup menu
-	pass
+	turret_actions.hide()
+	var money_returned: int = Global.turret_prices[turret.type] / 2
+	Global.money += money_returned
+	turret.queue_free()
+	turret_popup.show()
 
 
 func _on_turret_repair_requested() -> void:
+	turret_actions.hide()
 	# pay money and fix turret
-	pass
 
 
 func _on_turret_remove_requested() -> void:
+	turret_actions.hide()
 	# remove the turret
 	# give back half money
-	pass
 
 
 func _on_turret_popup_turret_requested(type: String) -> void:
@@ -44,4 +46,5 @@ func _on_turret_popup_turret_requested(type: String) -> void:
 
 
 func _on_turret_disabled() -> void:
+	turret_actions.hide()
 	turret = null
