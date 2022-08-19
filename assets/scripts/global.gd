@@ -2,7 +2,7 @@ extends Node
 
 
 var is_gameover := false
-var turret_actions: TurretActions = null  # used to ensure only one is visible in the map
+var turret_actions: Node = null  # used to ensure only one is visible in the map
 var money: int
 var turret_prices := {
 	"gatling": 250,

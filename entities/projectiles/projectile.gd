@@ -54,15 +54,15 @@ func _on_projectile_body_entered(body: Node2D) -> void:
 	if body is Enemy:
 		(body.get_fsm() as EnemyFSM).is_hit(damage)
 		_explode()
-	elif body.has_method("take_damage"):
-		body.take_damage(damage)
+	elif body is Turret:
+		(body as Turret).health -= damage
 		_explode()
 
 
 # See comment on the method above
 func _on_projectile_area_entered(area: Area2D) -> void:
 	if area is Objective:
-		(area as Objective).take_damage(damage)
+		(area as Objective).health -= damage
 		_explode()
 
 

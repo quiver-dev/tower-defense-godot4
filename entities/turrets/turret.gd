@@ -6,7 +6,8 @@ signal turret_disabled
 
 const FADE_OUT_DURATION := 0.25
 
-@export_range(0, 100) var health: int = 100
+@export_range(0, 100) var health: int = 100:
+	set = set_health
 
 # This works as long as all turrets are a single child of each turret slot,
 # i.e. their name will always be "SingleTurret" or "MissileTurret", etc.
@@ -30,8 +31,8 @@ func _physics_process(_delta: float) -> void:
 			shooter.shoot()
 
 
-func take_damage(damage: int) -> void:
-	health = max(0, health - damage)
+func set_health(value: int) -> void:
+	health = max(0, value)
 	hud.healthbar.value = health
 	if health == 0:
 		collision.set_deferred("disabled", true)

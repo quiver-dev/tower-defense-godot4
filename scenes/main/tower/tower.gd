@@ -9,7 +9,8 @@ signal destroyed
 # TODO: this could probably be an Enemy parameter: let that scene check damage
 const DEFAULT_DAMAGE := 10  # default damage dealt by enemies
 
-@export_range(0, 1000) var health: int = 500
+@export_range(0, 1000) var health: int = 500:
+	set = set_health
 
 @onready var collision := $CollisionShape2D as CollisionShape2D
 @onready var anim_sprite := $AnimatedSprite as AnimatedSprite2D
@@ -20,8 +21,8 @@ func _ready() -> void:
 	initialized.emit(health)
 
 
-func take_damage(damage: int) -> void:
-	health = max(0, health - damage)
+func set_health(value: int) -> void:
+	health = max(0, value)
 	if health == 0:
 		collision.set_deferred("disabled", true)
 		anim_sprite.play("die")
@@ -32,7 +33,7 @@ func take_damage(damage: int) -> void:
 
 func _on_objective_body_entered(body: Node2D) -> void:
 	if body is Enemy:
-		take_damage(DEFAULT_DAMAGE)
+		health -= DEFAULT_DAMAGE
 		# WARN: this won't emit the enemy_dead signal
 		(body as Enemy).queue_free()
 
