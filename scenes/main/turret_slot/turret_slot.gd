@@ -10,7 +10,7 @@ var turret: Turret  # turret assigned to this slot
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and \
 			event.button_index == MOUSE_BUTTON_LEFT:
-		if turret:
+		if is_instance_valid(turret):
 			turret_actions.visible = not turret_actions.visible
 		else:
 			turret_popup.show()
@@ -18,9 +18,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 
 func _on_turret_replace_requested() -> void:
 	turret_actions.hide()
-	var money_returned: int = Global.turret_prices[turret.type] / 2
-	Global.money += money_returned
-	turret.queue_free()
+	turret.remove()
 	turret_popup.show()
 
 
@@ -31,8 +29,7 @@ func _on_turret_repair_requested() -> void:
 
 func _on_turret_remove_requested() -> void:
 	turret_actions.hide()
-	# remove the turret
-	# give back half money
+	turret.remove()
 
 
 func _on_turret_popup_turret_requested(type: String) -> void:
@@ -40,11 +37,21 @@ func _on_turret_popup_turret_requested(type: String) -> void:
 	turret = load(Scenes.get_turret_path(type)).instantiate()
 	turret.position = Vector2.ZERO
 	add_child(turret, true)
-	turret.health = 1  # TEST: remove this
+#	turret.health = 10  # WARN: remove this
 	# connect turret signal to restore input detection on turret disabled
 	turret.turret_disabled.connect(_on_turret_disabled)
 
 
 func _on_turret_disabled() -> void:
 	turret_actions.hide()
-	turret = null
+	turret = null  # necessary because turret is still on exploding animation
+
+
+func _on_turret_popup_visibility_changed() -> void:
+	if turret_popup.visible:
+		turret_actions.hide()
+
+
+func _on_turret_actions_visibility_changed() -> void:
+	if turret_actions.visible:
+		turret_popup.hide()

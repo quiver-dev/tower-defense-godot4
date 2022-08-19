@@ -12,7 +12,8 @@ const FADE_OUT_DURATION := 0.25
 # This works as long as all turrets are a single child of each turret slot,
 # i.e. their name will always be "SingleTurret" or "MissileTurret", etc.
 var type: String:
-	get: return String(name).trim_suffix("Turret").to_lower()
+	get: 
+		return String(name).trim_suffix("Turret").to_lower()
 
 @onready var collision := $CollisionShape2D as CollisionShape2D
 @onready var shooter := $Shooter as Shooter
@@ -29,6 +30,14 @@ func _physics_process(_delta: float) -> void:
 	if shooter.targets:
 		if shooter.can_shoot and shooter.lookahead.is_colliding():
 			shooter.shoot()
+
+
+# Called by the UI: gives some value back based on current health percentage
+func remove() -> void:
+	var health_perc: float = hud.healthbar.value / hud.healthbar.max_value
+	var money_returned := int(Global.turret_prices[type] * health_perc)
+	Global.money += money_returned
+	queue_free()
 
 
 func set_health(value: int) -> void:

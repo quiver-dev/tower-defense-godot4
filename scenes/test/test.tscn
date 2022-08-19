@@ -52,7 +52,7 @@ position = Vector2(416, -240)
 START_STATE = NodePath("Idle")
 
 [node name="Sprite2D" parent="Enemies/InfantryT3" index="1"]
-frame = 6
+frame = 1
 
 [node name="InfantryT4" parent="Enemies" instance=ExtResource("5_sqult")]
 position = Vector2(184, 80)
