@@ -1,4 +1,8 @@
 extends Area2D
+# Interactive object which serves as a base for deployed turrets.
+# It can be clicked to spawn turrets (when empty) or to display the UI
+# showing the actions that can be performed on them.
+# When turrets are destroyed, the underlying slot remains there.
 
 
 var turret: Turret  # turret assigned to this slot
@@ -43,7 +47,6 @@ func _on_turret_popup_turret_requested(type: String) -> void:
 	turret = load(Scenes.get_turret_path(type)).instantiate()
 	turret.position = Vector2.ZERO
 	add_child(turret, true)
-#	turret.health = 10  # WARN: remove this
 	# connect turret signal to restore input detection on turret disabled
 	turret.turret_disabled.connect(_on_turret_disabled)
 
@@ -61,3 +64,6 @@ func _on_turret_popup_visibility_changed() -> void:
 func _on_turret_actions_visibility_changed() -> void:
 	if turret_actions.visible:
 		turret_popup.hide()
+		Global.turret_actions = turret_actions
+	else:
+		Global.turret_actions = null

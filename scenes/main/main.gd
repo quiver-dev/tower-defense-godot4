@@ -22,3 +22,11 @@ func _ready() -> void:
 	camera.limit_top = int(map_limits.position.y) * cell_size.y
 	camera.limit_right = int(map_limits.end.x) * cell_size.x
 	camera.limit_bottom = int(map_limits.end.y) * cell_size.y
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and \
+			event.button_index == MOUSE_BUTTON_LEFT:
+		# if there's a turret actions UI visible, hide it
+		if Global.turret_actions:
+			Global.turret_actions.hide()
