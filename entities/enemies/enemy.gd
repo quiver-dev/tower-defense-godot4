@@ -54,8 +54,11 @@ func apply_animation(anim_name: String) -> void:
 # the 'die' state if health goes to zero
 func set_health(value: int) -> void:
 	health = max(0, value)
-	# TODO: see if this gets fixed in future builds. Setter gets called
-	# before inheriting scenes (e.g. tank) call their _ready function
+	# this is needed because health is an exported variable set in the inspector,
+	# which means this setter gets called before the scene is ready.
+	# In other words, the onready variables referencing nodes won't have been
+	# initialied the first time this setter gets called. For more info, see
+	# https://docs.godotengine.org/en/stable/tutorials/best_practices/godot_notifications.html#init-vs-initialization-vs-export
 	if hud:
 		hud.healthbar.value = health
 

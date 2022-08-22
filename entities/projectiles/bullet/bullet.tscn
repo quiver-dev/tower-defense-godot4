@@ -30,7 +30,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="TurretBullet" instance=ExtResource("1_ry2b2")]
+[node name="Bullet" instance=ExtResource("1_ry2b2")]
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-27, 0)

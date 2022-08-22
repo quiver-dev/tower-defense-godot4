@@ -41,7 +41,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="TankBullet" instance=ExtResource("1_tkkdn")]
+[node name="Shell" instance=ExtResource("1_tkkdn")]
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-20, 0)

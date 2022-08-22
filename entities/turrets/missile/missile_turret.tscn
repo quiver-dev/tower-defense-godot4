@@ -103,7 +103,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ahvqc"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xoy3h"]
 radius = 1000.0
 
 [node name="MissileTurret" instance=ExtResource("1_46fx6")]
@@ -140,7 +140,7 @@ frames = SubResource("SpriteFrames_ncayq")
 offset = Vector2(12, 3)
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_ahvqc")
+shape = SubResource("CircleShape2D_xoy3h")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(1010, 0)

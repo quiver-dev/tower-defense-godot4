@@ -6,8 +6,8 @@ extends Area2D
 # when the projectile exits/enters the screen improve performance.
 # A lifetime parameter ensures that projectiles will be freed if they don't
 # hit anything.
-# Its parameters, such as collision_mask, speed and damage are passed to
-# the "start" method by parent Shooter scenes.
+# Its parameters, such as collision_mask, speed and damage are set
+# by parent Shooter scenes.
 
 
 @export var lifetime: int = 10  # seconds
