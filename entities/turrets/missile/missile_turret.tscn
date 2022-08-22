@@ -103,7 +103,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xoy3h"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_f3caw"]
 radius = 1000.0
 
 [node name="MissileTurret" instance=ExtResource("1_46fx6")]
@@ -117,6 +117,7 @@ script = ExtResource("2_b7udo")
 detect_radius = 1000
 fire_rate = 5.0
 projectile_count = 2
+targeted_groups = PackedStringArray("ground_vehicles")
 projectile_type = ExtResource("3_mk2yu")
 projectile_spread = 0.0
 projectile_speed = 400
@@ -140,7 +141,7 @@ frames = SubResource("SpriteFrames_ncayq")
 offset = Vector2(12, 3)
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_xoy3h")
+shape = SubResource("CircleShape2D_f3caw")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(1010, 0)

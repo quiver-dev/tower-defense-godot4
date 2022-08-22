@@ -20,6 +20,7 @@ signal has_shot(reload_time: float)
 @export var rot_speed: float = 5.0
 @export_range(1, 6) var projectile_count: int = 1:
 	set = set_projectile_count
+@export var targeted_groups: PackedStringArray = []
 @export var projectile_type: PackedScene
 @export var projectile_spread: float = 0.2
 @export var projectile_speed: int = 1000

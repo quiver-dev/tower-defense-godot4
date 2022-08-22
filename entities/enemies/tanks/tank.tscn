@@ -149,10 +149,10 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lmnnx"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_yuleh"]
 radius = 500.0
 
-[node name="Tank" instance=ExtResource("1_o2qr5")]
+[node name="Tank" groups=["ground_vehicles"] instance=ExtResource("1_o2qr5")]
 floor_constant_speed = true
 script = ExtResource("2_ri3h6")
 rot_speed = 4.0
@@ -174,7 +174,7 @@ script = ExtResource("5_5f6sk")
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_2qc3e")
-frame = 3
+frame = 2
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-14, 0)
@@ -183,11 +183,12 @@ shape = SubResource("CircleShape2D_piq2n")
 [node name="NavigationAgent2D" parent="." index="3"]
 radius = 100.0
 
-[node name="Shooter" parent="." index="5" instance=ExtResource("8_frgp2")]
+[node name="Shooter" parent="." index="5" groups=["ground_vehicles"] instance=ExtResource("8_frgp2")]
 detector_color = Color(0.909804, 0.054902, 0.109804, 0.490196)
 detect_radius = 500
 fire_rate = 3.0
 rot_speed = 4.0
+targeted_groups = PackedStringArray()
 projectile_type = ExtResource("13_2c4hm")
 projectile_spread = 0.1
 
@@ -206,7 +207,7 @@ frames = SubResource("SpriteFrames_x5y1r")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_lmnnx")
+shape = SubResource("CircleShape2D_yuleh")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)

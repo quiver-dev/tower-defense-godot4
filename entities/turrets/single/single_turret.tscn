@@ -83,7 +83,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tqa0l"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_es74y"]
 radius = 500.0
 
 [node name="SingleTurret" instance=ExtResource("1_ewq6e")]
@@ -95,6 +95,7 @@ shape = SubResource("RectangleShape2D_ecyxc")
 detect_radius = 500
 fire_rate = 1.0
 rot_speed = 2.5
+targeted_groups = PackedStringArray("ground_vehicles")
 projectile_type = ExtResource("2_1800l")
 projectile_spread = 0.05
 projectile_speed = 800
@@ -108,7 +109,7 @@ position = Vector2(56, 0)
 frames = SubResource("SpriteFrames_xiki0")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_tqa0l")
+shape = SubResource("CircleShape2D_es74y")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(510, 0)
