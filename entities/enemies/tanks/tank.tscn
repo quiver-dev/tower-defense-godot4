@@ -149,7 +149,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2mibd"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tcqin"]
 radius = 500.0
 
 [node name="Tank" instance=ExtResource("1_o2qr5")]
@@ -157,7 +157,7 @@ floor_constant_speed = true
 script = ExtResource("2_ri3h6")
 rot_speed = 4.0
 health = 300
-speed = 150
+speed = 100
 
 [node name="Move" parent="StateMachine" index="0"]
 script = ExtResource("3_7yovt")
@@ -174,7 +174,7 @@ script = ExtResource("5_5f6sk")
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_2qc3e")
-frame = 3
+frame = 1
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-14, 0)
@@ -187,7 +187,7 @@ radius = 100.0
 detector_color = Color(0.909804, 0.054902, 0.109804, 0.490196)
 detect_radius = 500
 fire_rate = 3.0
-rot_speed = 1.0
+rot_speed = 4.0
 projectile_type = ExtResource("13_2c4hm")
 projectile_spread = 0.1
 
@@ -206,7 +206,7 @@ frames = SubResource("SpriteFrames_x5y1r")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_2mibd")
+shape = SubResource("CircleShape2D_tcqin")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)

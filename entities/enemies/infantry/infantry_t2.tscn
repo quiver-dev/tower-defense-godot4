@@ -43,9 +43,11 @@ animations = [{
 }]
 
 [node name="InfantryT2" instance=ExtResource("1_xcp6m")]
+speed = 200
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_65d1v")
+frame = 3
 
 [node name="NavigationAgent2D" parent="." index="3"]
 neighbor_dist = 800.0

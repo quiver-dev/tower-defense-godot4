@@ -4,11 +4,11 @@ A 2D tile-based tower defense game built using Godot 4.0 alpha.
 ## Features
 - Tower placement
 - Different tower/weapon types
-- Projectiles
+- Various projectile types
 - Different enemy types
 - Enemy pathfinding
-- Particle effects
-- Basic UI and HUD
+- Basic enemy AI
+- UI and HUD
 
 ## Topics covered
 - Godot 4's new features:
@@ -23,7 +23,7 @@ A 2D tile-based tower defense game built using Godot 4.0 alpha.
 - Collision detection
 - AI implementing the Finite State Machine (FSM) pattern and states
 - Following Godot's [best practices](https://docs.godotengine.org/en/latest/tutorials/best_practices/index.html)
-- Creating UI **themes** with the built-in Theme Editor
+- Creating UI and HUD using **themes** with the built-in Theme Editor
 
 ## Code style and guidelines
 The code will be written using static typing whenever possible and
