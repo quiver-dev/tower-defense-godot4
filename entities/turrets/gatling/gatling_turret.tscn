@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://drun68eboqy33"]
 
-[ext_resource type="PackedScene" path="res://entities/turrets/turret.tscn" id="1_yb6wj"]
+[ext_resource type="PackedScene" uid="uid://q3ewy63w2x0m" path="res://entities/turrets/turret.tscn" id="1_yb6wj"]
 [ext_resource type="PackedScene" uid="uid://cfmt0lvu6g0mw" path="res://entities/projectiles/bullet/bullet.tscn" id="2_70bac"]
 [ext_resource type="Texture2D" uid="uid://6uahk03c6g56" path="res://entities/turrets/gatling/assets/textures/gun_die_00.png" id="3_mcjra"]
 [ext_resource type="Texture2D" uid="uid://e6asxs20t7o5" path="res://entities/turrets/gatling/assets/textures/gun_idle_00.png" id="3_tpsvc"]
@@ -74,7 +74,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rb30o"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vtadu"]
 radius = 700.0
 
 [node name="GatlingTurret" instance=ExtResource("1_yb6wj")]
@@ -119,7 +119,7 @@ position = Vector2(93, 1)
 frames = SubResource("SpriteFrames_r51ql")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_rb30o")
+shape = SubResource("CircleShape2D_vtadu")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(710, 0)

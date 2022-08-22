@@ -4,7 +4,7 @@ extends Node2D
 # Class aggregated by those entities which can shoot, e.g. turrets or tanks.
 # We are using component-based programming principles by leveraging Godot's
 # node system to replace multiple inheritance, which is not supported by
-# the engine. This method is called "composition", or "aggregation".
+# the engine. This is called "composition", or "aggregation".
 # This scene supports multiple projectiles per shot: just set the projectile count
 # parameter in the editor and it will spawn the corresponding number of
 # muzzles under the Gun node. Then just tweak their position and projectiles
@@ -101,21 +101,19 @@ func set_detect_radius(value: int) -> void:
 		lookahead.target_position.x = detect_radius
 
 
-# WARN: because of https://github.com/godotengine/godot/issues/60168, I need
-# to reference $Gun manually to make this setter work in inheriting classes
-# when running on the editor.
 func set_projectile_count(value: int) -> void:
 	projectile_count = value
-	var diff := value - $Gun.get_child_count()
+	var _gun := get_node("Gun")
+	var diff := value - _gun.get_child_count()
 	match signi(diff):
 		1:
 			for i in diff:
-				var dup = $Gun/Muzzle.duplicate() as Position2D
-				$Gun.add_child(dup, true)
+				var dup = _gun.get_node("Muzzle").duplicate() as Position2D
+				_gun.add_child(dup, true)
 				dup.owner = self
 		-1:
 			for i in abs(diff):
-				$Gun.get_child(i + 1).queue_free()
+				_gun.get_child(i + 1).queue_free()
 
 
 func _on_fire_rate_timer_timeout() -> void:

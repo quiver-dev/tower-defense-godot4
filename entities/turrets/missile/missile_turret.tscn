@@ -1,6 +1,6 @@
 [gd_scene load_steps=56 format=3 uid="uid://oh4cd280eo3m"]
 
-[ext_resource type="PackedScene" path="res://entities/turrets/turret.tscn" id="1_46fx6"]
+[ext_resource type="PackedScene" uid="uid://q3ewy63w2x0m" path="res://entities/turrets/turret.tscn" id="1_46fx6"]
 [ext_resource type="Script" path="res://entities/turrets/shooter_homing.gd" id="2_b7udo"]
 [ext_resource type="PackedScene" uid="uid://d0i8efn2ow88m" path="res://entities/projectiles/missile/homing_missile.tscn" id="3_mk2yu"]
 [ext_resource type="Texture2D" uid="uid://op4nyoe0a3da" path="res://entities/turrets/missile/assets/textures/gun_die_00.png" id="4_3iqqf"]
@@ -103,11 +103,10 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pmn1c"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahvqc"]
 radius = 1000.0
 
 [node name="MissileTurret" instance=ExtResource("1_46fx6")]
-position = Vector2(192, 64)
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(-8, 0)
@@ -141,7 +140,7 @@ frames = SubResource("SpriteFrames_ncayq")
 offset = Vector2(12, 3)
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_pmn1c")
+shape = SubResource("CircleShape2D_ahvqc")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(1010, 0)
