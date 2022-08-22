@@ -57,11 +57,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dnsyy"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_fct5w"]
 radius = 400.0
 
 [node name="Turret" type="CharacterBody2D"]
 collision_layer = 2
+input_pickable = true
 script = ExtResource("1_mel1h")
 metadata/_edit_group_ = true
 
@@ -77,6 +78,8 @@ shape = SubResource("RectangleShape2D_o87d8")
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
 
 [node name="Shooter" parent="." instance=ExtResource("4_wtpgl")]
+detector_color = Color(0, 0, 1, 0.0980392)
+targeted_groups = PackedStringArray()
 
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(4, 0)
@@ -87,7 +90,7 @@ offset = Vector2(7, -2)
 frames = SubResource("SpriteFrames_7qxgd")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_dnsyy")
+shape = SubResource("CircleShape2D_fct5w")
 
 [node name="Explosion" parent="." instance=ExtResource("13_iceo6")]
 
@@ -97,6 +100,8 @@ offset_top = -107.0
 offset_right = -31.0
 offset_bottom = -107.0
 
+[connection signal="mouse_entered" from="." to="Shooter" method="_on_parent_mouse_entered"]
+[connection signal="mouse_exited" from="." to="Shooter" method="_on_parent_mouse_exited"]
 [connection signal="has_shot" from="Shooter" to="." method="_on_shooter_has_shot"]
 [connection signal="animation_finished" from="Shooter/Gun" to="." method="_on_gun_animation_finished"]
 [connection signal="body_entered" from="Shooter/Detector" to="." method="_on_detector_body_entered"]

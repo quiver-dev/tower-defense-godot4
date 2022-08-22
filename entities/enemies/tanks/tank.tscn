@@ -149,10 +149,11 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yuleh"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2377y"]
 radius = 500.0
 
 [node name="Tank" groups=["ground_vehicles"] instance=ExtResource("1_o2qr5")]
+input_pickable = true
 floor_constant_speed = true
 script = ExtResource("2_ri3h6")
 rot_speed = 4.0
@@ -184,7 +185,7 @@ shape = SubResource("CircleShape2D_piq2n")
 radius = 100.0
 
 [node name="Shooter" parent="." index="5" groups=["ground_vehicles"] instance=ExtResource("8_frgp2")]
-detector_color = Color(0.909804, 0.054902, 0.109804, 0.490196)
+detector_color = Color(0.909804, 0.054902, 0.109804, 0.0980392)
 detect_radius = 500
 fire_rate = 3.0
 rot_speed = 4.0
@@ -207,7 +208,7 @@ frames = SubResource("SpriteFrames_x5y1r")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_yuleh")
+shape = SubResource("CircleShape2D_2377y")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)
@@ -220,6 +221,8 @@ collision_mask = 18
 offset_top = -115.0
 offset_bottom = -115.0
 
+[connection signal="mouse_entered" from="." to="Shooter" method="_on_parent_mouse_entered"]
+[connection signal="mouse_exited" from="." to="Shooter" method="_on_parent_mouse_exited"]
 [connection signal="has_shot" from="Shooter" to="." method="_on_shooter_has_shot"]
 [connection signal="area_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_entity_entered"]
 [connection signal="area_exited" from="Shooter/Detector" to="StateMachine/Shoot" method="_on_detector_entity_exited"]

@@ -47,7 +47,7 @@ speed = 200
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_65d1v")
-frame = 2
+frame = 4
 
 [node name="NavigationAgent2D" parent="." index="3"]
 neighbor_dist = 800.0

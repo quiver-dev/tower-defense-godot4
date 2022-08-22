@@ -26,6 +26,7 @@ signal has_shot(reload_time: float)
 @export var projectile_speed: int = 1000
 @export var projectile_damage: int = 10
 
+var is_mouse_hovering := false  # used to draw detect radius, set by parent scene
 var targets: Array[Node2D]
 var can_shoot := true
 
@@ -60,7 +61,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _draw() -> void:
-	draw_arc(Vector2.ZERO, detect_radius, 0, 2 * PI, 500, detector_color)
+	draw_circle(Vector2.ZERO, detect_radius if is_mouse_hovering else 0,
+			detector_color)
 
 
 # Gets called by its parents. This way we have more control on when to shoot
@@ -127,3 +129,11 @@ func _play_animations(anim_name: String) -> void:
 	muzzle_flash.frame = 0
 	gun.play(anim_name)
 	muzzle_flash.play(anim_name)
+
+
+func _on_parent_mouse_entered() -> void:
+	is_mouse_hovering = true
+
+
+func _on_parent_mouse_exited() -> void:
+	is_mouse_hovering = false
