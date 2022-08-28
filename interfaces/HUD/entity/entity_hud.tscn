@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cre1uon7pnve1"]
+[gd_scene load_steps=8 format=3 uid="uid://cre1uon7pnve1"]
 
+[ext_resource type="Theme" uid="uid://dp6cm6aj7bu7g" path="res://assets/themes/td_theme.tres" id="1_a7j6v"]
 [ext_resource type="Script" path="res://interfaces/HUD/entity/entity_hud.gd" id="1_qyud4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l380f"]
 
 [sub_resource type="Gradient" id="Gradient_20pti"]
 offsets = PackedFloat32Array(0)
@@ -21,6 +24,7 @@ width = 50
 height = 4
 
 [node name="EntityHUD" type="Control"]
+theme = ExtResource("1_a7j6v")
 script = ExtResource("1_qyud4")
 
 [node name="Parameters" type="VBoxContainer" parent="."]
@@ -29,21 +33,22 @@ offset_bottom = 40.0
 alignment = 2
 
 [node name="StateLabel" type="Label" parent="Parameters"]
-offset_right = 54.0
-offset_bottom = 26.0
+offset_right = 61.0
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 6
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l380f")
 text = " Shoot "
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_custom_anchors = false
 
 [node name="Healthbar" type="TextureProgressBar" parent="Parameters"]
-offset_left = 2.0
-offset_top = 30.0
-offset_right = 52.0
-offset_bottom = 40.0
+offset_left = 5.0
+offset_top = 23.0
+offset_right = 55.0
+offset_bottom = 33.0
 pivot_offset = Vector2(95, 22)
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -51,10 +56,10 @@ value = 100.0
 texture_progress = SubResource("GradientTexture2D_j8pgm")
 
 [node name="ReloadBar" type="TextureProgressBar" parent="Parameters"]
-offset_left = 2.0
-offset_top = 44.0
-offset_right = 52.0
-offset_bottom = 48.0
+offset_left = 5.0
+offset_top = 37.0
+offset_right = 55.0
+offset_bottom = 41.0
 pivot_offset = Vector2(95, 922)
 size_flags_horizontal = 4
 size_flags_vertical = 6
