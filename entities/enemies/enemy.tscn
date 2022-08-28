@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3]
+[gd_scene load_steps=19 format=3 uid="uid://b4q6b7u2whonn"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://entities/enemies/states/hit.gd" id="5_t30j3"]
 [ext_resource type="Script" path="res://entities/enemies/states/die.gd" id="6_70kam"]
 [ext_resource type="Texture2D" uid="uid://c2kw4wa37hx6d" path="res://entities/enemies/infantry/assets/textures/tier2/idle_00.png" id="6_ic7wi"]
-[ext_resource type="PackedScene" path="res://interfaces/HUD/entity/entity_hud.tscn" id="7_dxylf"]
+[ext_resource type="PackedScene" uid="uid://cre1uon7pnve1" path="res://interfaces/HUD/entity/entity_hud.tscn" id="7_dxylf"]
 [ext_resource type="Texture2D" uid="uid://qf1r4mreb4qp" path="res://entities/enemies/infantry/assets/textures/tier2/move_00.png" id="7_p5ao0"]
 [ext_resource type="Texture2D" uid="uid://b062p8m3h458m" path="res://entities/enemies/infantry/assets/textures/tier2/move_01.png" id="8_bl5vh"]
 [ext_resource type="Texture2D" uid="uid://b06tl5ljmiq8s" path="res://entities/enemies/infantry/assets/textures/tier2/move_02.png" id="9_j8c11"]
@@ -68,7 +68,7 @@ script = ExtResource("6_70kam")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_6olqj")
 animation = &"move"
-frame = 6
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

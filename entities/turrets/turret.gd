@@ -22,8 +22,10 @@ var type: String:
 
 
 func _ready() -> void:
-	# hide non-relevant HUD parts
+	# initialize HUD
 	hud.state_label.hide()
+	hud.healthbar.max_value = health
+	hud.healthbar.value = health
 
 
 func _physics_process(_delta: float) -> void:
