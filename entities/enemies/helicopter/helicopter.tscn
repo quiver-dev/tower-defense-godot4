@@ -60,11 +60,13 @@ radius = 24.0
 height = 192.0
 
 [node name="Helicopter" instance=ExtResource("1_48rki")]
+collision_layer = 64
+collision_mask = 70
 
 [node name="Shadow" type="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(8, 32)
 frames = SubResource("SpriteFrames_01vhn")
-frame = 3
+frame = 5
 playing = true
 
 [node name="Sprite2D" parent="." index="2"]
@@ -74,7 +76,7 @@ frame = 0
 [node name="Rotor" type="AnimatedSprite2D" parent="." index="3"]
 position = Vector2(16, 0)
 frames = SubResource("SpriteFrames_fkkfk")
-frame = 1
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" parent="." index="4"]

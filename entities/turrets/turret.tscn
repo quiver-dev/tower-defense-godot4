@@ -57,11 +57,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fct5w"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_fpdah"]
 radius = 400.0
 
 [node name="Turret" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 33
 input_pickable = true
 script = ExtResource("1_mel1h")
 metadata/_edit_group_ = true
@@ -79,7 +80,6 @@ shape = SubResource("RectangleShape2D_o87d8")
 
 [node name="Shooter" parent="." instance=ExtResource("4_wtpgl")]
 detector_color = Color(0, 0, 1, 0.0980392)
-targeted_groups = PackedStringArray()
 
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(4, 0)
@@ -90,7 +90,7 @@ offset = Vector2(7, -2)
 frames = SubResource("SpriteFrames_7qxgd")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_fct5w")
+shape = SubResource("CircleShape2D_fpdah")
 
 [node name="Explosion" parent="." instance=ExtResource("13_iceo6")]
 

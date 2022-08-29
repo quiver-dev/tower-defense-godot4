@@ -76,19 +76,15 @@ func _on_tween_finished() -> void:
 	queue_free()
 
 
-# Detector's Area2D can only scan for enemies. See its collision mask.
+# Detector's Area2D can only detect certain enemies. See its collision mask.
 func _on_detector_body_entered(body: Node2D) -> void:
-	for group in shooter.targeted_groups:
-		if body.is_in_group(group) and not body in shooter.targets:
-			shooter.targets.append(body)
-			break
+	if not body in shooter.targets:
+		shooter.targets.append(body)
 
 
 func _on_detector_body_exited(body: Node2D) -> void:
-	for group in shooter.targeted_groups:
-		if body.is_in_group(group) and body in shooter.targets:
-			shooter.targets.erase(body)
-			break
+	if body in shooter.targets:
+		shooter.targets.erase(body)
 
 
 func _on_shooter_has_shot(reload_time: float) -> void:

@@ -123,11 +123,13 @@ middle_mouse={
 
 [layer_names]
 
-2d_physics/layer_1="enemy"
+2d_physics/layer_1="infantry"
 2d_physics/layer_2="turret"
 2d_physics/layer_3="projectile"
 2d_physics/layer_4="turret_slot"
 2d_physics/layer_5="objective"
+2d_physics/layer_6="tank"
+2d_physics/layer_7="helicopter"
 
 [rendering]
 
