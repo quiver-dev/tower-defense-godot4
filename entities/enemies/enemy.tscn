@@ -42,7 +42,8 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q2pkr"]
-radius = 24.0
+resource_local_to_scene = true
+radius = 65.9697
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_mask = 7
