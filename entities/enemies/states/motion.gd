@@ -7,7 +7,10 @@ func _move() -> void:
 	var cur_agent_pos: Vector2 = (owner as Enemy).global_position
 	var new_velocity: Vector2 = cur_agent_pos.direction_to(next_path_pos) * \
 			(owner as Enemy).speed
-	(owner as Enemy).nav_agent.set_velocity(new_velocity)
+	if (owner as Enemy).nav_agent.avoidance_enabled:
+		(owner as Enemy).nav_agent.set_velocity(new_velocity)
+	else:
+		(owner as Enemy).nav_agent.velocity_computed.emit(new_velocity)
 	# DEBUG: visualize path
 	# FIXME: not working. For some reason points is always empty
 	(owner as Enemy).line2d.points.append(next_path_pos)

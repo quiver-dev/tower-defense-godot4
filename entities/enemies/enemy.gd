@@ -74,7 +74,7 @@ func _calculate_rot(start_rot: float, target_rot: float, _speed: float, delta: f
 
 
 # Emitted by NavigationAgent2D.set_velocity, which can be called by any 
-# State class
+# State class. Sets the desired velocity and makes the enemy move
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
 	move_and_slide()

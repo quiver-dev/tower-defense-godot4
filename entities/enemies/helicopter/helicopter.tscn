@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://bcbhlhvr6t8vq"]
+[gd_scene load_steps=21 format=3 uid="uid://bcbhlhvr6t8vq"]
 
 [ext_resource type="PackedScene" uid="uid://b4q6b7u2whonn" path="res://entities/enemies/enemy.tscn" id="1_48rki"]
 [ext_resource type="Texture2D" uid="uid://b0gsw8jj20l0p" path="res://entities/enemies/helicopter/assets/textures/shadow_00.png" id="2_7x0w3"]
+[ext_resource type="Script" path="res://entities/enemies/helicopter/helicopter.gd" id="2_ej2tr"]
 [ext_resource type="Texture2D" uid="uid://bqno5ak15gnhi" path="res://entities/enemies/helicopter/assets/textures/body_move_00.png" id="2_v2566"]
 [ext_resource type="Texture2D" uid="uid://b8mlqejo8asek" path="res://entities/enemies/helicopter/assets/textures/rotor_00.png" id="3_6uh76"]
+[ext_resource type="Script" path="res://entities/enemies/helicopter/states/move.gd" id="3_nvyvq"]
 [ext_resource type="Texture2D" uid="uid://nwablku7ypup" path="res://entities/enemies/helicopter/assets/textures/shadow_01.png" id="3_x6w7t"]
 [ext_resource type="Texture2D" uid="uid://dgpb7nteiq03x" path="res://entities/enemies/helicopter/assets/textures/shadow_02.png" id="4_78k3l"]
 [ext_resource type="Texture2D" uid="uid://bmyin10aahdhj" path="res://entities/enemies/helicopter/assets/textures/rotor_01.png" id="4_p4sya"]
@@ -60,13 +62,19 @@ radius = 24.0
 height = 192.0
 
 [node name="Helicopter" instance=ExtResource("1_48rki")]
+z_index = 20
 collision_layer = 64
-collision_mask = 70
+collision_mask = 68
+script = ExtResource("2_ej2tr")
+speed = 150
+
+[node name="Move" parent="StateMachine" index="0"]
+script = ExtResource("3_nvyvq")
 
 [node name="Shadow" type="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(8, 32)
 frames = SubResource("SpriteFrames_01vhn")
-frame = 5
+frame = 2
 playing = true
 
 [node name="Sprite2D" parent="." index="2"]
@@ -80,12 +88,15 @@ frame = 5
 playing = true
 
 [node name="CollisionShape2D" parent="." index="4"]
-visible = false
 rotation = 4.71239
 shape = SubResource("CapsuleShape2D_q2hii")
 
 [node name="NavigationAgent2D" parent="." index="5"]
+path_desired_distance = 20.0
+path_max_distance = 40.0
 navigation_layers = 2
+avoidance_enabled = false
+radius = 96.0
 
 [node name="EntityHUD" parent="." index="7"]
 offset_top = -114.0
