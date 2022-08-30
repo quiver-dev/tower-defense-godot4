@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnn6cjeebruvk"]
+[gd_scene load_steps=8 format=3 uid="uid://cnn6cjeebruvk"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_emp5r"]
 [ext_resource type="TileSet" uid="uid://djmpsk0ufljcv" path="res://scenes/main/assets/tilesets/field.tres" id="2_pffaj"]
@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dkfo0baxvyvf1" path="res://scenes/main/tower/tower.tscn" id="4_e3sfc"]
 [ext_resource type="PackedScene" uid="uid://cho12fkcmwlds" path="res://scenes/main/spawner/spawner.tscn" id="5_fn71b"]
 [ext_resource type="PackedScene" uid="uid://bxk8oojwxk051" path="res://scenes/main/turret_slot/turret_slot.tscn" id="6_m5pyv"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_j5bpb"]
+vertices = PackedVector2Array(256, -512, 6272, -512, 6272, 3328, 256, 3328)
+polygons = [PackedInt32Array(0, 1, 2, 3)]
+outlines = [PackedVector2Array(256, -512, 6272, -512, 6272, 3328, 256, 3328)]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_emp5r")
@@ -22,6 +27,11 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
+
+[node name="AircraftNavRegion" type="NavigationRegion2D" parent="."]
+visible = false
+navpoly = SubResource("NavigationPolygon_j5bpb")
+navigation_layers = 2
 
 [node name="Camera2D" parent="." instance=ExtResource("3_o2ded")]
 position = Vector2(3208, 1696)

@@ -14,6 +14,7 @@ const INITIAL_WAIT := 5.0  # amount of seconds to wait before starting a wave
 	"infantry_t1": 45,  # higher probability of spawn
 	"infantry_t2": 40,
 	"tank": 15,
+	"helicopter": 5,
 }
 
 var objective_pos: Vector2
