@@ -46,7 +46,7 @@ func stop() -> void:
 
 
 func apply_animation(anim_name: String) -> void:
-	if sprite:
+	if is_instance_valid(sprite):
 		sprite.play(anim_name)
 
 

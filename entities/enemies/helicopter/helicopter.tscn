@@ -1,6 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://bcbhlhvr6t8vq"]
+[gd_scene load_steps=44 format=3 uid="uid://bcbhlhvr6t8vq"]
 
-[ext_resource type="PackedScene" uid="uid://b4q6b7u2whonn" path="res://entities/enemies/enemy.tscn" id="1_48rki"]
+[ext_resource type="PackedScene" path="res://entities/enemies/enemy.tscn" id="1_48rki"]
 [ext_resource type="Texture2D" uid="uid://b0gsw8jj20l0p" path="res://entities/enemies/helicopter/assets/textures/shadow_00.png" id="2_7x0w3"]
 [ext_resource type="Script" path="res://entities/enemies/helicopter/helicopter.gd" id="2_ej2tr"]
 [ext_resource type="Texture2D" uid="uid://bqno5ak15gnhi" path="res://entities/enemies/helicopter/assets/textures/body_move_00.png" id="2_v2566"]
@@ -16,13 +16,33 @@
 [ext_resource type="Texture2D" uid="uid://deqxywucbi838" path="res://entities/enemies/helicopter/assets/textures/rotor_04.png" id="7_nfvym"]
 [ext_resource type="Texture2D" uid="uid://cjv6jb8b4f45l" path="res://entities/enemies/helicopter/assets/textures/shadow_05.png" id="7_p0jo8"]
 [ext_resource type="Texture2D" uid="uid://cmu0h1tuwxulp" path="res://entities/enemies/helicopter/assets/textures/rotor_05.png" id="8_6p0bl"]
+[ext_resource type="PackedScene" uid="uid://r1b440sc0tkl" path="res://entities/shooter.tscn" id="17_angwf"]
+[ext_resource type="Script" path="res://entities/shooter_homing.gd" id="18_p4d7g"]
+[ext_resource type="Texture2D" uid="uid://c5klrxund1x83" path="res://entities/enemies/helicopter/assets/textures/body_shoot_a_00.png" id="19_s1x3a"]
+[ext_resource type="Texture2D" uid="uid://d0k3hrd2suld6" path="res://entities/enemies/helicopter/assets/textures/body_shoot_a_01.png" id="20_rrcty"]
+[ext_resource type="Texture2D" uid="uid://b8dggthtw1ow2" path="res://entities/enemies/helicopter/assets/textures/body_shoot_a_02.png" id="21_m0ecs"]
+[ext_resource type="Texture2D" uid="uid://bmf6b4gqbygku" path="res://entities/enemies/helicopter/assets/textures/body_shoot_a_03.png" id="22_qjumk"]
+[ext_resource type="Texture2D" uid="uid://c5npt17orko6w" path="res://entities/enemies/helicopter/assets/textures/body_shoot_a_04.png" id="23_vpuln"]
+[ext_resource type="Texture2D" uid="uid://b0yxpqxuuhl01" path="res://entities/enemies/helicopter/assets/textures/body_shoot_b_00.png" id="24_608ch"]
+[ext_resource type="Texture2D" uid="uid://mp28wd7enlvm" path="res://entities/enemies/helicopter/assets/textures/body_shoot_b_01.png" id="25_ylhat"]
+[ext_resource type="Texture2D" uid="uid://oi75tru74yif" path="res://entities/enemies/helicopter/assets/textures/body_shoot_b_02.png" id="26_x51ic"]
+[ext_resource type="Texture2D" uid="uid://cibcdysi1s4kn" path="res://entities/enemies/helicopter/assets/textures/body_shoot_b_03.png" id="27_kvwm5"]
+[ext_resource type="Texture2D" uid="uid://or8dkbm7j1tn" path="res://entities/enemies/helicopter/assets/textures/body_shoot_b_04.png" id="28_g1in3"]
+[ext_resource type="Texture2D" uid="uid://dat1u2jr1n54h" path="res://entities/assets/textures/missile_vfx/gun_fx_00.png" id="29_s6l1u"]
+[ext_resource type="Texture2D" uid="uid://0nqxb5aias7b" path="res://entities/assets/textures/missile_vfx/gun_fx_01.png" id="30_wdl6o"]
+[ext_resource type="Texture2D" uid="uid://dhdw8umur4wry" path="res://entities/assets/textures/missile_vfx/gun_fx_02.png" id="31_eynw2"]
+[ext_resource type="Texture2D" uid="uid://dyrb3yn3pjljv" path="res://entities/assets/textures/missile_vfx/gun_fx_03.png" id="32_t34sf"]
+[ext_resource type="Texture2D" uid="uid://b51xwl1nt7eig" path="res://entities/assets/textures/missile_vfx/gun_fx_04.png" id="33_pky4r"]
+[ext_resource type="Texture2D" uid="uid://bcklf566ymctf" path="res://entities/assets/textures/missile_vfx/gun_fx_05.png" id="34_frwpc"]
+[ext_resource type="Texture2D" uid="uid://c6jma3iiarg4n" path="res://entities/assets/textures/missile_vfx/gun_fx_06.png" id="35_067ev"]
+[ext_resource type="Texture2D" uid="uid://d04k16lu1laqu" path="res://entities/assets/textures/missile_vfx/gun_fx_07.png" id="36_irvdh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_01vhn"]
 animations = [{
 "frames": [ExtResource("2_7x0w3"), ExtResource("3_x6w7t"), ExtResource("4_78k3l"), ExtResource("5_7s2dh"), ExtResource("6_6uh3r"), ExtResource("7_p0jo8")],
 "loop": true,
-"name": &"default",
-"speed": 6.0
+"name": &"move",
+"speed": 12.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q53ch"]
@@ -53,7 +73,7 @@ animations = [{
 animations = [{
 "frames": [ExtResource("3_6uh76"), ExtResource("4_p4sya"), ExtResource("5_xbbce"), ExtResource("6_0sjjr"), ExtResource("7_nfvym"), ExtResource("8_6p0bl")],
 "loop": true,
-"name": &"default",
+"name": &"move",
 "speed": 12.0
 }]
 
@@ -61,12 +81,63 @@ animations = [{
 radius = 24.0
 height = 192.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_iyx81"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [ExtResource("19_s1x3a"), ExtResource("20_rrcty"), ExtResource("21_m0ecs"), ExtResource("22_qjumk"), ExtResource("23_vpuln")],
+"loop": false,
+"name": &"shoot_a",
+"speed": 12.0
+}, {
+"frames": [ExtResource("24_608ch"), ExtResource("25_ylhat"), ExtResource("26_x51ic"), ExtResource("27_kvwm5"), ExtResource("28_g1in3")],
+"loop": false,
+"name": &"shoot_b",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rdfx"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [ExtResource("29_s6l1u"), ExtResource("30_wdl6o"), ExtResource("31_eynw2"), ExtResource("32_t34sf"), ExtResource("33_pky4r"), ExtResource("34_frwpc"), ExtResource("35_067ev"), ExtResource("36_irvdh")],
+"loop": false,
+"name": &"shoot_a",
+"speed": 12.0
+}, {
+"frames": [ExtResource("29_s6l1u"), ExtResource("30_wdl6o"), ExtResource("31_eynw2"), ExtResource("32_t34sf"), ExtResource("33_pky4r"), ExtResource("34_frwpc"), ExtResource("35_067ev"), ExtResource("36_irvdh")],
+"loop": false,
+"name": &"shoot_b",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bgdx0"]
+radius = 600.0
+
 [node name="Helicopter" instance=ExtResource("1_48rki")]
 z_index = 20
 collision_layer = 64
 collision_mask = 68
 script = ExtResource("2_ej2tr")
-speed = 150
+speed = 100
 
 [node name="Move" parent="StateMachine" index="0"]
 script = ExtResource("3_nvyvq")
@@ -74,6 +145,7 @@ script = ExtResource("3_nvyvq")
 [node name="Shadow" type="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(8, 32)
 frames = SubResource("SpriteFrames_01vhn")
+animation = &"move"
 frame = 2
 playing = true
 
@@ -84,6 +156,7 @@ frame = 0
 [node name="Rotor" type="AnimatedSprite2D" parent="." index="3"]
 position = Vector2(16, 0)
 frames = SubResource("SpriteFrames_fkkfk")
+animation = &"move"
 frame = 5
 playing = true
 
@@ -98,6 +171,40 @@ navigation_layers = 2
 avoidance_enabled = false
 radius = 96.0
 
-[node name="EntityHUD" parent="." index="7"]
+[node name="Shooter" parent="." index="7" instance=ExtResource("17_angwf")]
+position = Vector2(-10, 2)
+script = ExtResource("18_p4d7g")
+detector_color = Color(1, 0.22, 0.25, 0.25)
+detect_radius = 600
+fire_rate = 4.0
+projectile_count = 2
+projectile_spread = 0.0
+projectile_speed = 400
+projectile_damage = 200
+metadata/_edit_lock_ = true
+
+[node name="Gun" parent="Shooter" index="0"]
+frames = SubResource("SpriteFrames_iyx81")
+
+[node name="Muzzle" parent="Shooter/Gun" index="0"]
+position = Vector2(50, -42)
+
+[node name="Muzzle2" parent="Shooter/Gun" index="1"]
+position = Vector2(50, 38)
+
+[node name="MuzzleFlash" parent="Shooter" index="1"]
+frames = SubResource("SpriteFrames_8rdfx")
+
+[node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
+shape = SubResource("CircleShape2D_bgdx0")
+
+[node name="LookAhead" parent="Shooter" index="3"]
+target_position = Vector2(600, 0)
+
+[node name="EntityHUD" parent="." index="8"]
+layout_mode = 3
+anchors_preset = 0
 offset_top = -114.0
 offset_bottom = -114.0
+
+[editable path="Shooter"]
