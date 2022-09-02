@@ -64,7 +64,7 @@ animation = &"idle"
 playing = true
 offset = Vector2(11, -2)
 
-[node name="Muzzle" type="Position2D" parent="Gun"]
+[node name="Muzzle" type="Marker2D" parent="Gun"]
 position = Vector2(80, 0)
 
 [node name="MuzzleFlash" type="AnimatedSprite2D" parent="."]

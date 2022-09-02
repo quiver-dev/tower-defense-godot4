@@ -111,7 +111,7 @@ func set_projectile_count(value: int) -> void:
 	match signi(diff):
 		1:
 			for i in diff:
-				var dup = _gun.get_node("Muzzle").duplicate() as Position2D
+				var dup = _gun.get_node("Muzzle").duplicate() as Marker2D
 				_gun.add_child(dup, true)
 				dup.owner = self
 		-1:

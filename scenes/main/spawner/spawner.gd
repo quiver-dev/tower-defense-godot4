@@ -28,7 +28,7 @@ var spawns := []
 # Called once by parent scene when ready
 func initialize(_objective_pos: Vector2) -> void:
 	for node in get_children():
-		if node is Position2D:
+		if node is Marker2D:
 			spawns.append(node)
 	objective_pos = _objective_pos
 	wave_timer.start(INITIAL_WAIT)
@@ -59,7 +59,7 @@ func _spawn_enemy(enemy_path: String) -> void:
 	# spawn an enemy
 	var enemy: Enemy = load(enemy_path).instantiate()
 	enemy_container.add_child(enemy)
-	enemy.global_position = (spawns[randi() % spawns.size()] as Position2D).\
+	enemy.global_position = (spawns[randi() % spawns.size()] as Marker2D).\
 			global_position
 	enemy.move_to(objective_pos)
 

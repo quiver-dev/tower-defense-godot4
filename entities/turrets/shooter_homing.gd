@@ -9,7 +9,7 @@ var muzzle_idx := 0  # used to determine which missile to fire
 
 func shoot() -> void:
 	can_shoot = false
-	var muzzle := gun.get_child(muzzle_idx) as Position2D
+	var muzzle := gun.get_child(muzzle_idx) as Marker2D
 	var projectile: Projectile = projectile_type.instantiate()
 	projectile.name = "Missile%d" % (muzzle_idx + 1)
 	projectile.rotation = -PI / 2

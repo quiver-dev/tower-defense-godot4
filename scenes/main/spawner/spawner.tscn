@@ -8,9 +8,9 @@ script = ExtResource("1_hhcuf")
 spawn_rate = 3.0
 enemy_count = 40
 
-[node name="SpawnLocation1" type="Position2D" parent="."]
+[node name="SpawnLocation1" type="Marker2D" parent="."]
 
-[node name="SpawnLocation2" type="Position2D" parent="."]
+[node name="SpawnLocation2" type="Marker2D" parent="."]
 
 [node name="EnemyContainer" type="Node2D" parent="."]
 
