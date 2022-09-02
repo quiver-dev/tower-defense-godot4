@@ -32,7 +32,7 @@ _global_script_classes=[{
 "base": "Enemy",
 "class": &"Helicopter",
 "language": &"GDScript",
-"path": "res://entities/enemies/helicopter/helicopter.gd"
+"path": "res://entities/enemies/helicopters/helicopter.gd"
 }, {
 "base": "State",
 "class": &"Motion",

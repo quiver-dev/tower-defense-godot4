@@ -4,6 +4,7 @@ extends Enemy
 
 @onready var shadow := $Shadow as AnimatedSprite2D
 @onready var rotor := $Rotor as AnimatedSprite2D
+@onready var shooter := $Shooter as Shooter
 
 
 func _physics_process(delta: float) -> void:

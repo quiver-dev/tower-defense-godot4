@@ -1,6 +1,6 @@
 [gd_scene load_steps=86 format=3 uid="uid://c3jnmrhthj3q2"]
 
-[ext_resource type="PackedScene" uid="uid://b4q6b7u2whonn" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
+[ext_resource type="PackedScene" path="res://entities/enemies/enemy.tscn" id="1_o2qr5"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/tank.gd" id="2_ri3h6"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/move.gd" id="3_7yovt"]
 [ext_resource type="Script" path="res://entities/enemies/tanks/states/hit.gd" id="5_3qes1"]
@@ -149,7 +149,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pg1su"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jtrea"]
 radius = 500.0
 
 [node name="Tank" instance=ExtResource("1_o2qr5")]
@@ -177,7 +177,7 @@ script = ExtResource("5_5f6sk")
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_2qc3e")
-frame = 1
+frame = 2
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-14, 0)
@@ -209,7 +209,7 @@ frames = SubResource("SpriteFrames_x5y1r")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_pg1su")
+shape = SubResource("CircleShape2D_jtrea")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)
@@ -219,6 +219,8 @@ collision_mask = 18
 [node name="Explosion" parent="." index="6" instance=ExtResource("80_sm072")]
 
 [node name="EntityHUD" parent="." index="7"]
+layout_mode = 3
+anchors_preset = 0
 offset_top = -115.0
 offset_bottom = -115.0
 

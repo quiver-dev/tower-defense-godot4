@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mp28wd7enlvm"
-path="res://.godot/imported/body_shoot_b_01.png-885742ec2e5d9faf739f0e52a830499d.ctex"
+uid="uid://deqxywucbi838"
+path="res://.godot/imported/rotor_04.png-a6b4978872c72287bed6feb694b03a35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemies/helicopter/assets/textures/body_shoot_b_01.png"
-dest_files=["res://.godot/imported/body_shoot_b_01.png-885742ec2e5d9faf739f0e52a830499d.ctex"]
+source_file="res://entities/enemies/helicopters/assets/textures/rotor_04.png"
+dest_files=["res://.godot/imported/rotor_04.png-a6b4978872c72287bed6feb694b03a35.ctex"]
 
 [params]
 

@@ -4,11 +4,11 @@ extends "res://entities/enemies/states/hit.gd"
 
 
 func enter() -> void:
-	super.enter()
+	super()
 	# freeze the reload time for the duration of this state
 	(owner as Tank).shooter.set_firerate_timer_paused(true)
 
 
 func exit() -> void:
-	super.exit()
+	super()
 	(owner as Tank).shooter.set_firerate_timer_paused(false)
