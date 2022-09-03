@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cevqm4uu7yip1"]
+[gd_scene load_steps=15 format=3 uid="uid://bl2so1n5mvkym"]
 
 [ext_resource type="PackedScene" path="res://entities/enemies/enemy.tscn" id="1_tnaes"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/shooting_enemy.gd" id="2_ftlox"]
@@ -6,9 +6,10 @@
 [ext_resource type="Script" path="res://entities/enemies/shooting/states/hit.gd" id="4_qprvn"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/states/die.gd" id="5_ui7r8"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/states/shoot.gd" id="6_la5et"]
-[ext_resource type="Texture2D" path="res://entities/enemies/tanks/assets/textures/base_idle_00.png" id="7_g0m55"]
-[ext_resource type="PackedScene" path="res://entities/shooter.tscn" id="8_dv8tr"]
-[ext_resource type="Texture2D" path="res://entities/enemies/tanks/assets/textures/gun_idle_00.png" id="9_27c6o"]
+[ext_resource type="PackedScene" uid="uid://r1b440sc0tkl" path="res://entities/shooter.tscn" id="8_dv8tr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tr4ns"]
+load_path = "res://.godot/imported/base_idle_00.png-66194b3c7a6a32f9a48297bf5df74c88.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_54mwn"]
 resource_local_to_scene = true
@@ -23,7 +24,7 @@ animations = [{
 "name": &"hit",
 "speed": 5.0
 }, {
-"frames": [ExtResource("7_g0m55")],
+"frames": [SubResource("CompressedTexture2D_tr4ns")],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
@@ -38,6 +39,9 @@ animations = [{
 resource_local_to_scene = true
 radius = 65.9697
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_awfie"]
+load_path = "res://.godot/imported/gun_idle_00.png-ba58bceb44646f214772dcf01eb532ca.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_pwnph"]
 resource_local_to_scene = true
 animations = [{
@@ -46,7 +50,7 @@ animations = [{
 "name": &"explode",
 "speed": 5.0
 }, {
-"frames": [ExtResource("9_27c6o")],
+"frames": [SubResource("CompressedTexture2D_awfie")],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
@@ -76,7 +80,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_74nye"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hh7rq"]
 radius = 400.0
 
 [node name="ShootingEnemy" instance=ExtResource("1_tnaes")]
@@ -111,7 +115,7 @@ frames = SubResource("SpriteFrames_pwnph")
 frames = SubResource("SpriteFrames_e6dea")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_74nye")
+shape = SubResource("CircleShape2D_hh7rq")
 
 [node name="EntityHUD" parent="." index="6"]
 layout_mode = 3
@@ -121,6 +125,8 @@ offset_top = -120.0
 offset_right = -32.0
 offset_bottom = -120.0
 
+[connection signal="mouse_entered" from="." to="Shooter" method="_on_parent_mouse_entered"]
+[connection signal="mouse_exited" from="." to="Shooter" method="_on_parent_mouse_exited"]
 [connection signal="has_shot" from="Shooter" to="." method="_on_shooter_has_shot"]
 [connection signal="area_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_area_entered"]
 [connection signal="area_exited" from="Shooter/Detector" to="StateMachine/Shoot" method="_on_detector_area_exited"]
