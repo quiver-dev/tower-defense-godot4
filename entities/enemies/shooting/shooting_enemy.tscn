@@ -1,0 +1,130 @@
+[gd_scene load_steps=15 format=3 uid="uid://cevqm4uu7yip1"]
+
+[ext_resource type="PackedScene" path="res://entities/enemies/enemy.tscn" id="1_tnaes"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/shooting_enemy.gd" id="2_ftlox"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/states/move.gd" id="3_sa0ih"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/states/hit.gd" id="4_qprvn"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/states/die.gd" id="5_ui7r8"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/states/shoot.gd" id="6_la5et"]
+[ext_resource type="Texture2D" path="res://entities/enemies/tanks/assets/textures/base_idle_00.png" id="7_g0m55"]
+[ext_resource type="PackedScene" path="res://entities/shooter.tscn" id="8_dv8tr"]
+[ext_resource type="Texture2D" path="res://entities/enemies/tanks/assets/textures/gun_idle_00.png" id="9_27c6o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54mwn"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [ExtResource("7_g0m55")],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w2ixb"]
+resource_local_to_scene = true
+radius = 65.9697
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pwnph"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}, {
+"frames": [ExtResource("9_27c6o")],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"shoot",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6dea"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74nye"]
+radius = 400.0
+
+[node name="ShootingEnemy" instance=ExtResource("1_tnaes")]
+script = ExtResource("2_ftlox")
+
+[node name="Move" parent="StateMachine" index="0"]
+script = ExtResource("3_sa0ih")
+
+[node name="Hit" parent="StateMachine" index="2"]
+script = ExtResource("4_qprvn")
+
+[node name="Die" parent="StateMachine" index="3"]
+script = ExtResource("5_ui7r8")
+
+[node name="Shoot" type="Node" parent="StateMachine" index="4"]
+script = ExtResource("6_la5et")
+
+[node name="Sprite2D" parent="." index="1"]
+frames = SubResource("SpriteFrames_54mwn")
+animation = &"idle"
+frame = 0
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_w2ixb")
+
+[node name="Shooter" parent="." index="5" instance=ExtResource("8_dv8tr")]
+
+[node name="Gun" parent="Shooter" index="0"]
+frames = SubResource("SpriteFrames_pwnph")
+
+[node name="MuzzleFlash" parent="Shooter" index="1"]
+frames = SubResource("SpriteFrames_e6dea")
+
+[node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
+shape = SubResource("CircleShape2D_74nye")
+
+[node name="EntityHUD" parent="." index="6"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -32.0
+offset_top = -120.0
+offset_right = -32.0
+offset_bottom = -120.0
+
+[connection signal="has_shot" from="Shooter" to="." method="_on_shooter_has_shot"]
+[connection signal="area_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_area_entered"]
+[connection signal="area_exited" from="Shooter/Detector" to="StateMachine/Shoot" method="_on_detector_area_exited"]
+[connection signal="body_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Shooter/Detector" to="StateMachine/Shoot" method="_on_detector_body_exited"]
+
+[editable path="Shooter"]
