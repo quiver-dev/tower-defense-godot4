@@ -131,7 +131,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_d7qne"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jcpre"]
 radius = 600.0
 
 [node name="Helicopter" instance=ExtResource("1_54of7")]
@@ -151,7 +151,7 @@ script = ExtResource("4_vjdrk")
 position = Vector2(8, 32)
 frames = SubResource("SpriteFrames_01vhn")
 animation = &"move"
-frame = 4
+frame = 1
 playing = true
 
 [node name="Sprite2D" parent="." index="2"]
@@ -162,7 +162,7 @@ frame = 0
 position = Vector2(16, 0)
 frames = SubResource("SpriteFrames_fkkfk")
 animation = &"move"
-frame = 1
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" parent="." index="4"]
@@ -205,7 +205,7 @@ frames = SubResource("SpriteFrames_8rdfx")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_d7qne")
+shape = SubResource("CircleShape2D_jcpre")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(610, 0)
@@ -218,6 +218,8 @@ offset_top = -114.0
 offset_right = 0.0
 offset_bottom = -114.0
 
+[connection signal="has_shot" from="Shooter" to="." method="_on_shooter_has_shot"]
+[connection signal="area_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_area_entered"]
 [connection signal="body_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_body_entered"]
 [connection signal="body_exited" from="Shooter/Detector" to="StateMachine/Shoot" method="_on_detector_body_exited"]
 

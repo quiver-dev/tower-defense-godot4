@@ -61,3 +61,7 @@ time_horizon = 32.0
 [node name="EntityHUD" parent="." index="5"]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
