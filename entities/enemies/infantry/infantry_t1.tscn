@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://c0qro2s61gqnu"]
 
-[ext_resource type="PackedScene" path="res://entities/enemies/enemy.tscn" id="1_l80xx"]
+[ext_resource type="PackedScene" uid="uid://q63lxc50ni31" path="res://entities/enemies/enemy.tscn" id="1_l80xx"]
 [ext_resource type="Texture2D" uid="uid://6ouf3x1nqfpw" path="res://entities/enemies/infantry/assets/textures/tier1/idle_00.png" id="2_6871t"]
 [ext_resource type="Texture2D" uid="uid://dmyjeq3xr2bsw" path="res://entities/enemies/infantry/assets/textures/tier1/die_00.png" id="2_ld1gc"]
 [ext_resource type="Texture2D" uid="uid://1ahnc7cobauj" path="res://entities/enemies/infantry/assets/textures/tier1/die_01.png" id="3_02dn3"]
@@ -58,8 +58,6 @@ shape = SubResource("CircleShape2D_recve")
 time_horizon = 32.0
 
 [node name="EntityHUD" parent="." index="5"]
-layout_mode = 3
-anchors_preset = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0

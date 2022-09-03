@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b4q6b7u2whonn"]
+[gd_scene load_steps=19 format=3 uid="uid://q63lxc50ni31"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
 [ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
@@ -49,6 +49,7 @@ radius = 65.9697
 collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_cy1ia")
+metadata/_edit_group_ = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("2_8ke4v")
@@ -69,7 +70,7 @@ script = ExtResource("6_70kam")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_6olqj")
 animation = &"move"
-frame = 4
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -85,10 +86,13 @@ radius = 24.0
 width = 5.0
 
 [node name="EntityHUD" parent="." instance=ExtResource("7_dxylf")]
+layout_mode = 3
+anchors_preset = 0
 offset_left = -31.0
 offset_top = -75.0
 offset_right = -31.0
 offset_bottom = -75.0
+metadata/_edit_lock_ = true
 
 [connection signal="state_changed" from="StateMachine" to="." method="_on_state_machine_state_changed"]
 [connection signal="animation_finished" from="Sprite2D" to="StateMachine" method="_on_Sprite_animation_finished"]

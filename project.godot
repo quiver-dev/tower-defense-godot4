@@ -29,10 +29,10 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://interfaces/UI/game_over/game_over.gd"
 }, {
-"base": "Enemy",
+"base": "ShootingEnemy",
 "class": &"Helicopter",
 "language": &"GDScript",
-"path": "res://entities/enemies/helicopters/helicopter.gd"
+"path": "res://entities/enemies/shooting/helicopters/helicopter.gd"
 }, {
 "base": "State",
 "class": &"Motion",

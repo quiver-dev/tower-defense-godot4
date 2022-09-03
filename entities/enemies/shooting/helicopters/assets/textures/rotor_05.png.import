@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmu0h1tuwxulp"
-path="res://.godot/imported/rotor_05.png-6b9fbde7df3e3cf4afdb82b82f543a6c.ctex"
+path="res://.godot/imported/rotor_05.png-9948dd4e7b9bc724da72ba974044df77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemies/helicopters/assets/textures/rotor_05.png"
-dest_files=["res://.godot/imported/rotor_05.png-6b9fbde7df3e3cf4afdb82b82f543a6c.ctex"]
+source_file="res://entities/enemies/shooting/helicopters/assets/textures/rotor_05.png"
+dest_files=["res://.godot/imported/rotor_05.png-9948dd4e7b9bc724da72ba974044df77.ctex"]
 
 [params]
 

@@ -6,7 +6,7 @@ extends Node
 const INFANTRY_T1 := "res://entities/enemies/infantry/infantry_t1.tscn"
 const INFANTRY_T2 := "res://entities/enemies/infantry/infantry_t2.tscn"
 const TANK := "res://entities/enemies/shooting/tanks/tank.tscn"
-const HELICOPTER := "res://entities/enemies/helicopter/helicopter.tscn"
+const HELICOPTER := "res://entities/enemies/shooting/helicopters/helicopter.tscn"
 # Turrets
 const GATLING_TURRET := "res://entities/turrets/gatling/gatling_turret.tscn"
 const SINGLE_TURRET := "res://entities/turrets/single/single_turret.tscn"

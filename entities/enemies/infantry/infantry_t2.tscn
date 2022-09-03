@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://0h6p5kq7bwnw"]
 
-[ext_resource type="PackedScene" path="res://entities/enemies/enemy.tscn" id="1_xcp6m"]
+[ext_resource type="PackedScene" uid="uid://q63lxc50ni31" path="res://entities/enemies/enemy.tscn" id="1_xcp6m"]
 [ext_resource type="Texture2D" uid="uid://c2kw4wa37hx6d" path="res://entities/enemies/infantry/assets/textures/tier2/idle_00.png" id="2_j37t7"]
 [ext_resource type="Texture2D" uid="uid://dvslmim8gtmdm" path="res://entities/enemies/infantry/assets/textures/tier2/die_00.png" id="2_us1ld"]
 [ext_resource type="Texture2D" uid="uid://cyqia0ngmbbst" path="res://entities/enemies/infantry/assets/textures/tier2/die_01.png" id="3_bmrip"]
@@ -51,7 +51,7 @@ speed = 200
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_65d1v")
-frame = 6
+frame = 7
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_yy5b4")
@@ -60,8 +60,6 @@ shape = SubResource("CircleShape2D_yy5b4")
 time_horizon = 32.0
 
 [node name="EntityHUD" parent="." index="5"]
-layout_mode = 3
-anchors_preset = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0

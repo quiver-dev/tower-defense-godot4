@@ -1,10 +1,9 @@
 class_name Helicopter
-extends Enemy
+extends ShootingEnemy
 
 
 @onready var shadow := $Shadow as AnimatedSprite2D
 @onready var rotor := $Rotor as AnimatedSprite2D
-@onready var shooter := $Shooter as Shooter
 
 
 func _physics_process(delta: float) -> void:
@@ -22,7 +21,3 @@ func apply_animation(anim_name: String) -> void:
 		if is_instance_valid(animated_sprite) and \
 				(animated_sprite as AnimatedSprite2D).frames.has_animation(anim_name):
 			(animated_sprite as AnimatedSprite2D).play(anim_name)
-
-
-func _on_shooter_has_shot(reload_time) -> void:
-	hud.update_reloadbar(reload_time)
