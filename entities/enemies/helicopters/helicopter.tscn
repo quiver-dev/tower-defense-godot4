@@ -131,7 +131,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jcpre"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bltmb"]
 radius = 600.0
 
 [node name="Helicopter" instance=ExtResource("1_54of7")]
@@ -151,7 +151,6 @@ script = ExtResource("4_vjdrk")
 position = Vector2(8, 32)
 frames = SubResource("SpriteFrames_01vhn")
 animation = &"move"
-frame = 1
 playing = true
 
 [node name="Sprite2D" parent="." index="2"]
@@ -162,7 +161,7 @@ frame = 0
 position = Vector2(16, 0)
 frames = SubResource("SpriteFrames_fkkfk")
 animation = &"move"
-frame = 4
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" parent="." index="4"]
@@ -205,7 +204,7 @@ frames = SubResource("SpriteFrames_8rdfx")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_jcpre")
+shape = SubResource("CircleShape2D_bltmb")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(610, 0)
