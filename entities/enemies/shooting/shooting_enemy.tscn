@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bl2so1n5mvkym"]
 
-[ext_resource type="PackedScene" path="res://entities/enemies/enemy.tscn" id="1_tnaes"]
+[ext_resource type="PackedScene" uid="uid://q63lxc50ni31" path="res://entities/enemies/enemy.tscn" id="1_tnaes"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/shooting_enemy.gd" id="2_ftlox"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/states/move.gd" id="3_sa0ih"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/states/hit.gd" id="4_qprvn"]
@@ -80,10 +80,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7nnsc"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hpd41"]
 radius = 400.0
 
 [node name="ShootingEnemy" instance=ExtResource("1_tnaes")]
+input_pickable = true
 script = ExtResource("2_ftlox")
 
 [node name="Move" parent="StateMachine" index="0"]
@@ -115,14 +116,12 @@ frames = SubResource("SpriteFrames_pwnph")
 frames = SubResource("SpriteFrames_e6dea")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_7nnsc")
+shape = SubResource("CircleShape2D_hpd41")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 collide_with_areas = true
 
 [node name="EntityHUD" parent="." index="6"]
-layout_mode = 3
-anchors_preset = 0
 offset_left = -32.0
 offset_top = -120.0
 offset_right = -32.0

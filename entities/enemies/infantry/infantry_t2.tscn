@@ -47,11 +47,11 @@ resource_local_to_scene = true
 radius = 65.9697
 
 [node name="InfantryT2" instance=ExtResource("1_xcp6m")]
-speed = 200
+speed = 150
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_65d1v")
-frame = 7
+frame = 5
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_yy5b4")

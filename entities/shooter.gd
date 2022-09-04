@@ -35,7 +35,7 @@ var can_shoot := true
 @onready var detector := $Detector as Area2D
 @onready var detector_coll := $Detector/CollisionShape2D as CollisionShape2D
 @onready var detector_shape := CircleShape2D.new()
-@onready var lookahead  := $LookAhead as RayCast2D
+@onready var lookahead := $LookAhead as RayCast2D
 @onready var projectile_container := $ProjectileContainer as Node
 @onready var firerate_timer := $FireRateTimer as Timer
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=80 format=3 uid="uid://b4gh1jb37x2qp"]
+[gd_scene load_steps=82 format=3 uid="uid://b4gh1jb37x2qp"]
 
 [ext_resource type="PackedScene" uid="uid://bl2so1n5mvkym" path="res://entities/enemies/shooting/shooting_enemy.tscn" id="1_jmm6g"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/tanks/tank.gd" id="2_34241"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/tanks/states/die.gd" id="2_lf3dh"]
 [ext_resource type="Texture2D" uid="uid://c0x7de1x4cgyd" path="res://entities/enemies/shooting/tanks/assets/textures/base_idle_00.png" id="3_acrvy"]
 [ext_resource type="Texture2D" uid="uid://1ptfan0lyh0i" path="res://entities/enemies/shooting/tanks/assets/textures/base_die_00.png" id="3_c4ixt"]
@@ -74,6 +75,7 @@
 [ext_resource type="Texture2D" uid="uid://bcafe5b48ltly" path="res://entities/assets/textures/shell_vfx/gun_fx_04.png" id="72_jhb8e"]
 [ext_resource type="Texture2D" uid="uid://ceak4ctloj3bs" path="res://entities/assets/textures/shell_vfx/gun_fx_05.png" id="73_ikklc"]
 [ext_resource type="Texture2D" uid="uid://btvwwgocom5h8" path="res://entities/assets/textures/shell_vfx/gun_fx_06.png" id="74_fowal"]
+[ext_resource type="PackedScene" uid="uid://x6ivhnvyfp45" path="res://entities/explosion_vfx/explosion.tscn" id="76_tnfpx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u5pno"]
 animations = [{
@@ -143,15 +145,14 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_daspg"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vm8su"]
 radius = 500.0
 
 [node name="Tank" instance=ExtResource("1_jmm6g")]
 collision_layer = 32
 collision_mask = 39
 input_pickable = true
-rot_speed = 4.0
-health = 300
+script = ExtResource("2_34241")
 speed = 100
 
 [node name="Die" parent="StateMachine" index="3"]
@@ -187,11 +188,13 @@ frames = SubResource("SpriteFrames_x5y1r")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_daspg")
+shape = SubResource("CircleShape2D_vm8su")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)
 target_position = Vector2(510, 0)
 collision_mask = 18
+
+[node name="Explosion" parent="." index="6" instance=ExtResource("76_tnfpx")]
 
 [editable path="Shooter"]
