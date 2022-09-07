@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cre1uon7pnve1"]
 
-[ext_resource type="Theme" uid="uid://dp6cm6aj7bu7g" path="res://assets/themes/td_theme.tres" id="1_a7j6v"]
+[ext_resource type="Theme" uid="uid://cgfdgl4ihd081" path="res://assets/themes/td_theme.tres" id="1_a7j6v"]
 [ext_resource type="Script" path="res://interfaces/HUD/entity/entity_hud.gd" id="1_qyud4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l380f"]

@@ -50,7 +50,6 @@ speed = 150
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_hgfy3")
-frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_recve")
@@ -59,7 +58,4 @@ shape = SubResource("CircleShape2D_recve")
 time_horizon = 32.0
 
 [node name="EntityHUD" parent="." index="5"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+metadata/_edit_lock_ = true

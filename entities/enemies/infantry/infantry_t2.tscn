@@ -51,7 +51,7 @@ speed = 150
 
 [node name="Sprite2D" parent="." index="1"]
 frames = SubResource("SpriteFrames_65d1v")
-frame = 5
+frame = 7
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_yy5b4")
@@ -60,7 +60,4 @@ shape = SubResource("CircleShape2D_yy5b4")
 time_horizon = 32.0
 
 [node name="EntityHUD" parent="." index="5"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+metadata/_edit_lock_ = true

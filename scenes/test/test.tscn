@@ -52,6 +52,9 @@ position = Vector2(416, -240)
 [node name="StateMachine" parent="Enemies/InfantryT3" index="0"]
 START_STATE = NodePath("Idle")
 
+[node name="EntityHUD" parent="Enemies/InfantryT3" index="5"]
+metadata/_edit_lock_ = true
+
 [node name="InfantryT4" parent="Enemies" instance=ExtResource("5_sqult")]
 position = Vector2(184, 80)
 
