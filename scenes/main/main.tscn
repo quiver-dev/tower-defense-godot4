@@ -44,8 +44,15 @@ position = Vector2(5184, 960)
 position = Vector2(1080, 904)
 enemy_count = 20
 
+[node name="SpawnLocation1" parent="Spawner" index="0"]
+metadata/_edit_lock_ = true
+
 [node name="SpawnLocation2" parent="Spawner" index="1"]
 position = Vector2(16, 1208)
+metadata/_edit_lock_ = true
+
+[node name="EnemyContainer" parent="Spawner" index="3"]
+position = Vector2(-632, -8)
 
 [node name="TurretSlots" type="Node2D" parent="."]
 

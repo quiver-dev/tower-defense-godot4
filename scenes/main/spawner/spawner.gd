@@ -1,5 +1,13 @@
 class_name Spawner
 extends Node2D
+# This scene should be a direct child of the map scene.
+# It distinguishes between "field spawns" - i.e. where ground-based entities
+# spawn - and "aircraft spawns". This means that field-related markers must 
+# be inside a navigable path on the map, while the aircaft ones can be 
+# anywhere (preferrably as far as possible from the objective).
+# To customize the spawns, in the parent scene select the spawner and make it
+# editable. At this point you can move the Marker2D nodes to the desired
+# locations.
 
 
 signal wave_started(current_wave: int)
@@ -18,19 +26,21 @@ const INITIAL_WAIT := 5.0  # amount of seconds to wait before starting a wave
 }
 
 var objective_pos: Vector2
+var map_limits: Rect2
+var cell_size: Vector2i
 var current_wave := 1
-var spawns := []
 
 @onready var wave_timer := $WaveTimer as Timer
 @onready var enemy_container := $EnemyContainer as Node2D
+@onready var field_spawns := [$SpawnLocation1, $SpawnLocation2]
+@onready var aircraft_spawn_pos := $AircraftSpawnLocation as Marker2D
 
 
 # Called once by parent scene when ready
-func initialize(_objective_pos: Vector2) -> void:
-	for node in get_children():
-		if node is Marker2D:
-			spawns.append(node)
+func initialize(_objective_pos: Vector2, _map_limits: Rect2, _cell_size: Vector2i) -> void:
 	objective_pos = _objective_pos
+	map_limits = _map_limits
+	cell_size = _cell_size
 	wave_timer.start(INITIAL_WAIT)
 
 
@@ -59,8 +69,16 @@ func _spawn_enemy(enemy_path: String) -> void:
 	# spawn an enemy
 	var enemy: Enemy = load(enemy_path).instantiate()
 	enemy_container.add_child(enemy)
-	enemy.global_position = (spawns[randi() % spawns.size()] as Marker2D).\
-			global_position
+	if enemy is Helicopter:
+		# we use the same marked but we randomize its y axis
+		aircraft_spawn_pos.global_position.y = randf_range(
+				map_limits.position.y * cell_size.y,
+				map_limits.end.y * cell_size.y)
+		enemy.global_position = aircraft_spawn_pos.global_position
+	else:
+		# pick a random spawn location from the field spawns
+		enemy.global_position = (field_spawns[randi() % field_spawns.size()] \
+				as Marker2D).global_position
 	enemy.move_to(objective_pos)
 
 

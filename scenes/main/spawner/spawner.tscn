@@ -12,6 +12,8 @@ enemy_count = 40
 
 [node name="SpawnLocation2" type="Marker2D" parent="."]
 
+[node name="AircraftSpawnLocation" type="Marker2D" parent="."]
+
 [node name="EnemyContainer" type="Node2D" parent="."]
 
 [node name="WaveTimer" type="Timer" parent="."]
