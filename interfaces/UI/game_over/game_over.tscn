@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://jmm71rgqfd1r"]
 
-[ext_resource type="Theme" uid="uid://cgfdgl4ihd081" path="res://assets/themes/td_theme.tres" id="1_4hwqe"]
+[ext_resource type="Theme" uid="uid://cgfdgl4ihd081" path="res://assets/themes/td_theme.tres" id="1_42mgb"]
+[ext_resource type="Script" path="res://interfaces/UI/game_over/game_over.gd" id="2_a4bhp"]
 [ext_resource type="Texture2D" uid="uid://bh2j3w7sn76or" path="res://interfaces/UI/game_over/assets/textures/gameover.png" id="2_rdkds"]
-[ext_resource type="Script" path="res://interfaces/UI/game_over/game_over.gd" id="2_s1ogn"]
 
 [sub_resource type="Animation" id="Animation_iswqo"]
 length = 0.001
@@ -162,6 +162,7 @@ _data = {
 }
 
 [node name="GameOver" type="PanelContainer"]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -172,11 +173,11 @@ offset_right = 171.0
 offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_4hwqe")
-script = ExtResource("2_s1ogn")
-metadata/_edit_group_ = true
+theme = ExtResource("1_42mgb")
+script = ExtResource("2_a4bhp")
 
 [node name="Sections" type="VBoxContainer" parent="."]
+layout_mode = 2
 offset_left = 40.0
 offset_top = 40.0
 offset_right = 302.0
@@ -185,6 +186,7 @@ theme_override_constants/separation = 10
 
 [node name="Title" type="TextureRect" parent="Sections"]
 visible = false
+layout_mode = 2
 offset_top = 29.0
 offset_right = 780.0
 offset_bottom = 124.0
@@ -196,6 +198,7 @@ stretch_mode = 5
 [node name="Buttons" type="HBoxContainer" parent="Sections"]
 visible = false
 modulate = Color(1, 1, 1, 0)
+layout_mode = 2
 offset_top = 192.0
 offset_right = 780.0
 offset_bottom = 256.0
@@ -204,6 +207,7 @@ theme_override_constants/separation = 50
 alignment = 1
 
 [node name="Retry" type="Button" parent="Sections/Buttons"]
+layout_mode = 2
 offset_left = 184.0
 offset_right = 375.0
 offset_bottom = 64.0
@@ -214,6 +218,7 @@ theme_override_font_sizes/font_size = 42
 text = " RETRY "
 
 [node name="Exit" type="Button" parent="Sections/Buttons"]
+layout_mode = 2
 offset_left = 425.0
 offset_right = 596.0
 offset_bottom = 64.0

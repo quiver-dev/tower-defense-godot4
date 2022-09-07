@@ -70,7 +70,7 @@ script = ExtResource("6_70kam")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_6olqj")
 animation = &"move"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -86,8 +86,6 @@ radius = 24.0
 width = 5.0
 
 [node name="EntityHUD" parent="." instance=ExtResource("7_dxylf")]
-layout_mode = 3
-anchors_preset = 0
 offset_left = -31.0
 offset_top = -75.0
 offset_right = -31.0

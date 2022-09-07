@@ -52,7 +52,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# update draw
-	update()
+	queue_redraw()
 	if not targets.is_empty():
 		# handle the gun rotation
 		var target_pos: Vector2 = targets.front().global_position
