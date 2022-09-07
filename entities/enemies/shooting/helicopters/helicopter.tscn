@@ -147,7 +147,6 @@ script = ExtResource("2_vtkkc")
 position = Vector2(8, 32)
 frames = SubResource("SpriteFrames_akjy8")
 animation = &"move"
-frame = 4
 playing = true
 
 [node name="Sprite2D" parent="." index="2"]
@@ -158,7 +157,7 @@ animation = &"move"
 position = Vector2(16, 0)
 frames = SubResource("SpriteFrames_rn3o2")
 animation = &"move"
-frame = 2
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" parent="." index="4"]

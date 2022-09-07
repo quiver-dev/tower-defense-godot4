@@ -9,10 +9,9 @@ extends ShootingEnemy
 func _physics_process(delta: float) -> void:
 	super(delta)
 	# Rotate based on current velocity
-	shadow.global_rotation = _calculate_rot(sprite.global_rotation,
-			velocity.angle(), rot_speed, delta)
-	rotor.global_rotation = _calculate_rot(sprite.global_rotation,
-			velocity.angle(), rot_speed, delta)
+	sprite.global_rotation = shooter.rotation
+	shadow.global_rotation = sprite.global_rotation
+	rotor.global_rotation = sprite.global_rotation
 
 
 func apply_animation(anim_name: String) -> void:
