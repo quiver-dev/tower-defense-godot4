@@ -40,11 +40,12 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("2_itll1")
 
 [node name="PanelContainer" type="PanelContainer" parent="Info"]
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -58,26 +59,22 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_6t2jm")
 metadata/_edit_layout_mode = 1
 
 [node name="Rows" type="VBoxContainer" parent="Info/PanelContainer"]
-layout_mode = 2
 offset_left = 15.0
 offset_top = 45.0
 offset_right = 311.0
 offset_bottom = 128.0
 
 [node name="Health" type="HBoxContainer" parent="Info/PanelContainer/Rows"]
-layout_mode = 2
 offset_right = 296.0
 offset_bottom = 40.0
 
 [node name="Icon" type="TextureRect" parent="Info/PanelContainer/Rows/Health"]
-layout_mode = 2
 offset_right = 51.0
 offset_bottom = 40.0
 texture = ExtResource("2_mdkkp")
 stretch_mode = 3
 
 [node name="HealthBar" type="TextureProgressBar" parent="Info/PanelContainer/Rows/Health"]
-layout_mode = 2
 offset_left = 55.0
 offset_right = 296.0
 offset_bottom = 40.0
@@ -88,20 +85,17 @@ texture_progress = ExtResource("4_mlvjf")
 texture_progress_offset = Vector2(4, 4)
 
 [node name="Money" type="HBoxContainer" parent="Info/PanelContainer/Rows"]
-layout_mode = 2
 offset_top = 44.0
 offset_right = 296.0
 offset_bottom = 83.0
 
 [node name="Icon" type="TextureRect" parent="Info/PanelContainer/Rows/Money"]
-layout_mode = 2
 offset_right = 51.0
 offset_bottom = 39.0
 texture = ExtResource("5_5kl3n")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="Info/PanelContainer/Rows/Money"]
-layout_mode = 2
 offset_left = 55.0
 offset_top = 2.0
 offset_right = 296.0
@@ -114,7 +108,6 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="WaveLabel" type="Label" parent="Info"]
-layout_mode = 0
 offset_left = 11.0
 offset_top = 8.0
 offset_right = 155.0
@@ -134,16 +127,14 @@ offset_bottom = 40.0
 
 [node name="GameOver" parent="UI" instance=ExtResource("9_vrddp")]
 visible = false
-layout_mode = 1
-offset_left = 449.0
-offset_top = 268.5
-offset_right = 791.0
-offset_bottom = 411.5
+offset_left = 469.0
+offset_top = 288.5
+offset_right = 811.0
+offset_bottom = 431.5
 
 [node name="Pause" parent="UI" instance=ExtResource("10_h1mxi")]
 visible = false
-layout_mode = 1
-offset_left = 245.0
-offset_top = 748.0
-offset_right = 995.0
-offset_bottom = 1291.0
+offset_left = 265.0
+offset_top = 768.0
+offset_right = 1015.0
+offset_bottom = 1311.0

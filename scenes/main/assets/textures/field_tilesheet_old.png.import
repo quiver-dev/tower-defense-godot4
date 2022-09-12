@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwy4esakjt7in"
-path="res://.godot/imported/field_tilesheet.png-0c7b6dba1d5166f72f49e180553711e7.ctex"
+uid="uid://dr5bskicp83y5"
+path="res://.godot/imported/field_tilesheet_old.png-5a29c3deadba456d9c347b5231be377b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/main/assets/textures/field_tilesheet.png"
-dest_files=["res://.godot/imported/field_tilesheet.png-0c7b6dba1d5166f72f49e180553711e7.ctex"]
+source_file="res://scenes/main/assets/textures/field_tilesheet_old.png"
+dest_files=["res://.godot/imported/field_tilesheet_old.png-5a29c3deadba456d9c347b5231be377b.ctex"]
 
 [params]
 
