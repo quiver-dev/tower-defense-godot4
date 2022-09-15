@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://cgfdgl4ihd081" path="res://assets/themes/td_theme.tres" id="1_rkel8"]
 [ext_resource type="Texture2D" uid="uid://dkea4bvxyit85" path="res://interfaces/UI/menu/assets/textures/title.png" id="2_6rqf5"]
 [ext_resource type="Script" path="res://interfaces/UI/menu/menu.gd" id="2_wpuev"]
-[ext_resource type="Texture2D" uid="uid://c8efovy663vn0" path="res://interfaces/UI/menu/assets/textures/cover_notitles.jpg" id="3_7x0yc"]
+[ext_resource type="Texture2D" uid="uid://xovv4wa0ovh6" path="res://interfaces/UI/menu/assets/textures/cover_notitles_cropped.jpg" id="3_nru1f"]
 [ext_resource type="Texture2D" uid="uid://fdakrslesf3i" path="res://interfaces/UI/menu/assets/textures/mouse_diagram.png" id="4_25h13"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27cet"]
@@ -25,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_7x0yc")
+texture = ExtResource("3_nru1f")
 ignore_texture_size = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
