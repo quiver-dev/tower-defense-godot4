@@ -9,9 +9,7 @@ extends ShootingEnemy
 func _ready() -> void:
 	super()
 	# make sure all animated sprites are synchronized
-	for animated_sprite in [sprite, shadow, shooter.gun]:
-		(animated_sprite as AnimatedSprite2D).frame = 0
-		(animated_sprite as AnimatedSprite2D).playing = true
+	_sync_animations()
 
 
 func _physics_process(delta: float) -> void:
@@ -33,3 +31,14 @@ func apply_animation(anim_name: String) -> void:
 		if is_instance_valid(animated_sprite) and \
 				(animated_sprite as AnimatedSprite2D).frames.has_animation(anim_name):
 			(animated_sprite as AnimatedSprite2D).play(anim_name)
+
+
+func _sync_animations() -> void:
+	for animated_sprite in [sprite, shadow, shooter.gun]:
+		(animated_sprite as AnimatedSprite2D).frame = 0
+		(animated_sprite as AnimatedSprite2D).playing = true
+
+
+func _on_shooter_anim_restarted(anim_name: String) -> void:
+	if anim_name in ["move", "shoot_a", "shoot_b"]:
+		_sync_animations()

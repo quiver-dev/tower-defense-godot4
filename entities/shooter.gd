@@ -12,6 +12,7 @@ extends Node2D
 
 
 signal has_shot(reload_time: float)
+signal anim_restarted(anim_name: String)  # used to sync animations
 
 @export var detector_color: Color = Color(1, 0.22, 0.25, 0.25)  # for debug
 @export var detect_radius: int = 200:
@@ -44,8 +45,9 @@ func _ready() -> void:
 	# initialize detector's shape
 	detector_shape.radius = detect_radius
 	detector_coll.shape = detector_shape
-	# initialize raycast's length
+	# initialize raycast's length and collision mask
 	lookahead.target_position.x = detect_radius + 10
+	lookahead.collision_mask = detector.collision_mask
 	# init animations
 	_play_animations("idle")
 
@@ -65,7 +67,7 @@ func _draw() -> void:
 			detector_color)
 
 
-# Gets called by its parents. This way we have more control on when to shoot
+# Gets called by its parents. This way we have more control over when to shoot
 func shoot() -> void:
 	can_shoot = false
 	for _muzzle in gun.get_children():
@@ -121,7 +123,6 @@ func set_projectile_count(value: int) -> void:
 
 func _on_fire_rate_timer_timeout() -> void:
 	can_shoot = true
-	_play_animations("idle")
 
 
 func _play_animations(anim_name: String) -> void:
@@ -129,6 +130,7 @@ func _play_animations(anim_name: String) -> void:
 	muzzle_flash.frame = 0
 	gun.play(anim_name)
 	muzzle_flash.play(anim_name)
+	anim_restarted.emit(anim_name)
 
 
 func _on_parent_mouse_entered() -> void:
@@ -137,3 +139,8 @@ func _on_parent_mouse_entered() -> void:
 
 func _on_parent_mouse_exited() -> void:
 	is_mouse_hovering = false
+
+
+func _on_gun_animation_finished() -> void:
+	if "shoot" in gun.animation:
+		_play_animations("idle")
