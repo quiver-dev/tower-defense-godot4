@@ -47,6 +47,6 @@ static func get_turret_path(turret_name: String) -> String:
 
 
 func change_scene(scene: String) -> void:
-	var e = get_tree().change_scene(scene)
+	var e = get_tree().change_scene_to_file(scene)
 	if e != OK:
 		push_error("Error while changing scene: %s" % str(e))

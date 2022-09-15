@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6lmqt5q5ecrw"]
+[gd_scene load_steps=7 format=3 uid="uid://c6lmqt5q5ecrw"]
 
 [ext_resource type="Theme" uid="uid://cgfdgl4ihd081" path="res://assets/themes/td_theme.tres" id="1_rkel8"]
 [ext_resource type="Texture2D" uid="uid://dkea4bvxyit85" path="res://interfaces/UI/menu/assets/textures/title.png" id="2_6rqf5"]
 [ext_resource type="Script" path="res://interfaces/UI/menu/menu.gd" id="2_wpuev"]
+[ext_resource type="Texture2D" uid="uid://c8efovy663vn0" path="res://interfaces/UI/menu/assets/textures/cover_notitles.jpg" id="3_7x0yc"]
 [ext_resource type="Texture2D" uid="uid://fdakrslesf3i" path="res://interfaces/UI/menu/assets/textures/mouse_diagram.png" id="4_25h13"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27cet"]
@@ -17,8 +18,17 @@ grow_vertical = 2
 theme = ExtResource("1_rkel8")
 script = ExtResource("2_wpuev")
 
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7x0yc")
+ignore_texture_size = true
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -87,34 +97,42 @@ size_flags_stretch_ratio = 0.25
 theme_override_font_sizes/font_size = 42
 text = "   QUIT   "
 
-[node name="HowToPlay" type="PanelContainer" parent="."]
+[node name="HowToPlay" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -416.0
+offset_top = -291.0
+offset_right = 416.0
+offset_bottom = 291.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sections" type="VBoxContainer" parent="HowToPlay"]
-layout_mode = 2
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 425.0
-offset_bottom = 452.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -278.0
+offset_top = -240.0
+offset_right = 283.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 20
 
 [node name="Title" type="Label" parent="HowToPlay/Sections"]
 layout_mode = 2
-offset_right = 385.0
-offset_bottom = 34.0
+offset_right = 561.0
+offset_bottom = 42.0
 size_flags_vertical = 6
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_27cet")
 text = "How To Play"
 horizontal_alignment = 1
@@ -123,16 +141,16 @@ uppercase = true
 
 [node name="Objective" type="VBoxContainer" parent="HowToPlay/Sections"]
 layout_mode = 2
-offset_top = 54.0
-offset_right = 385.0
-offset_bottom = 100.0
+offset_top = 62.0
+offset_right = 561.0
+offset_bottom = 114.0
 size_flags_vertical = 3
 
 [node name="Title" type="Label" parent="HowToPlay/Sections/Objective"]
 layout_mode = 2
-offset_right = 385.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 20
+offset_right = 561.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_27cet")
 text = "Objective:"
 horizontal_alignment = 1
@@ -141,10 +159,10 @@ uppercase = true
 
 [node name="Description" type="Label" parent="HowToPlay/Sections/Objective"]
 layout_mode = 2
-offset_top = 27.0
-offset_right = 385.0
-offset_bottom = 46.0
-theme_override_font_sizes/font_size = 16
+offset_top = 31.0
+offset_right = 561.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxEmpty_27cet")
 text = "Defend the outpost from incoming enemies"
 horizontal_alignment = 1
@@ -153,16 +171,17 @@ uppercase = true
 
 [node name="Controls" type="VBoxContainer" parent="HowToPlay/Sections"]
 layout_mode = 2
-offset_top = 120.0
-offset_right = 385.0
-offset_bottom = 412.0
+offset_top = 134.0
+offset_right = 561.0
+offset_bottom = 481.0
 size_flags_vertical = 3
+theme_override_constants/separation = 0
 
 [node name="Title" type="Label" parent="HowToPlay/Sections/Controls"]
 layout_mode = 2
-offset_right = 385.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 20
+offset_right = 561.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_27cet")
 text = "Controls:"
 horizontal_alignment = 1
@@ -172,7 +191,7 @@ uppercase = true
 [node name="Description" type="HBoxContainer" parent="HowToPlay/Sections/Controls"]
 layout_mode = 2
 offset_top = 27.0
-offset_right = 385.0
+offset_right = 561.0
 offset_bottom = 292.0
 
 [node name="MouseImg" type="TextureRect" parent="HowToPlay/Sections/Controls/Description"]
@@ -181,86 +200,76 @@ offset_right = 235.0
 offset_bottom = 265.0
 texture = ExtResource("4_25h13")
 
-[node name="Label" type="Label" parent="HowToPlay/Sections/Controls/Description"]
-visible = false
-layout_mode = 2
-offset_left = 239.0
-offset_right = 504.0
-offset_bottom = 171.0
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxEmpty_27cet")
-text = "
-
-Select
-
-Move camera (click and drag)
-
-Zoom (scroll)
-
-ESC to pause"
-vertical_alignment = 1
-uppercase = true
-
-[node name="Control" type="Control" parent="HowToPlay/Sections/Controls/Description"]
+[node name="Labels" type="Control" parent="HowToPlay/Sections/Controls/Description"]
 layout_mode = 2
 anchors_preset = 0
 offset_left = 239.0
-offset_right = 385.0
+offset_right = 561.0
 offset_bottom = 265.0
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="HowToPlay/Sections/Controls/Description/Control"]
+[node name="Select" type="Label" parent="HowToPlay/Sections/Controls/Description/Labels"]
 layout_mode = 1
-offset_left = 1.5
-offset_top = -29.0
-offset_right = 266.5
-offset_bottom = 142.0
+offset_top = 47.0
+offset_right = 265.0
+offset_bottom = 66.0
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxEmpty_27cet")
 text = "Select"
 vertical_alignment = 1
 uppercase = true
 
-[node name="Label3" type="Label" parent="HowToPlay/Sections/Controls/Description/Control"]
+[node name="MoveCamera" type="Label" parent="HowToPlay/Sections/Controls/Description/Labels"]
 layout_mode = 1
-offset_left = 1.5
-offset_top = 10.0
-offset_right = 266.5
-offset_bottom = 181.0
+offset_top = 87.0
+offset_right = 265.0
+offset_bottom = 106.0
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxEmpty_27cet")
 text = "Move camera (click and drag)"
 vertical_alignment = 1
 uppercase = true
 
-[node name="Label4" type="Label" parent="HowToPlay/Sections/Controls/Description/Control"]
+[node name="Zoom" type="Label" parent="HowToPlay/Sections/Controls/Description/Labels"]
 layout_mode = 1
-offset_left = 1.5
-offset_top = 55.0
-offset_right = 266.5
-offset_bottom = 226.0
+offset_top = 131.0
+offset_right = 265.0
+offset_bottom = 150.0
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxEmpty_27cet")
 text = "Zoom (scroll)"
 vertical_alignment = 1
 uppercase = true
 
-[node name="Label5" type="Label" parent="HowToPlay/Sections/Controls/Description/Control"]
+[node name="Esc" type="Label" parent="HowToPlay/Sections/Controls/Description/Labels"]
 layout_mode = 1
 offset_left = 1.5
 offset_top = 122.0
 offset_right = 266.5
 offset_bottom = 293.0
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxEmpty_27cet")
 text = "ESC to pause"
 vertical_alignment = 1
 uppercase = true
 
+[node name="Back" type="Button" parent="HowToPlay/Sections/Controls"]
+layout_mode = 2
+offset_left = 204.0
+offset_top = 292.0
+offset_right = 357.0
+offset_bottom = 347.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.25
+theme_override_font_sizes/font_size = 32
+text = "  BACK  "
+
 [connection signal="pressed" from="PanelContainer/Sections/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="PanelContainer/Sections/HowToPlay" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="PanelContainer/Sections/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="HowToPlay/Sections/Controls/Back" to="." method="_on_back_pressed"]
