@@ -10,12 +10,11 @@
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_1wkj2"]
 frames = 3
-fps = 8.0
 frame_0/texture = ExtResource("2_cyqn1")
 frame_1/texture = ExtResource("3_18gee")
-frame_1/delay_sec = 0.0
+frame_1/duration = 1.0
 frame_2/texture = ExtResource("4_kdb4y")
-frame_2/delay_sec = 0.0
+frame_2/duration = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_er61a"]
 radius = 3.0

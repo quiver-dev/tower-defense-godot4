@@ -223,7 +223,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ak360"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tn0b2"]
 radius = 600.0
 
 [node name="Helicopter" instance=ExtResource("1_3xlxq")]
@@ -247,13 +247,11 @@ playing = true
 [node name="Sprite2D" parent="." index="2"]
 frames = SubResource("SpriteFrames_q53ch")
 animation = &"move"
-frame = 3
 
 [node name="Rotor" type="AnimatedSprite2D" parent="." index="3"]
 position = Vector2(3, 0)
 frames = SubResource("SpriteFrames_rn3o2")
 animation = &"move"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" parent="." index="4"]
@@ -298,7 +296,7 @@ frames = SubResource("SpriteFrames_8rdfx")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_ak360")
+shape = SubResource("CircleShape2D_tn0b2")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(610, 0)
