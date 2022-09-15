@@ -7,8 +7,8 @@ extends Area2D
 
 var turret: Turret  # turret assigned to this slot
 
-@onready var turret_popup := $TurretPopup as CanvasLayer
-@onready var turret_actions := $TurretActions as VBoxContainer
+@onready var turret_popup := $UI/TurretPopup as CanvasLayer
+@onready var turret_actions := $UI/TurretActions as VBoxContainer
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

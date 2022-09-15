@@ -22,10 +22,14 @@ texture = ExtResource("2_h7gu8")
 visible = false
 shape = SubResource("RectangleShape2D_hunl7")
 
-[node name="TurretPopup" parent="." instance=ExtResource("3_7p0hi")]
+[node name="UI" type="Node2D" parent="."]
+z_index = 100
+z_as_relative = false
+
+[node name="TurretPopup" parent="UI" instance=ExtResource("3_7p0hi")]
 visible = false
 
-[node name="TurretActions" parent="." instance=ExtResource("4_hrs4w")]
+[node name="TurretActions" parent="UI" instance=ExtResource("4_hrs4w")]
 visible = false
 offset_left = 88.0
 offset_top = -248.0
@@ -33,11 +37,11 @@ offset_right = 249.0
 offset_bottom = 237.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
-[connection signal="turret_requested" from="TurretPopup" to="." method="_on_turret_popup_turret_requested"]
-[connection signal="visibility_changed" from="TurretPopup" to="." method="_on_turret_popup_visibility_changed"]
-[connection signal="visibility_changed" from="TurretActions" to="." method="_on_turret_actions_visibility_changed"]
-[connection signal="pressed" from="TurretActions/Replace" to="." method="_on_turret_replace_requested"]
-[connection signal="pressed" from="TurretActions/Repair" to="." method="_on_turret_repair_requested"]
-[connection signal="pressed" from="TurretActions/Remove" to="." method="_on_turret_remove_requested"]
+[connection signal="turret_requested" from="UI/TurretPopup" to="." method="_on_turret_popup_turret_requested"]
+[connection signal="visibility_changed" from="UI/TurretPopup" to="." method="_on_turret_popup_visibility_changed"]
+[connection signal="visibility_changed" from="UI/TurretActions" to="." method="_on_turret_actions_visibility_changed"]
+[connection signal="pressed" from="UI/TurretActions/Replace" to="." method="_on_turret_replace_requested"]
+[connection signal="pressed" from="UI/TurretActions/Repair" to="." method="_on_turret_repair_requested"]
+[connection signal="pressed" from="UI/TurretActions/Remove" to="." method="_on_turret_remove_requested"]
 
-[editable path="TurretActions"]
+[editable path="UI/TurretActions"]
