@@ -4,6 +4,7 @@ extends ShootingEnemy
 
 @onready var shadow := $Shadow as AnimatedSprite2D
 @onready var rotor := $Rotor as AnimatedSprite2D
+@onready var explosion := $Explosion as AnimatedSprite2D
 
 
 func _ready() -> void:

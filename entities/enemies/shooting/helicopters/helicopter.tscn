@@ -1,9 +1,10 @@
-[gd_scene load_steps=118 format=3 uid="uid://dx0mfo2yv8887"]
+[gd_scene load_steps=120 format=3 uid="uid://dx0mfo2yv8887"]
 
 [ext_resource type="PackedScene" uid="uid://bl2so1n5mvkym" path="res://entities/enemies/shooting/shooting_enemy.tscn" id="1_3xlxq"]
 [ext_resource type="Texture2D" uid="uid://bqno5ak15gnhi" path="res://entities/enemies/shooting/helicopters/assets/textures/body_move_00.png" id="2_iq8hb"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/helicopter.gd" id="2_mdput"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/shoot.gd" id="2_vtkkc"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/die.gd" id="3_jegha"]
 [ext_resource type="Texture2D" uid="uid://j0wxuunw8xou" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_00.png" id="4_0piph"]
 [ext_resource type="Texture2D" uid="uid://cwnjbpttej5qs" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_01.png" id="5_urlb3"]
 [ext_resource type="Texture2D" uid="uid://yu11rbjii2ll" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_02.png" id="6_e1dxg"]
@@ -110,6 +111,7 @@
 [ext_resource type="Texture2D" uid="uid://cgd6vtf1sahe4" path="res://entities/enemies/shooting/helicopters/assets/textures/wings_shoot_b_03.png" id="99_ykpns"]
 [ext_resource type="Texture2D" uid="uid://dymn7j7miit36" path="res://entities/enemies/shooting/helicopters/assets/textures/wings_shoot_b_04.png" id="100_6odex"]
 [ext_resource type="Texture2D" uid="uid://dpqyybgdk1y6a" path="res://entities/enemies/shooting/helicopters/assets/textures/wings_shoot_b_05.png" id="101_ngg41"]
+[ext_resource type="PackedScene" uid="uid://x6ivhnvyfp45" path="res://entities/explosion_vfx/explosion.tscn" id="111_m6jlu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_akjy8"]
 animations = [{
@@ -223,7 +225,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tn0b2"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_62oie"]
 radius = 600.0
 
 [node name="Helicopter" instance=ExtResource("1_3xlxq")]
@@ -234,6 +236,9 @@ script = ExtResource("2_mdput")
 rot_speed = 4.0
 speed = 170
 metadata/_edit_lock_ = true
+
+[node name="Die" parent="StateMachine" index="3"]
+script = ExtResource("3_jegha")
 
 [node name="Shoot" parent="StateMachine" index="4"]
 script = ExtResource("2_vtkkc")
@@ -296,13 +301,15 @@ frames = SubResource("SpriteFrames_8rdfx")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_tn0b2")
+shape = SubResource("CircleShape2D_62oie")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(610, 0)
 collision_mask = 18
 
-[node name="EntityHUD" parent="." index="8"]
+[node name="Explosion" parent="." index="8" instance=ExtResource("111_m6jlu")]
+
+[node name="EntityHUD" parent="." index="9"]
 metadata/_edit_lock_ = true
 
 [connection signal="anim_restarted" from="Shooter" to="." method="_on_shooter_anim_restarted"]

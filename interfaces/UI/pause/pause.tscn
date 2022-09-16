@@ -64,10 +64,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -375.0
-offset_top = 408.0
-offset_right = 375.0
-offset_bottom = 951.0
+offset_left = 265.0
+offset_top = 768.0
+offset_right = 1015.0
+offset_bottom = 1311.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ax0fs")
@@ -89,9 +89,9 @@ texture = ExtResource("3_t0lgw")
 stretch_mode = 5
 
 [node name="Buttons" type="VBoxContainer" parent="Sections"]
-offset_top = 210.0
+offset_top = 211.0
 offset_right = 670.0
-offset_bottom = 442.0
+offset_bottom = 443.0
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.5
 theme_override_constants/separation = 20
