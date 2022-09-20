@@ -6,7 +6,7 @@ signal turret_disabled
 
 const FADE_OUT_DURATION := 0.25
 
-@export_range(0, 100) var health: int = 100:
+@export_range(1, 500) var health: int = 100:
 	set = set_health
 
 # This works as long as all turrets are a single child of each turret slot,
@@ -56,7 +56,8 @@ func repair() -> bool:
 
 func set_health(value: int) -> void:
 	health = max(0, value)
-	hud.healthbar.value = health
+	if is_instance_valid(hud):
+		hud.healthbar.value = health
 	if health == 0:
 		collision.set_deferred("disabled", true)
 		shooter.explode()

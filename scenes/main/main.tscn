@@ -53,18 +53,6 @@ metadata/_edit_lock_ = true
 [node name="EnemyContainer" parent="Spawner" index="3"]
 position = Vector2(-632, -8)
 
-[connection signal="input_event" from="TileMap/@TurretSlot@36402" to="TileMap/@TurretSlot@36402" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@36403" to="TileMap/@TurretSlot@36403" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@36404" to="TileMap/@TurretSlot@36404" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@36405" to="TileMap/@TurretSlot@36405" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@36406" to="TileMap/@TurretSlot@36406" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@36407" to="TileMap/@TurretSlot@36407" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@36408" to="TileMap/@TurretSlot@36408" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@36409" to="TileMap/@TurretSlot@36409" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@36410" to="TileMap/@TurretSlot@36410" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@36411" to="TileMap/@TurretSlot@36411" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@36412" to="TileMap/@TurretSlot@36412" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@36413" to="TileMap/@TurretSlot@36413" method="_on_input_event"]
 [connection signal="destroyed" from="Tower" to="Camera2D/Hud" method="_on_tower_destroyed"]
 [connection signal="health_changed" from="Tower" to="Camera2D/Hud" method="_on_tower_health_changed"]
 [connection signal="initialized" from="Tower" to="Camera2D/Hud" method="_on_tower_initialized"]

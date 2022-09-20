@@ -59,7 +59,7 @@ func set_health(value: int) -> void:
 	# In other words, the onready variables referencing nodes won't have been
 	# initialied the first time this setter gets called. For more info, see
 	# https://docs.godotengine.org/en/stable/tutorials/best_practices/godot_notifications.html#init-vs-initialization-vs-export
-	if hud:
+	if is_instance_valid(hud):
 		hud.healthbar.value = health
 
 
