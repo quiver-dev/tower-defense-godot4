@@ -19,7 +19,6 @@ theme = ExtResource("1_rkel8")
 script = ExtResource("2_wpuev")
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -29,7 +28,6 @@ texture = ExtResource("3_nru1f")
 ignore_texture_size = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -44,7 +42,6 @@ grow_vertical = 2
 metadata/_edit_layout_mode = 1
 
 [node name="Sections" type="VBoxContainer" parent="PanelContainer"]
-layout_mode = 2
 offset_left = 40.0
 offset_top = 40.0
 offset_right = 896.0
@@ -52,7 +49,6 @@ offset_bottom = 532.0
 theme_override_constants/separation = 10
 
 [node name="Title" type="TextureRect" parent="PanelContainer/Sections"]
-layout_mode = 2
 offset_top = 27.0
 offset_right = 856.0
 offset_bottom = 222.0
@@ -62,7 +58,6 @@ texture = ExtResource("2_6rqf5")
 stretch_mode = 5
 
 [node name="Start" type="Button" parent="PanelContainer/Sections"]
-layout_mode = 2
 offset_left = 303.0
 offset_top = 260.0
 offset_right = 552.0
@@ -74,7 +69,6 @@ theme_override_font_sizes/font_size = 42
 text = "   START   "
 
 [node name="HowToPlay" type="Button" parent="PanelContainer/Sections"]
-layout_mode = 2
 offset_left = 241.0
 offset_top = 334.0
 offset_right = 614.0
@@ -86,7 +80,6 @@ theme_override_font_sizes/font_size = 42
 text = "  HOW TO PLAY  "
 
 [node name="Quit" type="Button" parent="PanelContainer/Sections"]
-layout_mode = 2
 offset_left = 326.0
 offset_top = 408.0
 offset_right = 529.0
@@ -99,7 +92,6 @@ text = "   QUIT   "
 
 [node name="HowToPlay" type="Panel" parent="."]
 visible = false
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -113,7 +105,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sections" type="VBoxContainer" parent="HowToPlay"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -128,7 +119,6 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 
 [node name="Title" type="Label" parent="HowToPlay/Sections"]
-layout_mode = 2
 offset_right = 561.0
 offset_bottom = 42.0
 size_flags_vertical = 6
@@ -140,14 +130,12 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Objective" type="VBoxContainer" parent="HowToPlay/Sections"]
-layout_mode = 2
 offset_top = 62.0
 offset_right = 561.0
 offset_bottom = 114.0
 size_flags_vertical = 3
 
 [node name="Title" type="Label" parent="HowToPlay/Sections/Objective"]
-layout_mode = 2
 offset_right = 561.0
 offset_bottom = 27.0
 theme_override_font_sizes/font_size = 24
@@ -158,7 +146,6 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Description" type="Label" parent="HowToPlay/Sections/Objective"]
-layout_mode = 2
 offset_top = 31.0
 offset_right = 561.0
 offset_bottom = 52.0
@@ -170,7 +157,6 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Controls" type="VBoxContainer" parent="HowToPlay/Sections"]
-layout_mode = 2
 offset_top = 134.0
 offset_right = 561.0
 offset_bottom = 481.0
@@ -178,7 +164,6 @@ size_flags_vertical = 3
 theme_override_constants/separation = 0
 
 [node name="Title" type="Label" parent="HowToPlay/Sections/Controls"]
-layout_mode = 2
 offset_right = 561.0
 offset_bottom = 27.0
 theme_override_font_sizes/font_size = 24
@@ -189,19 +174,17 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Description" type="HBoxContainer" parent="HowToPlay/Sections/Controls"]
-layout_mode = 2
 offset_top = 27.0
 offset_right = 561.0
 offset_bottom = 292.0
 
 [node name="MouseImg" type="TextureRect" parent="HowToPlay/Sections/Controls/Description"]
-layout_mode = 2
 offset_right = 235.0
 offset_bottom = 265.0
 texture = ExtResource("4_25h13")
 
 [node name="Labels" type="Control" parent="HowToPlay/Sections/Controls/Description"]
-layout_mode = 2
+layout_mode = 3
 anchors_preset = 0
 offset_left = 239.0
 offset_right = 561.0
@@ -209,7 +192,6 @@ offset_bottom = 265.0
 size_flags_horizontal = 3
 
 [node name="Select" type="Label" parent="HowToPlay/Sections/Controls/Description/Labels"]
-layout_mode = 1
 offset_top = 47.0
 offset_right = 265.0
 offset_bottom = 66.0
@@ -221,7 +203,6 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="MoveCamera" type="Label" parent="HowToPlay/Sections/Controls/Description/Labels"]
-layout_mode = 1
 offset_top = 87.0
 offset_right = 265.0
 offset_bottom = 106.0
@@ -233,7 +214,6 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Zoom" type="Label" parent="HowToPlay/Sections/Controls/Description/Labels"]
-layout_mode = 1
 offset_top = 131.0
 offset_right = 265.0
 offset_bottom = 150.0
@@ -245,7 +225,6 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Esc" type="Label" parent="HowToPlay/Sections/Controls/Description/Labels"]
-layout_mode = 1
 offset_left = 1.5
 offset_top = 122.0
 offset_right = 266.5
@@ -258,7 +237,6 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Back" type="Button" parent="HowToPlay/Sections/Controls"]
-layout_mode = 2
 offset_left = 204.0
 offset_top = 292.0
 offset_right = 357.0

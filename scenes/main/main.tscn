@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://f5hj7jen72ii"]
+[gd_scene load_steps=7 format=3 uid="uid://f5hj7jen72ii"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_emp5r"]
 [ext_resource type="TileSet" uid="uid://byre1i74tiue6" path="res://scenes/main/assets/tilesets/field.tres" id="3_4iar0"]
 [ext_resource type="PackedScene" uid="uid://bdo8t3u7f3n35" path="res://scenes/main/camera2D/camera2D.tscn" id="3_o2ded"]
 [ext_resource type="PackedScene" uid="uid://dkfo0baxvyvf1" path="res://scenes/main/tower/tower.tscn" id="4_e3sfc"]
 [ext_resource type="PackedScene" uid="uid://cho12fkcmwlds" path="res://scenes/main/spawner/spawner.tscn" id="5_fn71b"]
-[ext_resource type="PackedScene" uid="uid://bxk8oojwxk051" path="res://scenes/main/turret_slot/turret_slot.tscn" id="6_m5pyv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_j5bpb"]
 vertices = PackedVector2Array(256, -512, 6272, -512, 6272, 3328, 256, 3328)
@@ -26,7 +25,7 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(524290, 327680, 1, 655363, 327680, 7, 917507, 327680, 4, 196612, 327680, 5, 786437, 131072, 4, 131078, 327680, 5, 393222, 327680, 2, 786440, 65536, 3, 655369, 196608, 3, 786442, 327680, 1, 1376266, 327680, 0, 1376288, 327680, 6, 1114151, 131072, 3, 1310760, 393216, 2, 917545, 393216, 6, 1376297, 393216, 3, 1114154, 327680, 0, 1245226, 327680, 1, 1114156, 131072, 4, 983086, 393216, 7, 1376302, 131072, 3, -65492, 393216, 7, -65490, 393216, 1, 131118, 196608, 4, 786478, 196608, 4, 196655, 131072, 3, 589871, 327680, 0, 65584, 393216, 0, 393264, 262144, 3, -131033, 393216, 3, -196602, 327680, 0, -196597, 65536, 3, -262124, 65536, 3, -196584, 327680, 6, -262117, 131072, 3, -196580, 262144, 3, -262108, 327680, 7, -196567, 262144, 4, 1245187, 131072, 4, 1245188, 131072, 3, 655377, 65536, 3, 655379, 393216, 4, 720917, 65536, 4, 851996, 131072, 4, 589869, 262144, 4, 393260, 196608, 3, 262190, 393216, 4, 327711, 196608, 4, 327706, 262144, 4, 393248, 196608, 4, -196592, 131072, 4, -196590, 65536, 4, 131115, 393216, 4, 851994, 327680, 4, 458761, 0, 3, 327691, 0, 3, 262162, 0, 4, 393234, 0, 3, 655386, 0, 4, 720928, 0, 4, 655402, 0, 4, 196645, 0, 3, -65512, 0, 3, 65560, 0, 4, 34, 0, 4, 852001, 0, 3, 1245217, 0, 3, 1179669, 0, 4, 1114138, 0, 4, 1245210, 0, 3, 1310733, 0, 3, 1048585, 0, 4, 1048587, 0, 3)
+layer_1/tile_data = PackedInt32Array(524290, 327680, 1, 655363, 327680, 7, 917507, 327680, 4, 196612, 327680, 5, 786437, 131072, 4, 131078, 327680, 5, 393222, 327680, 2, 786440, 65536, 3, 655369, 196608, 3, 786442, 327680, 1, 1376266, 327680, 0, 1376288, 327680, 6, 1114151, 131072, 3, 1310760, 393216, 2, 917545, 393216, 6, 1376297, 393216, 3, 1114154, 327680, 0, 1245226, 327680, 1, 1114156, 131072, 4, 983086, 393216, 7, 1376302, 131072, 3, -65492, 393216, 7, -65490, 393216, 1, 131118, 196608, 4, 786478, 196608, 4, 196655, 131072, 3, 589871, 327680, 0, 65584, 393216, 0, 393264, 262144, 3, -131033, 393216, 3, -196602, 327680, 0, -196597, 65536, 3, -262124, 65536, 3, -196584, 327680, 6, -262117, 131072, 3, -196580, 262144, 3, -262108, 327680, 7, -196567, 262144, 4, 1245187, 131072, 4, 1245188, 131072, 3, 655377, 65536, 3, 655379, 393216, 4, 720917, 65536, 4, 851996, 131072, 4, 589869, 262144, 4, 393260, 196608, 3, 262190, 393216, 4, 327711, 196608, 4, 327706, 262144, 4, 393248, 196608, 4, -196592, 131072, 4, -196590, 65536, 4, 131115, 393216, 4, 851994, 327680, 4, 458761, 0, 3, 327691, 0, 3, 262162, 0, 4, 393234, 0, 3, 655386, 0, 4, 720928, 0, 4, 655402, 0, 4, 196645, 0, 3, -65512, 0, 3, 65560, 0, 4, 34, 0, 4, 852001, 0, 3, 1245217, 0, 3, 1179669, 0, 4, 1114138, 0, 4, 1245210, 0, 3, 1310733, 0, 3, 1048585, 0, 4, 1048587, 0, 3, 131089, 1, 65536, 262166, 1, 65536, 262177, 1, 65536, 393249, 1, 65536, 917540, 1, 65536, 1114148, 1, 65536, 917534, 1, 65536, 917528, 1, 65536, 720919, 1, 65536, 655374, 1, 65536, 1048595, 1, 65536, 1114127, 1, 65536)
 
 [node name="AircraftNavRegion" type="NavigationRegion2D" parent="."]
 visible = false
@@ -54,44 +53,18 @@ metadata/_edit_lock_ = true
 [node name="EnemyContainer" parent="Spawner" index="3"]
 position = Vector2(-632, -8)
 
-[node name="TurretSlots" type="Node2D" parent="."]
-
-[node name="TurretSlot1" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(3072, 1472)
-
-[node name="TurretSlot2" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(1792, 1408)
-
-[node name="TurretSlot3" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(4608, 2240)
-
-[node name="TurretSlot4" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(4352, 896)
-
-[node name="TurretSlot5" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(4608, 1792)
-
-[node name="TurretSlot6" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(2432, 2176)
-
-[node name="TurretSlot7" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(3072, 1856)
-
-[node name="TurretSlot8" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(2048, 2176)
-
-[node name="TurretSlot9" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(2944, 576)
-
-[node name="TurretSlot10" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(4352, 584)
-
-[node name="TurretSlot11" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(2176, 320)
-
-[node name="TurretSlot12" parent="TurretSlots" instance=ExtResource("6_m5pyv")]
-position = Vector2(3840, 1856)
-
+[connection signal="input_event" from="TileMap/@TurretSlot@36402" to="TileMap/@TurretSlot@36402" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@36403" to="TileMap/@TurretSlot@36403" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@36404" to="TileMap/@TurretSlot@36404" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@36405" to="TileMap/@TurretSlot@36405" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@36406" to="TileMap/@TurretSlot@36406" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@36407" to="TileMap/@TurretSlot@36407" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@36408" to="TileMap/@TurretSlot@36408" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@36409" to="TileMap/@TurretSlot@36409" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@36410" to="TileMap/@TurretSlot@36410" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@36411" to="TileMap/@TurretSlot@36411" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@36412" to="TileMap/@TurretSlot@36412" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@36413" to="TileMap/@TurretSlot@36413" method="_on_input_event"]
 [connection signal="destroyed" from="Tower" to="Camera2D/Hud" method="_on_tower_destroyed"]
 [connection signal="health_changed" from="Tower" to="Camera2D/Hud" method="_on_tower_health_changed"]
 [connection signal="initialized" from="Tower" to="Camera2D/Hud" method="_on_tower_initialized"]

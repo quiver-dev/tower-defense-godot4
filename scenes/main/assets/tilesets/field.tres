@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://byre1i74tiue6"]
+[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://byre1i74tiue6"]
 
 [ext_resource type="Texture2D" uid="uid://dwy4esakjt7in" path="res://scenes/main/assets/textures/field_tilesheet.png" id="1_ffxvs"]
+[ext_resource type="PackedScene" uid="uid://bxk8oojwxk051" path="res://scenes/main/turret_slot/turret_slot.tscn" id="2_qwwt2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_hhw01"]
 vertices = PackedVector2Array(-64, -64, 64, -64, 64, 27, 30, 64, -64, 64)
@@ -331,6 +332,10 @@ texture_region_size = Vector2i(128, 128)
 5:7/0 = 0
 6:7/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mtglm"]
+resource_name = "turret_slots"
+scenes/1/scene = ExtResource("2_qwwt2")
+
 [resource]
 tile_size = Vector2i(128, 128)
 terrain_set_0/mode = 0
@@ -340,3 +345,4 @@ terrain_set_0/terrain_1/name = "Water"
 terrain_set_0/terrain_1/color = Color(0.247059, 0.494118, 0.501961, 1)
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_y85wl")
+sources/1 = SubResource("TileSetScenesCollectionSource_mtglm")
