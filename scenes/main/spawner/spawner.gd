@@ -1,3 +1,4 @@
+@tool
 class_name Spawner
 extends Node2D
 # This scene should be a direct child of the map scene.
@@ -19,6 +20,8 @@ const INITIAL_WAIT := 5.0  # amount of seconds to wait before starting a wave
 @export_range(0.5, 5.0, 0.5) var spawn_rate: float = 2.0
 @export var wave_count: int = 3
 @export var enemy_count: int = 10
+@export_range(1, 100) var spawn_count: int = 3:  # number of spawn locations (Marker2Ds)
+	set = set_spawn_count
 @export var enemies: Dictionary = {
 	"infantry_t1": 45,  # higher probability of spawn
 	"infantry_t2": 40,
@@ -52,6 +55,22 @@ func initialize(_objective_pos: Vector2, _map_limits: Rect2, _cell_size: Vector2
 	map_limits = _map_limits
 	cell_size = _cell_size
 	wave_timer.start(INITIAL_WAIT)
+
+
+# Called when changing the spawn count through the editor
+func set_spawn_count(value: int) -> void:
+	spawn_count = value
+	var _spawns_container := get_node("SpawnsContainer")
+	var diff := value - _spawns_container.get_child_count()
+	match signi(diff):
+		1:
+			for i in diff:
+				var dup = _spawns_container.get_node("SpawnLocation1").duplicate() as Marker2D
+				_spawns_container.add_child(dup, true)
+				dup.owner = self
+		-1:
+			for i in abs(diff):
+				_spawns_container.get_child(-1).queue_free()
 
 
 # Called on wave timer's timeout

@@ -118,7 +118,7 @@ func set_projectile_count(value: int) -> void:
 				dup.owner = self
 		-1:
 			for i in abs(diff):
-				_gun.get_child(i + 1).queue_free()
+				_gun.get_child(-1).queue_free()
 
 
 func _on_fire_rate_timer_timeout() -> void:
