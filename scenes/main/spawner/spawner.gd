@@ -1,13 +1,14 @@
 class_name Spawner
 extends Node2D
 # This scene should be a direct child of the map scene.
-# It distinguishes between "field spawns" - i.e. where ground-based entities
-# spawn - and "aircraft spawns". This means that field-related markers must 
+# It distinguishes between "ground spawns" - i.e. where ground-based entities
+# spawn - and "air spawns". This means that ground-related markers must 
 # be inside a navigable path on the map, while the aircaft ones can be 
-# anywhere (preferrably as far as possible from the objective).
+# anywhere inside the aircraft's navigation polygon in the parent
+# (check the Map scene for more info).
 # To customize the spawns, in the parent scene select the spawner and make it
 # editable. At this point you can move the Marker2D nodes to the desired
-# locations.
+# locations. You can also duplicate and delete them at your needs.
 
 
 signal wave_started(current_wave: int)
@@ -32,8 +33,17 @@ var current_wave := 1
 
 @onready var wave_timer := $WaveTimer as Timer
 @onready var enemy_container := $EnemyContainer as Node2D
-@onready var field_spawns := [$SpawnLocation1, $SpawnLocation2]
-@onready var aircraft_spawn_pos := $AircraftSpawnLocation as Marker2D
+@onready var spawns_container := $SpawnsContainer as Node2D
+@onready var ground_spawns := []
+@onready var air_spawns := []
+
+
+func _ready() -> void:
+	for marker in spawns_container.get_children():
+		if (marker as SpawnLocation).spawn_type == 0:  # ground
+			ground_spawns.append(marker)
+		elif (marker as SpawnLocation).spawn_type == 1:  # air
+			air_spawns.append(marker)
 
 
 # Called once by parent scene when ready
@@ -70,14 +80,16 @@ func _spawn_enemy(enemy_path: String) -> void:
 	var enemy: Enemy = load(enemy_path).instantiate()
 	enemy_container.add_child(enemy)
 	if enemy is Helicopter:
-		# we use the same marked but we randomize its y axis
-		aircraft_spawn_pos.global_position.y = randf_range(
+		# pick a random marker and randomize its y axis
+		var air_spawn_pos := (air_spawns[randi() % air_spawns.size()] \
+				as Marker2D)
+		air_spawn_pos.global_position.y = randf_range(
 				map_limits.position.y * cell_size.y,
 				map_limits.end.y * cell_size.y)
-		enemy.global_position = aircraft_spawn_pos.global_position
+		enemy.global_position = air_spawn_pos.global_position
 	else:
-		# pick a random spawn location from the field spawns
-		enemy.global_position = (field_spawns[randi() % field_spawns.size()] \
+		# pick a random spawn location from the ground spawns
+		enemy.global_position = (ground_spawns[randi() % ground_spawns.size()] \
 				as Marker2D).global_position
 	enemy.move_to(objective_pos)
 
