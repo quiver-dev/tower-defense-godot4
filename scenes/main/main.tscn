@@ -33,7 +33,8 @@ navpoly = SubResource("NavigationPolygon_j5bpb")
 navigation_layers = 2
 
 [node name="Camera2D" parent="." instance=ExtResource("3_o2ded")]
-position = Vector2(3208, 1696)
+position = Vector2(3168, 1440)
+zoom = Vector2(0.25, 0.25)
 smoothing_speed = 2.0
 
 [node name="Tower" parent="." instance=ExtResource("4_e3sfc")]
@@ -56,17 +57,17 @@ position = Vector2(-656, 600)
 position = Vector2(-632, -8)
 
 [connection signal="input_event" from="TileMap/TurretSlot" to="TileMap/TurretSlot" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@85204" to="TileMap/@TurretSlot@85204" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@85205" to="TileMap/@TurretSlot@85205" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@85206" to="TileMap/@TurretSlot@85206" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@85207" to="TileMap/@TurretSlot@85207" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@85208" to="TileMap/@TurretSlot@85208" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@85209" to="TileMap/@TurretSlot@85209" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@85210" to="TileMap/@TurretSlot@85210" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@85211" to="TileMap/@TurretSlot@85211" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@85212" to="TileMap/@TurretSlot@85212" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@85213" to="TileMap/@TurretSlot@85213" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@85214" to="TileMap/@TurretSlot@85214" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@64683" to="TileMap/@TurretSlot@64683" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@64684" to="TileMap/@TurretSlot@64684" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@64685" to="TileMap/@TurretSlot@64685" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@64686" to="TileMap/@TurretSlot@64686" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@64687" to="TileMap/@TurretSlot@64687" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@64688" to="TileMap/@TurretSlot@64688" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@64689" to="TileMap/@TurretSlot@64689" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@64690" to="TileMap/@TurretSlot@64690" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@64691" to="TileMap/@TurretSlot@64691" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@64692" to="TileMap/@TurretSlot@64692" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@64693" to="TileMap/@TurretSlot@64693" method="_on_input_event"]
 [connection signal="destroyed" from="Tower" to="Camera2D/Hud" method="_on_tower_destroyed"]
 [connection signal="health_changed" from="Tower" to="Camera2D/Hud" method="_on_tower_health_changed"]
 [connection signal="initialized" from="Tower" to="Camera2D/Hud" method="_on_tower_initialized"]
