@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://dl3ttmf843t7a"]
 
 [ext_resource type="Script" path="res://scenes/test/test.gd" id="1_antun"]
-[ext_resource type="TileSet" uid="uid://byre1i74tiue6" path="res://scenes/main/assets/tilesets/field.tres" id="2_jvhq7"]
-[ext_resource type="PackedScene" uid="uid://bdo8t3u7f3n35" path="res://scenes/main/camera2D/camera2D.tscn" id="3_7cmxw"]
+[ext_resource type="TileSet" path="res://scenes/maps/assets/tilesets/field.tres" id="2_jvhq7"]
+[ext_resource type="PackedScene" path="res://scenes/maps/camera2D/camera2D.tscn" id="3_7cmxw"]
 [ext_resource type="PackedScene" uid="uid://c0qro2s61gqnu" path="res://entities/enemies/infantry/infantry_t1.tscn" id="5_sqult"]
 [ext_resource type="PackedScene" uid="uid://b4gh1jb37x2qp" path="res://entities/enemies/shooting/tanks/tank.tscn" id="6_43a3t"]
 [ext_resource type="PackedScene" uid="uid://0h6p5kq7bwnw" path="res://entities/enemies/infantry/infantry_t2.tscn" id="6_ly08v"]
-[ext_resource type="PackedScene" uid="uid://dkfo0baxvyvf1" path="res://scenes/main/tower/tower.tscn" id="6_r1nlv"]
+[ext_resource type="PackedScene" path="res://scenes/maps/tower/tower.tscn" id="6_r1nlv"]
 [ext_resource type="PackedScene" uid="uid://dx0mfo2yv8887" path="res://entities/enemies/shooting/helicopters/helicopter.tscn" id="7_mqsc0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6ntce"]
@@ -68,4 +68,9 @@ metadata/_edit_lock_ = true
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 navpoly = SubResource("NavigationPolygon_6ntce")
-navigation_layers = 2
+
+[connection signal="input_event" from="TileMap/TurretSlot" to="TileMap/TurretSlot" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@50858" to="TileMap/@TurretSlot@50858" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@50859" to="TileMap/@TurretSlot@50859" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@50860" to="TileMap/@TurretSlot@50860" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@50861" to="TileMap/@TurretSlot@50861" method="_on_input_event"]

@@ -42,7 +42,7 @@ _global_script_classes=[{
 "base": "Area2D",
 "class": &"Objective",
 "language": &"GDScript",
-"path": "res://scenes/main/tower/tower.gd"
+"path": "res://scenes/maps/tower/tower.gd"
 }, {
 "base": "Area2D",
 "class": &"Projectile",
@@ -62,12 +62,12 @@ _global_script_classes=[{
 "base": "Marker2D",
 "class": &"SpawnLocation",
 "language": &"GDScript",
-"path": "res://scenes/main/spawner/marker2d.gd"
+"path": "res://scenes/maps/spawner/marker2d.gd"
 }, {
 "base": "Node2D",
 "class": &"Spawner",
 "language": &"GDScript",
-"path": "res://scenes/main/spawner/spawner.gd"
+"path": "res://scenes/maps/spawner/spawner.gd"
 }, {
 "base": "Node",
 "class": &"State",

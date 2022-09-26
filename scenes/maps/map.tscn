@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://58sg6orwfqux"]
+
+[ext_resource type="Script" path="res://scenes/maps/map.gd" id="1_nrbg7"]
+[ext_resource type="TileSet" uid="uid://qkm7w8f0dolu" path="res://scenes/maps/assets/tilesets/field.tres" id="2_h2epk"]
+[ext_resource type="PackedScene" path="res://scenes/maps/camera2D/camera2D.tscn" id="3_0rhbr"]
+[ext_resource type="PackedScene" path="res://scenes/maps/tower/tower.tscn" id="4_4ad64"]
+[ext_resource type="PackedScene" path="res://scenes/maps/spawner/spawner.tscn" id="5_n3p8r"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2mvwc"]
+resource_local_to_scene = true
+vertices = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720)
+polygons = [PackedInt32Array(0, 1, 2, 3)]
+outlines = [PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720)]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_nrbg7")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_h2epk")
+format = 2
+layer_0/name = "Ground"
+layer_1/name = "Ground Objects"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+
+[node name="AircraftNavRegion" type="NavigationRegion2D" parent="."]
+visible = false
+navpoly = SubResource("NavigationPolygon_2mvwc")
+
+[node name="Camera2D" parent="." instance=ExtResource("3_0rhbr")]
+smoothing_speed = 2.0
+
+[node name="Tower" parent="." instance=ExtResource("4_4ad64")]
+
+[node name="Spawner" parent="." instance=ExtResource("5_n3p8r")]
+
+[editable path="Camera2D"]
+[editable path="Spawner"]
