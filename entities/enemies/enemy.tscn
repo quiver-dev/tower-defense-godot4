@@ -43,7 +43,7 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q2pkr"]
 resource_local_to_scene = true
-radius = 65.9697
+radius = 24.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_mask = 7
@@ -70,17 +70,18 @@ script = ExtResource("6_70kam")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_6olqj")
 animation = &"move"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_q2pkr")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 5.0
-target_desired_distance = 5.0
+path_desired_distance = 100.0
+target_desired_distance = 100.0
+path_max_distance = 100.0
 avoidance_enabled = true
-radius = 24.0
+radius = 32.0
+time_horizon = 40.0
 
 [node name="Line2D" type="Line2D" parent="."]
 width = 5.0

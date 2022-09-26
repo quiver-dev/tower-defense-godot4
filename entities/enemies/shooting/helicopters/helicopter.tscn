@@ -225,7 +225,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_efu7k"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_voa1o"]
 radius = 600.0
 
 [node name="Helicopter" instance=ExtResource("1_3xlxq")]
@@ -266,10 +266,12 @@ shape = SubResource("CapsuleShape2D_q2hii")
 
 [node name="NavigationAgent2D" parent="." index="5"]
 path_desired_distance = 20.0
+target_desired_distance = 5.0
 path_max_distance = 40.0
 navigation_layers = 2
 avoidance_enabled = false
 radius = 96.0
+time_horizon = 20.0
 
 [node name="Shooter" parent="." index="7"]
 z_index = -5
@@ -301,7 +303,7 @@ frames = SubResource("SpriteFrames_8rdfx")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_efu7k")
+shape = SubResource("CircleShape2D_voa1o")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(610, 0)

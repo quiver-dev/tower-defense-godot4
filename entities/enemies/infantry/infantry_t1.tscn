@@ -54,8 +54,5 @@ frames = SubResource("SpriteFrames_hgfy3")
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_recve")
 
-[node name="NavigationAgent2D" parent="." index="3"]
-time_horizon = 32.0
-
 [node name="EntityHUD" parent="." index="5"]
 metadata/_edit_lock_ = true

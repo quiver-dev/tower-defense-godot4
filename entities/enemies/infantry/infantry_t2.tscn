@@ -44,7 +44,7 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yy5b4"]
 resource_local_to_scene = true
-radius = 65.9697
+radius = 24.0
 
 [node name="InfantryT2" instance=ExtResource("1_xcp6m")]
 speed = 150
@@ -56,7 +56,7 @@ frames = SubResource("SpriteFrames_65d1v")
 shape = SubResource("CircleShape2D_yy5b4")
 
 [node name="NavigationAgent2D" parent="." index="3"]
-time_horizon = 32.0
+time_horizon = 10000.0
 
 [node name="EntityHUD" parent="." index="5"]
 metadata/_edit_lock_ = true
