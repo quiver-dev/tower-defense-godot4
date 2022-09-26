@@ -11,7 +11,7 @@ extends Camera2D
 @export var zoom_delta: float = 0.1
 @export var drag_speed: float = 4.0
 
-var target_zoom: float = 0.25
+@onready var target_zoom: float = zoom.x  # this assignment is just for initialization
 
 
 func _physics_process(delta: float) -> void:
