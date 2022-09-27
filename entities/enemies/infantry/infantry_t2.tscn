@@ -55,8 +55,5 @@ frames = SubResource("SpriteFrames_65d1v")
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_yy5b4")
 
-[node name="NavigationAgent2D" parent="." index="3"]
-time_horizon = 10000.0
-
 [node name="EntityHUD" parent="." index="5"]
 metadata/_edit_lock_ = true

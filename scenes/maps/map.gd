@@ -8,7 +8,7 @@ extends Node2D
 
 const STARTING_MONEY := 5000
 
-@onready var tower := $Tower as Area2D
+@onready var tower := $Tower as Objective
 @onready var spawner := $Spawner as Spawner
 @onready var camera := $Camera2D as Camera2D
 @onready var tilemap := $TileMap as TileMap
@@ -25,6 +25,11 @@ func _ready() -> void:
 	camera.limit_top = int(map_limits.position.y) * cell_size.y
 	camera.limit_right = int(map_limits.end.x) * cell_size.x
 	camera.limit_bottom = int(map_limits.end.y) * cell_size.y
+	# connect signals
+	spawner.wave_started.connect(Callable(camera.hud, "_on_spawner_wave_started"))
+	tower.initialized.connect(Callable(camera.hud, "_on_tower_initialized"))
+	tower.health_changed.connect(Callable(camera.hud, "_on_tower_health_changed"))
+	tower.destroyed.connect(Callable(camera.hud, "_on_tower_destroyed"))
 	# start spawning enemies
 	spawner.initialize(tower.global_position, map_limits, cell_size)
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/test/test.gd" id="1_antun"]
 [ext_resource type="TileSet" uid="uid://qkm7w8f0dolu" path="res://scenes/maps/assets/tilesets/field.tres" id="2_jvhq7"]
-[ext_resource type="PackedScene" path="res://scenes/maps/camera2D/camera2D.tscn" id="3_7cmxw"]
+[ext_resource type="PackedScene" uid="uid://bpnhw7y2qno58" path="res://scenes/maps/camera2D/camera2D.tscn" id="3_7cmxw"]
 [ext_resource type="PackedScene" uid="uid://c0qro2s61gqnu" path="res://entities/enemies/infantry/infantry_t1.tscn" id="5_sqult"]
 [ext_resource type="PackedScene" uid="uid://b4gh1jb37x2qp" path="res://entities/enemies/shooting/tanks/tank.tscn" id="6_43a3t"]
 [ext_resource type="PackedScene" uid="uid://0h6p5kq7bwnw" path="res://entities/enemies/infantry/infantry_t2.tscn" id="6_ly08v"]

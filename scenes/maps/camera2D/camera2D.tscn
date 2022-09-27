@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://bpnhw7y2qno58"]
 
 [ext_resource type="Script" path="res://scenes/maps/camera2D/camera2D.gd" id="1_w05dq"]
 [ext_resource type="PackedScene" uid="uid://cmyjsqt6idilt" path="res://interfaces/HUD/hud.tscn" id="2_e4o7p"]

@@ -12,6 +12,7 @@ extends Camera2D
 @export var drag_speed: float = 4.0
 
 @onready var target_zoom: float = zoom.x  # this assignment is just for initialization
+@onready var hud := $Hud as Hud
 
 
 func _physics_process(delta: float) -> void:
