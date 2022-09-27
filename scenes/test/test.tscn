@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dl3ttmf843t7a"]
 
 [ext_resource type="Script" path="res://scenes/test/test.gd" id="1_antun"]
-[ext_resource type="TileSet" path="res://scenes/maps/assets/tilesets/field.tres" id="2_jvhq7"]
+[ext_resource type="TileSet" uid="uid://qkm7w8f0dolu" path="res://scenes/maps/assets/tilesets/field.tres" id="2_jvhq7"]
 [ext_resource type="PackedScene" path="res://scenes/maps/camera2D/camera2D.tscn" id="3_7cmxw"]
 [ext_resource type="PackedScene" uid="uid://c0qro2s61gqnu" path="res://entities/enemies/infantry/infantry_t1.tscn" id="5_sqult"]
 [ext_resource type="PackedScene" uid="uid://b4gh1jb37x2qp" path="res://entities/enemies/shooting/tanks/tank.tscn" id="6_43a3t"]
@@ -68,9 +68,3 @@ metadata/_edit_lock_ = true
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 navpoly = SubResource("NavigationPolygon_6ntce")
-
-[connection signal="input_event" from="TileMap/TurretSlot" to="TileMap/TurretSlot" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@50858" to="TileMap/@TurretSlot@50858" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@50859" to="TileMap/@TurretSlot@50859" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@50860" to="TileMap/@TurretSlot@50860" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@50861" to="TileMap/@TurretSlot@50861" method="_on_input_event"]

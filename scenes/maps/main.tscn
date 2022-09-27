@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ci5vc58hhw3i0"]
 
 [ext_resource type="Script" path="res://scenes/maps/map.gd" id="1_1y5oe"]
-[ext_resource type="TileSet" path="res://scenes/maps/assets/tilesets/field.tres" id="2_l5fue"]
+[ext_resource type="TileSet" uid="uid://qkm7w8f0dolu" path="res://scenes/maps/assets/tilesets/field.tres" id="2_l5fue"]
 [ext_resource type="PackedScene" path="res://scenes/maps/camera2D/camera2D.tscn" id="3_m7rxb"]
 [ext_resource type="PackedScene" path="res://scenes/maps/tower/tower.tscn" id="4_y75rt"]
 [ext_resource type="PackedScene" path="res://scenes/maps/spawner/spawner.tscn" id="5_cm6hg"]
@@ -15,6 +15,7 @@ outlines = [PackedVector2Array(256, -512, 6272, -512, 6272, 3328, 256, 3328)]
 script = ExtResource("1_1y5oe")
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-256, 512)
 tile_set = ExtResource("2_l5fue")
 format = 2
 layer_0/name = "Ground"
@@ -55,18 +56,6 @@ position = Vector2(-656, 600)
 [node name="EnemyContainer" parent="Spawner" index="1"]
 position = Vector2(-632, -8)
 
-[connection signal="input_event" from="TileMap/TurretSlot" to="TileMap/TurretSlot" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@58379" to="TileMap/@TurretSlot@58379" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@58380" to="TileMap/@TurretSlot@58380" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@58381" to="TileMap/@TurretSlot@58381" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@58382" to="TileMap/@TurretSlot@58382" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@58383" to="TileMap/@TurretSlot@58383" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@58384" to="TileMap/@TurretSlot@58384" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@58385" to="TileMap/@TurretSlot@58385" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@58386" to="TileMap/@TurretSlot@58386" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@58387" to="TileMap/@TurretSlot@58387" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@58388" to="TileMap/@TurretSlot@58388" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@58389" to="TileMap/@TurretSlot@58389" method="_on_input_event"]
 [connection signal="wave_started" from="Spawner" to="Camera2D/Hud" method="_on_spawner_wave_started"]
 
 [editable path="Camera2D"]

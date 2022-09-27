@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=19 format=3 uid="uid://qkm7w8f0dolu"]
 
-[ext_resource type="Texture2D" path="res://scenes/maps/assets/textures/field_tilesheet.png" id="1_ffxvs"]
+[ext_resource type="Texture2D" uid="uid://dwy4esakjt7in" path="res://scenes/maps/assets/textures/field_tilesheet.png" id="1_ffxvs"]
 [ext_resource type="PackedScene" path="res://scenes/maps/turret_slot/turret_slot.tscn" id="2_qwwt2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jxyw6"]
