@@ -21,9 +21,9 @@ func _ready() -> void:
 	# initialize camera
 	var map_limits := tilemap.get_used_rect()
 	var cell_size := tilemap.tile_set.tile_size
-	camera.limit_left = int(map_limits.position.x) * cell_size.x + cell_size.x
-	camera.limit_top = int(map_limits.position.y) * cell_size.y + cell_size.y
-	camera.limit_right = int(map_limits.end.x) * cell_size.x - cell_size.x
+	camera.limit_left = int(map_limits.position.x) * cell_size.x
+	camera.limit_top = int(map_limits.position.y) * cell_size.y
+	camera.limit_right = int(map_limits.end.x) * cell_size.x
 	camera.limit_bottom = int(map_limits.end.y) * cell_size.y
 	# start spawning enemies
 	spawner.initialize(tower.global_position, map_limits, cell_size)
