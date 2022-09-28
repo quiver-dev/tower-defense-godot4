@@ -16,7 +16,7 @@ func enable(value: bool) -> void:
 
 func _on_retry_pressed() -> void:
 	enable(false)
-	Scenes.change_scene(Scenes.MAP)
+	Scenes.change_scene(Scenes.MAP_TEMPLATE)
 
 
 func _on_exit_pressed() -> void:

@@ -49,7 +49,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tsnry"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_py40y"]
 radius = 400.0
 
 [node name="Shooter" type="Node2D"]
@@ -79,7 +79,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 modulate = Color(1, 1, 1, 0.247059)
-shape = SubResource("CircleShape2D_tsnry")
+shape = SubResource("CircleShape2D_py40y")
 
 [node name="LookAhead" type="RayCast2D" parent="."]
 target_position = Vector2(410, 0)
