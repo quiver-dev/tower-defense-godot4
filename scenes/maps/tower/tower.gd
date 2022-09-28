@@ -34,7 +34,7 @@ func set_health(value: int) -> void:
 func _on_objective_body_entered(body: Node2D) -> void:
 	if body is Enemy:
 		health -= DEFAULT_DAMAGE
-		# WARN: this won't emit the enemy_dead signal
+		# WARN: this won't emit the dead signal
 		(body as Enemy).queue_free()
 
 

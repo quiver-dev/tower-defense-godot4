@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 
 signal target_changed(pos: Vector2)
-signal enemy_dead
+signal dead
 
 @export var rot_speed: float = 10.0
 @export var health: int = 100:

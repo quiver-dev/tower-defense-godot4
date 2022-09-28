@@ -13,7 +13,7 @@ extends Node2D
 
 
 signal wave_started(current_wave: int)
-signal waves_finished
+signal enemies_defeated  # emitted in case of victory
 
 const INITIAL_WAIT := 5.0  # amount of seconds to wait before starting a wave
 
@@ -33,6 +33,8 @@ var objective_pos: Vector2
 var map_limits: Rect2
 var cell_size: Vector2i
 var current_wave := 1
+var are_waves_finished := false  # used to check win gameover
+var are_enemies_finished := false  # same here
 
 @onready var wave_timer := $WaveTimer as Timer
 @onready var enemy_container := $EnemyContainer as Node2D
@@ -57,7 +59,7 @@ func initialize(_objective_pos: Vector2, _map_limits: Rect2, _cell_size: Vector2
 	wave_timer.start(INITIAL_WAIT)
 
 
-# Called when changing the spawn count through the editor
+# Called when changing the spawn count through the inspector
 func set_spawn_count(value: int) -> void:
 	spawn_count = value
 	var _spawns_container := get_node("SpawnsContainer")
@@ -87,7 +89,7 @@ func _start_wave() -> void:
 
 func _end_wave() -> void:
 	if current_wave == wave_count:
-		waves_finished.emit()
+		are_waves_finished = true
 		return
 	current_wave += 1
 	enemy_count += current_wave * 10
@@ -99,7 +101,7 @@ func _spawn_enemy(enemy_path: String) -> void:
 	var enemy: Enemy = load(enemy_path).instantiate()
 	enemy_container.add_child(enemy)
 	if enemy is Helicopter:
-		# pick a random marker and randomize its y axis
+		# pick a random air marker and randomize its y axis
 		var air_spawn_pos := (air_spawns[randi() % air_spawns.size()] \
 				as Marker2D)
 		air_spawn_pos.global_position.y = randf_range(
@@ -110,7 +112,17 @@ func _spawn_enemy(enemy_path: String) -> void:
 		# pick a random spawn location from the ground spawns
 		enemy.global_position = (ground_spawns[randi() % ground_spawns.size()] \
 				as Marker2D).global_position
+	enemy.dead.connect(_on_enemy_death)
 	enemy.move_to(objective_pos)
+
+
+# Every time an enemy dies, we check if the player has just won.
+# Note that waves will already be finished when the last enemy dies
+func _on_enemy_death() -> void:
+	if enemy_container.get_child_count() == 0:
+		are_enemies_finished = true
+	if are_waves_finished and are_enemies_finished:
+		enemies_defeated.emit()
 
 
 # Implementation of the Cumulative Distribution Algorithm, used to spawn 

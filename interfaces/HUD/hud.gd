@@ -28,7 +28,7 @@ func _on_tower_destroyed() -> void:
 
 
 # Here just in case a different gameover screen will be used in case of victory
-func _on_spawner_waves_finished() -> void:
+func _on_spawner_enemies_defeated() -> void:
 	gameover.enable(true)
 
 

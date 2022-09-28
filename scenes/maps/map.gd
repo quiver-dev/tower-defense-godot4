@@ -27,7 +27,7 @@ func _ready() -> void:
 	camera.limit_bottom = int(map_limits.end.y) * cell_size.y
 	# connect signals
 	spawner.wave_started.connect(Callable(camera.hud, "_on_spawner_wave_started"))
-	spawner.waves_finished.connect(Callable(camera.hud, "_on_spawner_waves_finished"))
+	spawner.enemies_defeated.connect(Callable(camera.hud, "_on_spawner_enemies_defeated"))
 	tower.health_changed.connect(Callable(camera.hud, "_on_tower_health_changed"))
 	tower.destroyed.connect(Callable(camera.hud, "_on_tower_destroyed"))
 	# initialize HUD parameters

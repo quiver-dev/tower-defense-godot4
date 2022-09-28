@@ -19,5 +19,5 @@ func on_animation_finished() -> void:
 
 
 func _on_tween_finished() -> void:
-	(owner as Enemy).enemy_dead.emit()
+	(owner as Enemy).dead.emit()
 	(owner as Enemy).queue_free()
