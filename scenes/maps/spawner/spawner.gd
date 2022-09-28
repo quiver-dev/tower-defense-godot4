@@ -112,13 +112,14 @@ func _spawn_enemy(enemy_path: String) -> void:
 		# pick a random spawn location from the ground spawns
 		enemy.global_position = (ground_spawns[randi() % ground_spawns.size()] \
 				as Marker2D).global_position
-	enemy.dead.connect(_on_enemy_death)
+	enemy.dead.connect(_on_enemy_death.bind(enemy))
 	enemy.move_to(objective_pos)
 
 
 # Every time an enemy dies, we check if the player has just won.
 # Note that waves will already be finished when the last enemy dies
-func _on_enemy_death() -> void:
+func _on_enemy_death(enemy: Enemy) -> void:
+	await enemy.tree_exited  # make sure enemy will already be freed when checking
 	if enemy_container.get_child_count() == 0:
 		are_enemies_finished = true
 	if are_waves_finished and are_enemies_finished:
