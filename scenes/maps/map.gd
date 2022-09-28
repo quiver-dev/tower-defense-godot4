@@ -27,9 +27,11 @@ func _ready() -> void:
 	camera.limit_bottom = int(map_limits.end.y) * cell_size.y
 	# connect signals
 	spawner.wave_started.connect(Callable(camera.hud, "_on_spawner_wave_started"))
-	tower.initialized.connect(Callable(camera.hud, "_on_tower_initialized"))
+	spawner.waves_finished.connect(Callable(camera.hud, "_on_spawner_waves_finished"))
 	tower.health_changed.connect(Callable(camera.hud, "_on_tower_health_changed"))
 	tower.destroyed.connect(Callable(camera.hud, "_on_tower_destroyed"))
+	# initialize HUD parameters
+	(camera.hud as Hud).initialize(tower.health)  # tower will have already been initialized
 	# start spawning enemies
 	spawner.initialize(tower.global_position, map_limits, cell_size)
 

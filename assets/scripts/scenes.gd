@@ -13,7 +13,7 @@ const SINGLE_TURRET := "res://entities/turrets/single/single_turret.tscn"
 const MISSILE_TURRET := "res://entities/turrets/missile/missile_turret.tscn"
 # Scenes
 const MAIN_MENU := "res://interfaces/UI/menu/menu.tscn"
-const MAP := "res://scenes/main/main.tscn"
+const MAP_TEMPLATE := "res://scenes/maps/map_template.tscn"
 
 
 static func get_enemy_path(enemy_name: String) -> String:

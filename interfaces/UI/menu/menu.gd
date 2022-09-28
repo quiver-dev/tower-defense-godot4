@@ -6,7 +6,7 @@ extends Control
 
 
 func _on_start_pressed() -> void:
-	Scenes.change_scene(Scenes.MAP)
+	Scenes.change_scene(Scenes.MAP_TEMPLATE)
 
 
 func _on_quit_pressed() -> void:

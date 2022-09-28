@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 
 
 # Needed to set the healthbar's initial values
-func _on_tower_initialized(max_health) -> void:
+func initialize(max_health) -> void:
 	healthbar.max_value = max_health
 	healthbar.value = healthbar.max_value
 
@@ -24,6 +24,11 @@ func _on_tower_health_changed(cur_health: int) -> void:
 
 
 func _on_tower_destroyed() -> void:
+	gameover.enable(true)
+
+
+# Here just in case a different gameover screen will be used in case of victory
+func _on_spawner_waves_finished() -> void:
 	gameover.enable(true)
 
 
