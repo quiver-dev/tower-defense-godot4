@@ -36,17 +36,4 @@ position = Vector2(832, 2688)
 [node name="SpawnLocation3" parent="Spawner/SpawnsContainer" index="2"]
 position = Vector2(152, 1408)
 
-[connection signal="input_event" from="TileMap/TurretSlot" to="TileMap/TurretSlot" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@34804" to="TileMap/@TurretSlot@34804" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@34805" to="TileMap/@TurretSlot@34805" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@34806" to="TileMap/@TurretSlot@34806" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@34807" to="TileMap/@TurretSlot@34807" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@34808" to="TileMap/@TurretSlot@34808" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@34809" to="TileMap/@TurretSlot@34809" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@34810" to="TileMap/@TurretSlot@34810" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@34811" to="TileMap/@TurretSlot@34811" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@34812" to="TileMap/@TurretSlot@34812" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@34813" to="TileMap/@TurretSlot@34813" method="_on_input_event"]
-[connection signal="input_event" from="TileMap/@TurretSlot@34814" to="TileMap/@TurretSlot@34814" method="_on_input_event"]
-
 [editable path="Spawner"]
