@@ -129,6 +129,54 @@ text = "Wave: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="NextWave" type="PanelContainer" parent="Info"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 72.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("2_itll1")
+theme_override_styles/panel = SubResource("StyleBoxTexture_nmveo")
+
+[node name="Rows" type="HBoxContainer" parent="Info/NextWave"]
+layout_mode = 2
+offset_left = 15.0
+offset_top = 3.0
+offset_right = 337.0
+offset_bottom = 64.0
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="Info/NextWave/Rows"]
+layout_mode = 2
+offset_top = 11.0
+offset_right = 262.0
+offset_bottom = 49.0
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8hx4j")
+text = "Next wave in:"
+horizontal_alignment = 1
+
+[node name="Countdown" type="Label" parent="Info/NextWave/Rows"]
+layout_mode = 2
+offset_left = 282.0
+offset_top = 6.0
+offset_right = 315.0
+offset_bottom = 55.0
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8hx4j")
+text = "5"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="Info/NextWave"]
+one_shot = true
+
 [node name="UI" type="Control" parent="."]
 process_mode = 3
 layout_mode = 3
@@ -151,47 +199,4 @@ offset_top = 408.0
 offset_right = 375.0
 offset_bottom = 951.0
 
-[node name="NextWave" type="PanelContainer" parent="UI"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -280.0
-offset_top = -157.5
-offset_right = 280.0
-offset_bottom = 157.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_itll1")
-
-[node name="Rows" type="VBoxContainer" parent="UI/NextWave"]
-layout_mode = 2
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 520.0
-offset_bottom = 275.0
-
-[node name="Title" type="Label" parent="UI/NextWave/Rows"]
-layout_mode = 2
-offset_top = 33.0
-offset_right = 480.0
-offset_bottom = 82.0
-size_flags_vertical = 6
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8hx4j")
-text = "Next wave in"
-horizontal_alignment = 1
-
-[node name="Countdown" type="Label" parent="UI/NextWave/Rows"]
-layout_mode = 2
-offset_top = 145.0
-offset_right = 480.0
-offset_bottom = 209.0
-size_flags_vertical = 6
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8hx4j")
-text = "5"
-horizontal_alignment = 1
+[connection signal="timeout" from="Info/NextWave/Timer" to="." method="_on_timer_timeout"]

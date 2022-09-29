@@ -12,6 +12,7 @@ extends Node2D
 # locations. You can also duplicate and delete them at your needs.
 
 
+signal countdown_started(seconds: float)
 signal wave_started(current_wave: int)
 signal enemies_defeated  # emitted in case of victory
 
@@ -56,7 +57,7 @@ func initialize(_objective_pos: Vector2, _map_limits: Rect2, _cell_size: Vector2
 	objective_pos = _objective_pos
 	map_limits = _map_limits
 	cell_size = _cell_size
-	wave_timer.start(INITIAL_WAIT)
+	_start_wave_countdown()
 
 
 # Called when changing the spawn count through the inspector
@@ -93,7 +94,12 @@ func _end_wave() -> void:
 		return
 	current_wave += 1
 	enemy_count += current_wave * 10
+	_start_wave_countdown()
+
+
+func _start_wave_countdown() -> void:
 	wave_timer.start(INITIAL_WAIT)
+	countdown_started.emit(INITIAL_WAIT)
 
 
 func _spawn_enemy(enemy_path: String) -> void:
