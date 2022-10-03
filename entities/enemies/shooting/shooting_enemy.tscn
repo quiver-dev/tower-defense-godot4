@@ -91,7 +91,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2ixvl"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_qn7ja"]
 radius = 400.0
 
 [node name="ShootingEnemy" instance=ExtResource("1_tnaes")]
@@ -129,16 +129,16 @@ frames = SubResource("SpriteFrames_pwnph")
 frames = SubResource("SpriteFrames_e6dea")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_2ixvl")
+shape = SubResource("CircleShape2D_qn7ja")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 collide_with_areas = true
 
 [node name="EntityHUD" parent="." index="6"]
-offset_left = -32.0
-offset_top = -120.0
-offset_right = -32.0
-offset_bottom = -120.0
+offset_left = -50.0
+offset_top = -152.0
+offset_right = -50.0
+offset_bottom = -152.0
 
 [connection signal="mouse_entered" from="." to="Shooter" method="_on_parent_mouse_entered"]
 [connection signal="mouse_exited" from="." to="Shooter" method="_on_parent_mouse_exited"]

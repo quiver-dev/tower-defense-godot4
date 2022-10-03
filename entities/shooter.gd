@@ -46,7 +46,7 @@ func _ready() -> void:
 	detector_shape.radius = detect_radius
 	detector_coll.shape = detector_shape
 	# initialize raycast's length and collision mask
-	lookahead.target_position.x = detect_radius + 10
+	lookahead.target_position.x = detect_radius + 50
 	lookahead.collision_mask = detector.collision_mask
 	# init animations
 	_play_animations("idle")
@@ -101,7 +101,7 @@ func set_firerate_timer_paused(value: bool) -> void:
 
 func set_detect_radius(value: int) -> void:
 	detect_radius = value
-	if detector_shape:
+	if is_instance_valid(detector_shape):
 		detector_shape.radius = detect_radius
 		lookahead.target_position.x = detect_radius
 

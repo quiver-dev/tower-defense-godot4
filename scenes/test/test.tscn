@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dx0mfo2yv8887" path="res://entities/enemies/shooting/helicopters/helicopter.tscn" id="7_mqsc0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6ntce"]
-vertices = PackedVector2Array(-256, -288, 2560, -288, 2568, 1496, -256, 1496)
+vertices = PackedVector2Array(-680, -448, 2968, -432, 2984, 2048, -680, 2048)
 polygons = [PackedInt32Array(0, 1, 2, 3)]
-outlines = [PackedVector2Array(-256, -288, 2560, -288, 2568, 1496, -256, 1496)]
+outlines = [PackedVector2Array(-680, -448, 2968, -432, 2984, 2048, -680, 2048)]
 
 [node name="Test" type="Node2D"]
 script = ExtResource("1_antun")
@@ -68,3 +68,4 @@ metadata/_edit_lock_ = true
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 navpoly = SubResource("NavigationPolygon_6ntce")
+navigation_layers = 2
