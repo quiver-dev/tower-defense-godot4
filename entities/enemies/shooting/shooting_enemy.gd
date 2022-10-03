@@ -2,8 +2,6 @@ class_name ShootingEnemy
 extends Enemy
 
 
-var can_shoot_and_move := false  # set by certain states
-
 @onready var shooter := $Shooter as Shooter
 
 

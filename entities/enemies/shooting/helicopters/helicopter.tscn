@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bl2so1n5mvkym" path="res://entities/enemies/shooting/shooting_enemy.tscn" id="1_3xlxq"]
 [ext_resource type="Texture2D" uid="uid://bqno5ak15gnhi" path="res://entities/enemies/shooting/helicopters/assets/textures/body_move_00.png" id="2_iq8hb"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/helicopter.gd" id="2_mdput"]
-[ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/shoot.gd" id="2_vtkkc"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/die.gd" id="3_jegha"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/move.gd" id="3_scvwg"]
 [ext_resource type="Texture2D" uid="uid://j0wxuunw8xou" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_00.png" id="4_0piph"]
 [ext_resource type="Texture2D" uid="uid://cwnjbpttej5qs" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_01.png" id="5_urlb3"]
 [ext_resource type="Texture2D" uid="uid://yu11rbjii2ll" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_02.png" id="6_e1dxg"]
@@ -158,6 +158,11 @@ animations = [{
 "loop": false,
 "name": &"shoot_b",
 "speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shoot_still",
+"speed": 12.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rn3o2"]
@@ -225,7 +230,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1bfa0"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1q2is"]
 radius = 600.0
 
 [node name="Helicopter" instance=ExtResource("1_3xlxq")]
@@ -237,11 +242,11 @@ rot_speed = 4.0
 speed = 170
 metadata/_edit_lock_ = true
 
+[node name="Move" parent="StateMachine" index="0"]
+script = ExtResource("3_scvwg")
+
 [node name="Die" parent="StateMachine" index="3"]
 script = ExtResource("3_jegha")
-
-[node name="Shoot" parent="StateMachine" index="4"]
-script = ExtResource("2_vtkkc")
 
 [node name="Shadow" type="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(8, 32)
@@ -251,7 +256,7 @@ playing = true
 
 [node name="Sprite2D" parent="." index="2"]
 frames = SubResource("SpriteFrames_q53ch")
-animation = &"move"
+animation = &"shoot_still"
 
 [node name="Rotor" type="AnimatedSprite2D" parent="." index="3"]
 position = Vector2(3, 0)
@@ -303,7 +308,7 @@ frames = SubResource("SpriteFrames_8rdfx")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_1bfa0")
+shape = SubResource("CircleShape2D_1q2is")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(610, 0)

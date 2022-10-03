@@ -46,8 +46,11 @@ func stop() -> void:
 
 
 func apply_animation(anim_name: String) -> void:
-	if is_instance_valid(sprite):
-		sprite.play(anim_name)
+	# wait for the parent node to be ready, otherwise all onready variables
+	# will be null, including the sprite node
+	if not is_instance_valid(sprite):
+		await ready
+	sprite.play(anim_name)
 
 
 # Health is modified by the state machine, which will eventually trigger
