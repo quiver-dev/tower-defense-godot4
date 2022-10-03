@@ -139,7 +139,7 @@ func populate_settings() -> void:
 				colour_picker))
 		pattern_edit.remove_button.pressed.connect(remove_pattern.bind(i,
 				pattern_edit, colour_picker))
-	$VBoxContainer/TabContainer/Settings/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4/Patterns/AddPatternButton.raise()
+#	$VBoxContainer/TabContainer/Settings/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4/Patterns/AddPatternButton.raise()
 	
 	# path filtering
 	var ignore_paths_field := ignore_textbox

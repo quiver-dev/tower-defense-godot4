@@ -10,4 +10,6 @@ func update(_delta: float) -> void:
 
 
 func _on_navigation_agent_2d_target_reached() -> void:
-	finished.emit("idle")
+	# for debug purposes, switch to "idle" state only when running in the editor
+	if OS.has_feature("editor"):
+		finished.emit("idle")
