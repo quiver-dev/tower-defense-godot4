@@ -11,8 +11,8 @@ colors = PackedColorArray(0.533333, 0.878431, 0.376471, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_j8pgm"]
 gradient = SubResource("Gradient_20pti")
-width = 50
-height = 10
+width = 100
+height = 20
 
 [sub_resource type="Gradient" id="Gradient_xebfl"]
 offsets = PackedFloat32Array(0)
@@ -20,8 +20,8 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_y4p0d"]
 gradient = SubResource("Gradient_xebfl")
-width = 50
-height = 4
+width = 100
+height = 8
 
 [node name="EntityHUD" type="Control"]
 layout_mode = 3
@@ -30,44 +30,40 @@ theme = ExtResource("1_w2foj")
 script = ExtResource("1_qyud4")
 
 [node name="Parameters" type="VBoxContainer" parent="."]
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 alignment = 2
 
 [node name="StateLabel" type="Label" parent="Parameters"]
-layout_mode = 2
-offset_right = 61.0
-offset_bottom = 19.0
+offset_right = 99.0
+offset_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_l380f")
-text = " Shoot "
+text = "Shoot"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_custom_anchors = false
 
 [node name="Healthbar" type="TextureProgressBar" parent="Parameters"]
-layout_mode = 2
-offset_left = 5.0
-offset_top = 23.0
-offset_right = 55.0
-offset_bottom = 33.0
+offset_top = 38.0
+offset_right = 50.0
+offset_bottom = 48.0
 pivot_offset = Vector2(95, 22)
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 6
 value = 100.0
 texture_progress = SubResource("GradientTexture2D_j8pgm")
 
 [node name="ReloadBar" type="TextureProgressBar" parent="Parameters"]
-layout_mode = 2
-offset_left = 5.0
-offset_top = 37.0
-offset_right = 55.0
-offset_bottom = 41.0
+offset_top = 52.0
+offset_right = 50.0
+offset_bottom = 56.0
 pivot_offset = Vector2(95, 922)
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 6
 value = 100.0
 rounded = true
