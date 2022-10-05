@@ -5,8 +5,8 @@ const FADE_OUT_DURATION := 0.25
 
 
 func enter() -> void:
-	(owner as Enemy).stop()
 	(owner as Enemy).collision.set_deferred("disabled", true)
+	(owner as Enemy).stop()
 	(owner as Enemy).apply_animation("die")
 	# give money to the player
 	Global.money += int((owner as Enemy).hud.healthbar.max_value)

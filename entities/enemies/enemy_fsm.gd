@@ -29,7 +29,7 @@ func _ready() -> void:
 # damage_taken parameter on the Enemy scene that the Hit state will use to
 # handle health.
 func is_hit(damage: int) -> void:
-	if current_state.name == "Hit":
+	if String(current_state.name) in ["Hit", "Die"]:
 		return
 	(owner as Enemy).health -= damage
 	current_state.finished.emit("die" if (owner as Enemy).health == 0 else "hit")

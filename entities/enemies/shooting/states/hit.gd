@@ -1,6 +1,4 @@
 extends "res://entities/enemies/states/hit.gd"
-# TODO: rework this in the future. Maybe make it last the duration of 
-# the hit animation.
 
 
 func enter() -> void:
