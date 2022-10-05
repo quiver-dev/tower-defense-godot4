@@ -50,7 +50,10 @@ func apply_animation(anim_name: String) -> void:
 	# will be null, including the sprite node
 	if not is_instance_valid(sprite):
 		await ready
-	sprite.play(anim_name)
+	if sprite.frames.has_animation(anim_name):
+		sprite.play(anim_name)
+	else:
+		print_debug("Sprite node doesn't have animation %s!" % anim_name)
 
 
 # Health is modified by the state machine, which will eventually trigger

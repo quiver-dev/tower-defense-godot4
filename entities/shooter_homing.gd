@@ -1,4 +1,4 @@
-@tool  # WARN: this appears to be necessary. Investigate further.
+@tool
 extends Shooter
 # TODO: try reducing code duplication in shoot function.
 # Also find a way to improve the muzzle flash animation.
