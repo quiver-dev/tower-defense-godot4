@@ -47,7 +47,7 @@ _global_script_classes=[{
 "base": "Area2D",
 "class": &"Objective",
 "language": &"GDScript",
-"path": "res://scenes/maps/tower/tower.gd"
+"path": "res://scenes/maps/objective/objective.gd"
 }, {
 "base": "Area2D",
 "class": &"Projectile",

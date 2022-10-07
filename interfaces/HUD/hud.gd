@@ -23,12 +23,12 @@ func initialize(max_health) -> void:
 	healthbar.value = healthbar.max_value
 
 
-# Used to update the tower's health
-func _on_tower_health_changed(cur_health: int) -> void:
+# Used to update the objective's health
+func _on_objective_health_changed(cur_health: int) -> void:
 	healthbar.value = cur_health
 
 
-func _on_tower_destroyed() -> void:
+func _on_objective_destroyed() -> void:
 	gameover.enable(true)
 
 

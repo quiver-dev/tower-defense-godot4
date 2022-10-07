@@ -10,6 +10,8 @@ signal dead
 	set = set_health
 @export var speed: int = 300
 
+var objective_damage := 10  # default damage dealt when entering the objective
+
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @onready var sprite := $Sprite2D as AnimatedSprite2D
 @onready var collision := $CollisionShape2D as CollisionShape2D

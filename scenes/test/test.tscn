@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl3ttmf843t7a"]
+[gd_scene load_steps=10 format=3 uid="uid://cfrropapfnixs"]
 
 [ext_resource type="Script" path="res://scenes/test/test.gd" id="1_antun"]
 [ext_resource type="TileSet" uid="uid://qkm7w8f0dolu" path="res://scenes/maps/assets/tilesets/field.tres" id="2_jvhq7"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c0qro2s61gqnu" path="res://entities/enemies/infantry/infantry_t1.tscn" id="5_sqult"]
 [ext_resource type="PackedScene" uid="uid://b4gh1jb37x2qp" path="res://entities/enemies/shooting/tanks/tank.tscn" id="6_43a3t"]
 [ext_resource type="PackedScene" uid="uid://0h6p5kq7bwnw" path="res://entities/enemies/infantry/infantry_t2.tscn" id="6_ly08v"]
-[ext_resource type="PackedScene" path="res://scenes/maps/tower/tower.tscn" id="6_r1nlv"]
+[ext_resource type="PackedScene" uid="uid://b8g10g5id7xy5" path="res://scenes/maps/objective/objective.tscn" id="6_r1nlv"]
 [ext_resource type="PackedScene" uid="uid://dx0mfo2yv8887" path="res://entities/enemies/shooting/helicopters/helicopter.tscn" id="7_mqsc0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6ntce"]

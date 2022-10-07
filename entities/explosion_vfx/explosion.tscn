@@ -76,10 +76,10 @@ animations = [{
 }, {
 "frames": [ExtResource("22_fq0q0"), ExtResource("23_f6pb4"), ExtResource("24_xil8s"), ExtResource("25_rinsj"), ExtResource("26_6hu26"), ExtResource("27_vk3sl"), ExtResource("28_sw1o1"), ExtResource("29_bb52m"), ExtResource("30_tnkjw"), ExtResource("31_iaex2"), ExtResource("32_4dsba"), ExtResource("33_hxa6u"), ExtResource("34_jjeof"), ExtResource("35_ytpo8"), ExtResource("36_43nsx"), ExtResource("37_dw0c2"), ExtResource("38_gxe3e"), ExtResource("39_fqrur"), ExtResource("40_y1c1f"), ExtResource("41_5iojt"), ExtResource("42_qckkv"), ExtResource("43_m7vh6"), ExtResource("44_k7dwd"), ExtResource("45_kiio7"), ExtResource("46_p5euq"), ExtResource("47_x5sgc"), ExtResource("48_dlwi1"), ExtResource("49_dk6g6"), ExtResource("50_dqv5b"), ExtResource("51_yp6y3"), ExtResource("52_x0bwj"), ExtResource("53_dp8ku"), ExtResource("54_n43xi"), ExtResource("55_opgre"), ExtResource("56_yk0wd"), ExtResource("57_ptfjp"), ExtResource("58_wjuqg"), ExtResource("59_47rky"), ExtResource("60_3dhlx"), ExtResource("61_n6nfh")],
 "loop": false,
-"name": &"tower",
+"name": &"objective",
 "speed": 12.0
 }]
 
 [node name="Explosion" type="AnimatedSprite2D"]
 frames = SubResource("SpriteFrames_h1o7w")
-animation = &"hidden"
+animation = &"objective"

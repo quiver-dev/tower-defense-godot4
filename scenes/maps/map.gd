@@ -2,13 +2,13 @@ extends Node2D
 # This acts as a base Map scene. To make a new level,
 # just create a scene inheriting this one and use the tilemap to design it.
 # You can use the Terrains feature to draw paths which already 
-# navigation set-up, then tweak the spawner, tower, camera, etc. to
+# navigation set-up, then tweak the spawner, objective, camera, etc. to
 # your needs.
 
 
 const STARTING_MONEY := 5000
 
-@onready var tower := $Tower as Objective
+@onready var objective := $Objective as Objective
 @onready var spawner := $Spawner as Spawner
 @onready var camera := $Camera2D as Camera2D
 @onready var tilemap := $TileMap as TileMap
@@ -29,12 +29,12 @@ func _ready() -> void:
 	spawner.countdown_started.connect(Callable(camera.hud, "_on_spawner_countdown_started"))
 	spawner.wave_started.connect(Callable(camera.hud, "_on_spawner_wave_started"))
 	spawner.enemies_defeated.connect(Callable(camera.hud, "_on_spawner_enemies_defeated"))
-	tower.health_changed.connect(Callable(camera.hud, "_on_tower_health_changed"))
-	tower.destroyed.connect(Callable(camera.hud, "_on_tower_destroyed"))
+	objective.health_changed.connect(Callable(camera.hud, "_on_objective_health_changed"))
+	objective.destroyed.connect(Callable(camera.hud, "_on_objective_destroyed"))
 	# initialize HUD parameters
-	(camera.hud as Hud).initialize(tower.health)  # tower will have already been initialized
+	(camera.hud as Hud).initialize(objective.health)  # objective will have already been initialized
 	# start spawning enemies
-	spawner.initialize(tower.global_position, map_limits, cell_size)
+	spawner.initialize(objective.global_position, map_limits, cell_size)
 
 
 func _unhandled_input(event: InputEvent) -> void:

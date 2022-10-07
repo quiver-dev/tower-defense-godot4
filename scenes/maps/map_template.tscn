@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://2r30x0p2rjvp"]
 
-[ext_resource type="PackedScene" uid="uid://58sg6orwfqux" path="res://scenes/maps/map.tscn" id="1_kisry"]
+[ext_resource type="PackedScene" uid="uid://covoab3tdrgeg" path="res://scenes/maps/map.tscn" id="1_kisry"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_uxgnd"]
 resource_local_to_scene = true
@@ -21,7 +21,7 @@ navpoly = SubResource("NavigationPolygon_uxgnd")
 position = Vector2(3168, 1440)
 zoom = Vector2(0.25, 0.25)
 
-[node name="Tower" parent="." index="3"]
+[node name="Objective" parent="." index="3"]
 position = Vector2(4960, 1472)
 
 [node name="Spawner" parent="." index="4"]
@@ -35,5 +35,18 @@ position = Vector2(832, 2688)
 
 [node name="SpawnLocation3" parent="Spawner/SpawnsContainer" index="2"]
 position = Vector2(152, 1408)
+
+[connection signal="input_event" from="TileMap/TurretSlot" to="TileMap/TurretSlot" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@30939" to="TileMap/@TurretSlot@30939" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@30940" to="TileMap/@TurretSlot@30940" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@30941" to="TileMap/@TurretSlot@30941" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@30942" to="TileMap/@TurretSlot@30942" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@30943" to="TileMap/@TurretSlot@30943" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@30944" to="TileMap/@TurretSlot@30944" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@30945" to="TileMap/@TurretSlot@30945" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@30946" to="TileMap/@TurretSlot@30946" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@30947" to="TileMap/@TurretSlot@30947" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@30948" to="TileMap/@TurretSlot@30948" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@30949" to="TileMap/@TurretSlot@30949" method="_on_input_event"]
 
 [editable path="Spawner"]
