@@ -1,5 +1,6 @@
 class_name Enemy
 extends CharacterBody2D
+# TODO: remove all Line2D references
 
 
 signal target_changed(pos: Vector2)
@@ -13,7 +14,8 @@ signal dead
 var objective_damage := 10  # default damage dealt when entering the objective
 
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
-@onready var sprite := $Sprite2D as AnimatedSprite2D
+@onready var sprite := $Sprite2D as AnimatedSprite2D:
+	get: return $Sprite2D as AnimatedSprite2D
 @onready var collision := $CollisionShape2D as CollisionShape2D
 @onready var hud := $EntityHUD as EntityHud
 @onready var line2d := $Line2D as Line2D
@@ -48,10 +50,6 @@ func stop() -> void:
 
 
 func apply_animation(anim_name: String) -> void:
-	# wait for the parent node to be ready, otherwise all onready variables
-	# will be null, including the sprite node
-	if not is_instance_valid(sprite):
-		await ready
 	if sprite.frames.has_animation(anim_name):
 		sprite.play(anim_name)
 	else:

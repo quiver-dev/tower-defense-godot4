@@ -1,7 +1,4 @@
 extends CanvasLayer
-# TODO: try using the new Popup class when they stabilize it. At the
-# moment it seems broken, or at least there's no documentation to
-# understand how to use it.
 
 
 signal turret_requested(type: String)
