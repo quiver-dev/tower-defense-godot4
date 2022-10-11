@@ -143,3 +143,25 @@ func _on_parent_mouse_exited() -> void:
 func _on_gun_animation_finished() -> void:
 	if "shoot" in gun.animation:
 		_play_animations("idle")
+
+
+# We only write on the targets array, then each parent entity will
+# take care of switching the state
+func _on_detector_area_entered(area: Area2D) -> void:
+	if not area in targets:
+		targets.append(area)
+
+
+func _on_detector_area_exited(area: Area2D) -> void:
+	if area in targets:
+		targets.erase(area)
+
+
+func _on_detector_body_entered(body: Node2D) -> void:
+	if not body in targets:
+		targets.append(body)
+
+
+func _on_detector_body_exited(body: Node2D) -> void:
+	if body in targets:
+		targets.erase(body)

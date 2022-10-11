@@ -91,7 +91,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lijf5"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gca24"]
 radius = 400.0
 
 [node name="ShootingEnemy" instance=ExtResource("1_tnaes")]
@@ -128,11 +128,15 @@ frames = SubResource("SpriteFrames_pwnph")
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 frames = SubResource("SpriteFrames_e6dea")
 
+[node name="Detector" parent="Shooter" index="2"]
+collision_mask = 18
+
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_lijf5")
+shape = SubResource("CircleShape2D_gca24")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(450, 0)
+collision_mask = 18
 collide_with_areas = true
 
 [node name="EntityHUD" parent="." index="6"]
@@ -144,11 +148,9 @@ offset_bottom = -152.0
 [connection signal="mouse_entered" from="." to="Shooter" method="_on_parent_mouse_entered"]
 [connection signal="mouse_exited" from="." to="Shooter" method="_on_parent_mouse_exited"]
 [connection signal="has_shot" from="Shooter" to="." method="_on_shooter_has_shot"]
-[connection signal="area_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_area_entered"]
-[connection signal="area_exited" from="Shooter/Detector" to="StateMachine/Shoot" method="_on_detector_area_exited"]
-[connection signal="area_exited" from="Shooter/Detector" to="StateMachine/Shoot_Still" method="_on_detector_area_exited"]
-[connection signal="body_entered" from="Shooter/Detector" to="StateMachine/Move" method="_on_detector_body_entered"]
-[connection signal="body_exited" from="Shooter/Detector" to="StateMachine/Shoot" method="_on_detector_body_exited"]
-[connection signal="body_exited" from="Shooter/Detector" to="StateMachine/Shoot_Still" method="_on_detector_body_exited"]
+[connection signal="area_entered" from="Shooter/Detector" to="Shooter" method="_on_detector_area_entered"]
+[connection signal="area_exited" from="Shooter/Detector" to="Shooter" method="_on_detector_area_exited"]
+[connection signal="body_entered" from="Shooter/Detector" to="Shooter" method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Shooter/Detector" to="Shooter" method="_on_detector_body_exited"]
 
 [editable path="Shooter"]

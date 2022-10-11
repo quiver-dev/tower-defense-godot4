@@ -12,6 +12,8 @@ func update(_delta: float) -> void:
 		(owner as ShootingEnemy).shooter.shoot()
 		var shooting_anim := (owner as ShootingEnemy).shooter.gun.animation
 		(owner as ShootingEnemy).apply_animation(shooting_anim)
+	if (owner as ShootingEnemy).shooter.targets.is_empty():
+		finished.emit("move")
 
 
 func on_animation_finished() -> void:
