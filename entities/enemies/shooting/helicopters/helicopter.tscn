@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=3 uid="uid://dx0mfo2yv8887"]
+[gd_scene load_steps=122 format=3 uid="uid://dx0mfo2yv8887"]
 
 [ext_resource type="PackedScene" uid="uid://bl2so1n5mvkym" path="res://entities/enemies/shooting/shooting_enemy.tscn" id="1_3xlxq"]
 [ext_resource type="Texture2D" uid="uid://bqno5ak15gnhi" path="res://entities/enemies/shooting/helicopters/assets/textures/body_move_00.png" id="2_iq8hb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/die.gd" id="3_jegha"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/move.gd" id="3_scvwg"]
 [ext_resource type="Texture2D" uid="uid://j0wxuunw8xou" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_00.png" id="4_0piph"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/shoot.gd" id="5_kl3dc"]
 [ext_resource type="Texture2D" uid="uid://cwnjbpttej5qs" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_01.png" id="5_urlb3"]
 [ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/shoot_still.gd" id="5_we7qf"]
 [ext_resource type="Texture2D" uid="uid://yu11rbjii2ll" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_02.png" id="6_e1dxg"]
@@ -226,7 +227,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hdaxh"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_su7de"]
 radius = 600.0
 
 [node name="Helicopter" instance=ExtResource("1_3xlxq")]
@@ -243,6 +244,9 @@ script = ExtResource("3_scvwg")
 
 [node name="Die" parent="StateMachine" index="3"]
 script = ExtResource("3_jegha")
+
+[node name="Shoot" parent="StateMachine" index="4"]
+script = ExtResource("5_kl3dc")
 
 [node name="Shoot_Still" parent="StateMachine" index="5"]
 script = ExtResource("5_we7qf")
@@ -303,7 +307,7 @@ position = Vector2(50, 38)
 frames = SubResource("SpriteFrames_8rdfx")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_hdaxh")
+shape = SubResource("CircleShape2D_su7de")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(650, 0)
