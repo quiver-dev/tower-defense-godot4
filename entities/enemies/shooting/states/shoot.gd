@@ -13,3 +13,8 @@ func update(_delta: float) -> void:
 	# check if we need to exit the state
 	if (owner as ShootingEnemy).shooter.targets.is_empty():
 		finished.emit("move")
+	else:
+		for target in (owner as ShootingEnemy).shooter.targets:
+			if target is Objective:
+				finished.emit("shoot_still")
+				break
