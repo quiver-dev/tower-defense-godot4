@@ -25,7 +25,7 @@ zoom = Vector2(0.25, 0.25)
 position = Vector2(4960, 1472)
 
 [node name="Spawner" parent="." index="4"]
-enemy_count = 5
+enemy_count = 20
 
 [node name="SpawnLocation1" parent="Spawner/SpawnsContainer" index="0"]
 position = Vector2(824, 1344)
@@ -35,5 +35,18 @@ position = Vector2(832, 2688)
 
 [node name="SpawnLocation3" parent="Spawner/SpawnsContainer" index="2"]
 position = Vector2(152, 1408)
+
+[connection signal="input_event" from="TileMap/TurretSlot" to="TileMap/TurretSlot" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@27989" to="TileMap/@TurretSlot@27989" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@27990" to="TileMap/@TurretSlot@27990" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@27991" to="TileMap/@TurretSlot@27991" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@27992" to="TileMap/@TurretSlot@27992" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@27993" to="TileMap/@TurretSlot@27993" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@27994" to="TileMap/@TurretSlot@27994" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@27995" to="TileMap/@TurretSlot@27995" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@27996" to="TileMap/@TurretSlot@27996" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@27997" to="TileMap/@TurretSlot@27997" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@27998" to="TileMap/@TurretSlot@27998" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@27999" to="TileMap/@TurretSlot@27999" method="_on_input_event"]
 
 [editable path="Spawner"]
