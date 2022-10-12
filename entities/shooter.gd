@@ -20,6 +20,7 @@ signal anim_restarted(anim_name: String)  # used to sync animations
 	set = set_detect_radius
 @export var fire_rate: float = 0.5
 @export var rot_speed: float = 5.0
+@export_enum("Normal", "Homing") var shooting_mode: int
 @export_range(1, 6) var projectile_count: int = 1:
 	set = set_projectile_count
 @export var projectile_type: PackedScene
@@ -30,6 +31,7 @@ signal anim_restarted(anim_name: String)  # used to sync animations
 var is_mouse_hovering := false  # used to draw detect radius, set by parent scene
 var targets: Array[Node2D]
 var can_shoot := true
+var muzzle_idx := -1  # used in homing mode, otherwise stays negative
 
 @onready var gun := $Gun as AnimatedSprite2D
 @onready var muzzle_flash := $MuzzleFlash as AnimatedSprite2D
@@ -41,6 +43,8 @@ var can_shoot := true
 
 
 func _ready() -> void:
+	if shooting_mode == 1:  # Homing
+		muzzle_idx = 0
 	# initialize detector's shape
 	detector_shape.radius = detect_radius
 	detector_coll.shape = detector_shape
@@ -69,17 +73,18 @@ func _draw() -> void:
 # Gets called by its parents, so that we have more control over when to shoot
 func shoot() -> void:
 	can_shoot = false
-	for _muzzle in gun.get_children():
-		var projectile: Projectile = projectile_type.instantiate()
-		projectile.start(_muzzle.global_position,
-				rotation + randf_range(-projectile_spread, projectile_spread),
-				projectile_speed, projectile_damage)
-		projectile.collision_mask = detector.collision_mask
-		projectile_instanced.emit(projectile)
-	firerate_timer.start(fire_rate)
-	# play animations
-	_play_animations("shoot")
+	if shooting_mode == 0:  # Normal
+		for _muzzle in gun.get_children():
+			_instance_projectile(_muzzle.global_position)
+		_play_animations("shoot")
+	else:  # Homing
+		var muzzle_pos := (gun.get_child(muzzle_idx) as Marker2D).global_position
+		_instance_projectile(muzzle_pos, targets.front())
+		muzzle_idx = Global.wrap_index(muzzle_idx + 1, projectile_count)
+		muzzle_flash.global_position = muzzle_pos
+		_play_animations("shoot_%s" % ["b" if muzzle_idx == 0 else "a"])
 	# show reload time on HUD
+	firerate_timer.start(fire_rate)
 	has_shot.emit(firerate_timer.wait_time)
 
 
@@ -122,6 +127,15 @@ func set_projectile_count(value: int) -> void:
 
 func _on_fire_rate_timer_timeout() -> void:
 	can_shoot = true
+
+
+func _instance_projectile(_position: Vector2, target=null) -> void:
+	var projectile: Projectile = projectile_type.instantiate()
+	projectile.start(_position,
+			rotation + randf_range(-projectile_spread, projectile_spread),
+			projectile_speed, projectile_damage, target)
+	projectile.collision_mask = detector.collision_mask
+	projectile_instanced.emit(projectile)
 
 
 func _play_animations(anim_name: String) -> void:

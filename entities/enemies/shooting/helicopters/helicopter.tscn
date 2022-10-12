@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://dx0mfo2yv8887"]
+[gd_scene load_steps=121 format=3 uid="uid://dx0mfo2yv8887"]
 
 [ext_resource type="PackedScene" uid="uid://bl2so1n5mvkym" path="res://entities/enemies/shooting/shooting_enemy.tscn" id="1_3xlxq"]
 [ext_resource type="Texture2D" uid="uid://bqno5ak15gnhi" path="res://entities/enemies/shooting/helicopters/assets/textures/body_move_00.png" id="2_iq8hb"]
@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://c5klrxund1x83" path="res://entities/enemies/shooting/helicopters/assets/textures/body_shoot_a_00.png" id="16_bd0ml"]
 [ext_resource type="Texture2D" uid="uid://b1ri56amou7ry" path="res://entities/enemies/shooting/helicopters/assets/textures/body_die_06.png" id="16_grsvb"]
 [ext_resource type="Texture2D" uid="uid://cvnfto16cn0rn" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_12.png" id="16_tciob"]
-[ext_resource type="Script" path="res://entities/shooter_homing.gd" id="16_x1stl"]
 [ext_resource type="Texture2D" uid="uid://ciw2hpxa7lldn" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_move_00.png" id="17_l0fmg"]
 [ext_resource type="Texture2D" uid="uid://de7we2ed6467x" path="res://entities/enemies/shooting/helicopters/assets/textures/body_die_07.png" id="17_w5ksi"]
 [ext_resource type="Texture2D" uid="uid://d0k3hrd2suld6" path="res://entities/enemies/shooting/helicopters/assets/textures/body_shoot_a_01.png" id="17_wf4qk"]
@@ -227,7 +226,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_52mwm"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gvtx"]
 radius = 600.0
 
 [node name="Helicopter" instance=ExtResource("1_3xlxq")]
@@ -282,10 +281,10 @@ time_horizon = 20.0
 
 [node name="Shooter" parent="." index="7"]
 z_index = -5
-script = ExtResource("16_x1stl")
 detector_color = Color(1, 0.22, 0.25, 0.25)
 detect_radius = 600
 fire_rate = 4.0
+shooting_mode = 1
 projectile_count = 2
 projectile_type = ExtResource("15_j4ape")
 projectile_spread = 0.0
@@ -307,7 +306,7 @@ position = Vector2(50, 38)
 frames = SubResource("SpriteFrames_8rdfx")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_52mwm")
+shape = SubResource("CircleShape2D_1gvtx")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(650, 0)
