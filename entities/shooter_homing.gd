@@ -13,12 +13,12 @@ func shoot() -> void:
 	var projectile: Projectile = projectile_type.instantiate()
 	projectile.name = "Missile%d" % (muzzle_idx + 1)
 	projectile.rotation = -PI / 2
-	projectile_container.add_child(projectile, true)
 	projectile.start(muzzle.global_position,
 			rotation + randf_range(-projectile_spread, projectile_spread),
 			projectile_speed, projectile_damage,
 			targets.front())
 	projectile.collision_mask = detector.collision_mask
+	projectile_instanced.emit(projectile)
 	firerate_timer.start(fire_rate)
 	muzzle_idx = Global.wrap_index(muzzle_idx + 1, projectile_count)
 	# play animation

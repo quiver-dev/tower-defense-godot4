@@ -38,8 +38,9 @@ var are_waves_finished := false  # used to check win gameover
 var are_enemies_finished := false  # same here
 
 @onready var wave_timer := $WaveTimer as Timer
-@onready var enemy_container := $EnemyContainer as Node2D
 @onready var spawns_container := $SpawnsContainer as Node2D
+@onready var enemy_container := $EnemyContainer as Node2D
+@onready var projectile_container := $ProjectileContainer as Node
 @onready var ground_spawns := []
 @onready var air_spawns := []
 
@@ -119,6 +120,9 @@ func _spawn_enemy(enemy_path: String) -> void:
 		enemy.global_position = (ground_spawns[randi() % ground_spawns.size()] \
 				as Marker2D).global_position
 	enemy.dead.connect(_on_enemy_death.bind(enemy))
+	if enemy is ShootingEnemy:
+		(enemy as ShootingEnemy).shooter.projectile_instanced.connect(
+				_on_enemy_projectile_instanced)
 	enemy.move_to(objective_pos)
 
 
@@ -130,6 +134,10 @@ func _on_enemy_death(enemy: Enemy) -> void:
 		are_enemies_finished = true
 	if are_waves_finished and are_enemies_finished:
 		enemies_defeated.emit()
+
+
+func _on_enemy_projectile_instanced(projectile: Projectile) -> void:
+	projectile_container.add_child(projectile, true)
 
 
 # Implementation of the Cumulative Distribution Algorithm, used to spawn 

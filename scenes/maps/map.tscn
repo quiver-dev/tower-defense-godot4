@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://qkm7w8f0dolu" path="res://scenes/maps/assets/tilesets/field.tres" id="2_h2epk"]
 [ext_resource type="PackedScene" uid="uid://bpnhw7y2qno58" path="res://scenes/maps/camera2D/camera2D.tscn" id="3_0rhbr"]
 [ext_resource type="PackedScene" uid="uid://b8g10g5id7xy5" path="res://scenes/maps/objective/objective.tscn" id="4_4ad64"]
-[ext_resource type="PackedScene" path="res://scenes/maps/spawner/spawner.tscn" id="5_n3p8r"]
+[ext_resource type="PackedScene" uid="uid://bdyht7kyjay3y" path="res://scenes/maps/spawner/spawner.tscn" id="5_n3p8r"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2mvwc"]
 resource_local_to_scene = true

@@ -12,6 +12,7 @@ extends Node2D
 
 
 signal has_shot(reload_time: float)
+signal projectile_instanced(type: Projectile)
 signal anim_restarted(anim_name: String)  # used to sync animations
 
 @export var detector_color: Color = Color(1, 0.22, 0.25, 0.25)  # for debug
@@ -36,7 +37,6 @@ var can_shoot := true
 @onready var detector_coll := $Detector/CollisionShape2D as CollisionShape2D
 @onready var detector_shape := CircleShape2D.new()
 @onready var lookahead := $LookAhead as RayCast2D
-@onready var projectile_container := $ProjectileContainer as Node
 @onready var firerate_timer := $FireRateTimer as Timer
 
 
@@ -66,7 +66,7 @@ func _draw() -> void:
 			detector_color)
 
 
-# Gets called by its parents. This way we have more control over when to shoot
+# Gets called by its parents, so that we have more control over when to shoot
 func shoot() -> void:
 	can_shoot = false
 	for _muzzle in gun.get_children():
@@ -74,8 +74,8 @@ func shoot() -> void:
 		projectile.start(_muzzle.global_position,
 				rotation + randf_range(-projectile_spread, projectile_spread),
 				projectile_speed, projectile_damage)
-		projectile_container.add_child(projectile, true)
 		projectile.collision_mask = detector.collision_mask
+		projectile_instanced.emit(projectile)
 	firerate_timer.start(fire_rate)
 	# play animations
 	_play_animations("shoot")

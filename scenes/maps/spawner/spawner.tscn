@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnsta2tsiaa64"]
+[gd_scene load_steps=3 format=3 uid="uid://bdyht7kyjay3y"]
 
 [ext_resource type="Script" path="res://scenes/maps/spawner/spawner.gd" id="1_hhcuf"]
 [ext_resource type="Script" path="res://scenes/maps/spawner/marker2d.gd" id="2_m2sbv"]
@@ -28,6 +28,8 @@ script = ExtResource("2_m2sbv")
 spawn_type = 1
 
 [node name="EnemyContainer" type="Node2D" parent="."]
+
+[node name="ProjectileContainer" type="Node" parent="."]
 
 [node name="WaveTimer" type="Timer" parent="."]
 one_shot = true

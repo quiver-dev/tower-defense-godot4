@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://c00tw3b8wgm8y"]
 
 [ext_resource type="Script" path="res://scenes/maps/turret_slot/turret_slot.gd" id="1_skyup"]
 [ext_resource type="Texture2D" uid="uid://cdt1rsj4xbkq3" path="res://entities/turrets/assets/textures/base_idle_00.png" id="2_h7gu8"]
@@ -21,6 +21,8 @@ texture = ExtResource("2_h7gu8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_hunl7")
+
+[node name="ProjectileContainer" type="Node" parent="."]
 
 [node name="UI" type="Node2D" parent="."]
 z_index = 100
