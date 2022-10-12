@@ -57,7 +57,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fpdah"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_g112j"]
 radius = 400.0
 
 [node name="Turret" type="CharacterBody2D"]
@@ -90,15 +90,22 @@ offset = Vector2(7, -2)
 frames = SubResource("SpriteFrames_7qxgd")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_fpdah")
+shape = SubResource("CircleShape2D_g112j")
+
+[node name="LookAhead" parent="Shooter" index="3"]
+target_position = Vector2(450, 0)
 
 [node name="Explosion" parent="." instance=ExtResource("13_iceo6")]
 
-[node name="EntityHUD" parent="." instance=ExtResource("5_owktb")]
-offset_left = -31.0
-offset_top = -107.0
-offset_right = -31.0
-offset_bottom = -107.0
+[node name="UI" type="Node2D" parent="."]
+z_index = 50
+z_as_relative = false
+
+[node name="EntityHUD" parent="UI" instance=ExtResource("5_owktb")]
+offset_left = -45.0
+offset_top = -134.0
+offset_right = -45.0
+offset_bottom = -134.0
 
 [connection signal="mouse_entered" from="." to="Shooter" method="_on_parent_mouse_entered"]
 [connection signal="mouse_exited" from="." to="Shooter" method="_on_parent_mouse_exited"]

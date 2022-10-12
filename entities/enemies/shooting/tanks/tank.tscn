@@ -151,7 +151,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_py4ih"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_w32bt"]
 radius = 500.0
 
 [node name="Tank" instance=ExtResource("1_jmm6g")]
@@ -185,6 +185,7 @@ fire_rate = 3.0
 rot_speed = 4.0
 projectile_type = ExtResource("33_kokoa")
 projectile_spread = 0.1
+projectile_damage = 25
 
 [node name="Gun" parent="Shooter" index="0"]
 frames = SubResource("SpriteFrames_mdejl")
@@ -195,7 +196,7 @@ position = Vector2(44, 0)
 frames = SubResource("SpriteFrames_x5y1r")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_py4ih")
+shape = SubResource("CircleShape2D_w32bt")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)

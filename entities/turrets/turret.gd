@@ -18,7 +18,7 @@ var type: String:
 @onready var collision := $CollisionShape2D as CollisionShape2D
 @onready var shooter := $Shooter as Shooter
 @onready var explosion := $Explosion as AnimatedSprite2D
-@onready var hud := $EntityHUD as EntityHud
+@onready var hud := $UI/EntityHUD as EntityHud
 
 
 func _ready() -> void:

@@ -74,7 +74,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h61hu"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_o3j1l"]
 radius = 700.0
 
 [node name="GatlingTurret" instance=ExtResource("1_yb6wj")]
@@ -88,9 +88,8 @@ detect_radius = 700
 fire_rate = 0.1
 rot_speed = 15.0
 projectile_count = 6
-targeted_groups = PackedStringArray("infantry")
 projectile_type = ExtResource("2_70bac")
-projectile_spread = 0.1
+projectile_spread = 0.08
 projectile_damage = 3
 
 [node name="Gun" parent="Shooter" index="0"]
@@ -121,13 +120,9 @@ position = Vector2(93, 1)
 frames = SubResource("SpriteFrames_r51ql")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_h61hu")
+shape = SubResource("CircleShape2D_o3j1l")
 
 [node name="LookAhead" parent="Shooter" index="3"]
-target_position = Vector2(710, 0)
-
-[node name="EntityHUD" parent="." index="5"]
-offset_left = -30.0
-offset_right = -30.0
+target_position = Vector2(750, 0)
 
 [editable path="Shooter"]
