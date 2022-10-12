@@ -86,7 +86,11 @@ time_horizon = 40.0
 [node name="Line2D" type="Line2D" parent="."]
 width = 5.0
 
-[node name="EntityHUD" parent="." instance=ExtResource("7_dxylf")]
+[node name="UI" type="Node2D" parent="."]
+z_index = 50
+z_as_relative = false
+
+[node name="EntityHUD" parent="UI" instance=ExtResource("7_dxylf")]
 offset_left = -48.0
 offset_top = -117.0
 offset_right = -48.0

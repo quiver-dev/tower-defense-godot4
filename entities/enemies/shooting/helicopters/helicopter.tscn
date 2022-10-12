@@ -227,7 +227,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_su7de"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_fwmrg"]
 radius = 600.0
 
 [node name="Helicopter" instance=ExtResource("1_3xlxq")]
@@ -307,15 +307,12 @@ position = Vector2(50, 38)
 frames = SubResource("SpriteFrames_8rdfx")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_su7de")
+shape = SubResource("CircleShape2D_fwmrg")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(650, 0)
 
 [node name="Explosion" parent="." index="8" instance=ExtResource("111_m6jlu")]
-
-[node name="EntityHUD" parent="." index="9"]
-metadata/_edit_lock_ = true
 
 [connection signal="anim_restarted" from="Shooter" to="." method="_on_shooter_anim_restarted"]
 

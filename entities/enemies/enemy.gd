@@ -17,7 +17,7 @@ var objective_damage := 10  # default damage dealt when entering the objective
 @onready var sprite := $Sprite2D as AnimatedSprite2D:
 	get: return $Sprite2D as AnimatedSprite2D
 @onready var collision := $CollisionShape2D as CollisionShape2D
-@onready var hud := $EntityHUD as EntityHud
+@onready var hud := $UI/EntityHUD as EntityHud
 @onready var line2d := $Line2D as Line2D
 
 
