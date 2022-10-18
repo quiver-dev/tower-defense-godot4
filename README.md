@@ -1,4 +1,4 @@
-# Outpost Assalut: Tower Defense Game Template
+# Outpost Assault: Tower Defense Game Template
 A 2D tile-based tower defense game built using Godot 4.0 beta.
 
 ## Features
