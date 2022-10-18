@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/akashi.ttf-3aa2e1823ae9ea2bfeca04d856914b1d.f
 [params]
 
 Rendering=null
-antialiased=true
+antialiasing=1
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8

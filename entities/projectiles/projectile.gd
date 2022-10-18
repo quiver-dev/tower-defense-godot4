@@ -21,6 +21,7 @@ var target  # homing missiles only
 @onready var hit_vfx := $HitVfx as AnimatedSprite2D
 @onready var collision_shape := $CollisionShape2D as CollisionShape2D
 @onready var visibility_notifier := $VisibleOnScreenNotifier2D as VisibleOnScreenNotifier2D
+@onready var lifetime_timer := $LifetimeTimer as Timer
 
 
 func _ready() -> void:
@@ -29,8 +30,7 @@ func _ready() -> void:
 	visibility_notifier.screen_entered.connect(show)
 	visibility_notifier.screen_exited.connect(hide)
 	# create a one-shot timer for lifetime
-	var timer := get_tree().create_timer(lifetime)
-	timer.timeout.connect(_on_lifetime_timer_timeout)
+	lifetime_timer.start(lifetime)
 
 
 func _physics_process(delta: float) -> void:

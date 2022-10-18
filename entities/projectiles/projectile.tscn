@@ -52,6 +52,9 @@ position = Vector2(40, 0)
 frames = SubResource("SpriteFrames_6sp82")
 animation = &"hit"
 
+[node name="LifetimeTimer" type="Timer" parent="."]
+
 [connection signal="area_entered" from="." to="." method="_on_projectile_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_projectile_body_entered"]
 [connection signal="animation_finished" from="HitVfx" to="." method="_on_hit_vfx_animation_finished"]
+[connection signal="timeout" from="LifetimeTimer" to="." method="_on_lifetime_timer_timeout"]
