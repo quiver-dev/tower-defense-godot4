@@ -91,7 +91,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gvhhk"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_yv1bs"]
 radius = 400.0
 
 [node name="ShootingEnemy" instance=ExtResource("1_tnaes")]
@@ -132,10 +132,9 @@ frames = SubResource("SpriteFrames_e6dea")
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_gvhhk")
+shape = SubResource("CircleShape2D_yv1bs")
 
 [node name="LookAhead" parent="Shooter" index="3"]
-target_position = Vector2(450, 0)
 collision_mask = 18
 collide_with_areas = true
 

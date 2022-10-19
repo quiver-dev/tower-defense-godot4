@@ -21,7 +21,7 @@ func _ready() -> void:
 # for the duration of this state
 func enter() -> void:
 	(owner as Enemy).speed -= int((owner as Enemy).speed * slowdown_percentage)
-	prev_state = (owner as Enemy).get_fsm().states_stack.back()
+	prev_state = (owner as Enemy).state_machine.states_stack.back()
 	timer.start(state_duration)
 
 

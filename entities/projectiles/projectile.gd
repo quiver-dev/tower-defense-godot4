@@ -52,7 +52,7 @@ func start(_position: Vector2, _rotation: float, _speed: int, _damage: int, _tar
 # Thus we can be sure the right method will be triggered by each instance
 func _on_projectile_body_entered(body: Node2D) -> void:
 	if body is Enemy:
-		(body.get_fsm() as EnemyFSM).is_hit(damage)
+		(body.state_machine as EnemyFSM).is_hit(damage)
 		_explode()
 	elif body is Turret:
 		(body as Turret).health -= damage

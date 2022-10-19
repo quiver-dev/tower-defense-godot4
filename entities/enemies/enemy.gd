@@ -1,6 +1,5 @@
 class_name Enemy
 extends CharacterBody2D
-# TODO: remove all Line2D references
 
 
 signal target_changed(pos: Vector2)
@@ -13,17 +12,17 @@ signal dead
 
 var objective_damage := 10  # default damage dealt when entering the objective
 
+@onready var state_machine := $StateMachine as StateMachine
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @onready var sprite := $Sprite2D as AnimatedSprite2D:
 	get: return $Sprite2D as AnimatedSprite2D
 @onready var collision := $CollisionShape2D as CollisionShape2D
 @onready var hud := $UI/EntityHUD as EntityHud
-@onready var line2d := $Line2D as Line2D
 
 
 func _ready() -> void:
 	# initialize HUD
-	hud.state_label.text = get_fsm().current_state.name
+	hud.state_label.text = state_machine.current_state.name
 	hud.healthbar.max_value = health
 	hud.healthbar.value = health
 	# initialize navigation agent
@@ -67,10 +66,6 @@ func set_health(value: int) -> void:
 	# https://docs.godotengine.org/en/stable/tutorials/best_practices/godot_notifications.html#init-vs-initialization-vs-export
 	if is_instance_valid(hud):
 		hud.healthbar.value = health
-
-
-func get_fsm() -> StateMachine:
-	return $StateMachine as StateMachine
 
 
 # Used to make the enemy rotate to face its current direction,

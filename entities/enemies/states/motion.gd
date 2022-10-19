@@ -11,6 +11,3 @@ func _move() -> void:
 		(owner as Enemy).nav_agent.set_velocity(new_velocity)
 	else:
 		(owner as Enemy).nav_agent.velocity_computed.emit(new_velocity)
-	# DEBUG: visualize path
-	# FIXME: not working. For some reason points is always empty
-	(owner as Enemy).line2d.points.append(next_path_pos)

@@ -83,9 +83,6 @@ avoidance_enabled = true
 radius = 32.0
 time_horizon = 40.0
 
-[node name="Line2D" type="Line2D" parent="."]
-width = 5.0
-
 [node name="UI" type="Node2D" parent="."]
 z_index = 50
 z_as_relative = false
