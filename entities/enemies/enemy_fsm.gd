@@ -25,9 +25,6 @@ func _ready() -> void:
 # Special case to force a switch to the Hit state.
 # Called when colliding with damaging objects. This is a limitation of
 # this implementation because we can't pass data directly to a state.
-# TODO: try finding a way to let the Hit state handle damage. Maybe have a
-# damage_taken parameter on the Enemy scene that the Hit state will use to
-# handle health.
 func is_hit(damage: int) -> void:
 	if String(current_state.name) in ["Hit", "Die"]:
 		return
