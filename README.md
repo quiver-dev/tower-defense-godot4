@@ -1,5 +1,8 @@
 # Outpost Assault: Tower Defense Game Template
-A 2D tile-based tower defense game built using Godot 4.0 beta.
+An open source 2D tile-based tower defense game template built for Godot 4.0, created by [Quiver](https://quiver.dev).
+
+## Prerequisites
+Latest version of Godot 4
 
 ## Features
 - Tower placement
@@ -53,7 +56,14 @@ infantry/move_00.png
 ```
 `animation` can also be omitted in case an entity only has one animation (e.g. a bullet flash or an explosion).
 
-## LFS
-This project uses Git Large File Storage (LFS) to store asset binaries.
-To initialize it make sure you have LFS installed, then simply run 
-`git lfs install` (only once per local repository).
+## Installation Instructions
+* Clone this repository from Github
+* This project uses Git Large File Storage (LFS) to store asset binaries. To initialize it make sure you have LFS installed, then simply run `git lfs install` (only once per local repository).
+* Open the project file with Godot 4 and run it to play the *Outpost Assault* demo!
+
+## Questions/Bugs/Suggestions
+For bugs and feature requests, feel free to file an issue here or comment on this template's [project page](https://quiver.dev/assets/game-templates/outpost-assault-tower-defense-godot-4-template/).
+
+## Share with the community!
+If you manage to incorporate this template into your next project, please share with the [Quiver community](https://quiver.dev/)!
+
