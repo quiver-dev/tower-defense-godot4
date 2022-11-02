@@ -10,4 +10,8 @@ export_presets.cfg
 data_*/
 
 # Personal Godot plugins
-#addons/
+addons/
+
+# Development files
+scenes/test/
+
