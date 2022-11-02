@@ -69,3 +69,10 @@ metadata/_edit_lock_ = true
 visible = false
 navpoly = SubResource("NavigationPolygon_6ntce")
 navigation_layers = 2
+
+[connection signal="input_event" from="TileMap/@TurretSlot@19211" to="TileMap/@TurretSlot@19211" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@19212" to="TileMap/@TurretSlot@19212" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@19213" to="TileMap/@TurretSlot@19213" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@19214" to="TileMap/@TurretSlot@19214" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@19215" to="TileMap/@TurretSlot@19215" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@TurretSlot@19216" to="TileMap/@TurretSlot@19216" method="_on_input_event"]
