@@ -63,8 +63,8 @@ infantry/move_00.png
 `animation` can also be omitted in case an entity only has one animation (e.g. a bullet flash or an explosion).
 
 ## Installation Instructions
+* This project uses [Git Large File Storage](https://git-lfs.github.com/) (LFS) to store asset binaries. To initialize it make sure you have LFS installed, then simply run ```git lfs install```
 * Clone this repository from Github
-* This project uses Git Large File Storage (LFS) to store asset binaries. To initialize it make sure you have LFS installed, then simply run `git lfs install` (only once per local repository).
 * Open the project file with Godot 4 and run it to play the *Outpost Assault* demo!
 
 ## Questions/Bugs/Suggestions
