@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/shadow_die_02.png-205ee9ccad2f2c808a80260e23f
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

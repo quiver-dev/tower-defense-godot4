@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/red_circle_cross.png-89ea1644668f6f2f8a485634
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

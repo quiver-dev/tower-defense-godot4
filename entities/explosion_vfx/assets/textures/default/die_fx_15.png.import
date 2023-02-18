@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/die_fx_15.png-aaec6abed5feeb9b406b457e54ec9ce
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

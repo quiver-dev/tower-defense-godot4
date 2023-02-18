@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/die_06.png-a8b9fa7117aeae3d3234d01c93b761f5.c
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

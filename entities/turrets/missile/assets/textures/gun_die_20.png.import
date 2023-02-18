@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/gun_die_20.png-a33c9c0aea84e34f6c557ba7e0ecd9
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

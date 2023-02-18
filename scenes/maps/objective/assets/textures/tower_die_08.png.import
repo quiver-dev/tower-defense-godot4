@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/tower_die_08.png-185eba5c8e739210ac0df84d8aa6
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

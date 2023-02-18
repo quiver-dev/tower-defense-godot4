@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/body_die_18.png-0a4c1acb3bfb970b47697f717bbc4
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

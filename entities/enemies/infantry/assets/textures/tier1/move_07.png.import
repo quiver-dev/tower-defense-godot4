@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/move_07.png-940aae412461b5a1f134f61afb93e4c0.
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
