@@ -25,7 +25,10 @@ animations = [{
 "name": &"hit",
 "speed": 5.0
 }, {
-"frames": [SubResource("CompressedTexture2D_tr4ns")],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_tr4ns")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
@@ -61,7 +64,10 @@ animations = [{
 "name": &"explode",
 "speed": 5.0
 }, {
-"frames": [SubResource("CompressedTexture2D_awfie")],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_awfie")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
@@ -91,7 +97,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yv1bs"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_71c7q"]
 radius = 400.0
 
 [node name="ShootingEnemy" instance=ExtResource("1_tnaes")]
@@ -114,33 +120,33 @@ script = ExtResource("6_la5et")
 script = ExtResource("7_o658i")
 
 [node name="Sprite2D" parent="." index="1"]
-frames = SubResource("SpriteFrames_54mwn")
+sprite_frames = SubResource("SpriteFrames_54mwn")
 animation = &"idle"
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_w2ixb")
 
+[node name="EntityHUD" parent="UI" index="0"]
+offset_top = -150.0
+offset_bottom = -150.0
+
 [node name="Shooter" parent="." index="5" instance=ExtResource("8_dv8tr")]
 
 [node name="Gun" parent="Shooter" index="0"]
-frames = SubResource("SpriteFrames_pwnph")
+sprite_frames = SubResource("SpriteFrames_pwnph")
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
-frames = SubResource("SpriteFrames_e6dea")
+sprite_frames = SubResource("SpriteFrames_e6dea")
 
 [node name="Detector" parent="Shooter" index="2"]
 collision_mask = 18
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_yv1bs")
+shape = SubResource("CircleShape2D_71c7q")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 collision_mask = 18
 collide_with_areas = true
-
-[node name="EntityHUD" parent="UI" index="0"]
-offset_top = -150.0
-offset_bottom = -150.0
 
 [connection signal="mouse_entered" from="." to="Shooter" method="_on_parent_mouse_entered"]
 [connection signal="mouse_exited" from="." to="Shooter" method="_on_parent_mouse_exited"]

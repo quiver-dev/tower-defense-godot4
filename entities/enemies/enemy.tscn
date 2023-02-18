@@ -30,12 +30,39 @@ animations = [{
 "name": &"hit",
 "speed": 5.0
 }, {
-"frames": [ExtResource("6_ic7wi")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ic7wi")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource("7_p5ao0"), ExtResource("8_bl5vh"), ExtResource("9_j8c11"), ExtResource("10_irr8p"), ExtResource("11_83b1a"), ExtResource("12_7n4yk"), ExtResource("13_ciwdb"), ExtResource("14_vd38d")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_p5ao0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bl5vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j8c11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_irr8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_83b1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7n4yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ciwdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vd38d")
+}],
 "loop": true,
 "name": &"move",
 "speed": 5.0
@@ -68,9 +95,8 @@ script = ExtResource("5_t30j3")
 script = ExtResource("6_70kam")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-frames = SubResource("SpriteFrames_6olqj")
+sprite_frames = SubResource("SpriteFrames_6olqj")
 animation = &"move"
-playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_q2pkr")
@@ -78,7 +104,6 @@ shape = SubResource("CircleShape2D_q2pkr")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 100.0
 target_desired_distance = 100.0
-path_max_distance = 100.0
 avoidance_enabled = true
 radius = 32.0
 time_horizon = 40.0

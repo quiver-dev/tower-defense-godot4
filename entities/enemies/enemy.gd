@@ -38,8 +38,8 @@ func _physics_process(delta: float) -> void:
 
 
 func move_to(pos: Vector2) -> void:
-	nav_agent.set_target_location(pos)
-	target_changed.emit(nav_agent.get_target_location())
+	nav_agent.target_position = pos
+	target_changed.emit(nav_agent.target_position)
 
 
 func stop() -> void:
@@ -49,7 +49,7 @@ func stop() -> void:
 
 
 func apply_animation(anim_name: String) -> void:
-	if sprite.frames.has_animation(anim_name):
+	if sprite.sprite_frames.has_animation(anim_name):
 		sprite.play(anim_name)
 	else:
 		print_debug("Sprite node doesn't have animation %s!" % anim_name)
