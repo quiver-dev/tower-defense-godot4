@@ -19,12 +19,39 @@ animations = [{
 "name": &"explode",
 "speed": 5.0
 }, {
-"frames": [ExtResource("2_31pp5")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_31pp5")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource("4_80ryh"), ExtResource("5_bcu82"), ExtResource("6_emgg5"), ExtResource("7_7d4qh"), ExtResource("8_623st"), ExtResource("9_wt1r4"), ExtResource("10_r4ivj"), ExtResource("11_ecrc2")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_80ryh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bcu82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_emgg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7d4qh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_623st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wt1r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r4ivj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ecrc2")
+}],
 "loop": false,
 "name": &"shoot",
 "speed": 10.0
@@ -49,19 +76,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hqfft"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_3bg57"]
 radius = 400.0
 
 [node name="Shooter" type="Node2D"]
 script = ExtResource("1_iyj4l")
 detector_color = Color(0, 0, 1, 0.490196)
 detect_radius = 400
-shooting_mode = 0
 
 [node name="Gun" type="AnimatedSprite2D" parent="."]
-frames = SubResource("SpriteFrames_m3rfr")
+sprite_frames = SubResource("SpriteFrames_m3rfr")
 animation = &"idle"
-playing = true
+autoplay = "idle"
 offset = Vector2(11, -2)
 
 [node name="Muzzle" type="Marker2D" parent="Gun"]
@@ -69,9 +95,9 @@ position = Vector2(80, 0)
 
 [node name="MuzzleFlash" type="AnimatedSprite2D" parent="."]
 position = Vector2(80, 0)
-frames = SubResource("SpriteFrames_0m3mx")
+sprite_frames = SubResource("SpriteFrames_0m3mx")
 animation = &"idle"
-playing = true
+autoplay = "idle"
 
 [node name="Detector" type="Area2D" parent="."]
 collision_layer = 0
@@ -79,7 +105,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 modulate = Color(1, 1, 1, 0.247059)
-shape = SubResource("CircleShape2D_hqfft")
+shape = SubResource("CircleShape2D_3bg57")
 
 [node name="LookAhead" type="RayCast2D" parent="."]
 target_position = Vector2(450, 0)

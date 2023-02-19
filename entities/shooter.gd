@@ -139,8 +139,6 @@ func _instance_projectile(_position: Vector2, target=null) -> void:
 
 
 func _play_animations(anim_name: String) -> void:
-	gun.frame = 0
-	muzzle_flash.frame = 0
 	gun.play(anim_name)
 	muzzle_flash.play(anim_name)
 	anim_restarted.emit(anim_name)

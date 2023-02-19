@@ -27,12 +27,39 @@ animations = [{
 "name": &"explode",
 "speed": 5.0
 }, {
-"frames": [ExtResource("4_o5cln")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_o5cln")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource("5_7xp4l"), ExtResource("6_73w7d"), ExtResource("7_2g8oo"), ExtResource("8_37pud"), ExtResource("9_ujgii"), ExtResource("10_g16i6"), ExtResource("11_lja6c"), ExtResource("12_kj0np")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7xp4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_73w7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2g8oo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_37pud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ujgii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g16i6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lja6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kj0np")
+}],
 "loop": false,
 "name": &"shoot",
 "speed": 12.0
@@ -57,7 +84,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g112j"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ypac4"]
 radius = 400.0
 
 [node name="Turret" type="CharacterBody2D"]
@@ -72,8 +99,8 @@ visible = false
 texture = ExtResource("2_nf4vx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, 0)
 z_index = 1
+position = Vector2(5, 0)
 shape = SubResource("RectangleShape2D_o87d8")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
@@ -83,17 +110,15 @@ detector_color = Color(0, 0, 1, 0.0980392)
 
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(4, 0)
-frames = SubResource("SpriteFrames_lyc1n")
+sprite_frames = SubResource("SpriteFrames_lyc1n")
+frame_progress = 0.0500505
 offset = Vector2(7, -2)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
-frames = SubResource("SpriteFrames_7qxgd")
+sprite_frames = SubResource("SpriteFrames_7qxgd")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_g112j")
-
-[node name="LookAhead" parent="Shooter" index="3"]
-target_position = Vector2(450, 0)
+shape = SubResource("CircleShape2D_ypac4")
 
 [node name="Explosion" parent="." instance=ExtResource("13_iceo6")]
 

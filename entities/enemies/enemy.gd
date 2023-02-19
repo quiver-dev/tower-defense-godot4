@@ -48,6 +48,7 @@ func stop() -> void:
 	nav_agent.set_velocity(Vector2.ZERO)
 
 
+# Always called by states
 func apply_animation(anim_name: String) -> void:
 	if sprite.sprite_frames.has_animation(anim_name):
 		sprite.play(anim_name)
