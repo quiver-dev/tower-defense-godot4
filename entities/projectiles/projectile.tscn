@@ -23,7 +23,16 @@ height = 9.99999
 [sub_resource type="SpriteFrames" id="SpriteFrames_6sp82"]
 resource_local_to_scene = true
 animations = [{
-"frames": [ExtResource("5_hg75i"), ExtResource("6_f5msy"), ExtResource("7_4o8dh"), null],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hg75i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f5msy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4o8dh")
+}],
 "loop": false,
 "name": &"hit",
 "speed": 10.0
@@ -49,7 +58,7 @@ scale = Vector2(4, 4)
 [node name="HitVfx" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(40, 0)
-frames = SubResource("SpriteFrames_6sp82")
+sprite_frames = SubResource("SpriteFrames_6sp82")
 animation = &"hit"
 
 [node name="LifetimeTimer" type="Timer" parent="."]

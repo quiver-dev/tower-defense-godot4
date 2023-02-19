@@ -72,7 +72,6 @@ func _explode() -> void:
 	collision_shape.set_deferred("disabled", true)
 	# play vfx
 	sprite.hide()
-	hit_vfx.frame = 0
 	hit_vfx.show()
 	hit_vfx.play("hit")
 

@@ -73,7 +73,10 @@ animations = [{
 "name": &"explode",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
@@ -84,7 +87,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ypac4"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_mwix6"]
 radius = 400.0
 
 [node name="Turret" type="CharacterBody2D"]
@@ -111,14 +114,15 @@ detector_color = Color(0, 0, 1, 0.0980392)
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_lyc1n")
-frame_progress = 0.0500505
+frame_progress = 0.0431887
 offset = Vector2(7, -2)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 sprite_frames = SubResource("SpriteFrames_7qxgd")
+frame_progress = 0.656992
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_ypac4")
+shape = SubResource("CircleShape2D_mwix6")
 
 [node name="Explosion" parent="." instance=ExtResource("13_iceo6")]
 

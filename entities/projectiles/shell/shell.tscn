@@ -19,14 +19,13 @@
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_sre88"]
 frames = 4
-fps = 8.0
 frame_0/texture = ExtResource("3_b0pds")
 frame_1/texture = ExtResource("4_btc3t")
-frame_1/delay_sec = 0.0
+frame_1/duration = 1.0
 frame_2/texture = ExtResource("5_ngfwe")
-frame_2/delay_sec = 0.0
+frame_2/duration = 1.0
 frame_3/texture = ExtResource("6_uuiht")
-frame_3/delay_sec = 0.0
+frame_3/duration = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpee1"]
 radius = 8.0
@@ -35,7 +34,40 @@ height = 24.0
 [sub_resource type="SpriteFrames" id="SpriteFrames_52x2d"]
 resource_local_to_scene = true
 animations = [{
-"frames": [ExtResource("6_nb3n6"), ExtResource("7_8h77b"), ExtResource("8_cgx24"), ExtResource("9_mft6p"), ExtResource("10_dviqr"), ExtResource("11_ko8n7"), ExtResource("12_eccky"), ExtResource("13_nxurx"), ExtResource("14_lseg6"), ExtResource("15_2xcdg"), ExtResource("16_s0kxe"), null],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nb3n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8h77b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cgx24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mft6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dviqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ko8n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_eccky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nxurx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lseg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2xcdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_s0kxe")
+}],
 "loop": false,
 "name": &"hit",
 "speed": 12.0
@@ -53,4 +85,4 @@ shape = SubResource("CapsuleShape2D_qpee1")
 
 [node name="HitVfx" parent="." index="3"]
 position = Vector2(66, 0)
-frames = SubResource("SpriteFrames_52x2d")
+sprite_frames = SubResource("SpriteFrames_52x2d")

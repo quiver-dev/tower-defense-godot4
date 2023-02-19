@@ -36,7 +36,6 @@ func apply_animation(anim_name: String) -> void:
 
 func _sync_animations() -> void:
 	for animated_sprite in [sprite, shadow, shooter.gun]:
-		(animated_sprite as AnimatedSprite2D).frame = 0
 		(animated_sprite as AnimatedSprite2D).play()
 
 

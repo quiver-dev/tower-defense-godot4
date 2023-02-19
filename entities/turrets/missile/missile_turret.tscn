@@ -57,22 +57,142 @@ size = Vector2(80, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pwq6h"]
 animations = [{
-"frames": [ExtResource("4_3iqqf"), ExtResource("5_b0yrp"), ExtResource("6_jpgek"), ExtResource("7_h6ap3"), ExtResource("8_i8o3n"), ExtResource("9_pu88b"), ExtResource("10_hgq3a"), ExtResource("11_8lbso"), ExtResource("12_gjs76"), ExtResource("13_8uy5e"), ExtResource("14_nbtbt"), ExtResource("15_e8767"), ExtResource("16_ll6q2"), ExtResource("17_ixk1e"), ExtResource("18_3roos"), ExtResource("19_phw43"), ExtResource("20_e8akw"), ExtResource("21_s3u5k"), ExtResource("22_ff6v8"), ExtResource("23_40lt0"), ExtResource("24_yyvjv"), ExtResource("25_rcovv"), ExtResource("26_sobf6")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3iqqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b0yrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jpgek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h6ap3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i8o3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pu88b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hgq3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8lbso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gjs76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8uy5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nbtbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_e8767")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ll6q2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ixk1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_3roos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_phw43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_e8akw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_s3u5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ff6v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_40lt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_yyvjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rcovv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_sobf6")
+}],
 "loop": false,
 "name": &"explode",
 "speed": 12.0
 }, {
-"frames": [ExtResource("4_utfvp")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_utfvp")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource("5_luclg"), ExtResource("6_j64sg"), ExtResource("7_en265"), ExtResource("8_4xsnx"), ExtResource("9_oympy"), ExtResource("10_pv3tn"), ExtResource("11_gcv3r"), ExtResource("12_8qoh3")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_luclg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j64sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_en265")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4xsnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oympy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pv3tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gcv3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8qoh3")
+}],
 "loop": false,
 "name": &"shoot_a",
 "speed": 10.0
 }, {
-"frames": [ExtResource("13_ilnkr"), ExtResource("14_askng"), ExtResource("15_tm7ph"), ExtResource("16_iigwa"), ExtResource("17_3ouq7"), ExtResource("18_yxbt6"), ExtResource("19_1ifk6"), ExtResource("20_cqmx5")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ilnkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_askng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tm7ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_iigwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3ouq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_yxbt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1ifk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cqmx5")
+}],
 "loop": false,
 "name": &"shoot_b",
 "speed": 10.0
@@ -81,28 +201,82 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_ncayq"]
 resource_local_to_scene = true
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": false,
 "name": &"explode",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource("21_xkwgg"), ExtResource("22_oy58g"), ExtResource("23_5cym0"), ExtResource("24_b0roi"), ExtResource("25_3rpo1"), ExtResource("26_rbkuv"), ExtResource("27_ccrje"), ExtResource("28_36qse"), null],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_xkwgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_oy58g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5cym0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_b0roi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_3rpo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rbkuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ccrje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_36qse")
+}],
 "loop": false,
 "name": &"shoot_a",
 "speed": 10.0
 }, {
-"frames": [ExtResource("21_xkwgg"), ExtResource("22_oy58g"), ExtResource("23_5cym0"), ExtResource("24_b0roi"), ExtResource("25_3rpo1"), ExtResource("26_rbkuv"), ExtResource("27_ccrje"), ExtResource("28_36qse"), null],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_xkwgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_oy58g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5cym0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_b0roi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_3rpo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rbkuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ccrje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_36qse")
+}],
 "loop": false,
 "name": &"shoot_b",
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s35mx"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_38r7f"]
 radius = 1000.0
 
 [node name="MissileTurret" instance=ExtResource("1_46fx6")]
@@ -124,7 +298,8 @@ projectile_damage = 20
 
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(2, 0)
-frames = SubResource("SpriteFrames_pwq6h")
+sprite_frames = SubResource("SpriteFrames_pwq6h")
+frame_progress = 0.72723
 offset = Vector2(-2, 0)
 metadata/_edit_lock_ = true
 
@@ -136,14 +311,16 @@ position = Vector2(17, 30)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 position = Vector2(19, -30)
-frames = SubResource("SpriteFrames_ncayq")
+sprite_frames = SubResource("SpriteFrames_ncayq")
+animation = &"shoot_a"
+frame_progress = 0.0
 offset = Vector2(12, 3)
 
 [node name="Detector" parent="Shooter" index="2"]
 collision_mask = 64
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_s35mx")
+shape = SubResource("CircleShape2D_38r7f")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(1050, 0)

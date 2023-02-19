@@ -406,12 +406,18 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_x5y1r"]
 resource_local_to_scene = true
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": true,
 "name": &"explode",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
@@ -443,7 +449,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_152a7"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_4jkcm"]
 radius = 500.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h1o7w"]
@@ -661,7 +667,7 @@ script = ExtResource("2_lf3dh")
 
 [node name="Sprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_u5pno")
-animation = &"move"
+animation = &"shoot_still"
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-14, 0)
@@ -682,15 +688,16 @@ projectile_damage = 25
 
 [node name="Gun" parent="Shooter" index="0"]
 sprite_frames = SubResource("SpriteFrames_mdejl")
-frame_progress = 0.656543
+frame_progress = 0.826881
 offset = Vector2(0, 0)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 position = Vector2(44, 0)
 sprite_frames = SubResource("SpriteFrames_x5y1r")
+animation = &"explode"
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_152a7")
+shape = SubResource("CircleShape2D_4jkcm")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)

@@ -39,17 +39,101 @@ size = Vector2(88, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v3a16"]
 animations = [{
-"frames": [ExtResource("3_mcjra"), ExtResource("4_bdy6l"), ExtResource("5_vufof"), ExtResource("6_rtexl"), ExtResource("7_ufpno"), ExtResource("8_214jn"), ExtResource("9_njk0i"), ExtResource("10_by2ot"), ExtResource("11_3xp2o"), ExtResource("12_nga6v"), ExtResource("13_0msu7"), ExtResource("14_rg4yh"), ExtResource("15_itxra"), ExtResource("16_bx3ab"), ExtResource("17_ugcre"), ExtResource("18_j6t65"), ExtResource("19_gmsmo"), ExtResource("20_8qlac"), ExtResource("21_ox1c4"), ExtResource("22_w1u3q"), ExtResource("23_q56ns"), ExtResource("24_3g1tw"), ExtResource("25_mucvq")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mcjra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bdy6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vufof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rtexl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ufpno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_214jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_njk0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_by2ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3xp2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nga6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0msu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rg4yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_itxra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bx3ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ugcre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_j6t65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gmsmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8qlac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ox1c4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_w1u3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_q56ns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_3g1tw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_mucvq")
+}],
 "loop": false,
 "name": &"explode",
 "speed": 12.0
 }, {
-"frames": [ExtResource("3_tpsvc")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tpsvc")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource("4_npg74"), ExtResource("5_yuymw"), ExtResource("6_ctxvf"), ExtResource("7_4a8ie")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_npg74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yuymw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ctxvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4a8ie")
+}],
 "loop": true,
 "name": &"shoot",
 "speed": 12.0
@@ -58,23 +142,35 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_r51ql"]
 resource_local_to_scene = true
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": false,
 "name": &"explode",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource("8_1kst4"), ExtResource("9_q6bje")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1kst4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q6bje")
+}],
 "loop": true,
 "name": &"shoot",
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_o3j1l"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7jan"]
 radius = 700.0
 
 [node name="GatlingTurret" instance=ExtResource("1_yb6wj")]
@@ -94,7 +190,9 @@ projectile_damage = 3
 
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(3, 0)
-frames = SubResource("SpriteFrames_v3a16")
+sprite_frames = SubResource("SpriteFrames_v3a16")
+animation = &"shoot"
+frame_progress = 0.10378
 offset = Vector2(10, 1)
 
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
@@ -117,10 +215,12 @@ position = Vector2(82, 20)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 position = Vector2(93, 1)
-frames = SubResource("SpriteFrames_r51ql")
+sprite_frames = SubResource("SpriteFrames_r51ql")
+animation = &"explode"
+frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_o3j1l")
+shape = SubResource("CircleShape2D_c7jan")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(750, 0)

@@ -65,7 +65,10 @@ animations = [{
 "name": &"explode",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
@@ -88,6 +91,7 @@ detect_radius = 400
 sprite_frames = SubResource("SpriteFrames_m3rfr")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.824369
 offset = Vector2(11, -2)
 
 [node name="Muzzle" type="Marker2D" parent="Gun"]

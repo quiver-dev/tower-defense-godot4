@@ -454,7 +454,10 @@ height = 192.0
 [sub_resource type="SpriteFrames" id="SpriteFrames_iyx81"]
 resource_local_to_scene = true
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": false,
 "name": &"explode",
 "speed": 5.0
@@ -532,12 +535,18 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_8rdfx"]
 resource_local_to_scene = true
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": false,
 "name": &"explode",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
@@ -601,7 +610,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8om4b"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwt14"]
 radius = 600.0
 
 [node name="Helicopter" instance=ExtResource("1_3xlxq")]
@@ -628,17 +637,17 @@ script = ExtResource("5_we7qf")
 [node name="Shadow" type="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(8, 32)
 sprite_frames = SubResource("SpriteFrames_akjy8")
-animation = &"move"
+animation = &"die"
 autoplay = "move"
 
 [node name="Sprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_q53ch")
-animation = &"move"
+animation = &"shoot_b"
 
 [node name="Rotor" type="AnimatedSprite2D" parent="." index="3"]
 position = Vector2(3, 0)
 sprite_frames = SubResource("SpriteFrames_rn3o2")
-animation = &"move"
+animation = &"die"
 autoplay = "move"
 
 [node name="CollisionShape2D" parent="." index="4"]
@@ -671,7 +680,8 @@ metadata/_edit_lock_ = true
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(-14, 0)
 sprite_frames = SubResource("SpriteFrames_iyx81")
-frame_progress = 0.238025
+animation = &"explode"
+frame_progress = 0.0
 
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
 position = Vector2(50, -42)
@@ -681,9 +691,10 @@ position = Vector2(50, 38)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 sprite_frames = SubResource("SpriteFrames_8rdfx")
+animation = &"explode"
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_8om4b")
+shape = SubResource("CircleShape2D_qwt14")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(650, 0)

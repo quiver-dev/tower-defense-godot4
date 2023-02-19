@@ -153,7 +153,7 @@ func _on_parent_mouse_exited() -> void:
 
 
 func _on_gun_animation_finished() -> void:
-	if "shoot" in gun.animation:
+	if gun.animation.contains("shoot"):
 		_play_animations("idle")
 
 

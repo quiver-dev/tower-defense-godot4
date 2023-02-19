@@ -48,17 +48,113 @@ size = Vector2(96, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qvsj1"]
 animations = [{
-"frames": [ExtResource("3_ockfg"), ExtResource("4_3md02"), ExtResource("5_p503j"), ExtResource("6_w1uqn"), ExtResource("7_kae01"), ExtResource("8_cvg80"), ExtResource("9_8m0g2"), ExtResource("10_fk8tv"), ExtResource("11_6suaa"), ExtResource("12_gvrcn"), ExtResource("13_bhjqb"), ExtResource("14_a8tmw"), ExtResource("15_kesh4"), ExtResource("16_u0xu8"), ExtResource("17_wfxcv"), ExtResource("18_6rlob"), ExtResource("19_x53gf"), ExtResource("20_ae4l6"), ExtResource("21_1xrgh"), ExtResource("22_2sybm"), ExtResource("23_kdqa0"), ExtResource("24_7u5fg"), ExtResource("25_pg4n3")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ockfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3md02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p503j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w1uqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kae01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cvg80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8m0g2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fk8tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6suaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gvrcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bhjqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_a8tmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kesh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_u0xu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wfxcv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6rlob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_x53gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ae4l6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1xrgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2sybm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_kdqa0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7u5fg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_pg4n3")
+}],
 "loop": false,
 "name": &"explode",
 "speed": 12.0
 }, {
-"frames": [ExtResource("3_cx06d")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cx06d")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource("4_wf5uk"), ExtResource("5_8ec7b"), ExtResource("6_yq6j2"), ExtResource("7_qd535"), ExtResource("8_ccshw"), ExtResource("9_2luwa"), ExtResource("10_oh1cj"), ExtResource("11_gvyaa")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wf5uk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8ec7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yq6j2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qd535")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ccshw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2luwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oh1cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gvyaa")
+}],
 "loop": false,
 "name": &"shoot",
 "speed": 12.0
@@ -67,23 +163,50 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_xiki0"]
 resource_local_to_scene = true
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": false,
 "name": &"explode",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource("12_mqbby"), ExtResource("13_mx5lf"), ExtResource("14_vrtod"), ExtResource("15_dskmc"), ExtResource("16_2afws"), ExtResource("17_28ano"), ExtResource("18_a70jf"), null],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_mqbby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mx5lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vrtod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dskmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2afws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_28ano")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_a70jf")
+}],
 "loop": false,
 "name": &"shoot",
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_eavig"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_22kwe"]
 radius = 600.0
 
 [node name="SingleTurret" instance=ExtResource("1_ewq6e")]
@@ -102,17 +225,20 @@ projectile_speed = 800
 projectile_damage = 20
 
 [node name="Gun" parent="Shooter" index="0"]
-frames = SubResource("SpriteFrames_qvsj1")
+sprite_frames = SubResource("SpriteFrames_qvsj1")
+frame_progress = 0.619648
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 position = Vector2(56, 0)
-frames = SubResource("SpriteFrames_xiki0")
+sprite_frames = SubResource("SpriteFrames_xiki0")
+animation = &"explode"
+frame_progress = 0.0
 
 [node name="Detector" parent="Shooter" index="2"]
 collision_mask = 32
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_eavig")
+shape = SubResource("CircleShape2D_22kwe")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(650, 0)
