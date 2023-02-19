@@ -157,6 +157,13 @@ func _on_gun_animation_finished() -> void:
 		_play_animations("idle")
 
 
+# We need a slightly different logic for looping animations, as we want
+# to keep them looping if they still have targets
+func _on_gun_animation_looped() -> void:
+	if gun.animation.contains("shoot") and targets.is_empty():
+		_play_animations("idle")
+
+
 # We only write on the targets array, then each parent entity will
 # take care of switching the state
 func _on_detector_area_entered(area: Area2D) -> void:

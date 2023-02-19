@@ -12,8 +12,7 @@ const FADE_OUT_DURATION := 0.25
 # This works as long as all turrets are a single child of each turret slot,
 # i.e. their name will always be "SingleTurret" or "MissileTurret", etc.
 var type: String:
-	get: 
-		return String(name).trim_suffix("Turret").to_lower()
+	get: return String(name).trim_suffix("Turret").to_lower()
 
 @onready var collision := $CollisionShape2D as CollisionShape2D
 @onready var shooter := $Shooter as Shooter
