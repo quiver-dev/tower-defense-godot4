@@ -671,7 +671,7 @@ metadata/_edit_lock_ = true
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(-14, 0)
 sprite_frames = SubResource("SpriteFrames_iyx81")
-frame_progress = 0.00324428
+frame_progress = 0.238025
 
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
 position = Vector2(50, -42)
