@@ -170,7 +170,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2mlng"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_46qvy"]
 radius = 700.0
 
 [node name="GatlingTurret" instance=ExtResource("1_yb6wj")]
@@ -191,7 +191,7 @@ projectile_damage = 3
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(3, 0)
 sprite_frames = SubResource("SpriteFrames_v3a16")
-frame_progress = 0.991344
+frame_progress = 0.970164
 offset = Vector2(10, 1)
 
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
@@ -215,10 +215,10 @@ position = Vector2(82, 20)
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 position = Vector2(93, 1)
 sprite_frames = SubResource("SpriteFrames_r51ql")
-frame_progress = 0.345934
+frame_progress = 0.324759
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_2mlng")
+shape = SubResource("CircleShape2D_46qvy")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(750, 0)

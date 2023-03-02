@@ -2,7 +2,7 @@
 An open source 2D tile-based tower defense game template built for Godot 4.0, created by [Quiver](https://quiver.dev).
 
 ## Prerequisites
-Latest version of Godot 4
+Godot 4.0 RC 6 or later.
 
 ## Trailer
 [![Outpost Assault Trailer](https://image.mux.com/48I4Lkdd7d5KKqnv00yq2mtmkj8Miel84c4NBVkUjRLU/animated.gif?start=17&end=24)](http://quiver.dev/assets/game-templates/outpost-assault-tower-defense-godot-4-template/#lg=1&slide=0)

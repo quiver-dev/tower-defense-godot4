@@ -449,7 +449,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wklqf"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7s25b"]
 radius = 500.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h1o7w"]
@@ -696,7 +696,7 @@ position = Vector2(44, 0)
 sprite_frames = SubResource("SpriteFrames_x5y1r")
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_wklqf")
+shape = SubResource("CircleShape2D_7s25b")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 self_modulate = Color(1, 0.0235294, 0.313726, 1)

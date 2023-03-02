@@ -31,11 +31,12 @@ func _on_turret_repair_requested() -> void:
 	if turret.repair():
 		turret_actions.hide()
 	else:
-		var tween := create_tween().set_trans(Tween.TRANS_BACK).\
-				set_ease(Tween.EASE_IN_OUT)
 		var repair_btn := get_node("TurretActions/Repair") as Button
-		repair_btn.modulate = Color("ff383f")
-		tween.tween_property(repair_btn, "modulate", Color("fff"), 0.25)
+		if is_instance_valid(repair_btn):
+			var tween := create_tween().set_trans(Tween.TRANS_BACK).\
+					set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(repair_btn, "modulate", Color("fff"), 0.25).\
+					from(Color("ff383f"))
 
 
 func _on_turret_remove_requested() -> void:

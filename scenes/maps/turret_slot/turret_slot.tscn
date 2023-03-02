@@ -38,6 +38,15 @@ offset_top = -248.0
 offset_right = 249.0
 offset_bottom = 237.0
 
+[node name="Replace" parent="UI/TurretActions" index="0"]
+layout_mode = 2
+
+[node name="Repair" parent="UI/TurretActions" index="1"]
+layout_mode = 2
+
+[node name="Remove" parent="UI/TurretActions" index="2"]
+layout_mode = 2
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="turret_requested" from="UI/TurretPopup" to="." method="_on_turret_popup_turret_requested"]
 [connection signal="visibility_changed" from="UI/TurretPopup" to="." method="_on_turret_popup_visibility_changed"]
