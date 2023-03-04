@@ -610,7 +610,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qwt14"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2d3my"]
 radius = 600.0
 
 [node name="Helicopter" instance=ExtResource("1_3xlxq")]
@@ -680,8 +680,7 @@ metadata/_edit_lock_ = true
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(-14, 0)
 sprite_frames = SubResource("SpriteFrames_iyx81")
-animation = &"explode"
-frame_progress = 0.0
+frame_progress = 0.436135
 
 [node name="Muzzle" parent="Shooter/Gun" index="0"]
 position = Vector2(50, -42)
@@ -691,10 +690,10 @@ position = Vector2(50, 38)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 sprite_frames = SubResource("SpriteFrames_8rdfx")
-animation = &"explode"
+frame_progress = 0.848354
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_qwt14")
+shape = SubResource("CircleShape2D_2d3my")
 
 [node name="LookAhead" parent="Shooter" index="3"]
 target_position = Vector2(650, 0)

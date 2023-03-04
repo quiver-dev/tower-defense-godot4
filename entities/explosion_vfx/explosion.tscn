@@ -268,4 +268,5 @@ animations = [{
 
 [node name="Explosion" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_h1o7w")
+animation = &"hidden"
 autoplay = "hidden"
