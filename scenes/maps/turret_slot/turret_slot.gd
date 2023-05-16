@@ -48,12 +48,12 @@ func _on_turret_popup_turret_requested(type: String) -> void:
 	# load turret into scene and disable input
 	turret = load(Scenes.get_turret_path(type)).instantiate()
 	add_child(turret, true)
-	turret.shooter.projectile_instanced.connect(_on_turret_projectile_intanced)
+	turret.shooter.projectile_instanced.connect(_on_turret_projectile_instanced)
 	# connect turret signal to restore input detection on turret disabled
 	turret.turret_disabled.connect(_on_turret_disabled)
 
 
-func _on_turret_projectile_intanced(projectile: Projectile) -> void:
+func _on_turret_projectile_instanced(projectile: Projectile) -> void:
 	projectile_container.add_child(projectile, true)
 
 

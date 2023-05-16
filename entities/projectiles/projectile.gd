@@ -26,7 +26,7 @@ var target  # homing missiles only
 
 func _ready() -> void:
 	hit_vfx.hide()
-	# handle visilibity via VisibleOnScreenNotifier2D node
+	# handle visibility via VisibleOnScreenNotifier2D node
 	visibility_notifier.screen_entered.connect(show)
 	visibility_notifier.screen_exited.connect(hide)
 	# create a one-shot timer for lifetime
