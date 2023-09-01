@@ -1,3 +1,5 @@
+> :warning: This repository has now been superceded by the new [Outpost Assault repo](https://github.com/quiver-dev/tower-defense-tutorial) that accompanies the [Outpost Assault course](https://quiver.dev/tutorials/make-a-2d-tower-defense-game-with-godot-4/). Please use that codebase instead of this one. We're still preserving this codebase because it has one or two features not present in the other one, such as hit states. Note, however, that this version is missing explosions, sound effects, and will be less up-to-date overall.
+
 # Outpost Assault: Tower Defense Game Template
 An open source 2D tile-based tower defense game template built for Godot 4.0, created by [Quiver](https://quiver.dev).
 
